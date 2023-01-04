@@ -1,0 +1,82 @@
+---
+permalink: monitor/monitoring-storage-capacity-for-entire-grid.html 
+sidebar: sidebar 
+keywords: storage capacity, grid 
+summary: Die Storage-Gesamtkapazität für das Grid muss überwacht werden, um zu gewährleisten, dass ausreichend freier Speicherplatz für Objekt- und Objekt-Metadaten verbleibt. Wenn Sie verstehen, wie sich die Storage-Kapazität im Laufe der Zeit verändert, können Sie beim Hinzufügen von Storage-Nodes oder Storage-Volumes unterstützen, bevor die nutzbare Storage-Kapazität des Grid verbraucht wird. 
+---
+= Überwachung der Storage-Kapazität für das gesamte Grid
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Storage-Gesamtkapazität für das Grid muss überwacht werden, um zu gewährleisten, dass ausreichend freier Speicherplatz für Objekt- und Objekt-Metadaten verbleibt. Wenn Sie verstehen, wie sich die Storage-Kapazität im Laufe der Zeit verändert, können Sie Storage-Nodes oder Storage-Volumes planen, bevor die nutzbare Storage-Kapazität des Grid verbraucht wird.
+
+.Was Sie benötigen
+Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+
+.Über diese Aufgabe
+Über das Dashboard im Grid Manager können Sie schnell ermitteln, wie viel Storage für das gesamte Grid und für jedes Datacenter zur Verfügung steht. Die Seite Knoten enthält detailliertere Werte für Objektdaten und Objektmetadaten.
+
+.Schritte
+. Beurteilen Sie, wie viel Storage für das gesamte Grid und das jeweilige Datacenter verfügbar ist.
++
+.. Wählen Sie *Dashboard*.
+.. Notieren Sie sich im Fenster Verfügbare Speicherkapazität die Zusammenfassung der freien und genutzten Speicherkapazität.
++
+
+NOTE: Die Zusammenfassung enthält keine Archivierungsmedien.
+
++
+image::../media/grid_manager_dashboard_cropped.png[Grid Manager Dashboard]
+
+.. Platzieren Sie den Cursor über die freien bzw. genutzten Kapazitätsbereiche des Diagramms, um genau zu sehen, wie viel Speicherplatz frei oder verwendet wird.
++
+image::../media/storage_capacity_used.gif[Diagramm „Freie oder genutzte Kapazität“ auf dem Dashboard]
+
+.. Sehen Sie sich das Diagramm für die einzelnen Datacenter an, um Grids für mehrere Standorte zu verwenden.
+.. Klicken Sie auf das Diagrammsymbol image:../media/icon_chart_new.gif["Diagrammsymbol"] Für das Gesamtdiagramm oder für ein einzelnes Datacenter, um ein Diagramm anzuzeigen, in dem die Kapazitätsauslastung im Laufe der Zeit dargestellt wird.
++
+Eine Grafik zeigt den prozentualen Anteil an der genutzten Storage-Kapazität (%) gegenüber Die Uhrzeit wird angezeigt.
+
+
+
+. Ermitteln Sie, wie viel Storage genutzt wurde und wie viel Storage für Objekt- und Objekt-Metadaten verfügbar ist.
++
+.. Wählen Sie *Knoten*.
+.. Wählen Sie *_Grid_* > *Storage* aus.
++
+image::../media/nodes_deployment_storage_tab.png[Registerkarte Nodes Deployment Storage]
+
+.. Bewegen Sie den Mauszeiger über den Speicher verwendet - Objektdaten und den verwendeten Speicher - Objektmetadaten-Diagramme, um zu ermitteln, wie viel Objekt-Storage und Objekt-Metadaten im gesamten Grid zur Verfügung stehen und wieviel Storage über die Zeit verwendet wurde.
++
+
+NOTE: Die Gesamtwerte für einen Standort oder das Grid enthalten keine Nodes, die mindestens fünf Minuten lang keine Kennzahlen enthalten, z. B. Offline-Nodes.
+
+
+
+. Sehen Sie sich gemäß dem technischen Support weitere Details zur Speicherkapazität Ihres Grids an.
++
+.. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+.. Wählen Sie *_Grid_* > *Übersicht* > *Main*.
++
+image::../media/system_wide_storage_capacity.gif[Systemweiter Baum In Der Storage-Kapazität--Grid-Topologie]
+
+
+
+. Planung, eine Erweiterung zum Hinzufügen von Storage-Nodes oder Storage-Volumes durchzuführen, bevor die nutzbare Storage-Kapazität des Grid genutzt wird
++
+Berücksichtigen Sie bei der Planung des Zeitplans für eine Erweiterung, wie lange die Beschaffung und Installation von zusätzlichem Storage dauern wird.
+
++
+
+NOTE: Wenn Ihre ILM-Richtlinie Erasure Coding verwendet, wird es möglicherweise besser erweitert, wenn vorhandene Storage-Nodes ungefähr 70 % ausgelastet sind, um die Anzahl der hinzugefügten Nodes zu verringern.
+
++
+Weitere Informationen zur Planung einer Speichererweiterung finden Sie in den Anweisungen zur Erweiterung von StorageGRID.
+
+
+
+.Verwandte Informationen
+link:../expand/index.html["Erweitern Sie Ihr Raster"]

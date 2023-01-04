@@ -1,0 +1,21 @@
+---
+permalink: monitor/monitoring-storage-capacity.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie müssen den insgesamt nutzbaren Speicherplatz auf Storage-Nodes überwachen, um sicherzustellen, dass dem StorageGRID System nicht der Speicherplatz für Objekte oder Objekt-Metadaten zur Verfügung steht. 
+---
+= Monitoring der Storage-Kapazität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen den insgesamt nutzbaren Speicherplatz auf Storage-Nodes überwachen, um sicherzustellen, dass dem StorageGRID System nicht der Speicherplatz für Objekte oder Objekt-Metadaten zur Verfügung steht.
+
+StorageGRID speichert Objektdaten und Objektmetadaten separat und behält eine bestimmte Menge an Speicherplatz für eine verteilte Cassandra-Datenbank mit Objekt-Metadaten bei. Überwachen Sie den Gesamtspeicherplatz für Objekte und Objekt-Metadaten sowie Trends für den Speicherplatz, der für jeden verbraucht wird. So können Sie das Hinzufügen von Nodes vorausschauender planen und Serviceausfälle vermeiden.
+
+Sie können Storage-Kapazitätsinformationen für das gesamte Grid, für jeden Standort und für jeden Storage-Node in Ihrem StorageGRID-System anzeigen.
+
+.Verwandte Informationen
+link:viewing-storage-tab.html["Anzeigen der Registerkarte „Speicher“"]

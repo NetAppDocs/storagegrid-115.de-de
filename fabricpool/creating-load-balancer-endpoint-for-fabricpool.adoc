@@ -1,0 +1,91 @@
+---
+permalink: fabricpool/creating-load-balancer-endpoint-for-fabricpool.html 
+sidebar: sidebar 
+keywords: fabricPool, load balancer, endpoint, load balancing, create, creating, certificate 
+summary: Wenn Sie StorageGRID für die Verwendung mit FabricPool konfigurieren, konfigurieren Sie einen Endpunkt für den Load Balancer und laden das Endpoint-Zertifikat für den Load Balancer hoch, mit dem die Verbindung zwischen ONTAP und StorageGRID gesichert werden kann. 
+---
+= Erstellen eines Endpunkts für den Load Balancer für FabricPool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie StorageGRID für die Verwendung mit FabricPool konfigurieren, konfigurieren Sie einen Endpunkt für den Load Balancer und laden das Endpoint-Zertifikat für den Load Balancer hoch, mit dem die Verbindung zwischen ONTAP und StorageGRID gesichert werden kann.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über die Berechtigung Root Access verfügen.
+* Sie haben die folgenden Dateien:
++
+** Serverzertifikat: Die benutzerdefinierte Serverzertifikatdatei.
+** Server Certificate Private Key: Die private Schlüsseldatei des benutzerdefinierten Serverzertifikats.
+** CA-Paket: Eine einzelne Datei, die die Zertifikate jeder Zertifizierungsstelle (CA) enthält. Die Datei sollte alle PEM-kodierten CA-Zertifikatdateien enthalten, die in der Reihenfolge der Zertifikatskette verkettet sind.
+
+
+
+
+.Über diese Aufgabe
+Weitere Informationen zu dieser Aufgabe finden Sie unter link:../admin/configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"].
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Balancer-Endpunkte Laden*.
++
+image::../media/load_balancer_endpoint_create_http.png[LB-Endpunkt erstellen]
+
+. Wählen Sie *Endpunkt hinzufügen*.
+. Geben Sie die folgenden Informationen ein.
++
+[cols="1a,1a"]
+|===
+| Feld | Beschreibung 
+
+
+ a| 
+Anzeigename
+ a| 
+Einen beschreibenden Namen für den Endpunkt
+
+
+
+ a| 
+Port
+ a| 
+Der StorageGRID-Port, den Sie für den Lastausgleich verwenden möchten. Dieses Feld ist standardmäßig auf 10433 eingestellt, Sie können jedoch alle nicht verwendeten externen Ports eingeben. Wenn Sie 80 oder 443 eingeben, wird der Endpunkt nur auf Gateway-Knoten konfiguriert, da diese Ports auf Admin-Nodes reserviert sind.
+
+*Hinweis:* Ports, die von anderen Netzdiensten verwendet werden, sind nicht zulässig. Siehe Liste der Anschlüsse, die für interne und externe Kommunikation verwendet werden:
+
+link:../network/network-port-reference.html["Referenz für Netzwerk-Ports"]
+
+Sie müssen diese Portnummer an ONTAP angeben, wenn Sie StorageGRID als FabricPool Cloud Tier anhängen.
+
+
+
+ a| 
+Protokoll
+ a| 
+Muss *HTTPS* sein.
+
+
+
+ a| 
+Endpunktbindungsmodus
+ a| 
+Verwenden Sie die *Global*-Einstellung (empfohlen) oder beschränken Sie die Zugänglichkeit dieses Endpunkts auf einen der folgenden Elemente:
+
+** Spezifische virtuelle Hochverfügbarkeits-IP-Adressen (VIPs). Verwenden Sie diese Auswahl nur, wenn ein deutlich höheres Maß an Isolierung von Workloads erforderlich ist.
+** Spezielle Netzwerkschnittstellen bestimmter Nodes.
+
+
+|===
+. Wählen Sie *Speichern*.
++
+Das Dialogfeld Endpunkt bearbeiten wird angezeigt.
+
+. Wählen Sie für * Endpoint Service Type* *S3* aus.
+. Wählen Sie *Zertifikat hochladen* (empfohlen) und navigieren Sie anschließend zu Ihrem Serverzertifikat, Ihrem privaten Zertifikatschlüssel und dem CA-Paket.
++
+image::../media/load_balancer_endpoint_upload_cert.png[Zertifikat Hochladen]
+
+. Wählen Sie *Speichern*.
+

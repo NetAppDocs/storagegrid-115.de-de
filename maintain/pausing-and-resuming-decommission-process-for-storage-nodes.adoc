@@ -1,0 +1,43 @@
+---
+permalink: maintain/pausing-and-resuming-decommission-process-for-storage-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, decommission, storage node 
+summary: Sie können den Decommission-Vorgang für einen Storage-Node gegebenenfalls während bestimmter Phasen unterbrechen. Sie müssen die Deaktivierung auf einem Storage-Node unterbrechen, bevor Sie ein zweites Wartungsverfahren starten können. Nachdem das andere Verfahren abgeschlossen ist, können Sie die Stilllegung fortsetzen. 
+---
+= Anhalten und Fortsetzen des Stilllegen-Prozesses für Storage Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Decommission-Vorgang für einen Storage-Node gegebenenfalls während bestimmter Phasen unterbrechen. Sie müssen die Deaktivierung auf einem Storage-Node unterbrechen, bevor Sie ein zweites Wartungsverfahren starten können. Nachdem das andere Verfahren abgeschlossen ist, können Sie die Stilllegung fortsetzen.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über die Berechtigung Wartung oder Stammzugriff verfügen.
+
+
+.Schritte
+. Wählen Sie *Wartung* > *Wartungsaufgaben* > *Dekommission*.
++
+Die Seite Decommission wird angezeigt.
+
+. Klicken Sie Auf *Decommission Nodes*.
++
+Die Seite Decommission Nodes wird angezeigt. Wenn die Deaktivierung eine der folgenden Stufen erreicht, ist die Schaltfläche *Pause* aktiviert.
+
++
+** ILM-Evaluierung
+** Erasure-codierte Daten werden stilllegung
+
+
+. Klicken Sie auf *Pause*, um den Vorgang zu unterbrechen.
++
+Die aktuelle Phase wird angehalten, und die Schaltfläche *Fortsetzen* ist aktiviert.
+
++
+image::../media/decommission_nodes_procedure_paused.png[Verfahren Für Die Deaktivierung Von Knoten Angehalten]
+
+. Klicken Sie nach Abschluss des anderen Wartungsverfahrens auf *Fortsetzen*, um mit der Stilllegung fortzufahren.
+

@@ -1,0 +1,74 @@
+---
+permalink: admin/editing-tenant-account.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können ein Mandantenkonto bearbeiten, um den Anzeigenamen zu ändern, die Einstellung für die Identitätsquelle zu ändern, Plattformservices zu ermöglichen oder zu verlassen oder ein Speicherkontingent einzugeben. 
+---
+= Bearbeiten eines Mandantenkontos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Mandantenkonto bearbeiten, um den Anzeigenamen zu ändern, die Einstellung für die Identitätsquelle zu ändern, Plattformservices zu ermöglichen oder zu verlassen oder ein Speicherkontingent einzugeben.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Schritte
+. Wählen Sie *Mieter*.
++
+Die Seite „Mandantenkonten“ wird angezeigt und enthält alle vorhandenen Mandantenkonten.
+
++
+image::../media/tenant_accounts_page.png[Seite „Mandantenkonten“]
+
+. Wählen Sie das Mandantenkonto aus, das Sie bearbeiten möchten.
++
+Wenn Ihr System mehr als 20 Elemente enthält, können Sie festlegen, wie viele Zeilen auf jeder Seite gleichzeitig angezeigt werden. Verwenden Sie das Suchfeld, um nach einem Mandantenkonto zu suchen, indem Sie den Namen oder die Mandanten-ID anzeigen.
+
+. Wählen Sie *Bearbeiten*.
++
+Die Seite Mandantenkonto bearbeiten wird angezeigt. Dieses Beispiel gilt für ein Raster, in dem keine SSO (Single Sign On) verwendet wird. Dieses Mandantenkonto hat keine eigene Identitätsquelle konfiguriert.
+
++
+image::../media/edit_tenant_account.png[Mandantenkonto bearbeiten]
+
+. Ändern Sie die Werte für die Felder nach Bedarf.
++
+.. Ändern Sie den Anzeigenamen für dieses Mandantenkonto.
+.. Ändern Sie die Einstellung des Kontrollkästchen *Plattformdienste zulassen*, um festzustellen, ob das Mandantenkonto Plattformdienste für ihre S3-Buckets verwenden kann.
++
+
+IMPORTANT: Wenn Sie Plattform-Services für einen Mandanten deaktivieren, der sie bereits nutzt, funktionieren die Services, die er für seine S3-Buckets konfiguriert hat, nicht mehr. Es wird keine Fehlermeldung an den Mandanten gesendet. Wenn der Mandant beispielsweise die Replizierung von CloudMirror für einen S3-Bucket konfiguriert hat, können sie Objekte weiterhin im Bucket speichern, doch werden Kopien dieser Objekte nicht mehr im externen S3-Bucket erstellt, den sie als Endpunkt konfiguriert haben.
+
+.. Ändern Sie für *Speicherkontingent* die Anzahl der für die Objekte dieses Mandanten verfügbaren maximalen Gigabytes, Terabyte oder Petabytes, oder lassen Sie das Feld leer, wenn Sie möchten, dass dieser Mieter eine unbegrenzte Quote hat.
++
+Das Storage-Kontingent eines Mandanten stellt eine logische Menge (Objektgröße) und keine physische Menge (Größe auf der Festplatte) dar. ILM-Kopien und Erasure Coding tragen nicht zum Umfang des verwendeten Kontingents bei.
+
++
+
+NOTE: Um die Storage-Nutzung jedes Mandantenkontos zu überwachen, wählen Sie *Nutzung*. Mandantenkonten können auch ihre eigene Nutzung von der Konsole im Mandantenmanager oder mit der Mandantenmanagement-API überwachen. Beachten Sie, dass die Storage-Nutzungswerte eines Mandanten möglicherweise nicht mehr aktuell sind, wenn Nodes von anderen Nodes im Grid isoliert werden. Die Gesamtwerte werden aktualisiert, wenn die Netzwerkverbindung wiederhergestellt ist.
+
+.. Ändern Sie die Einstellung des Checkbox *uses own Identity Source*, um festzustellen, ob das Mandantenkonto eine eigene Identitätsquelle oder die für den Grid Manager konfigurierte Identitätsquelle verwendet.
++
+
+NOTE: Wenn das Kontrollkästchen * verwendet eigene Identitätsquelle*:
+
++
+*** Deaktiviert und überprüft, hat der Mandant bereits seine eigene Identitätsquelle aktiviert. Ein Mandant muss seine Identitätsquelle deaktivieren, bevor er die für den Grid Manager konfigurierte Identitätsquelle verwenden kann.
+*** Deaktiviert und deaktiviert ist, ist SSO für das StorageGRID System aktiviert. Der Mandant muss die Identitätsquelle verwenden, die für den Grid Manager konfiguriert wurde.
+
+
+
+
+. Wählen Sie *Speichern*.
+
+
+.Verwandte Informationen
+link:managing-platform-services-for-s3-tenant-accounts.html["Management von Plattform-Services für S3-Mandantenkonten"]
+
+link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]

@@ -1,0 +1,42 @@
+---
+permalink: vmware/planning-and-preparation.html 
+sidebar: sidebar 
+keywords:  
+summary: Bevor Sie Grid-Nodes implementieren und das StorageGRID Grid konfigurieren, müssen Sie die Schritte und Anforderungen für das Durchführen des Verfahrens kennen. 
+---
+= Planung und Vorbereitung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie Grid-Nodes implementieren und das StorageGRID Grid konfigurieren, müssen Sie die Schritte und Anforderungen für das Durchführen des Verfahrens kennen.
+
+Bei den Implementierungs- und Konfigurationsverfahren für StorageGRID ist bereits die Architektur und die betrieblichen Funktionen des StorageGRID Systems bekannt.
+
+Sie können einen oder mehrere Standorte gleichzeitig implementieren. Alle Standorte müssen jedoch die Mindestanforderungen erfüllen, die für mindestens drei Storage-Nodes bestehen.
+
+Bevor Sie mit der Implementierung eines Node und der Grid-Konfiguration beginnen, müssen Sie:
+
+* Planung der StorageGRID Implementierung
+* Installation, Anschluss und Konfiguration der gesamten erforderlichen Hardware – einschließlich aller StorageGRID Appliances – gemäß den Spezifikationen
++
+
+NOTE: Hardware-spezifische Installations- und Integrationsanweisungen sind nicht im Installationsverfahren für StorageGRID enthalten. Informationen zur Installation von StorageGRID Appliances finden Sie in der Installations- und Wartungsanleitung für Ihre Appliance.
+
+* Kenntnis der verfügbaren Netzwerkoptionen und Implementierung der einzelnen Netzwerkoptionen auf Grid Nodes Siehe StorageGRID Netzwerkrichtlinien.
+* Sammeln Sie alle Netzwerkinformationen im Voraus. Wenn Sie nicht DHCP verwenden, sammeln Sie die IP-Adressen, die jedem Grid-Node zugewiesen werden sollen, und die IP-Adressen des Domain Name System (DNS) und der von Ihnen verwendeten NTP-Server (Network Time Protocol).
+* Legen Sie fest, welche der verfügbaren Implementierungs- und Konfigurationstools Sie verwenden möchten.
+
+
+.Verwandte Informationen
+link:../network/index.html["Netzwerkrichtlinien"]
+
+link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+link:../sg6000/index.html["SG6000 Storage-Appliances"]
+
+link:../sg5700/index.html["SG5700 Storage-Appliances"]
+
+link:../sg5600/index.html["SG5600 Storage Appliances"]

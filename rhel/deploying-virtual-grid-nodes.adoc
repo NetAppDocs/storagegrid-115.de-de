@@ -1,0 +1,28 @@
+---
+permalink: rhel/deploying-virtual-grid-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, deploying grid nodes, deploy grid nodes, rhel, redhat, redhat linux, centos 
+summary: Zum Bereitstellen von virtuellen Grid-Nodes auf Red hat Enterprise Linux- oder CentOS-Hosts erstellen Sie Node-Konfigurationsdateien für alle Nodes, validieren die Dateien und starten den StorageGRID-Hostdienst, der die Nodes startet. Wenn Sie Speicherknoten von StorageGRID Appliances bereitstellen müssen, lesen Sie die Installations- und Wartungsanleitung für die Appliance, nachdem Sie alle virtuellen Knoten bereitgestellt haben. 
+---
+= Implementierung virtueller Grid-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Bereitstellen von virtuellen Grid-Nodes auf Red hat Enterprise Linux- oder CentOS-Hosts erstellen Sie Node-Konfigurationsdateien für alle Nodes, validieren die Dateien und starten den StorageGRID-Hostdienst, der die Nodes startet. Wenn Sie Speicherknoten von StorageGRID Appliances bereitstellen müssen, lesen Sie die Installations- und Wartungsanleitung für die Appliance, nachdem Sie alle virtuellen Knoten bereitgestellt haben.
+
+* link:creating-node-configuration-files.html["Erstellen von Knoten-Konfigurationsdateien"]
+* link:validating-storagegrid-configuration.html["Überprüfung der StorageGRID-Konfiguration"]
+* link:starting-storagegrid-host-service.html["Starten des StorageGRID Host Service"]
+
+
+.Verwandte Informationen
+link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+link:../sg5700/index.html["SG5700 Storage-Appliances"]
+
+link:../sg6000/index.html["SG6000 Storage-Appliances"]

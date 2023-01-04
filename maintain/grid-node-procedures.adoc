@@ -1,0 +1,43 @@
+---
+permalink: maintain/grid-node-procedures.html 
+sidebar: sidebar 
+keywords: storagegrid, grid node procedure 
+summary: Möglicherweise müssen Sie auf einem bestimmten Grid-Node Verfahren durchführen. Während Sie einige dieser Verfahren von Grid Manager ausführen können, müssen Sie bei den meisten Verfahren von der Befehlszeile des Knotens aus auf Server Manager zugreifen. 
+---
+= Verfahren für den Grid-Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie auf einem bestimmten Grid-Node Verfahren durchführen. Sie können zwar einige dieser Verfahren im Grid Manager ausführen, jedoch müssen Sie bei den meisten Verfahren von der Befehlszeile des Knotens aus auf Server Manager zugreifen.
+
+Server Manager wird auf jedem Grid-Knoten ausgeführt, um das Starten und Beenden von Diensten zu überwachen und sicherzustellen, dass Dienste problemlos dem StorageGRID-System beitreten und das System verlassen. Server Manager überwacht auch die Dienste auf jedem Grid-Knoten und versucht automatisch, alle Services, die Fehler melden, neu zu starten.
+
+
+IMPORTANT: Sie sollten auf Server Manager zugreifen, wenn Sie von technischem Support dazu aufgefordert wurden.
+
+
+NOTE: Sie müssen die aktuelle Shell-Sitzung des Befehls schließen und sich ausloggen, nachdem Sie mit Server Manager fertig sind. Geben Sie Ein: `exit`
+
+.Wahlmöglichkeiten
+* link:viewing-server-manager-status-and-version.html["Anzeigen von Status und Version von Server Manager"]
+* link:viewing-current-status-of-all-services.html["Anzeigen des aktuellen Status aller Dienste"]
+* link:starting-server-manager-and-all-services.html["Starten von Server Manager und allen Diensten"]
+* link:restarting-server-manager-and-all-services.html["Neustart von Server Manager und allen Diensten"]
+* link:stopping-server-manager-and-all-services.html["Beenden von Server Manager und allen Diensten"]
+* link:viewing-current-status-of-service.html["Anzeigen des aktuellen Status eines Dienstes"]
+* link:stopping-service.html["Anhalten eines Dienstes"]
+* link:placing-appliance-into-maintenance-mode.html["Versetzen einer Appliance in den Wartungsmodus"]
+* link:forcing-service-to-terminate.html["Beendigung eines Dienstes erzwingen"]
+* link:starting-or-restarting-service.html["Starten oder Neustarten eines Dienstes"]
+* link:removing-port-remaps.html["Entfernen von Port-Remaps"]
+* link:removing-port-remaps-on-bare-metal-hosts.html["Entfernen von Port-Remaps auf Bare-Metal-Hosts"]
+* link:rebooting-grid-node.html["Neubooten eines Grid-Node"]
+* link:shutting-down-grid-node.html["Herunterfahren eines Grid-Node"]
+* link:powering-down-host.html["Herunterfahren eines Hosts"]
+* link:powering-off-and-on-all-nodes-in-grid.html["Ausschalten und Einschalten aller Knoten im Grid"]
+* link:using-donotstart-file.html["Verwenden einer DoNotStart-Datei"]
+* link:troubleshooting-server-manager.html["Fehlerbehebung Für Server Manager"]
+

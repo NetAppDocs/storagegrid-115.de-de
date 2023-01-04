@@ -1,0 +1,37 @@
+---
+permalink: ilm/what-ilm-rule-filtering-is.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn Sie eine ILM-Regel erstellen, geben Sie Filter an, um zu identifizieren, für welche Objekte die Regel gilt. 
+---
+= Was ist die ILM-Regelfilterung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie eine ILM-Regel erstellen, geben Sie Filter an, um zu identifizieren, für welche Objekte die Regel gilt.
+
+Im einfachsten Fall verwendet eine Regel möglicherweise keine Filter. Alle Regeln, die keine Filter verwenden, gelten für alle Objekte. Daher muss es sich um die letzte (standardmäßige) Regel in einer ILM-Richtlinie handelt. Die Standardregel enthält Speicheranweisungen für Objekte, die nicht mit den Filtern in einer anderen Regel übereinstimmen.
+
+Grundlegende Filter ermöglichen es Ihnen, unterschiedliche Regeln auf große, unterschiedliche Objektgruppen anzuwenden. Mit den grundlegenden Filtern auf der Seite „Grundlagen definieren“ des Assistenten zur Erstellung von ILM-Regeln können Sie eine Regel auf spezifische Mandantenkonten, bestimmte S3-Buckets oder Swift-Container oder beides anwenden.
+
+image::../media/ilm_create_ilm_rule_wizard_1.png[ILM-Assistent: Schritt 1 von 3]
+
+Diese Grundfilter bieten eine einfache Möglichkeit, verschiedene Regeln auf eine große Anzahl von Objekten anzuwenden. So müssen beispielsweise die Finanzdaten Ihres Unternehmens möglicherweise gespeichert werden, um gesetzliche Vorgaben einzuhalten. Daten aus der Marketing-Abteilung müssen möglicherweise gespeichert werden, um den täglichen Betrieb zu erleichtern. Nach der Erstellung separater Mandantenkonten für jede Abteilung oder nach Trennung von Daten aus den verschiedenen Abteilungen in separate S3 Buckets können Sie problemlos eine Regel erstellen, die für alle Finanzdaten und eine zweite Regel gilt für alle Marketingdaten.
+
+Die Seite *Advanced Filtering* des Create ILM Rule Wizard gibt Ihnen granulare Kontrolle. Sie können Filter erstellen, um Objekte anhand der folgenden Objekteigenschaften auszuwählen:
+
+* Aufnahmezeit
+* Zeitpunkt des letzten Zugriffs
+* Der Objektname (Schlüssel) ganz oder teilweise
+* S3-Bucket-Region (Speicherortbeschränkung)
+* Objektgröße
+* Benutzer-Metadaten
+* S3-Objekt-Tags
+
+
+Sie können Objekte nach sehr spezifischen Kriterien filtern. So können beispielsweise Objekte, die von der Bildgebungsabteilung eines Krankenhauses gespeichert sind, häufig verwendet werden, wenn sie weniger als 30 Tage alt und selten danach sind, während Objekte, die Angaben zu Patientenbesuchen enthalten, möglicherweise in die Rechnungsabteilung des Gesundheitsnetzwerks kopiert werden müssen. Sie können Filter erstellen, die jeden Objekttyp anhand von Objektnamen, -Größe, S3-Objekt-Tags oder anderen relevanten Kriterien identifizieren. Anschließend können separate Regeln erstellt werden, um jeden Objektsatz entsprechend zu speichern.
+
+Sie können auch einfache und erweiterte Filter nach Bedarf in einer einzigen Regel kombinieren. Beispielsweise möchte die Marketingabteilung große Bilddateien anders speichern als die Lieferantendaten, während die Personalabteilung Personaldatensätze in einer bestimmten Region und in einer bestimmten Richtlinie zentral speichern muss. In diesem Fall können Sie Regeln erstellen, die nach Mandantenkonto filtern, um die Datensätze von jeder Abteilung zu trennen, während Sie in jeder Regel erweiterte Filter verwenden, um den spezifischen Objekttyp zu identifizieren, für den die Regel gilt.

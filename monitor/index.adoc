@@ -1,0 +1,25 @@
+---
+permalink: monitor/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Überwachen Sie ein StorageGRID System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erfahren Sie, wie Sie ein StorageGRID System überwachen und eventuelle Probleme bewerten. Listet alle Systemmeldungen auf.
+
+* link:using-grid-manager-for-monitoring.html["Verwenden des Grid Managers zur Überwachung"]
+* link:information-you-should-monitor-regularly.html["Informationen, die Sie regelmäßig überwachen sollten"]
+* link:managing-alerts-and-alarms.html["Verwalten von Meldungen und Alarmen"]
+* link:using-snmp-monitoring.html["Verwendung von SNMP-Überwachung"]
+* link:collecting-additional-storagegrid-data.html["Erfassung weiterer StorageGRID-Daten"]
+* link:../troubleshoot/troubleshooting-storagegrid-system.html["Fehlerbehebung für ein StorageGRID System"]
+* link:alerts-reference.html["Alerts Referenz"]
+* link:alarms-reference.html["Alarmreferenz (Altsystem)"]
+* link:../monitor/logs-files-reference.html["Referenz für Protokolldateien"]
+

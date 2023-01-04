@@ -1,0 +1,59 @@
+---
+permalink: admin/what-storage-volume-watermarks-are.html 
+sidebar: sidebar 
+keywords:  
+summary: 'StorageGRID verwendet Wasserzeichen für Speichervolumen, damit Sie die Menge an nutzbarem Speicherplatz auf Speicherknoten überwachen können. Wenn der verfügbare Speicherplatz eines Knotens kleiner als eine konfigurierte Wasserzeicheneinstellung ist, wird der Speicherstatus (SSTS)-Alarm ausgelöst, damit Sie feststellen können, ob Sie Storage-Nodes hinzufügen müssen.' 
+---
+= Welche Wasserzeichen für Storage Volume sind
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID verwendet Wasserzeichen für Speichervolumen, damit Sie die Menge an nutzbarem Speicherplatz auf Speicherknoten überwachen können. Wenn der verfügbare Speicherplatz eines Knotens kleiner als eine konfigurierte Wasserzeicheneinstellung ist, wird der Speicherstatus (SSTS)-Alarm ausgelöst, damit Sie feststellen können, ob Sie Storage-Nodes hinzufügen müssen.
+
+Um die aktuellen Einstellungen für die Speichervolumen-Wasserzeichen anzuzeigen, wählen Sie *Konfiguration* > *Speicheroptionen* > *Übersicht*.
+
+image::../media/storage_watermarks.png[Wasserzeichen]
+
+Die folgende Abbildung zeigt einen Storage-Node mit drei Volumes und zeigt die relative Position der drei Storage Volume-Wasserzeichen. Innerhalb jedes Storage-Nodes reserviert StorageGRID auf Volume 0 Platz für Objekt-Metadaten. Der restliche Speicherplatz auf diesem Volume wird für Objektdaten verwendet. Alle anderen Volumes werden ausschließlich für Objektdaten verwendet, zu denen replizierte Kopien und nach dem Erasure-Coding-Verfahren gehören.
+
+image::../media/storage_volume_watermarks.png[Wasserzeichen Diagramm]
+
+Die Wasserzeichen für das Speichervolumen sind systemweite Standardwerte, die die Mindestmenge an freiem Speicherplatz angeben, die für jedes Volume im Speicherknoten benötigt wird, um zu verhindern, dass StorageGRID das Schreibverhalten des Knotens ändert oder einen Alarm auslöst. Beachten Sie, dass alle Volumes das entsprechende Wasserzeichen erreichen müssen, bevor StorageGRID entsprechende Maßnahmen ergreift. Wenn einige Volumes mehr als den mindestens erforderlichen freien Speicherplatz haben, wird der Alarm nicht ausgelöst, und das Lesen-Schreiben-Verhalten des Knotens ändert sich nicht.
+
+
+
+== Speichervolumen Soft Read-Only-Wasserzeichen (VHWM)
+
+Das Speichervolumen Soft Read-Only Watermark ist das erste Wasserzeichen, das angibt, dass der für Objektdaten nutzbare Speicherplatz eines Node voll wird. Dieses Wasserzeichen gibt an, wie viel freier Speicherplatz auf jedem Volume in einem Storage Node vorhanden sein muss, um zu verhindern, dass der Node in den „`soft schreibgeschützten Modus“ wechselt.` „Soft Read-Only“-Modus bedeutet, dass der Storage-Node mit Read-Only-Diensten für den Rest des StorageGRID Systems wirbt, aber alle ausstehenden Schreibanforderungen erfüllt.
+
+Wenn die Menge an freiem Speicherplatz auf jedem Volume kleiner als die Einstellung dieses Wasserzeichens ist, wird der Alarm „Speicherstatus“ (SSTS) auf der Ebene „Hinweis“ ausgelöst und der Speicherknoten wechselt in den Modus „Soft Read-Only“.
+
+Angenommen, das Speichervolumen-Soft-Read-Only-Wasserzeichen ist auf 10 GB gesetzt, das ist der Standardwert. Wenn weniger als 10 GB freier Speicherplatz auf jedem Volume im Speicherknoten verbleibt, wird der SSTS-Alarm auf der Ebene Notice ausgelöst und der Speicherknoten wechselt in den Modus Soft Read.
+
+
+
+== Hard Read-Only-Wasserzeichen (VROM) für Speichervolumen
+
+Das Hard Read-Only-Wasserzeichen für Speichervolumen ist das nächste Wasserzeichen, das angibt, dass der nutzbare Speicherplatz eines Knotens für Objektdaten voll wird. Dieses Wasserzeichen gibt an, wie viel freier Speicherplatz auf jedem Volume in einem Storage Node vorhanden sein muss, um zu verhindern, dass der Knoten in den „`Hard Read-Only Mode`“ wechselt. Der Festplatten-Lesemodus bedeutet, dass der Speicherknoten schreibgeschützt ist und keine Schreibanforderungen mehr akzeptiert.
+
+Wenn die Menge an freiem Speicherplatz auf jedem Volume in einem Speicherknoten kleiner als die Einstellung dieses Wasserzeichens ist, wird der Alarm Speicherstatus (SSTS) auf der Hauptebene ausgelöst, und der Speicherknoten wechselt in den Modus für den reinen Lesezugriff.
+
+Beispiel: Angenommen, der Hard Read-Only-Wasserzeichen des Speichervolumens ist auf 5 GB gesetzt, was der Standardwert ist. Wenn weniger als 5 GB freier Speicherplatz auf jedem Speicher-Volume im Storage-Node verbleibt, wird der SSTS-Alarm auf der Hauptebene ausgelöst und der Storage-Node wechselt in den reinen Schreibmodus.
+
+Der Wert des Hard Read-Only-Wasserzeichens für Speichervolumen muss kleiner sein als der Wert des Speichervolumes Soft Read-Only-Wasserzeichens.
+
+
+
+== Storage-Volume-Lese-/Schreibmarke (VLWM)
+
+Die Wasserzeichen Storage Volume für Lese- und Schreibvorgänge gilt nur für Storage-Nodes, die in den schreibgeschützten Modus versetzt wurden. Dieses Wasserzeichen bestimmt, wann der Speicherknoten wieder Lese- und Schreibzugriff erhalten darf.
+
+Angenommen, ein Storage-Node ist in den reinen Lesemodus verschoben. Wenn das Speichervolume-Lese-Schreib-Wasserzeichen auf 30 GB (Standard) gesetzt ist, muss der freie Speicherplatz auf jedem Speichervolumen im Speicherknoten von 5 GB auf 30 GB ansteigen, bevor der Knoten wieder Lese-/Schreibzugriff erhalten kann.
+
+Der Wert des Speichervolumes-Wasserzeichens für Lesen und Schreiben muss größer sein als der Wert des Speichervolumes Soft-Read-Only-Wasserzeichens.
+
+.Verwandte Informationen
+link:managing-full-storage-nodes.html["Verwalten vollständiger Speicherknoten"]

@@ -1,0 +1,22 @@
+---
+permalink: tenant/managing-s3-platform-services.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn die Nutzung von Plattform-Services für Ihr S3-Mandantenkonto zulässig ist, können Sie Plattform-Services verwenden, um externe Services zu nutzen und die Replizierung und Benachrichtigungen von CloudMirror und die Integration von S3-Buckets zu konfigurieren. 
+---
+= Verwalten von S3-Plattformservices
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn die Nutzung von Plattform-Services für Ihr S3-Mandantenkonto zulässig ist, können Sie Plattform-Services verwenden, um externe Services zu nutzen und die Replizierung und Benachrichtigungen von CloudMirror und die Integration von S3-Buckets zu konfigurieren.
+
+* link:what-platform-services-are.html["Um welche Plattform-Services geht es"]
+* link:considerations-for-using-platform-services.html["Überlegungen bei der Verwendung von Plattform-Services"]
+* link:configuring-platform-services-endpoints.html["Konfigurieren von Endpunkten für Plattformservices"]
+* link:configuring-cloudmirror-replication.html["CloudMirror-Replizierung wird konfiguriert"]
+* link:configuring-event-notifications.html["Ereignisbenachrichtigungen werden konfiguriert"]
+* link:using-search-integration-service.html["Verwenden des Suchintegrationsdienstes"]
+

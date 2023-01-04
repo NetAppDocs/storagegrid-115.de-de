@@ -1,0 +1,189 @@
+---
+permalink: expand/configuring-expanded-storagegrid-system.html 
+sidebar: sidebar 
+keywords: expansion, configuration 
+summary: Nach Abschluss einer Erweiterung müssen Sie weitere Integrations- und Konfigurationsschritte durchführen. 
+---
+= Konfiguration des erweiterten StorageGRID-Systems
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach Abschluss einer Erweiterung müssen Sie weitere Integrations- und Konfigurationsschritte durchführen.
+
+.Über diese Aufgabe
+Sie müssen die unten aufgeführten Konfigurationsaufgaben für die Grid-Nodes ausführen, die Sie in Ihrer Erweiterung hinzufügen. Einige Aufgaben können optional sein, je nachdem, welche Optionen bei der Installation und Verwaltung des Systems ausgewählt wurden, und wie Sie die während der Erweiterung hinzugefügten Grid-Nodes konfigurieren möchten.
+
+.Schritte
+. Wenn Sie einen Speicherknoten hinzugefügt haben, führen Sie die folgenden Konfigurationsaufgaben aus.
++
+[cols="2a,1a"]
+|===
+| Konfigurationsaufgaben für Storage-Nodes | Zur Information 
+
+
+ a| 
+Überprüfen Sie die in Ihren ILM-Regeln verwendeten Speicherpools, um sicherzustellen, dass der neue Speicher verwendet wird.
+
+** Wenn Sie einen Standort hinzufügen, erstellen Sie einen Speicherpool für den Standort und aktualisieren Sie ILM-Regeln, um den neuen Speicherpool zu verwenden.
+** Wenn Sie einem vorhandenen Standort einen Speicherknoten hinzugefügt haben, bestätigen Sie, dass der neue Node die richtige Speicherklasse verwendet.
++
+*Hinweis:* standardmäßig wird ein neuer Speicherknoten der Speicherklasse Alle Speicherknoten zugewiesen und zu Speicherpools hinzugefügt, die diese Klasse für den Standort verwenden. Wenn ein neuer Knoten eine benutzerdefinierte Speicherklasse verwenden soll, müssen Sie ihn der benutzerdefinierten Klasse manuell zuweisen (*ILM* > *Storage-Klasse*).
+
+
+ a| 
+link:../ilm/index.html["Objektmanagement mit ILM"]
+
+
+
+ a| 
+Vergewissern Sie sich, dass der Speicherknoten Objekte erfasst.
+ a| 
+link:verifying-storage-node-is-active.html["Überprüfen, ob der Speicherknoten aktiv ist"]
+
+
+
+ a| 
+Ausgleich von Daten mit Verfahren zur Einhaltung von Datenkonsistenz (nur wenn die empfohlene Anzahl von Storage-Nodes nicht hinzugefügt werden konnte)
+ a| 
+link:rebalancing-erasure-coded-data-after-adding-storage-nodes.html["Balancieren Sie Daten aus, die im Erasure-Coding-Verfahren codiert wurden, nach dem Hinzufügen von Storage"]
+
+|===
+. Wenn Sie einen Gateway-Node hinzugefügt haben, führen Sie die folgenden Konfigurationsaufgaben aus.
++
+[cols="2a,1a"]
+|===
+| Konfigurationsaufgaben für Gateway Node | Zur Information 
+
+
+ a| 
+Wenn Hochverfügbarkeitsgruppen für Client-Verbindungen verwendet werden, fügen Sie die Gateway-Nodes einer HA-Gruppe hinzu. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Hochverfügbarkeitsgruppen* aus, um die Liste der vorhandenen HA-Gruppen zu überprüfen und die neuen Nodes hinzuzufügen.
+ a| 
+link:../admin/index.html["StorageGRID verwalten"]
+
+|===
+. Wenn Sie einen Admin-Node hinzugefügt haben, führen Sie die folgenden Konfigurationsaufgaben aus.
++
+[cols="2a,1a"]
+|===
+| Konfigurationsaufgaben für Admin-Node | Zur Information 
+
+
+ a| 
+Wenn Single Sign-On für Ihr StorageGRID-System aktiviert ist, müssen Sie für den neuen Admin-Knoten ein Vertrauensverhältnis der Vertrauensbasis in Active Directory Federation Services (AD FS) erstellen. Sie können sich erst beim Knoten anmelden, wenn Sie dieses Vertrauen der Vertrauensbasis erstellen.
+ a| 
+link:../admin/configuring-sso.html["Konfigurieren der Single Sign-On-Konfiguration"]
+
+
+
+ a| 
+Wenn Sie den Load Balancer-Service auf Admin-Nodes verwenden möchten, müssen Sie die Admin-Nodes möglicherweise den Gruppen für hohe Verfügbarkeit hinzufügen. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Hochverfügbarkeitsgruppen* aus, um die Liste der vorhandenen HA-Gruppen zu überprüfen und die neuen Nodes hinzuzufügen.
+ a| 
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+Kopieren Sie optional die Admin-Node-Datenbank vom primären Admin-Node zum ErweiterungAdmin-Node, wenn Sie das Attribut und die Audit-Informationen auf jedem Admin-Knoten konsistent halten möchten.
+ a| 
+link:copying-admin-node-database.html["Die Admin-Knoten-Datenbank wird kopiert"]
+
+
+
+ a| 
+Kopieren Sie optional die Prometheus-Datenbank vom primären Admin-Node zum ErweiterungAdmin-Node, wenn Sie die historischen Metriken auf jedem Admin-Knoten konsistent halten möchten.
+ a| 
+link:copying-prometheus-metrics.html["Kopieren von Prometheus-Kennzahlen"]
+
+
+
+ a| 
+Kopieren Sie optional die vorhandenen Audit-Protokolle vom primären Admin-Node zum ErweiterungAdmin-Node, wenn Sie die historischen Protokollinformationen auf jedem Admin-Knoten konsistent halten möchten.
+ a| 
+link:copying-audit-logs.html["Prüfprotokolle werden kopiert"]
+
+
+
+ a| 
+Konfigurieren Sie optional den Zugriff auf das System für Audit-Zwecke über eine NFS- oder CIFS-Dateifreigabe.
+
+*Hinweis:* der Audit-Export über CIFS/Samba ist veraltet und wird in einer zukünftigen StorageGRID-Version entfernt.
+ a| 
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+Ändern Sie optional den bevorzugten Absender für Benachrichtigungen. Sie können den Erweiterungs-Admin-Knoten zum bevorzugten Absender machen. Andernfalls sendet ein vorhandener als bevorzugter Absender konfigurierter Admin-Node weiterhin Benachrichtigungen, einschließlich AutoSupport-Nachrichten, SNMP-Benachrichtigungen, Alarm-E-Mails und Alarm-E-Mails (Legacy-System).
+ a| 
+link:../admin/index.html["StorageGRID verwalten"]
+
+|===
+. Wenn Sie einen Archivknoten hinzugefügt haben, führen Sie die folgenden Konfigurationsaufgaben aus.
++
+[cols="2a,1a"]
+|===
+| Konfigurationsaufgaben für Archivierungs-Knoten | Zur Information 
+
+
+ a| 
+Konfigurieren Sie die Verbindung des Archiv-Knotens mit dem angestrebten externen Archiv-Storage-System. Wenn Sie die Erweiterung abgeschlossen haben, befinden sich Archiv-Knoten in einem Alarmzustand, bis Sie die Verbindungsinformationen über die Komponente *ARC* > *Ziel* konfigurieren.
+ a| 
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+Aktualisieren Sie die ILM-Richtlinie, um Objektdaten über den neuen Archivierungs-Node zu archivieren.
+ a| 
+link:../ilm/index.html["Objektmanagement mit ILM"]
+
+
+
+ a| 
+Konfigurieren Sie benutzerdefinierte Alarme für die Attribute, die zur Überwachung der Geschwindigkeit und Effizienz des Datenabrufs von Objektdaten von Archiv-Nodes verwendet werden.
+ a| 
+link:../admin/index.html["StorageGRID verwalten"]
+
+|===
+. Um zu überprüfen, ob Erweiterungsknoten mit einem nicht vertrauenswürdigen Client-Netzwerk hinzugefügt wurden oder um zu ändern, ob das Client-Netzwerk eines Knotens nicht vertrauenswürdig oder vertrauenswürdig ist, gehen Sie zu *Konfiguration* > *Netzwerkeinstellungen* > *nicht vertrauenswürdiges Client-Netzwerk*.
++
+Wenn das Client-Netzwerk auf dem Erweiterungsknoten nicht vertrauenswürdig ist, müssen Verbindungen zum Knoten im Client-Netzwerk über einen Load Balancer-Endpunkt hergestellt werden. Weitere Informationen finden Sie in den Anweisungen zum Verwalten von StorageGRID.
+
+. Konfigurieren Sie das Domain Name System (DNS).
++
+Wenn Sie für jeden Grid-Node DNS-Einstellungen separat angegeben haben, müssen Sie für die neuen Nodes benutzerdefinierte DNS-Einstellungen pro Node hinzufügen. Weitere Informationen zum Ändern der DNS-Konfiguration für einen einzelnen Grid-Node finden Sie in den Anweisungen zur Recovery und Wartung.
+
++
+Eine Best Practice besteht in der netzweiten DNS-Server-Liste, die einige DNS-Server enthält, auf die von jedem Standort aus lokal zugegriffen werden kann. Wenn Sie gerade einen neuen Standort hinzugefügt haben, fügen Sie der Grid-weiten DNS-Konfiguration neue DNS-Server für den Standort hinzu.
+
++
+
+IMPORTANT: Geben Sie zwei bis sechs IPv4-Adressen für DNS-Server an. Wählen Sie DNS-Server aus, auf die jeder Standort lokal zugreifen kann, wenn das Netzwerk landet. Damit soll sichergestellt werden, dass ein islanded-Standort weiterhin Zugriff auf den DNS-Dienst hat. Nach der Konfiguration der DNS-Serverliste für das gesamte Grid können Sie die DNS-Serverliste für jeden Knoten weiter anpassen. Weitere Informationen finden Sie in den Informationen zum Ändern der DNS-Konfiguration in den Wiederherstellungsanleitungen und Wartungsanweisungen.
+
+. Wenn Sie einen neuen Standort hinzugefügt haben, vergewissern Sie sich, dass auf die NTP-Server (Network Time Protocol) von diesem Standort aus zugegriffen werden kann.
++
+
+IMPORTANT: Vergewissern Sie sich, dass mindestens zwei Nodes an jedem Standort auf mindestens vier externe NTP-Quellen zugreifen können. Wenn nur ein Node an einem Standort die NTP-Quellen erreichen kann, treten Probleme mit dem Timing auf, wenn dieser Node ausfällt. Durch die Festlegung von zwei Nodes pro Standort als primäre NTP-Quellen ist zudem ein genaues Timing gewährleistet, wenn ein Standort vom Rest des Grid isoliert ist.
+
++
+Weitere Informationen finden Sie in den Anweisungen zur Wiederherstellung und Wartung.
+
+
+
+.Verwandte Informationen
+link:../ilm/index.html["Objektmanagement mit ILM"]
+
+link:verifying-storage-node-is-active.html["Überprüfen, ob der Speicherknoten aktiv ist"]
+
+link:copying-admin-node-database.html["Die Admin-Knoten-Datenbank wird kopiert"]
+
+link:copying-prometheus-metrics.html["Kopieren von Prometheus-Kennzahlen"]
+
+link:copying-audit-logs.html["Prüfprotokolle werden kopiert"]
+
+link:../upgrade/index.html["Software-Upgrade"]
+
+link:../maintain/index.html["Verwalten Sie  erholen"]

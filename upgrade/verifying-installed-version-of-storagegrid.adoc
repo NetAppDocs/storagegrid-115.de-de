@@ -1,0 +1,67 @@
+---
+permalink: upgrade/verifying-installed-version-of-storagegrid.html 
+sidebar: sidebar 
+keywords: storagegrid, version, current version, previous version 
+summary: Bevor Sie mit dem Upgrade beginnen, müssen Sie überprüfen, ob die vorherige Version von StorageGRID derzeit mit dem neuesten verfügbaren Hotfix installiert ist. 
+---
+= Überprüfen der installierten Version von StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie mit dem Upgrade beginnen, müssen Sie überprüfen, ob die vorherige Version von StorageGRID derzeit mit dem neuesten verfügbaren Hotfix installiert ist.
+
+.Schritte
+. Melden Sie sich über einen unterstützten Browser beim Grid Manager an.
+. Wählen Sie *Hilfe* > *Info*.
+. Überprüfen Sie, ob die *Version* 11.4._x.y_ lautet.
++
+In der StorageGRID 11.4._x.y_ Versionsnummer:
+
++
+** Die Hauptversion hat einen _x_-Wert von 0 (11.4.0).
+** Eine kleine Version hat, falls verfügbar, einen anderen _x_-Wert als 0 (z. B. 11.4.1).
+** Ein Hotfix, falls verfügbar, hat einen _y_-Wert (z. B. 11.4.0.1).
+
+
++
+
+IMPORTANT: Wenn Sie eine frühere Version von StorageGRID haben, müssen Sie vor dem Upgrade auf StorageGRID 11.5 ein Upgrade auf eine beliebige Version 11.4 durchführen. Für ein Upgrade auf StorageGRID 11.5 müssen Sie sich nicht auf die höchste Version von 11.4 Minor-Version befinden.
+
+. Wenn Sie keine StorageGRID 11.4-Version haben, müssen Sie auf Version 11.4, eine neue Version auf einmal, unter Verwendung der Anweisungen für jede Version aktualisieren.
++
+Vor dem Upgrade auf die nächste Stufe müssen Sie außerdem den aktuellen Hotfix für jede StorageGRID-Version anwenden.
+
++
+Ein möglicher Upgrade-Pfad wird im Beispiel dargestellt.
+
+. Sobald Sie StorageGRID 11.4 erreicht haben, rufen Sie die NetApp Downloads-Seite für StorageGRID auf und überprüfen Sie, ob Hotfixes für Ihre StorageGRID 11.4._x_-Version verfügbar sind.
++
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp Downloads: StorageGRID"^]
+
+. Überprüfen Sie, ob die StorageGRID 11.4._x_-Version den neuesten Hotfix angewendet hat.
+. Laden Sie ggf. den aktuellen StorageGRID 11.4._x.y_ Hotfix für Ihre StorageGRID 11.4._x_-Version herunter.
++
+Informationen zur Anwendung von Hotfixes finden Sie in der Recovery- und Wartungsanleitung.
+
+
+
+
+
+== Beispiel: Upgrade auf StorageGRID 11.5 ab Version 11.3.0.8 wird vorbereitet
+
+Das folgende Beispiel zeigt die Schritte zur Vorbereitung auf ein Upgrade von StorageGRID Version 11.3.0.8 auf Version 11.5. Bevor Sie ein Upgrade auf StorageGRID 11.5 durchführen können, muss auf Ihrem System eine StorageGRID 11.4-Version mit dem neuesten Hotfix installiert sein.
+
+Laden Sie die Software in der folgenden Reihenfolge herunter und installieren Sie sie, um Ihr System auf die Aktualisierung vorzubereiten:
+
+. Wenden Sie den aktuellen StorageGRID 11.3.0._y_ Hotfix an.
+. Upgrade auf StorageGRID 11.4.0 Hauptversion. (Sie müssen keine 11.4._x_ Minor-Versionen installieren.)
+. Wenden Sie den aktuellen StorageGRID 11.4.0._y_ Hotfix an.
+
+
+.Verwandte Informationen
+link:../admin/index.html["StorageGRID verwalten"]
+
+link:../maintain/index.html["Verwalten Sie  erholen"]

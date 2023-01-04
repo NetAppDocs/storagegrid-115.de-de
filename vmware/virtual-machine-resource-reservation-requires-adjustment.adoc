@@ -1,0 +1,31 @@
+---
+permalink: vmware/virtual-machine-resource-reservation-requires-adjustment.html 
+sidebar: sidebar 
+keywords:  
+summary: OVF-Dateien enthalten eine Ressourcenreservierung, die sicherstellen soll, dass jeder Grid-Knoten über ausreichend RAM und CPU verfügt, um effizient zu arbeiten. Wenn Sie virtuelle Maschinen durch die Bereitstellung dieser OVF-Dateien auf VMware erstellen und die vordefinierte Anzahl von Ressourcen nicht verfügbar ist, werden die virtuellen Maschinen nicht gestartet. 
+---
+= Die Ressourcenreservierung für virtuelle Maschinen erfordert eine Anpassung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+OVF-Dateien enthalten eine Ressourcenreservierung, die sicherstellen soll, dass jeder Grid-Knoten über ausreichend RAM und CPU verfügt, um effizient zu arbeiten. Wenn Sie virtuelle Maschinen durch die Bereitstellung dieser OVF-Dateien auf VMware erstellen und die vordefinierte Anzahl von Ressourcen nicht verfügbar ist, werden die virtuellen Maschinen nicht gestartet.
+
+.Über diese Aufgabe
+Wenn Sie sicher sind, dass der VM-Host über ausreichende Ressourcen für jeden Grid-Node verfügt, passen Sie die Ressourcen, die für die einzelnen Virtual Machines zugewiesen sind, manuell an und starten Sie dann die Virtual Machines.
+
+.Schritte
+. Wählen Sie in der VMware vSphere Hypervisor-Clientstruktur die virtuelle Maschine aus, die nicht gestartet wird.
+. Klicken Sie mit der rechten Maustaste‐auf die virtuelle Maschine, und wählen Sie *Einstellungen bearbeiten*.
+. Wählen Sie im Fenster Eigenschaften von virtuellen Maschinen die Registerkarte *Ressourcen* aus.
+. Passen Sie die Ressourcen an, die der virtuellen Maschine zugewiesen sind:
++
+.. Wählen Sie *CPU* aus, und passen Sie mit dem Schieberegler Reservierung die für diese virtuelle Maschine reservierten MHz an.
+.. Wählen Sie *Speicher*, und passen Sie mit dem Schieberegler Reservierung die für diese virtuelle Maschine reservierten MB an.
+
+
+. Klicken Sie auf *OK*.
+. Wiederholen Sie diesen Vorgang für andere virtuelle Maschinen, die auf demselben VM-Host gehostet werden.
+

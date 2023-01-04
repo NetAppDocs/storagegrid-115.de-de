@@ -1,0 +1,19 @@
+---
+permalink: tenant/using-identity-federation.html 
+sidebar: sidebar 
+keywords:  
+summary: Durch die Verwendung eines Identitätsverbunds können Mandantengruppen und Benutzer schneller eingerichtet werden, und Mandantenbenutzer können sich dann mithilfe der vertrauten Anmeldedaten beim Mandantenkonto anmelden. 
+---
+= Identitätsföderation verwenden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Durch die Verwendung eines Identitätsverbunds können Mandantengruppen und Benutzer schneller eingerichtet werden, und Mandantenbenutzer können sich dann mithilfe der vertrauten Anmeldedaten beim Mandantenkonto anmelden.
+
+* link:configuring-federated-identity-source.html["Konfigurieren einer föderierten Identitätsquelle"]
+* link:forcing-synchronization-with-identity-source.html["Synchronisierung mit der Identitätsquelle erzwingen"]
+* link:disabling-identity-federation.html["Identitätsföderation deaktivieren"]
+

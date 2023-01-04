@@ -1,0 +1,24 @@
+---
+permalink: primer/using-storagegrid.html 
+sidebar: sidebar 
+keywords:  
+summary: Nach der Installation der Grid-Nodes und StorageGRID-Netzwerke können Sie mit der Konfiguration und Verwendung von StorageGRID beginnen. Zu den Aufgaben, die Sie durchführen werden, gehören die Kontrolle des Benutzerzugriffs auf Systemverwaltungsfunktionen, die Einrichtung von Mandantenkonten, das Verwalten von Client-Verbindungen, das Festlegen von Konfigurationsoptionen, das Managen von Objektstandorten mit ILM, die Überwachung des Systemzustands und der täglichen Aktivitäten des StorageGRID-Systems sowie die Durchführung von routinemäßigen und nicht-routinemäßigen Wartungsaktivitäten. 
+---
+= Verwenden von StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach der Installation der Grid-Nodes und StorageGRID-Netzwerke können Sie mit der Konfiguration und Verwendung von StorageGRID beginnen. Zu den Aufgaben, die Sie durchführen werden, gehören die Kontrolle des Benutzerzugriffs auf Systemverwaltungsfunktionen, die Einrichtung von Mandantenkonten, das Verwalten von Client-Verbindungen, das Festlegen von Konfigurationsoptionen, das Managen von Objektstandorten mit ILM, die Überwachung des Systemzustands und der täglichen Aktivitäten des StorageGRID-Systems sowie die Durchführung von routinemäßigen und nicht-routinemäßigen Wartungsaktivitäten.
+
+* link:controlling-storagegrid-access.html["Kontrolle des StorageGRID-Zugriffs"]
+* link:managing-tenants-and-client-connections.html["Management von Mandanten und Client-Verbindungen"]
+* link:configuring-network-settings.html["Netzwerkeinstellungen werden konfiguriert"]
+* link:configuring-system-settings.html["Systemeinstellungen werden konfiguriert"]
+* link:using-information-lifecycle-management.html["Mit Information Lifecycle Management"]
+* link:monitoring-storagegrid-operations.html["Monitoring der StorageGRID Vorgänge"]
+* link:performing-maintenance-procedures.html["Durchführung von Wartungsverfahren"]
+* link:using-storagegrid-support-options.html["Verwenden von StorageGRID Support-Optionen"]
+

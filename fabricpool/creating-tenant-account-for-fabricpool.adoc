@@ -1,0 +1,43 @@
+---
+permalink: fabricpool/creating-tenant-account-for-fabricpool.html 
+sidebar: sidebar 
+keywords: fabricPool, tenant, SSO 
+summary: Sie müssen ein Mandantenkonto im Grid Manager for FabricPool Use erstellen. 
+---
+= Erstellen eines Mandantenkontos für FabricPool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen ein Mandantenkonto im Grid Manager for FabricPool Use erstellen.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Über diese Aufgabe
+Mandantenkonten ermöglichen Client-Applikationen, Objekte auf StorageGRID zu speichern und abzurufen. Jedes Mandantenkonto verfügt über eine eigene Account-ID, autorisierte Gruppen und Benutzer, Buckets und Objekte.
+
+Sie können dasselbe Mandantenkonto für mehrere ONTAP Cluster verwenden. Oder Sie können bei Bedarf ein dediziertes Mandantenkonto für jedes ONTAP Cluster erstellen.
+
+[NOTE]
+====
+Bei diesen Anweisungen wird davon ausgegangen, dass Sie Single Sign-On (SSO) für den Grid Manager konfiguriert haben. Wenn Sie kein SSO verwenden, befolgen Sie die Anweisungen für link:../admin/creating-tenant-account-if-storagegrid-is-not-using-sso.html["Erstellen eines Mandantenkontos, wenn StorageGRID kein SSO verwendet"].
+
+====
+.Schritte
+. Wählen Sie *Mieter*.
+. Wählen Sie *Erstellen*.
+. Geben Sie einen Anzeigenamen für das FabricPool-Mandantenkonto ein.
+. Wählen Sie *S3*.
+. Lassen Sie das Kontrollkästchen *Plattformdienste zulassen* aktiviert, um die Nutzung von Plattformdiensten zu aktivieren.
++
+Wenn Plattformservices aktiviert sind, kann ein Mandant Funktionen wie CloudMirror Replizierung verwenden, die auf externe Services zugreifen.
+
+. Lassen Sie das Feld *Storage Quota* leer.
+. Wählen Sie im Feld *Root Access Group* eine vorhandene föderierte Gruppe aus dem Grid Manager aus, um die ursprüngliche Root Access-Berechtigung für den Mandanten zu erhalten.
+. Wählen Sie *Speichern*.
+

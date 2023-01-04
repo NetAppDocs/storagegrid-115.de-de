@@ -1,0 +1,20 @@
+---
+permalink: expand/planning-expansion.html 
+sidebar: sidebar 
+keywords: expand, expansion, planning 
+summary: StorageGRID lässt sich erweitern, um die Storage-Kapazität zu erhöhen, Metadaten hinzuzufügen, Redundanz oder neue Funktionen hinzuzufügen oder einen neuen Standort hinzuzufügen. Die Anzahl, der Typ und der Standort der Nodes, die Sie hinzufügen müssen, hängt vom Grund der Erweiterung ab. 
+---
+= StorageGRID-Erweiterung geplant
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID lässt sich erweitern, um die Storage-Kapazität zu erhöhen, Metadaten hinzuzufügen, Redundanz oder neue Funktionen hinzuzufügen oder einen neuen Standort hinzuzufügen. Die Anzahl, der Typ und der Standort der Nodes, die Sie hinzufügen müssen, hängt vom Grund der Erweiterung ab.
+
+* link:adding-storage-capacity.html["Erweiterung der Storage-Kapazität"]
+* link:adding-metadata-capacity.html["Hinzufügen von Metadaten-Kapazität"]
+* link:adding-grid-nodes-to-add-capabilities.html["Grid-Nodes werden hinzugefügt, um Funktionen zu Ihrem System hinzuzufügen"]
+* link:adding-new-site.html["Hinzufügen eines neuen Standorts"]
+

@@ -1,0 +1,24 @@
+---
+permalink: maintain/storagegrid-hotfix-procedure.html 
+sidebar: sidebar 
+keywords:  
+summary: Möglicherweise müssen Sie einen Hotfix auf Ihr StorageGRID-System anwenden, wenn Probleme mit der Software zwischen Funktionsversionen erkannt und behoben werden. 
+---
+= StorageGRID Hotfix Verfahren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie einen Hotfix auf Ihr StorageGRID-System anwenden, wenn Probleme mit der Software zwischen Funktionsversionen erkannt und behoben werden.
+
+StorageGRID Hotfixes enthalten Software-Änderungen, die außerhalb einer Feature- oder Patch-Freigabe verfügbar gemacht werden. Die gleichen Änderungen sind in einer zukünftigen Version enthalten. Darüber hinaus enthält jede Hotfix-Version eine Roll-up aller früheren Hotfixes innerhalb der Funktion oder Patch-Freigabe.
+
+* link:considerations-for-applying-hotfix.html["Überlegungen für die Anwendung eines Hotfix"]
+* link:how-your-system-is-affected-when-you-apply-hotfix.html["Auswirkungen auf Ihr System beim Anwenden eines Hotfix"]
+* link:obtaining-required-materials-for-hotfix.html["Beschaffung der erforderlichen Materialien für einen Hotfix"]
+* link:downloading-hotfix-file.html["Hotfix-Datei wird heruntergeladen"]
+* link:checking-systems-condition-before-applying-hotfix.html["Überprüfen Sie den Zustand des Systems, bevor Sie einen Hotfix anwenden"]
+* link:applying-hotfix.html["Anwenden des Hotfix"]
+

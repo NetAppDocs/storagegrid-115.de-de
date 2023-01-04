@@ -1,0 +1,22 @@
+---
+permalink: monitor/message-severities-in-bycast-log.html 
+sidebar: sidebar 
+keywords: bycast, log, severities 
+summary: Den Meldungen in bycast.log werden Schweregrade zugewiesen. 
+---
+= Nachrichten-Schweregrade in bycast.log
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Meldungen in `bycast.log` Werden Schweregrade zugewiesen.
+
+Beispiel:
+
+* *HINWEIS* -- ein Ereignis, das aufgezeichnet werden soll, ist aufgetreten. Die meisten Protokollmeldungen befinden sich auf dieser Ebene.
+* *WARNUNG* -- ein unerwarteter Zustand ist aufgetreten.
+* *ERROR* -- ein großer Fehler ist aufgetreten, der sich auf den Betrieb auswirkt.
+* *KRITISCH* -- Es ist ein anormaler Zustand aufgetreten, der den normalen Betrieb gestoppt hat. Sie sollten umgehend mit dem zugrunde liegenden Zustand beginnen. Kritische Meldungen werden auch im Grid Manager angezeigt. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus. Wählen Sie dann *Standort* > *Knoten* > *SSM* > *Events* aus.
+

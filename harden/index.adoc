@@ -1,0 +1,22 @@
+---
+permalink: harden/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Systemhärtung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Informieren Sie sich über Systemeinstellungen, Best Practices und Empfehlungen zum Schutz eines StorageGRID-Systems vor Sicherheitsbedrohungen.
+
+* link:hardening-storagegrid-system.html["Sicherung eines StorageGRID Systems"]
+* link:hardening-guidelines-for-software-upgrades.html["Hardening-Richtlinien für Software Upgrades"]
+* link:hardening-guidelines-for-storagegrid-networks.html["Hardening Guidelines for StorageGRID Networks"]
+* link:hardening-guidelines-for-storagegrid-nodes.html["Hardening-Richtlinien für StorageGRID-Knoten"]
+* link:hardening-guideline-for-server-certificates.html["Härtungsrichtlinien für Serverzertifikate"]
+* link:other-hardening-guidelines.html["Andere Hinweise zur Verhärtung"]]
+

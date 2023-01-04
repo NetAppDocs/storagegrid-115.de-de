@@ -1,0 +1,32 @@
+---
+permalink: admin/setting-archive-node-to-read-only-if-tsm-middleware-reaches-capacity.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn der angestrebte TSM Middleware-Server seine Kapazität erreicht, kann der Archivknoten optimiert werden, um nur die Abrufvorgänge durchzuführen. 
+---
+= Einrichten des Archivierungs-Nodes auf „schreibgeschützt“, wenn die TSM Middleware die Kapazität erreicht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn der angestrebte TSM Middleware-Server seine Kapazität erreicht, kann der Archivknoten optimiert werden, um nur die Abrufvorgänge durchzuführen.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Schritte
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie *_Archivknoten_* > *ARC* > *Ziel* aus.
+. Wählen Sie *Konfiguration* > *Main*.
+. Ändern Sie die maximale Anzahl der Abruf-Sitzungen auf dieselbe Weise wie die Anzahl der gleichzeitigen Sitzungen, die in der Anzahl der Sitzungen aufgeführt sind.
+. Ändern Sie die maximale Anzahl von Sitzungen im Store auf 0.
++
+
+NOTE: Das Ändern der maximalen Speichersitzungen auf 0 ist nicht erforderlich, wenn der Archivknoten schreibgeschützt ist. Speichersitzungen werden nicht erstellt.
+
+. Klicken Sie Auf *Änderungen Übernehmen*.
+

@@ -1,0 +1,105 @@
+---
+permalink: upgrade/obtaining-required-materials-for-software-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, requirements, rhel, red hat, linux, centOS, ubuntu, debian 
+summary: Bevor Sie mit dem Software-Upgrade beginnen, müssen Sie alle erforderlichen Unterlagen beschaffen, damit das Upgrade erfolgreich abgeschlossen werden kann. 
+---
+= Beschaffung der erforderlichen Materialien für ein Software-Upgrade
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie mit dem Software-Upgrade beginnen, müssen Sie alle erforderlichen Unterlagen beschaffen, damit das Upgrade erfolgreich abgeschlossen werden kann.
+
+[cols="1a,3a"]
+|===
+| Element | Hinweise 
+
+
+ a| 
+StorageGRID-Upgrade-Dateien
+ a| 
+Sie müssen die erforderlichen Dateien auf Ihren Service-Laptop herunterladen:
+
+* * Alle Plattformen*: `.upgrade` Datei
+* *Beliebiger Knoten auf Red hat Enterprise Linux oder CentOS*: `.upgrade` Datei- und RPM-Datei (`.zip` Oder `.tgz`)
+* *Jeder Knoten auf Ubuntu oder Debian*: `.upgrade` Datei und DEB-Datei (`.zip` Oder `.tgz`)
+
+
+
+
+ a| 
+Service-Laptop
+ a| 
+Der Service-Laptop muss Folgendes haben:
+
+* Netzwerkport
+* SSH-Client (z. B. PuTTY)
+
+
+
+
+ a| 
+Unterstützter Webbrowser
+ a| 
+Sie müssen bestätigen, dass der Webbrowser auf dem Service-Laptop für die Verwendung mit StorageGRID 11.5 unterstützt wird.
+
+link:web-browser-requirements.html["Anforderungen an einen Webbrowser"]
+
+*Hinweis:* die Browser-Unterstützung wurde für StorageGRID 11.5 geändert. Vergewissern Sie sich, dass Sie eine unterstützte Version verwenden.
+
+
+
+ a| 
+Wiederherstellungspaket (`.zip`) Datei
+ a| 
+Vor dem Upgrade sollten Sie die aktuellste Wiederherstellungspaket-Datei herunterladen, falls während des Upgrades Probleme auftreten.
+
+Nachdem Sie den primären Admin-Knoten aktualisiert haben, müssen Sie eine neue Kopie der Recovery Package-Datei herunterladen und an einem sicheren Ort speichern. Mit der aktualisierten Wiederherstellungspaket-Datei können Sie das System wiederherstellen, wenn ein Fehler auftritt.
+
+link:downloading-recovery-package.html["Herunterladen des Wiederherstellungspakets"]
+
+
+
+ a| 
+`Passwords.txt` Datei
+ a| 
+Diese Datei ist im GENANNTEN Paket enthalten, das Teil des Wiederherstellungspakets ist `.zip` Datei: Sie müssen die neueste Version des Wiederherstellungspakets erhalten.
+
+
+
+ a| 
+Provisioning-Passphrase
+ a| 
+Die Passphrase wird erstellt und dokumentiert, wenn das StorageGRID-System zum ersten Mal installiert wird. Die Provisionierungs-Passphrase wird im nicht aufgeführt `Passwords.txt` Datei:
+
+
+
+ a| 
+Zugehörige Dokumentation
+ a| 
+* Versionshinweise zu StorageGRID 11.5. Lesen Sie diese vor Beginn des Upgrades sorgfältig durch.
+* Anweisungen für die Administration von StorageGRID
+* Wenn Sie eine Linux-Bereitstellung aktualisieren, lesen Sie die StorageGRID-Installationsanweisungen für Ihre Linux-Plattform.
+* Andere StorageGRID-Dokumentation, falls erforderlich.
+
+
+|===
+.Verwandte Informationen
+link:web-browser-requirements.html["Anforderungen an einen Webbrowser"]
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+link:../rhel/index.html["Installieren Sie Red hat Enterprise Linux oder CentOS"]
+
+link:../ubuntu/index.html["Installieren Sie Ubuntu oder Debian"]
+
+link:../vmware/index.html["VMware installieren"]
+
+link:downloading-storagegrid-upgrade-files.html["StorageGRID-Upgrade-Dateien werden heruntergeladen"]
+
+link:downloading-recovery-package.html["Herunterladen des Wiederherstellungspakets"]
+
+link:../release-notes/index.html["Versionshinweise"]

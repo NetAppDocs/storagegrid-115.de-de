@@ -1,0 +1,28 @@
+---
+permalink: monitor/resetting-event-counts.html 
+sidebar: sidebar 
+keywords:  
+summary: Nach dem Beheben von Systemereignissen können Sie die Ereignisanzahl auf Null zurücksetzen. 
+---
+= Ereignisanzahl wird zurückgesetzt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Beheben von Systemereignissen können Sie die Ereignisanzahl auf Null zurücksetzen.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über die Berechtigung für die Konfiguration der Seite für die Grid-Topologie verfügen.
+
+
+.Schritte
+. Wählen Sie *Nodes* > *_Grid Node_* > *Events* Aus.
+. Stellen Sie sicher, dass jedes Ereignis mit einer Zählung von mehr als 0 gelöst wurde.
+. Klicken Sie auf *Ereignisanzahl zurücksetzen*.
++
+image::../media/reset_event_counts.png[Ereigniszähler Zurücksetzen]
+
+

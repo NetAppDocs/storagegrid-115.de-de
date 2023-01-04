@@ -1,0 +1,21 @@
+---
+permalink: admin/changing-ip-address-of-nfs-audit-client.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Ändern der IP-Adresse eines NFS-Audit-Clients
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+. Fügen Sie einer vorhandenen NFS-Revisionsfreigabe eine neue IP-Adresse hinzu.
+. Entfernen Sie die ursprüngliche IP-Adresse.
+
+
+.Verwandte Informationen
+link:adding-nfs-audit-client-to-audit-share.html["Hinzufügen eines NFS-Audit-Clients zu einer Revisionsfreigabe"]
+
+link:removing-nfs-audit-client-from-audit-share.html["Entfernen eines NFS-Audit-Clients aus der Revisionsfreigabe"]

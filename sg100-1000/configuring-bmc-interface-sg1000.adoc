@@ -1,0 +1,22 @@
+---
+permalink: sg100-1000/configuring-bmc-interface-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, BMC, baseboard management controller, configure, setup, set up 
+summary: 'Die Benutzeroberfläche für den Baseboard Management Controller \(BMC\) auf der Services-Appliance bietet Statusinformationen über die Hardware und ermöglicht Ihnen die Konfiguration von SNMP-Einstellungen und anderen Optionen für die Services-Appliance.' 
+---
+= Konfigurieren der BMC-Schnittstelle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Benutzeroberfläche für den Baseboard Management Controller (BMC) auf der Services Appliance bietet Statusinformationen über die Hardware und ermöglicht die Konfiguration von SNMP-Einstellungen und anderen Optionen für die Services Appliance.
+
+.Schritte
+* link:changing-root-password-for-bmc-interface-sg1000.html["Ändern des Root-Passworts für die BMC-Schnittstelle"]
+* link:setting-ip-address-for-bmc-management-port-sg1000.html["Einstellen der IP-Adresse für den BMC-Managementport"]
+* link:accessing-bmc-interface-sg1000.html["Zugriff auf die BMC-Schnittstelle"]
+* link:configuring-snmp-settings-for-sg1000.html["Konfigurieren von SNMP-Einstellungen für die Services-Appliance"]
+* link:setting-up-email-notifications-for-alerts.html["Einrichten von E-Mail-Benachrichtigungen für Meldungen"]
+

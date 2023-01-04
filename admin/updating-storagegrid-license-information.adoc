@@ -1,0 +1,31 @@
+---
+permalink: admin/updating-storagegrid-license-information.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie müssen die Lizenzinformationen für Ihr StorageGRID-System jederzeit aktualisieren, wenn sich die Bedingungen Ihrer Lizenz ändern. Sie müssen beispielsweise die Lizenzinformationen aktualisieren, wenn Sie zusätzliche Speicherkapazität für Ihr Grid erwerben. 
+---
+= Die StorageGRID-Lizenzinformationen werden aktualisiert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Lizenzinformationen für Ihr StorageGRID-System jederzeit aktualisieren, wenn sich die Bedingungen Ihrer Lizenz ändern. Sie müssen beispielsweise die Lizenzinformationen aktualisieren, wenn Sie zusätzliche Speicherkapazität für Ihr Grid erwerben.
+
+.Was Sie benötigen
+* Sie müssen über eine neue Lizenzdatei verfügen, um sich auf Ihr StorageGRID-System bewerben zu können.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+* Sie müssen über eine Passphrase für die Bereitstellung verfügen.
+
+
+.Schritte
+. Wählen Sie *Wartung* > *System* > *Lizenz*.
+. Geben Sie die Provisionierungs-Passphrase für Ihr StorageGRID-System im Textfeld *Provisioning-Passphrase* ein.
+. Klicken Sie Auf *Durchsuchen*.
+. Suchen Sie im Dialogfeld Öffnen die neue Lizenzdatei, und wählen Sie sie aus (`.txt`Und klicken Sie auf *Öffnen*.
++
+Die neue Lizenzdatei wird validiert und angezeigt.
+
+. Klicken Sie Auf *Speichern*.
+

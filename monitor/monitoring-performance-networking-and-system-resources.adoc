@@ -1,0 +1,14 @@
+---
+permalink: monitor/monitoring-performance-networking-and-system-resources.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie sollten die Performance-, Netzwerk- und Systemressourcen überwachen, um zu ermitteln, ob StorageGRID die aktuelle Last bewältigen kann und ob die Client-Performance im Laufe der Zeit nicht abnimmt. 
+---
+= Monitoring der Performance-, Netzwerk- und Systemressourcen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie sollten die Performance-, Netzwerk- und Systemressourcen überwachen, um zu ermitteln, ob StorageGRID die aktuelle Last bewältigen kann und ob die Client-Performance im Laufe der Zeit nicht abnimmt.

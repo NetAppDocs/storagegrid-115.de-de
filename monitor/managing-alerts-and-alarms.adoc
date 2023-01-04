@@ -1,0 +1,49 @@
+---
+permalink: monitor/managing-alerts-and-alarms.html 
+sidebar: sidebar 
+keywords: managing, alarms, alerts 
+summary: Das StorageGRID Alert System wurde entwickelt, um Sie über betriebliche Probleme zu informieren, die Ihre Aufmerksamkeit erfordern. Bei Bedarf können Sie auch das alte Alarmsystem zur Überwachung Ihres Systems verwenden. 
+---
+= Verwalten von Meldungen und Alarmen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID Alert System wurde entwickelt, um Sie über betriebliche Probleme zu informieren, die Ihre Aufmerksamkeit erfordern. Bei Bedarf können Sie auch das alte Alarmsystem zur Überwachung Ihres Systems verwenden. Dieser Abschnitt enthält die folgenden Unterabschnitte:
+
+* link:comparing-alerts-and-alarms.html["Vergleichen von Meldungen und Alarmen"]
+* link:managing-alerts.html["Verwalten von Meldungen"]
+* link:managing-alarms.html["Verwalten von Alarmen (Altsystem)"]
+
+
+StorageGRID beinhaltet zwei Systeme, mit denen Sie über Probleme informiert werden.
+
+
+
+== Meldungssystem
+
+Das Alarmsystem wurde als Ihr vorrangiges Tool entwickelt, mit dem Sie alle eventuell auftretenden Probleme in Ihrem StorageGRID System überwachen können. Das Alarmsystem bietet eine benutzerfreundliche Oberfläche zum Erkennen, Bewerten und Beheben von Problemen.
+
+Warnmeldungen werden auf bestimmten Schweregraden ausgelöst, wenn Alarmregelbedingungen als wahr bewertet werden. Wenn eine Meldung ausgelöst wird, treten die folgenden Aktionen auf:
+
+* Im Dashboard im Grid Manager wird ein Symbol für den Schweregrad „Meldungen“ angezeigt, und die Anzahl der aktuellen Meldungen wird erhöht.
+* Die Warnmeldung wird auf der Registerkarte *Nodes* > *_Node_* > *Übersicht* angezeigt.
+* Es wird eine E-Mail-Benachrichtigung gesendet, vorausgesetzt, Sie haben einen SMTP-Server konfiguriert und E-Mail-Adressen für die Empfänger bereitgestellt.
+* Es wird eine SNMP-Benachrichtigung (Simple Network Management Protocol) gesendet, vorausgesetzt, Sie haben den StorageGRID SNMP-Agent konfiguriert.
+
+
+
+
+== Altes Alarmsystem
+
+Das Alarmsystem wird unterstützt, gilt jedoch als ein altes System. Wie bei Warnungen werden auch Alarme mit bestimmten Schweregraden ausgelöst, wenn Attribute definierte Schwellenwerte erreichen. Im Gegensatz zu Warnmeldungen werden jedoch viele Alarme für Ereignisse ausgelöst, die Sie sicher ignorieren können, was zu einer übermäßigen Anzahl an E-Mail- oder SNMP-Benachrichtigungen führen kann.
+
+Wenn ein Alarm ausgelöst wird, treten folgende Aktionen auf:
+
+* Die Anzahl der älteren Alarme auf dem Dashboard wird erhöht.
+* Der Alarm wird auf der Seite *Support* > *Alarme (alt)* > *Aktuelle Alarme* angezeigt.
+* Es wird eine E-Mail-Benachrichtigung gesendet, vorausgesetzt, Sie haben einen SMTP-Server konfiguriert und eine oder mehrere Mailinglisten konfiguriert.
+* Es kann eine SNMP-Benachrichtigung gesendet werden, vorausgesetzt, Sie haben den StorageGRID SNMP-Agent konfiguriert. (SNMP-Benachrichtigungen werden nicht für alle Alarme oder Alarme gesendet.)
+

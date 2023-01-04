@@ -1,0 +1,26 @@
+---
+permalink: monitor/file-rotation-for-bycast-log.html 
+sidebar: sidebar 
+keywords: file rotation, bycast, log, file rotation, bycast.log 
+summary: 'Wenn der `bycast.log` Die Datei erreicht 1 GB, die vorhandene Datei wird gespeichert und eine neue Protokolldatei wird gestartet.' 
+---
+= Dateirotation für bycast.log
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn der `bycast.log` Die Datei erreicht 1 GB, die vorhandene Datei wird gespeichert und eine neue Protokolldatei wird gestartet.
+
+Die gespeicherte Datei wird umbenannt `bycast.log.1`, Und die neue Datei wird benannt `bycast.log`. Wenn das neue `bycast.log` Erreicht 1 GB, `bycast.log.1` Wird umbenannt und komprimiert zu werden `bycast.log.2.gz`, und `bycast.log` Wird umbenannt `bycast.log.1`.
+
+Die Rotationsgrenze für `bycast.log` Sind 21 Dateien. Wenn die 22. Version des `bycast.log` Datei wird erstellt, die älteste Datei wird gelöscht.
+
+Die Rotationsgrenze für `bycast-err.log` Sind sieben Dateien.
+
+
+NOTE: Wenn eine Protokolldatei komprimiert wurde, dürfen Sie sie nicht auf den gleichen Speicherort dekomprimieren, an dem sie geschrieben wurde. Die Dekomprimierung der Datei an demselben Speicherort kann die Drehskripte des Protokolls beeinträchtigen.
+
+.Verwandte Informationen
+link:collecting-log-files-and-system-data.html["Protokolldateien und Systemdaten werden erfasst"]

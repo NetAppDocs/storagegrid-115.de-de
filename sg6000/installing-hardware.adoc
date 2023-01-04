@@ -1,0 +1,27 @@
+---
+permalink: sg6000/installing-hardware.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, hardware, install, installing 
+summary: Bei der Hardware-Installation wird der SG6000-CN Controller und das Storage Controller Shelf in ein Gehäuse oder Rack installiert, die Kabel angeschlossen und mit Strom versorgt. 
+---
+= Installieren der Hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei der Hardware-Installation wird der SG6000-CN Controller und das Storage Controller Shelf in ein Gehäuse oder Rack installiert, die Kabel angeschlossen und mit Strom versorgt.
+
+.Schritte
+* link:registering-hardware.html["Registrieren der Hardware"]
+* link:sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html["SG6060: Installieren von Shelfs mit 60 Laufwerken in einem Schrank oder Rack"]
+* link:sg6060-installing-drives.html["SG6060: Installieren der Laufwerke"]
+* link:sgf6024-installing-24-drive-shelves-into-cabinet-or-rack.html["SGF6024: Installieren von Shelfs mit 24 Laufwerken in einem Rack oder Schrank"]
+* link:sg6000-cn-installing-into-cabinet-or-rack.html["SG6000-CN: Einbau in einen Schrank oder Rack"]
+* link:cabling-appliance-sg6000.html["Verkabeln des Geräts (SG6000)"]
+* link:sg6060-cabling-optional-expansion-shelves.html["SG6060: Verkabelung der optionalen Erweiterungs-Shelfs"]
+* link:connecting-power-cords-and-applying-power-sg6000.html["Anschließen von Netzkabeln und Anwenden der Stromversorgung (SG6000)"]
+* link:viewing-status-indicators-and-buttons-on-sg6000-cn-controller.html["Anzeigen von Statusanzeigen und -Tasten auf dem SG6000-CN-Controller"]
+* link:viewing-boot-up-status-codes-for-sg6000-storage-controllers.html["Anzeigen von Boot-Statuscodes für die SG6000-Speicher-Controller"]
+

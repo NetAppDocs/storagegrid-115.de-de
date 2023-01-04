@@ -1,0 +1,40 @@
+---
+permalink: fabricpool/best-practices-for-high-availability-groups.html 
+sidebar: sidebar 
+keywords: fabricPool, high availability group, HA group, active-active, active-backup, cloud tier, best practices 
+summary: 'Bevor Sie StorageGRID als FabricPool Cloud-Tier anhängen, können Sie mithilfe des StorageGRID Grid Manager eine Hochverfügbarkeitsgruppe \(HA\) konfigurieren.' 
+---
+= Best Practices für Hochverfügbarkeitsgruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie StorageGRID als FabricPool Cloud-Tier anhängen, können Sie mithilfe von StorageGRID Grid Manager eine HA-Gruppe (High Availability, Hochverfügbarkeit) konfigurieren.
+
+
+
+== Eine HA-Gruppe (High Availability, Hochverfügbarkeit) ist das
+
+Um sicherzustellen, dass der Load Balancer-Service zum Verwalten von FabricPool-Daten immer verfügbar ist, können Sie die Netzwerkschnittstellen mehrerer Admin- und Gateway-Nodes zu einer einzigen Einheit gruppieren, die als HA-Gruppe (High Availability, Hochverfügbarkeit) bezeichnet wird. Wenn der aktive Node in der HA-Gruppe ausfällt, kann der Workload weiterhin von einem anderen Node in der Gruppe gemanagt werden.
+
+Jede HA-Gruppe ermöglicht einen hochverfügbaren Zugriff auf die Shared Services auf den zugehörigen Nodes. Beispielsweise bietet eine HA-Gruppe, die aus allen Admin-Nodes besteht, hochverfügbaren Zugriff auf einige Management-Services für Admin-Nodes und den Load-Balancer-Service. Eine HA-Gruppe, die aus nur Gateway-Nodes oder Admin-Nodes und Gateway-Nodes besteht, bietet hochverfügbaren Zugriff auf den Shared Load Balancer Service.
+
+Beim Erstellen einer HA-Gruppe wählen Sie Netzwerkschnittstellen aus, die zum Grid Network (eth0) oder dem Client-Netzwerk (eth2) gehören. Alle Schnittstellen in einer HA-Gruppe müssen sich im selben Netzwerk-Subnetz befinden.
+
+Eine HA-Gruppe behält eine oder mehrere virtuelle IP-Adressen bei, die der aktiven Schnittstelle in der Gruppe hinzugefügt werden. Wenn die aktive Schnittstelle nicht mehr verfügbar ist, werden die virtuellen IP-Adressen in eine andere Schnittstelle verschoben. Dieser Failover-Prozess dauert in der Regel nur wenige Sekunden und ist schnell genug, dass Client-Applikationen nur geringe Auswirkungen haben und sich auf normale Wiederholungsmuster verlassen können, um den Betrieb fortzusetzen.
+
+Wenn Sie eine HA-Gruppe mit Nodes für den Lastausgleich konfigurieren, stellt FabricPool eine Verbindung zu den virtuellen IP-Adressen dieser HA-Gruppe her.
+
+
+
+== Best Practices für Hochverfügbarkeitsgruppen (High Availability groups, HA-Gruppen
+
+Die Best Practices zum Erstellen einer StorageGRID HA-Gruppe für FabricPool hängen vom Workload ab:
+
+* Wenn Sie FabricPool für Daten mit primären Workloads verwenden möchten, müssen Sie eine HA-Gruppe erstellen, die mindestens zwei Load-Balancing-Nodes umfasst, um eine Unterbrechung beim Datenabruf zu vermeiden.
+* Wenn Sie eine FabricPool Richtlinie für das reine Volume-Tiering nur für Snapshots oder nicht für lokale Performance-Tiers (z. B. Disaster Recovery-Standorte oder NetApp SnapMirror Ziele) verwenden möchten, können Sie eine HA-Gruppe mit nur einem Node konfigurieren.
+
+
+Diese Anweisungen beschreiben die Einrichtung einer HA-Gruppe für Active-Backup HA (ein Node ist aktiv und ein Node ist ein Backup). Möglicherweise verwenden Sie jedoch lieber DNS Round Robin oder Active-Active HA. Informationen zu den Vorteilen dieser anderen HA-Konfigurationen finden Sie unter link:../admin/configuration-options-for-ha-groups.html["Konfigurationsoptionen für HA-Gruppen"].

@@ -1,0 +1,26 @@
+---
+permalink: network/linux-deployments.html 
+sidebar: sidebar 
+keywords:  
+summary: Das StorageGRID System wird unter Linux als Sammlung von Docker Containern ausgeführt, um Effizienz, Zuverlässigkeit und Sicherheit zu gewährleisten. Eine Docker-bezogene Netzwerkkonfiguration ist für ein StorageGRID System nicht erforderlich. 
+---
+= Linux Implementierungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID System wird unter Linux als Sammlung von Docker Containern ausgeführt, um Effizienz, Zuverlässigkeit und Sicherheit zu gewährleisten. Eine Docker-bezogene Netzwerkkonfiguration ist für ein StorageGRID System nicht erforderlich.
+
+Verwenden Sie für die Container-Netzwerkschnittstelle ein Gerät ohne Bindung, z. B. ein VLAN- oder ein virtuelles Ethernet-Paar (Veth). Geben Sie dieses Gerät als Netzwerkschnittstelle in der Node-Konfigurationsdatei an.
+
+
+IMPORTANT: Verwenden Sie keine Bond- oder Bridge-Geräte direkt als Container-Netzwerkschnittstelle. Dies könnte den Start von Knoten verhindern, weil ein Kernel-Problem mit der Verwendung von macvlan mit Bond- und Bridge-Geräten im Container-Namespace vorliegt.
+
+Siehe Installationsanweisungen für Red hat Enterprise Linux/CentOS oder Ubuntu/Debian-Bereitstellungen.
+
+.Verwandte Informationen
+link:../rhel/index.html["Installieren Sie Red hat Enterprise Linux oder CentOS"]
+
+link:../ubuntu/index.html["Installieren Sie Ubuntu oder Debian"]

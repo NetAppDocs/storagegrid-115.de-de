@@ -1,0 +1,35 @@
+---
+permalink: vmware/troubleshooting-installation-issues.html 
+sidebar: sidebar 
+keywords: storagegrid, vmware, troubleshoot installation, troubleshooting installation 
+summary: Falls bei der Installation des StorageGRID-Systems Probleme auftreten, können Sie auf die Installationsprotokolldateien zugreifen. 
+---
+= Fehlerbehebung bei Installationsproblemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Falls bei der Installation des StorageGRID-Systems Probleme auftreten, können Sie auf die Installationsprotokolldateien zugreifen.
+
+Im Folgenden finden Sie die wichtigsten Installationsprotokolldateien, die beim technischen Support eventuell zu Problemen führen müssen.
+
+* `/var/local/log/install.log` (Auf allen Grid-Nodes gefunden)
+* `/var/local/log/gdu-server.log` (Auf dem primären Admin-Node gefunden)
+
+
+Informationen zum Zugriff auf die Protokolldateien finden Sie in den Anweisungen zum Überwachen und Beheben von StorageGRID. Informationen zur Fehlerbehebung bei Problemen mit der Installation finden Sie in den Installations- und Wartungsanweisungen für Ihre Geräte. Wenn Sie weitere Hilfe benötigen, wenden Sie sich an den technischen Support.
+
+.Verwandte Informationen
+link:../monitor/index.html["Monitor  Fehlerbehebung"]
+
+link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+link:../sg6000/index.html["SG6000 Storage-Appliances"]
+
+link:../sg5700/index.html["SG5700 Storage-Appliances"]
+
+link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^]

@@ -1,0 +1,50 @@
+---
+permalink: monitor/generating-text-reports.html 
+sidebar: sidebar 
+keywords: reports, text 
+summary: Textberichte zeigen eine textuelle Darstellung von Attributdatenwerten an, die vom NMS-Dienst verarbeitet wurden. Die Berichte können an Datacenter-Standorten, Grid-Node, Komponenten oder Service erstellt werden. 
+---
+= Textberichte werden erstellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Textberichte zeigen eine textuelle Darstellung von Attributdatenwerten an, die vom NMS-Dienst verarbeitet wurden. Die Berichte können an Datacenter-Standorten, Grid-Node, Komponenten oder Service erstellt werden.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Über diese Aufgabe
+Für Attributdaten, die voraussichtlich kontinuierlich geändert werden, werden diese Attributdaten in regelmäßigen Abständen vom NMS-Dienst (an der Quelle) erfasst. Bei selten veränderlichen Attributdaten (z. B. Daten, die auf Ereignissen wie Statusänderungen basieren) wird ein Attributwert an den NMS-Dienst gesendet, wenn sich der Wert ändert.
+
+Der angezeigte Berichtstyp hängt vom konfigurierten Zeitraum ab. Standardmäßig werden zusammengefasste Textberichte für Zeiträume generiert, die länger als eine Woche sind.
+
+Der graue Text zeigt an, dass der Dienst während der Probenahme administrativ unten war. Blauer Text zeigt an, dass der Dienst in einem unbekannten Zustand war.
+
+.Schritte
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie *_Grid Node_* > *_Component oder Service_* > *Berichte* > *Text* aus.
+. Wählen Sie das Attribut aus der Dropdown-Liste *Attribut* aus, für das ein Bericht erstellt werden soll.
+. Wählen Sie aus der Dropdown-Liste *Ergebnisse pro Seite* die Anzahl der Ergebnisse pro Seite aus.
+. Um Werte auf maximal drei Dezimalstellen (z. B. für als Prozentwert gemeldete Attribute) zu runden, deaktivieren Sie das Kontrollkästchen *Rohdaten*.
+. Wählen Sie den Zeitraum aus der Dropdown-Liste *Quick Query* aus, für den Sie einen Bericht erstellen möchten.
++
+Wählen Sie die Option Benutzerdefinierte Abfrage aus, um einen bestimmten Zeitbereich auszuwählen.
+
++
+Der Bericht erscheint nach wenigen Augenblicken. Lassen Sie mehrere Minuten für die Tabulierung von langen Zeitbereichen.
+
+. Wenn Sie „Benutzerdefinierte Abfrage“ ausgewählt haben, müssen Sie den Zeitraum anpassen, an dem Sie einen Bericht erstellen möchten, indem Sie die Optionen *Startdatum* und *Enddatum* eingeben.
++
+Verwenden Sie das Format `YYYY/MM/DDHH:MM:SS` Ortszeit verwendet. Führende Nullen sind für das Format erforderlich. Beispiel: 2017/4/6 7:30:00 schlägt die Validierung fehl. Das richtige Format ist: 2017/04/06 07:30:00.
+
+. Klicken Sie Auf *Aktualisieren*.
++
+Nach wenigen Augenblicken wird ein Textbericht erstellt. Lassen Sie mehrere Minuten für die Tabulierung von langen Zeitbereichen. Abhängig von der für die Abfrage festgelegten Dauer wird entweder ein RAW-Textbericht oder ein aggregierter Textbericht angezeigt.
+
+. Wenn Sie den Bericht drucken möchten, klicken Sie mit der rechten Maustaste, und wählen Sie *Drucken*, und ändern Sie die erforderlichen Druckereinstellungen und klicken Sie auf *Drucken*.
+

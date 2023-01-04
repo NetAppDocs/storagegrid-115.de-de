@@ -1,0 +1,34 @@
+---
+permalink: ilm/managing-objects-with-s3-object-lock.html 
+sidebar: sidebar 
+keywords:  
+summary: Als Grid-Administrator können Sie die S3 Objektsperre für Ihr StorageGRID System aktivieren und eine konforme ILM-Richtlinie implementieren. So wird sichergestellt, dass Objekte in bestimmten S3-Buckets nicht für eine bestimmte Zeit gelöscht oder überschrieben werden. 
+---
+= Verwalten von Objekten mit S3 Object Lock
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Als Grid-Administrator können Sie die S3 Objektsperre für Ihr StorageGRID System aktivieren und eine konforme ILM-Richtlinie implementieren. So wird sichergestellt, dass Objekte in bestimmten S3-Buckets nicht für eine bestimmte Zeit gelöscht oder überschrieben werden.
+
+
+
+== Was ist S3 Object Lock?
+
+Die Funktion StorageGRID S3 Object Lock ist eine Objektschutzlösung, die der S3 Object Lock in Amazon Simple Storage Service (Amazon S3) entspricht.
+
+Wenn die globale S3-Objektsperre für ein StorageGRID-System aktiviert ist, kann ein S3-Mandantenkonto Buckets mit oder ohne aktivierte S3-Objektsperre erstellen. Wenn in einem Bucket S3-Objektsperre aktiviert ist, können S3-Client-Applikationen optional Aufbewahrungseinstellungen für jede Objektversion in diesem Bucket angeben. Eine Objektversion muss über Aufbewahrungseinstellungen verfügen, die durch S3 Object Lock geschützt werden sollen.
+
+image::../media/s3_object_lock_architecture.png[S3 Object Lock-Architektur]
+
+Die StorageGRID S3 Objektsperre bietet einen einheitlichen Aufbewahrungsmodus, der dem Amazon S3-Compliance-Modus entspricht. Standardmäßig kann eine geschützte Objektversion nicht von einem Benutzer überschrieben oder gelöscht werden. Die StorageGRID S3-Objektsperre unterstützt keinen Governance-Modus und erlaubt Benutzern mit speziellen Berechtigungen nicht, Aufbewahrungseinstellungen zu umgehen oder geschützte Objekte zu löschen.
+
+Wenn in einem Bucket S3-Objektsperre aktiviert ist, kann die S3-Client-Applikation beim Erstellen oder Aktualisieren eines Objekts optional eine oder beide der folgenden Aufbewahrungseinstellungen auf Objektebene angeben:
+
+* *Bis-Datum aufbewahren*: Wenn das Aufbewahrungsdatum einer Objektversion in der Zukunft liegt, kann das Objekt abgerufen, aber nicht geändert oder gelöscht werden. Bei Bedarf kann das Aufbewahrungsdatum eines Objekts erhöht werden, dieses Datum kann jedoch nicht verringert werden.
+* *Legal Hold*: Die Anwendung eines gesetzlichen Hold auf eine Objektversion sperrt diesen Gegenstand sofort. Beispielsweise müssen Sie ein Objekt, das mit einer Untersuchung oder einem Rechtsstreit zusammenhängt, rechtlich festhalten. Eine gesetzliche Aufbewahrungspflichten haben kein Ablaufdatum, bleiben aber bis zur ausdrücklichen Entfernung erhalten. Die gesetzlichen Aufbewahrungspflichten sind unabhängig von der bisherigen Aufbewahrungsfrist.
+
+
+Weitere Informationen zu diesen Einstellungen finden Sie unter „`Using S3 object Lock`“ in link:../s3/s3-rest-api-supported-operations-and-limitations.html["Unterstützte Vorgänge und Einschränkungen durch S3-REST-API"].

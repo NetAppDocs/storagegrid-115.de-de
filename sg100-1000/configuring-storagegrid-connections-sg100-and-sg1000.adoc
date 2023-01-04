@@ -1,0 +1,23 @@
+---
+permalink: sg100-1000/configuring-storagegrid-connections-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, storagegrid connections, connections, configure, setup, set up 
+summary: Bevor Sie die Services-Appliance als Node in einem StorageGRID-System bereitstellen können, müssen Sie die Verbindungen zwischen der Appliance und den zu verwendenden Netzwerken konfigurieren. Sie können Netzwerke konfigurieren, indem Sie im StorageGRID Appliance Installer navigieren, der auf der Services Appliance vorinstalliert ist. 
+---
+= Konfigurieren von StorageGRID-Verbindungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie die Services-Appliance als Node in einem StorageGRID-System bereitstellen können, müssen Sie die Verbindungen zwischen der Appliance und den zu verwendenden Netzwerken konfigurieren. Sie können Netzwerke konfigurieren, indem Sie im StorageGRID Appliance Installer navigieren, der auf der Services Appliance vorinstalliert ist.
+
+.Schritte
+* link:accessing-storagegrid-appliance-installer-sg100-and-sg1000.html["Zugriff auf das Installationsprogramm der StorageGRID-Appliance"]
+* link:verifying-and-upgrading-storagegrid-appliance-installer-version.html["Überprüfen und Aktualisieren der Installationsversion der StorageGRID Appliance"]
+* link:configuring-network-links-sg100-and-sg1000.html["Konfigurieren von Netzwerkverbindungen (SG100 und SG1000)"]
+* link:configuring-storagegrid-ip-addresses-sg100-and-sg1000.html["StorageGRID-IP-Adressen werden konfiguriert"]
+* link:verifying-network-connections.html["Netzwerkverbindungen werden überprüft"]
+* link:verifying-port-level-network-connections.html["Überprüfen von Netzwerkverbindungen auf Portebene"]
+

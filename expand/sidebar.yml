@@ -1,0 +1,63 @@
+---
+section: expand
+title: Erweitern Sie Ihr Raster
+url: "/expand/index.html"
+entries:
+- title: StorageGRID-Erweiterung geplant
+  url: "/expand/planning-expansion.html"
+  entries:
+  - title: Erweiterung der Storage-Kapazität
+    url: "/expand/adding-storage-capacity.html"
+    entries:
+    - title: Richtlinien zum Hinzufügen von Objektkapazität
+      url: "/expand/guidelines-for-adding-object-capacity.html"
+    - title: Hinzufügen von Speicherkapazität für replizierte Objekte
+      url: "/expand/adding-storage-capacity-for-replicated-objects.html"
+    - title: Hinzufügen von Storage-Kapazität für Objekte mit Erasure-Coding-Verfahren
+      url: "/expand/adding-storage-capacity-for-erasure-coded-objects.html"
+    - title: Überlegungen zur Lastverteilung bei Daten, die mit Erasure Coding versehen
+        sind
+      url: "/expand/considerations-for-rebalancing-erasure-coded-data.html"
+  - title: Hinzufügen von Metadaten-Kapazität
+    url: "/expand/adding-metadata-capacity.html"
+  - title: Grid-Nodes werden hinzugefügt, um Funktionen zu Ihrem System hinzuzufügen
+    url: "/expand/adding-grid-nodes-to-add-capabilities.html"
+  - title: Hinzufügen eines neuen Standorts
+    url: "/expand/adding-new-site.html"
+- title: Vorbereitung auf eine Erweiterung
+  url: "/expand/preparing-for-expansion.html"
+- title: Überblick über das Expansionsverfahren
+  url: "/expand/overview-of-expansion-procedure.html"
+- title: Hinzufügen von Storage-Volumes zu Storage-Nodes
+  url: "/expand/adding-storage-volumes-to-storage-nodes.html"
+  entries:
+  - title: 'VMware: Hinzufügen von Speicher-Volumes zu einem Speicherknoten'
+    url: "/expand/vmware-adding-storage-volumes-to-storage-node.html"
+  - title: 'Linux: Hinzufügen von Direct-Attached- oder SAN-Volumes zu einem Storage-Node'
+    url: "/expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html"
+- title: Einem vorhandenen Standort Grid-Nodes hinzufügen oder einen neuen Standort
+    hinzufügen
+  url: "/expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html"
+  entries:
+  - title: Subnetze für das Grid-Netzwerk aktualisieren
+    url: "/expand/updating-subnets-for-grid-network.html"
+  - title: Neue Grid-Nodes implementieren
+    url: "/expand/deploying-new-grid-nodes.html"
+  - title: Durchführung der Erweiterung
+    url: "/expand/performing-expansion.html"
+- title: Konfiguration des erweiterten StorageGRID-Systems
+  url: "/expand/configuring-expanded-storagegrid-system.html"
+  entries:
+  - title: Überprüfen, ob der Speicherknoten aktiv ist
+    url: "/expand/verifying-storage-node-is-active.html"
+  - title: Die Admin-Knoten-Datenbank wird kopiert
+    url: "/expand/copying-admin-node-database.html"
+  - title: Kopieren von Prometheus-Kennzahlen
+    url: "/expand/copying-prometheus-metrics.html"
+  - title: Prüfprotokolle werden kopiert
+    url: "/expand/copying-audit-logs.html"
+  - title: Balancieren Sie Daten aus, die im Erasure-Coding-Verfahren codiert wurden,
+      nach dem Hinzufügen von Storage
+    url: "/expand/rebalancing-erasure-coded-data-after-adding-storage-nodes.html"
+- title: Kontakt mit dem technischen Support
+  url: "/expand/contacting-technical-support.html"

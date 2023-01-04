@@ -1,0 +1,49 @@
+---
+permalink: monitor/monitoring-events.html 
+sidebar: sidebar 
+keywords: monitor, monitoring events, events, storageGRID events 
+summary: Sie können Ereignisse überwachen, die von einem Grid-Node erkannt werden, einschließlich benutzerdefinierter Ereignisse, die Sie erstellt haben, um Ereignisse zu verfolgen, die auf dem Syslog-Server protokolliert werden. Die Meldung Letztes Ereignis, die im Grid Manager angezeigt wird, enthält weitere Informationen zum letzten Ereignis. 
+---
+= Monitoring von Ereignissen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Ereignisse überwachen, die von einem Grid-Node erkannt werden, einschließlich benutzerdefinierter Ereignisse, die Sie erstellt haben, um Ereignisse zu verfolgen, die auf dem Syslog-Server protokolliert werden. Die Meldung Letztes Ereignis, die im Grid Manager angezeigt wird, enthält weitere Informationen zum letzten Ereignis.
+
+Ereignismeldungen sind auch in aufgeführt `/var/local/log/bycast-err.log` Protokolldatei.
+
+Der SMTT-Alarm (Total Events) kann wiederholt durch Probleme wie Netzwerkprobleme, Stromausfälle oder Upgrades ausgelöst werden. Dieser Abschnitt enthält Informationen zur Untersuchung von Ereignissen, sodass Sie besser verstehen können, warum diese Alarme aufgetreten sind. Wenn ein Ereignis aufgrund eines bekannten Problems aufgetreten ist, können die Ereigniszähler sicher zurückgesetzt werden.
+
+
+
+== Überprüfen von Ereignissen auf der Seite Knoten
+
+Auf der Seite Nodes werden die Systemereignisse für jeden Grid-Node aufgeführt.
+
+. Wählen Sie *Knoten*.
+. Wählen Sie *_Grid Node_* > *Events* aus.
+. Stellen Sie oben auf der Seite fest, ob ein Ereignis für *Letztes Ereignis* angezeigt wird, das das letzte Ereignis beschreibt, das vom Grid-Knoten erkannt wurde.
++
+Das Ereignis wird wortgetreu vom Grid-Node übermittelt und enthält alle Protokollmeldungen mit dem Schweregrad „FEHLER“ oder „KRITISCH“.
+
+. Überprüfen Sie in der Tabelle, ob die Anzahl für ein Ereignis oder einen Fehler nicht Null ist.
+. Klicken Sie nach dem Beheben von Problemen auf *Ereignisanzahl zurücksetzen*, um die Zählung auf Null zurückzusetzen.
+
+
+
+
+== Überprüfen von Ereignissen auf der Seite Grid Topology
+
+Auf der Seite Grid Topology werden außerdem die Systemereignisse für jeden Grid-Node aufgeführt.
+
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie *_site_* > *_GRID Node_* > *SSM* > *Events* > *Übersicht* > *Main*.
+
+
+.Verwandte Informationen
+link:resetting-event-counts.html["Ereignisanzahl wird zurückgesetzt"]
+
+link:../monitor/logs-files-reference.html["Referenz für Protokolldateien"]

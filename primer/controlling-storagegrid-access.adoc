@@ -1,0 +1,54 @@
+---
+permalink: primer/controlling-storagegrid-access.html 
+sidebar: sidebar 
+keywords: grid manager, administrator access, single sign on, sso, users, groups, client certificates, passwords, passphrase 
+summary: 'Sie steuern, wer auf StorageGRID zugreifen kann und welche Aufgaben Benutzer ausführen können, indem Sie Gruppen und Benutzer erstellen oder importieren und jeder Gruppe Berechtigungen zuweisen. Optional können Sie Single Sign-On \(SSO\) aktivieren, Client-Zertifikate erstellen und Grid-Passwörter ändern.' 
+---
+= Kontrolle des StorageGRID-Zugriffs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie steuern, wer auf StorageGRID zugreifen kann und welche Aufgaben Benutzer ausführen können, indem Sie Gruppen und Benutzer erstellen oder importieren und jeder Gruppe Berechtigungen zuweisen. Optional können Sie Single Sign On (SSO) aktivieren, Client-Zertifikate erstellen und Grid-Passwörter ändern.
+
+
+
+== Steuern des Zugriffs auf den Grid Manager
+
+Sie bestimmen, wer auf den Grid Manager und die Grid Management API zugreifen kann, indem Sie Gruppen und Benutzer von einem Identitätsverbundservice aus importieren oder lokale Gruppen und lokale Benutzer einrichten.
+
+Durch die Verwendung von Identity Federation lassen sich Gruppen und Benutzer schneller einrichten, und Benutzer können sich mithilfe vertrauter Anmeldedaten bei StorageGRID anmelden. Sie können die Identitätsföderation konfigurieren, wenn Sie Active Directory, OpenLDAP oder Oracle Directory Server verwenden.
+
+
+NOTE: Wenden Sie sich an den technischen Support, wenn Sie einen anderen LDAP v3-Dienst verwenden möchten.
+
+Sie legen fest, welche Aufgaben jeder Benutzer ausführen kann, indem Sie jeder Gruppe unterschiedliche Berechtigungen zuweisen. Beispielsweise können Benutzer in einer Gruppe in der Lage sein, ILM-Regeln und Benutzer in einer anderen Gruppe zu verwalten, um Wartungsaufgaben durchzuführen. Ein Benutzer muss mindestens einer Gruppe angehören, um auf das System zuzugreifen.
+
+Optional können Sie eine Gruppe als schreibgeschützt konfigurieren. Benutzer in einer schreibgeschützten Gruppe können nur Einstellungen und Funktionen anzeigen. Sie können keine Änderungen vornehmen oder Vorgänge im Grid Manager oder der Grid Management API ausführen.
+
+
+
+== Aktivieren von Single Sign On
+
+Das StorageGRID-System unterstützt Single Sign-On (SSO) unter Verwendung des Security Assertion Markup Language 2.0 (SAML 2.0)-Standards. Wenn SSO aktiviert ist, müssen alle Benutzer von einem externen Identitäts-Provider authentifiziert werden, bevor sie auf den Grid Manager, den Mandanten-Manager, die Grid-Management-API oder die Mandantenmanagement-API zugreifen können. Lokale Benutzer können sich nicht bei StorageGRID anmelden.
+
+Wenn SSO aktiviert ist und Benutzer sich bei StorageGRID anmelden, werden sie zur SSO-Seite Ihres Unternehmens weitergeleitet, um ihre Anmeldedaten zu validieren. Wenn sich Benutzer von einem Admin-Node abmelden, werden sie automatisch von allen Admin-Nodes abgemeldet.
+
+
+
+== Clientzertifikate werden verwendet
+
+Sie können Clientzertifikate verwenden, um autorisierten externen Clients den Zugriff auf die StorageGRID Prometheus-Datenbank zu ermöglichen. Clientzertifikate bieten eine sichere Möglichkeit zur Verwendung externer Tools zur Überwachung von StorageGRID. Sie können Ihr eigenes Clientzertifikat bereitstellen oder mit dem Grid Manager ein Zertifikat erstellen.
+
+
+
+== Grid-Passwörter werden geändert
+
+Die Provisionierungs-Passphrase ist für viele Installations- und Wartungsverfahren und für das Herunterladen des StorageGRID Recovery Package erforderlich. Die Passphrase ist auch erforderlich, um Backups der Grid-Topologieinformationen und Verschlüsselungen für das StorageGRID System herunterzuladen. Sie können diese Passphrase nach Bedarf ändern.
+
+.Verwandte Informationen
+link:../admin/index.html["StorageGRID verwalten"]
+
+link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]

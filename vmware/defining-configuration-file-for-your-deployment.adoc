@@ -1,0 +1,24 @@
+---
+permalink: vmware/defining-configuration-file-for-your-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie geben die Informationen an, die zum Bereitstellen virtueller Grid-Knoten für StorageGRID in einer Konfigurationsdatei erforderlich sind, die vom deploy-vsphere-ovftool.sh Bash-Skript verwendet wird. Sie können eine Beispielkonfigurationsdatei ändern, damit Sie die Datei nicht von Grund auf neu erstellen müssen. 
+---
+= Definieren der Konfigurationsdatei für Ihre Bereitstellung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie geben die Informationen an, die zum Implementieren der virtuellen Grid-Nodes für StorageGRID in einer Konfigurationsdatei erforderlich sind, die von verwendet wird `deploy-vsphere-ovftool.sh` Bash-Skript. Sie können eine Beispielkonfigurationsdatei ändern, damit Sie die Datei nicht von Grund auf neu erstellen müssen.
+
+.Schritte
+. Erstellen Sie eine Kopie der Beispielkonfigurationsdatei (`deploy-vsphere-ovftool.sample.ini`). Speichern Sie die neue Datei unter `deploy-vsphere-ovftool.ini` Im gleichen Verzeichnis wie `deploy-vsphere-ovftool.sh`.
+. Offen `deploy-vsphere-ovftool.ini`.
+. Geben Sie alle für die Implementierung der virtuellen VMware Grid-Nodes erforderlichen Informationen ein.
++
+Siehe link:configuration-file-settings.html["Konfigurationsdateieinstellungen"] Zur Information.
+
+. Wenn Sie alle erforderlichen Informationen eingegeben und verifiziert haben, speichern und schließen Sie die Datei.
+

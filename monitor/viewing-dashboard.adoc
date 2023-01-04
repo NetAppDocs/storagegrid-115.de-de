@@ -1,0 +1,119 @@
+---
+permalink: monitor/viewing-dashboard.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn Sie sich zum ersten Mal beim Grid Manager anmelden, können Sie über das Dashboard Systemaktivitäten auf einen Blick überwachen. Das Dashboard enthält Informationen zum Systemzustand, über Auslastungsmetriken sowie über Betriebstrends und -Diagramme. 
+---
+= Anzeigen des Dashboards
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie sich zum ersten Mal beim Grid Manager anmelden, können Sie über das Dashboard Systemaktivitäten auf einen Blick überwachen. Das Dashboard enthält Informationen zum Systemzustand, über Auslastungsmetriken sowie über Betriebstrends und -Diagramme.
+
+image::../media/grid_manager_dashboard.png[Grid Manager Dashboard]
+
+
+
+== Systemzustand
+
+|===
+| Beschreibung | Weitere Details anzeigen | Weitere Informationen . 
+
+
+ a| 
+Fasst den Systemzustand zusammen. Ein grünes Häkchen bedeutet, dass keine aktuellen Warnmeldungen vorhanden sind und alle Grid-Nodes verbunden sind. Jedes andere Symbol bedeutet, dass mindestens eine aktuelle Warnung oder ein nicht getrennter Knoten vorhanden ist.
+ a| 
+Möglicherweise werden mindestens ein der folgenden Links angezeigt:
+
+* *Grid Details*: Wird angezeigt, wenn Knoten getrennt sind (Verbindungsstatus unbekannt oder Administrativ ausgefallen). Klicken Sie auf den Link oder klicken Sie auf das blaue oder graue Symbol, um zu ermitteln, welche Nodes betroffen sind.
+* *Aktuelle Meldungen*: Wird angezeigt, wenn derzeit Alarme aktiv sind. Klicken Sie auf den Link oder klicken Sie auf *kritisch*, *Major* oder *Minor*, um die Details auf der Seite *Alarme* > *Aktuell* anzuzeigen.
+* *Kürzlich behobene Alarme*: Wird angezeigt, wenn alle in der letzten Woche ausgelösten Benachrichtigungen jetzt behoben sind. Klicken Sie auf den Link, um die Details auf der Seite *Alerts* > *aufgelöst* anzuzeigen.
+* *Legacy-Alarme*: Wird angezeigt, wenn derzeit Alarme (Legacy-System) aktiv sind. Klicken Sie auf den Link, um die Details auf der Seite *Support* > *Alarme (alt)* > *Aktuelle Alarme* anzuzeigen.
+* *Lizenz*: Wird angezeigt, wenn ein Problem mit der Softwarelizenz für dieses StorageGRID-System vorliegt. Klicken Sie auf den Link, um die Details auf der Seite *Wartung* > *System* > *Lizenz* anzuzeigen.
+
+ a| 
+* link:monitoring-node-connection-states.html["Monitoring der Verbindungsstatus der Nodes"]
+* link:viewing-current-alerts.html["Anzeigen aktueller Meldungen"]
+* link:viewing-resolved-alerts.html["Anzeigen gelöster Warnmeldungen"]
+* link:viewing-legacy-alarms.html["Anzeigen von Legacy-Alarmen"]
+* link:../admin/index.html["StorageGRID verwalten"]
+
+
+|===
+
+
+== Bereich „Verfügbare Lagerung“
+
+|===
+| Beschreibung | Weitere Details anzeigen | Weitere Informationen . 
+
+
+ a| 
+Zeigt die verfügbare und genutzte Speicherkapazität im gesamten Grid an, nicht einschließlich Archivmedien.
+
+Das Gesamtdiagramm stellt die Gesamtgesamtwerte für das gesamte Grid dar. Ist dies ein Grid mit mehreren Standorten, werden für jeden Datacenter-Standort zusätzliche Diagramme angezeigt.
+
+Anhand dieser Informationen können Sie den verwendeten Speicher mit dem verfügbaren Speicher vergleichen. Wenn Sie ein Grid mit mehreren Standorten verwenden, können Sie feststellen, welcher Standort mehr Storage verbraucht.
+ a| 
+* Um die Kapazität anzuzeigen, platzieren Sie den Cursor über die verfügbaren und genutzten Kapazitätsbereiche des Diagramms.
+* Um Kapazitätstrends über einen Datumsbereich anzuzeigen, klicken Sie auf das Diagrammsymbol image:../media/icon_chart_new.gif["Diagrammsymbol"] Für das Gesamtraster oder einen Standort im Datacenter.
+* Um Details anzuzeigen, wählen Sie *Knoten*. Anschließend können Sie die Registerkarte „Storage“ für das gesamte Grid, eine gesamte Site oder einen einzelnen Storage-Node anzeigen.
+
+ a| 
+* link:viewing-storage-tab.html["Anzeigen der Registerkarte „Speicher“"]
+* link:monitoring-storage-capacity.html["Monitoring der Storage-Kapazität"]
+
+
+|===
+
+
+== Bereich „Information Lifecycle Management“ (ILM)
+
+|===
+| Beschreibung | Weitere Details anzeigen | Weitere Informationen . 
+
+
+ a| 
+Zeigt die aktuellen ILM-Vorgänge und ILM-Warteschlangen für das System an. Sie können diese Informationen für das Monitoring der Arbeitsbelastung Ihres Systems verwenden.
+
+* *Ausstehend - Client*: Die Gesamtzahl der Objekte, die auf eine ILM-Bewertung aus Client-Operationen warten (zum Beispiel Aufnahme).
+* *Ausstehend - Evaluation Rate*: Die aktuelle Rate, mit der Objekte ausgewertet werden, entspricht der ILM-Richtlinie im Grid.
+* *Scan Period - Estimated*: Die geschätzte Zeit, um einen vollständigen ILM-Scan aller Objekte abzuschließen. *Hinweis:* Ein vollständiger Scan garantiert nicht, dass ILM auf alle Objekte angewendet wurde.
+
+ a| 
+* Um Details anzuzeigen, wählen Sie *Knoten*. Anschließend können Sie die ILM-Registerkarte für das gesamte Grid, eine gesamte Site oder einen einzelnen Storage-Node anzeigen.
+* Um die vorhandenen ILM-Regeln anzuzeigen, wählen Sie *ILM* > *Regeln*.
+* Um die vorhandenen ILM-Richtlinien anzuzeigen, wählen Sie *ILM* > *Richtlinien*.
+
+ a| 
+* link:viewing-ilm-tab.html["Anzeigen der Registerkarte ILM"]
+* link:../admin/index.html["StorageGRID verwalten"].
+
+
+|===
+
+
+== Bereich „Protokollbetrieb“
+
+|===
+| Beschreibung | Weitere Details anzeigen | Weitere Informationen . 
+
+
+ a| 
+Zeigt die Anzahl der protokollspezifischen Vorgänge (S3 und Swift) an, die vom System durchgeführt werden.
+
+Sie können diese Informationen nutzen, um die Workloads und die Effizienz Ihres Systems zu überwachen. Die Protokollraten werden über die letzten zwei Minuten Durchschnitt.
+ a| 
+* Um Details anzuzeigen, wählen Sie *Knoten*. Anschließend können Sie die Registerkarte Objekte für das gesamte Grid, eine gesamte Site oder einen einzelnen Storage-Node anzeigen.
+* Um Trends über einen Datumsbereich anzuzeigen, klicken Sie auf das Diagrammsymbol image:../media/icon_chart_new.gif["Diagrammsymbol"] Rechts neben der S3- oder Swift-Protokollrate.
+
+ a| 
+* link:viewing-objects-tab.html["Anzeigen der Registerkarte Objekte"]
+* link:../s3/index.html["S3 verwenden"]
+* link:../swift/index.html["Verwenden Sie Swift"]
+
+
+|===

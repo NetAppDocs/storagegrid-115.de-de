@@ -1,0 +1,52 @@
+---
+permalink: sg100-1000/replacing-power-supply-in-services-appliance.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, Replacing, replace, power supply, remove, removing, removal, install, installing, installation 
+summary: Das Services-Gerät verfügt über zwei Netzteile für Redundanz. Wenn eines der Netzteile ausfällt, müssen Sie es so schnell wie möglich austauschen, um sicherzustellen, dass das Gerät über eine redundante Stromversorgung verfügt. 
+---
+= Ersetzen eines Netzteils in der Serviceanwendung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Services-Gerät verfügt über zwei Netzteile für Redundanz. Wenn eines der Netzteile ausfällt, müssen Sie es so schnell wie möglich austauschen, um sicherzustellen, dass das Gerät über eine redundante Stromversorgung verfügt.
+
+.Was Sie benötigen
+* Sie haben das Ersatznetzteil entpackt.
+* Sie haben das Gerät in physischer Lage, wo Sie das Netzteil im Datacenter ersetzen.
++
+link:locating-controller-in-data-center.html["Lokalisierung des Controllers in einem Rechenzentrum"]
+
+* Sie können bestätigen, dass das andere Netzteil installiert ist und in Betrieb ist.
+
+
+.Über diese Aufgabe
+Die Abbildung zeigt die beiden Netzteile des SG100, auf die von der Rückseite des Geräts zugegriffen werden kann.
+
+image::../media/sg1000_power_supplies.png[Rückseite des SG100 mit zwei Netzteilen]
+
+
+NOTE: Die Netzteile für den SG1000 sind identisch.
+
+.Schritte
+. Ziehen Sie das Netzkabel vom Netzteil ab.
+. Heben Sie den Nockengriff an.
++
+image::../media/sg6000_cn_lift_cam_handle_psu.gif[Anheben des Nockengriffs zum Entfernen des SG1000-Netzteils]
+
+. Drücken Sie auf den blauen Riegel, und ziehen Sie das Netzteil heraus.
++
+image::../media/sg6000_cn_remove_power_supply.gif[Entfernen eines SG1000-Netzteils]
+
+. Schieben Sie das Ersatznetzteil in das Gehäuse.
++
+Stellen Sie sicher, dass sich der blaue Riegel auf der rechten Seite befindet, wenn Sie das Gerät einschieben.
+
++
+image::../media/sg6000_cn_insert_power_supply.gif[Stromversorgung in SG1000 schieben]
+
+. Drücken Sie den Nockengriff nach unten, um die Stromversorgung zu sichern.
+. Schließen Sie das Netzkabel an das Netzteil an, und stellen Sie sicher, dass die grüne LED leuchtet.
+

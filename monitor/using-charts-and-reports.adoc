@@ -1,0 +1,14 @@
+---
+permalink: monitor/using-charts-and-reports.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Mithilfe von Diagrammen und Berichten lässt sich der Zustand des StorageGRID Systems überwachen und Probleme beheben. Die im Grid Manager verfügbaren Diagrammtypen und Berichte umfassen Tortendiagramme \ (nur auf dem Dashboard\), Diagramme und Textberichte.' 
+---
+= Verwenden von Diagrammen und Berichten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe von Diagrammen und Berichten lässt sich der Zustand des StorageGRID Systems überwachen und Probleme beheben. Die im Grid Manager verfügbaren Diagrammtypen und Berichte umfassen Tortendiagramme (nur auf dem Dashboard), Diagramme und Textberichte.

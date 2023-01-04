@@ -1,0 +1,109 @@
+---
+permalink: admin/managing-local-users.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Verwalten von lokalen Benutzern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können lokale Benutzer erstellen und lokalen Admin-Gruppen zuweisen, um zu bestimmen, auf welche Grid Manager-Funktionen diese Benutzer zugreifen können.
+
+Der Grid Manager enthält einen vordefinierten lokalen Benutzer mit dem Namen „`root`“. Obwohl Sie lokale Benutzer hinzufügen und entfernen können, können Sie den Root-Benutzer nicht entfernen.
+
+
+NOTE: Wenn Single Sign-On (SSO) aktiviert ist, können sich lokale Benutzer nicht bei StorageGRID anmelden.
+
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+
+
+== Erstellen eines lokalen Benutzers
+
+Wenn Sie lokale Administratorgruppen erstellt haben, können Sie einen oder mehrere lokale Benutzer erstellen und jeden Benutzer einer oder mehreren Gruppen zuweisen. Die Berechtigungen der Gruppe steuern, auf welche Grid Manager den Benutzer zugreifen kann.
+
+.Über diese Aufgabe
+Sie können nur lokale Benutzer erstellen und diese Benutzer nur lokalen Admin-Gruppen zuweisen. Verbundene Benutzer und Gruppen werden über die externe Identitätsquelle verwaltet.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Admin-Benutzer*.
+. Klicken Sie Auf *Erstellen*.
+. Geben Sie den Anzeigenamen, den eindeutigen Namen und das Kennwort des Benutzers ein.
+. Weisen Sie den Benutzer einer oder mehreren Gruppen zu, die die Zugriffsberechtigungen regeln.
++
+Die Liste der Gruppennamen wird aus der Tabelle Gruppen generiert.
+
+. Klicken Sie Auf *Speichern*.
+
+
+.Verwandte Informationen
+link:managing-admin-groups.html["Verwalten von Admin-Gruppen"]
+
+
+
+== Ändern des Kontos eines lokalen Benutzers
+
+Sie können das Konto eines lokalen Administratorbenutzers ändern, um den Anzeigenamen oder die Gruppenmitgliedschaft des Benutzers zu aktualisieren. Sie können auch vorübergehend verhindern, dass ein Benutzer auf das System zugreift.
+
+.Über diese Aufgabe
+Sie können nur lokale Benutzer bearbeiten. Verbundene Benutzerdetails werden automatisch mit der externen Identitätsquelle synchronisiert.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Admin-Benutzer*.
+. Wählen Sie den Benutzer aus, den Sie bearbeiten möchten.
++
+Wenn Ihr System mehr als 20 Elemente enthält, können Sie festlegen, wie viele Zeilen auf jeder Seite gleichzeitig angezeigt werden. Sie können dann die Suchfunktion Ihres Browsers verwenden, um nach einem bestimmten Element in den aktuell angezeigten Zeilen zu suchen.
+
+. Klicken Sie Auf *Bearbeiten*.
+. Ändern Sie optional den Namen oder die Gruppenmitgliedschaft.
+. Um den Benutzer vorübergehend nicht auf das System zugreifen zu können, aktivieren Sie *Zugriff verweigern*.
+. Klicken Sie Auf *Speichern*.
++
+Die neuen Einstellungen werden angewendet, wenn sich der Benutzer beim nächsten Mal abmeldet und sich dann wieder beim Grid Manager anmeldet.
+
+
+
+
+
+== Löschen eines lokalen Benutzerkontos
+
+Sie können Konten für lokale Benutzer löschen, die keinen Zugriff mehr auf den Grid Manager benötigen.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Admin-Benutzer*.
+. Wählen Sie den lokalen Benutzer aus, den Sie löschen möchten.
++
+
+NOTE: Der vordefinierte lokale Root-Benutzer kann nicht gelöscht werden.
+
++
+Wenn Ihr System mehr als 20 Elemente enthält, können Sie festlegen, wie viele Zeilen auf jeder Seite gleichzeitig angezeigt werden. Sie können dann die Suchfunktion Ihres Browsers verwenden, um nach einem bestimmten Element in den aktuell angezeigten Zeilen zu suchen.
+
+. Klicken Sie Auf *Entfernen*.
+. Klicken Sie auf *OK*.
+
+
+
+
+== Ändern des Kennworts eines lokalen Benutzers
+
+Lokale Benutzer können ihre eigenen Passwörter mit der Option *Passwort ändern* im Banner Grid Manager ändern. Darüber hinaus können Benutzer, die Zugriff auf die Seite Admin-Benutzer haben, Passwörter für andere lokale Benutzer ändern.
+
+.Über diese Aufgabe
+Sie können Passwörter nur für lokale Benutzer ändern. Verbundene Benutzer müssen ihre eigenen Passwörter in der externen Identitätsquelle ändern.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Admin-Benutzer*.
+. Wählen Sie auf der Seite Benutzer den Benutzer aus.
++
+Wenn Ihr System mehr als 20 Elemente enthält, können Sie festlegen, wie viele Zeilen auf jeder Seite gleichzeitig angezeigt werden. Sie können dann die Suchfunktion Ihres Browsers verwenden, um nach einem bestimmten Element in den aktuell angezeigten Zeilen zu suchen.
+
+. Klicken Sie Auf *Passwort Ändern*.
+. Geben Sie das Passwort ein und bestätigen Sie es, und klicken Sie auf *Speichern*.
+

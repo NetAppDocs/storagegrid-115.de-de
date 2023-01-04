@@ -1,0 +1,51 @@
+---
+permalink: primer/configuring-system-settings.html 
+sidebar: sidebar 
+keywords: system settings, grid manager, configure, configuration, display options, grid options, key management server, S3 object lock, storage options 
+summary: Sie können verschiedene Systemeinstellungen über den Grid Manager konfigurieren, um den Betrieb Ihres StorageGRID Systems zu optimieren. 
+---
+= Systemeinstellungen werden konfiguriert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können verschiedene Systemeinstellungen über den Grid Manager konfigurieren, um den Betrieb Ihres StorageGRID Systems zu optimieren.
+
+
+
+== Anzeigeoptionen
+
+Mit den Anzeigeoptionen können Sie den Zeitraum für das Timeout für Benutzersitzungen festlegen und E-Mail-Benachrichtigungen für ältere Alarme und AutoSupport-Meldungen mit Ereignisauslösung unterdrücken.
+
+
+
+== Grid-Optionen
+
+Mit den Grid-Optionen können Sie die Einstellungen für alle Objekte konfigurieren, die in Ihrem StorageGRID-System gespeichert sind, einschließlich gespeicherter Objektkomprimierung und gespeicherter Objektverschlüsselung. Und gespeichertes Objekt-Hashing.
+
+Mit diesen Optionen können Sie auch globale Einstellungen für S3- und Swift-Client-Vorgänge festlegen.
+
+
+
+== Für Schlüsselmanagement-Server
+
+Ein oder mehrere externe Verschlüsselungsmanagement-Server (KMS) lassen sich konfigurieren, um StorageGRID Services und Storage Appliances Verschlüsselungen bereitzustellen. Jeder KMS- oder KMS-Cluster verwendet das KMIP (Key Management Interoperability Protocol), um einen Verschlüsselungsschlüssel für die Appliance-Nodes am zugehörigen StorageGRID-Standort bereitzustellen. Mithilfe von Verschlüsselungsmanagement-Servern können Sie StorageGRID-Daten schützen, selbst wenn eine Appliance aus dem Datacenter entfernt wird. Nachdem die Appliance-Volumes verschlüsselt sind, können Sie erst auf sämtliche Daten auf der Appliance zugreifen, wenn der Node mit dem KMS kommunizieren kann.
+
+
+NOTE: Um die Verschlüsselungsschlüsselverwaltung zu verwenden, müssen Sie während der Installation die Einstellung *Node Encryption* für jedes Gerät aktivieren, bevor das Gerät zum Grid hinzugefügt wird.
+
+
+
+== S3-Objektsperre
+
+Die Funktion StorageGRID S3 Object Lock ist eine Objektschutzlösung, die der S3 Object Lock in Amazon Simple Storage Service (Amazon S3) entspricht. Sie können die globale S3-Objektsperre für ein StorageGRID-System aktivieren, damit S3-Mandantenkonten Buckets erstellen können, wobei S3-Objektsperre aktiviert ist. Der Mandant kann dann mithilfe einer S3-Client-Applikation optional Aufbewahrungseinstellungen (Aufbewahrung bis Datum, gesetzliche Aufbewahrungspflichten oder beides) für die Objekte in diesen Buckets festlegen.
+
+image::../media/s3_object_lock_architecture.png[S3 Object Lock-Architektur]
+
+
+
+== Storage-Optionen
+
+Mithilfe von Storage-Optionen können Sie die Objektsegmentierung steuern und Storage-Wasserzeichen definieren, um den nutzbaren Storage-Speicherplatz eines Storage Node zu managen.

@@ -1,0 +1,30 @@
+---
+permalink: ilm/how-s3-versioned-objects-are-deleted.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn die Versionierung für einen S3-Bucket aktiviert ist, befolgt StorageGRID das Verhalten von Amazon S3, wenn es auf Löschanfragen reagiert, unabhängig davon, ob diese Anfragen von einem S3-Client, dem Ablauf eines S3-Bucket-Lebenszyklus oder den Anforderungen der ILM-Richtlinie stammen. 
+---
+= Löschen von S3-versionierten Objekten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn die Versionierung für einen S3-Bucket aktiviert ist, befolgt StorageGRID das Verhalten von Amazon S3, wenn es auf Löschanfragen reagiert, unabhängig davon, ob diese Anfragen von einem S3-Client, dem Ablauf eines S3-Bucket-Lebenszyklus oder den Anforderungen der ILM-Richtlinie stammen.
+
+Wenn Objekte versioniert sind, löschen Anforderungen zum Löschen von Objekten nicht die aktuelle Version des Objekts und geben keinen freien Speicherplatz frei. Stattdessen erstellt eine Anforderung zum Löschen eines Objekts einfach eine Löschmarkierung als aktuelle Version des Objekts, wodurch die vorherige Version des Objekts „`non-current.`“
+
+Auch wenn das Objekt nicht entfernt wurde, verhält sich StorageGRID so, als ob die aktuelle Version des Objekts nicht mehr verfügbar ist. Anfragen an dieses Objekt geben 404 nicht gefunden zurück. Da jedoch nicht aktuelle Objektdaten nicht entfernt wurden, können Anforderungen, die eine nicht aktuelle Version des Objekts angeben, erfolgreich ausgeführt werden.
+
+Um beim Löschen versionierter Objekte freien Speicherplatz zu erhalten, müssen Sie einen der folgenden Schritte ausführen:
+
+* *S3-Clientanforderung*: Geben Sie die Objektversionsnummer in der S3-LÖSCHOBJEKTANFORDERUNG an (`DELETE /object?versionId=ID`). Beachten Sie, dass diese Anforderung nur Objektkopien für die angegebene Version entfernt (die anderen Versionen belegen noch Speicherplatz).
+* *Bucket-Lebenszyklus*: Verwenden Sie das `NoncurrentVersionExpiration` Aktionen in der Bucket-Lifecycle-Konfiguration Wenn die angegebene Anzahl von nicht-currentDays erreicht ist, entfernt StorageGRID dauerhaft alle Kopien nicht aktueller Objektversionen. Diese Objektversionen können nicht wiederhergestellt werden.
+* *ILM*: Fügen Sie zwei ILM-Regeln zu Ihrer ILM-Richtlinie hinzu. Verwenden Sie *nicht aktuelle Zeit* als Referenzzeit in der ersten Regel, um die nicht aktuellen Versionen des Objekts zu entsprechen. Verwenden Sie *Aufnahmezeit* in der zweiten Regel, um mit der aktuellen Version zu übereinstimmen. Die *nicht aktuelle Zeit*-Regel muss in der Regel über der *Aufnahmezeit*-Regel erscheinen.
+
+
+.Verwandte Informationen
+link:../s3/index.html["S3 verwenden"]
+
+link:example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["Beispiel 4: ILM-Regeln und -Richtlinie für versionierte Objekte mit S3"]

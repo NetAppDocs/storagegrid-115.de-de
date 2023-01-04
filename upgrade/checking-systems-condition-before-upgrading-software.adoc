@@ -1,0 +1,50 @@
+---
+permalink: upgrade/checking-systems-condition-before-upgrading-software.html 
+sidebar: sidebar 
+keywords: upgrade, firewall, ports 
+summary: Vor dem Upgrade eines StorageGRID Systems müssen Sie überprüfen, ob das System bereit ist, um das Upgrade durchzuführen. Sie müssen sicherstellen, dass das System ordnungsgemäß ausgeführt wird und alle Grid-Nodes funktionsfähig sind. 
+---
+= Überprüfen Sie den Zustand des Systems, bevor Sie die Software aktualisieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vor dem Upgrade eines StorageGRID Systems müssen Sie überprüfen, ob das System bereit ist, um das Upgrade durchzuführen. Sie müssen sicherstellen, dass das System ordnungsgemäß ausgeführt wird und alle Grid-Nodes funktionsfähig sind.
+
+.Schritte
+. Melden Sie sich über einen unterstützten Browser beim Grid Manager an.
+. Aktive Warnmeldungen prüfen und beheben.
++
+Informationen zu bestimmten Warnmeldungen finden Sie in den Anweisungen zum Monitoring und zur Fehlerbehebung.
+
+. Bestätigen Sie, dass keine in Konflikt stehenden Grid-Aufgaben aktiv oder ausstehend sind.
++
+.. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+.. Wählen Sie *_site_* > *_primary Admin Node_* > *CMN* > *Grid Tasks* > *Konfiguration* aus.
++
+ILME-Tasks (Information Lifecycle Management Evaluation) sind die einzigen Grid-Aufgaben, die gleichzeitig mit dem Software-Upgrade ausgeführt werden können.
+
+.. Wenn andere Grid-Aufgaben aktiv oder ausstehend sind, warten Sie, bis sie abgeschlossen sind oder lassen Sie ihre Sperre los.
++
+
+NOTE: Wenden Sie sich an den technischen Support, wenn eine Aufgabe nicht beendet ist oder ihre Sperre nicht freigegeben wird.
+
+
+
+. Lesen Sie die Liste der internen und externen Ports in der Version 11.5 der Netzwerkrichtlinien und stellen Sie sicher, dass alle erforderlichen Ports geöffnet sind, bevor Sie ein Upgrade durchführen.
++
+
+IMPORTANT: Wenn Sie benutzerdefinierte Firewall-Ports geöffnet haben, werden Sie während der Vorabprüfung des Upgrades benachrichtigt. Bevor Sie das Upgrade durchführen, müssen Sie sich an den technischen Support wenden.
+
+
+
+.Verwandte Informationen
+link:../monitor/index.html["Monitor  Fehlerbehebung"]
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+link:../maintain/index.html["Verwalten Sie  erholen"]
+
+link:../network/index.html["Netzwerkrichtlinien"]

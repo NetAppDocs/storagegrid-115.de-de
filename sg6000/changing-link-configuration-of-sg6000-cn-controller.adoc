@@ -1,0 +1,71 @@
+---
+permalink: sg6000/changing-link-configuration-of-sg6000-cn-controller.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, admin node, link configuration, link, configure, configuring, ethernet, port bond mode, port bond, network bond mode, network bond, link speed, vlan tagging, vlan tag 
+summary: Sie können die Ethernet-Link-Konfiguration des SG6000-CN Controllers ändern. Sie können den Port Bond-Modus, den Netzwerk-Bond-Modus und die Verbindungsgeschwindigkeit ändern. 
+---
+= Ändern der Verbindungskonfiguration des SG6000-CN Controllers
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Ethernet-Link-Konfiguration des SG6000-CN Controllers ändern. Sie können den Port Bond-Modus, den Netzwerk-Bond-Modus und die Verbindungsgeschwindigkeit ändern.
+
+.Was Sie benötigen
+Das Gerät wurde in den Wartungsmodus versetzt.
+
+link:placing-appliance-into-maintenance-mode.html["Versetzen einer Appliance in den Wartungsmodus"]
+
+.Über diese Aufgabe
+Zum Ändern der Ethernet-Link-Konfiguration des SG6000-CN Controllers gehören folgende Optionen:
+
+* Ändern des *Port Bond Modus* von Fixed zu Aggregate oder von Aggregat zu Fixed
+* Ändern des *Netzwerk-Bond-Modus* von Active-Backup zu LACP oder von LACP zu Active-Backup
+* Aktivieren oder Deaktivieren von VLAN-Tagging oder Ändern des Werts einer VLAN-Tag-Nummer
+* Ändern der Verbindungsgeschwindigkeit.
+
+
+.Schritte
+. Wählen Sie im Installationsprogramm der StorageGRID-Appliance die Option *Netzwerke konfigurieren* > *Link-Konfiguration* aus.
++
+image::../media/link_configuration_option.gif[Verbindungskonfiguration]
+
+
+
+[[link_config_changes]]
+. Nehmen Sie die gewünschten Änderungen an der Verbindungskonfiguration vor.
++
+Weitere Informationen zu den Optionen finden Sie unter link:configuring-network-links-sg6000.html["Konfigurieren von Netzwerkverbindungen (SG6000)"].
+
+. Wenn Sie mit Ihrer Auswahl zufrieden sind, klicken Sie auf *Speichern*.
++
+
+NOTE: Wenn Sie Änderungen am Netzwerk oder an der Verbindung vorgenommen haben, über die Sie verbunden sind, können Sie die Verbindung verlieren. Wenn Sie nicht innerhalb einer Minute eine erneute Verbindung hergestellt haben, geben Sie die URL für das Installationsprogramm von StorageGRID-Geräten erneut ein. Verwenden Sie dazu eine der anderen IP-Adressen, die der Appliance zugewiesen sind: +
+`*https://_Appliance_Controller_IP_:8443*`
+
++
+Wenn Sie Änderungen an den VLAN-Einstellungen vorgenommen haben, hat sich das Subnetz für die Appliance möglicherweise geändert. Wenn Sie die IP-Adressen für die Appliance ändern müssen, befolgen Sie die Anweisungen zum Konfigurieren von IP-Adressen.
+
++
+link:configuring-storagegrid-ip-addresses-sg6000.html["StorageGRID-IP-Adressen werden konfiguriert"]
+
+. Wählen Sie im Menü die Option *Netzwerk konfigurieren* > *Ping-Test* aus.
+. Verwenden Sie das Ping-Test-Tool, um die Verbindung zu IP-Adressen in allen Netzwerken zu überprüfen, die möglicherweise von den in vorgenommenen Änderungen der Verbindungskonfiguration betroffen sind <<link_config_changes,Änderungen der Linkkonfiguration>> Schritt:
++
+Zusätzlich zu allen anderen Tests, die Sie durchführen möchten, bestätigen Sie, dass Sie die Grid-Netzwerk-IP-Adresse des primären Admin-Knotens und die Grid-Netzwerk-IP-Adresse von mindestens einem anderen Speicherknoten pingen können. Falls erforderlich, kehren Sie zum zurück <<link_config_changes,Änderungen der Linkkonfiguration>> Führen Sie Schritte aus, und beheben Sie alle Probleme mit der Link-Konfiguration.
+
+. Wenn Sie zufrieden sind, dass die Änderungen an der Link-Konfiguration funktionieren, booten Sie den Node neu. Wählen Sie im Installationsprogramm der StorageGRID-Appliance die Option *Erweitert* > *Controller neu starten* aus, und wählen Sie dann eine der folgenden Optionen aus:
++
+** Wählen Sie *Neustart in StorageGRID* aus, um den Controller neu zu starten, wobei der Knoten wieder in das Raster integriert wird. Wählen Sie diese Option, wenn Sie im Wartungsmodus ausgeführt werden und den Node in den normalen Betrieb zurückkehren möchten.
+** Wählen Sie *Neustart im Wartungsmodus* aus, um den Controller neu zu starten, wobei der Knoten noch im Wartungsmodus bleibt. Wählen Sie diese Option aus, wenn weitere Wartungsmaßnahmen erforderlich sind, die Sie auf dem Node durchführen müssen, bevor Sie das Raster neu beitreten.image:../media/reboot_controller_from_maintenance_mode.png["Booten Sie den Controller im Wartungsmodus neu"]
++
+Die Appliance kann bis zu 20 Minuten dauern, bis sie neu gestartet und wieder in das Grid eingesetzt wird. Um zu überprüfen, ob das Neubooten abgeschlossen ist und dass der Node wieder dem Grid beigetreten ist, gehen Sie zurück zum Grid Manager. Auf der Registerkarte *Nodes* sollte ein normaler Status angezeigt werden image:../media/icon_alert_green_checkmark.png["Grünes Häkchen für Symbolwarnung"] Für den Appliance-Node gibt an, dass keine Meldungen aktiv sind und der Node mit dem Grid verbunden ist.
+
++
+image::../media/node_rejoin_grid_confirmation.png[Das Raster des Appliance-Node wurde neu verbunden]
+
+
+
+

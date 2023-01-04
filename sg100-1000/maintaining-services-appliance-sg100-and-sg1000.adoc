@@ -1,0 +1,28 @@
+---
+permalink: sg100-1000/maintaining-services-appliance-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, maintain, maintaining, hardware, procedures, tasks 
+summary: Möglicherweise müssen Sie Wartungsarbeiten am Gerät durchführen. Bei den Verfahren in diesem Abschnitt wird davon ausgegangen, dass die Appliance bereits als Gateway-Node oder Admin-Node in einem StorageGRID-System bereitgestellt wurde. 
+---
+= Warten des Geräts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie Wartungsarbeiten am Gerät durchführen. Bei den Verfahren in diesem Abschnitt wird davon ausgegangen, dass die Appliance bereits als Gateway-Node oder Admin-Node in einem StorageGRID-System bereitgestellt wurde.
+
+.Schritte
+* link:placing-appliance-into-maintenance-mode.html["Versetzen einer Appliance in den Wartungsmodus"]
+* link:turning-controller-identify-led-on-and-off.html["Durch ein- und Ausschalten des Controllers wird die LED angezeigt"]
+* link:locating-controller-in-data-center.html["Lokalisierung des Controllers in einem Rechenzentrum"]
+* link:replacing-services-appliance.html["Ersetzen der Service Appliance"]
+* link:replacing-power-supply-in-services-appliance.html["Ersetzen eines Netzteils in der Serviceanwendung"]
+* link:replacing-fan-in-services-appliance.html["Austausch eines Lüfters in der Service-Appliance"]
+* link:replacing-drive-in-services-appliance.html["Ersetzen eines Laufwerks in der Services-Appliance"]
+* link:changing-link-configuration-of-services-appliance.html["Ändern der Link-Konfiguration der Services Appliance"]
+* link:changing-mtu-setting.html["Ändern der MTU-Einstellung"]
+* link:checking-dns-server-configuration.html["Überprüfen der DNS-Serverkonfiguration"]
+* link:monitoring-node-encryption-in-maintenance-mode.html["Monitoring der Node-Verschlüsselung im Wartungsmodus"]
+

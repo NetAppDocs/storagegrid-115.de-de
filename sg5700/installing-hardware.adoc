@@ -1,0 +1,22 @@
+---
+permalink: sg5700/installing-hardware.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, hardware, install, installing 
+summary: Die Hardware-Installation umfasst die Installation des Geräts in einem Schrank oder Rack, den Anschluss der Kabel und den Strom-Einsatz. 
+---
+= Installieren der Hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Hardware-Installation umfasst die Installation des Geräts in einem Schrank oder Rack, den Anschluss der Kabel und den Strom-Einsatz.
+
+.Schritte
+* link:registering-hardware.html["Registrieren der Hardware"]
+* link:installing-appliance-in-cabinet-or-rack-sg5700.html["Installieren der Appliance in einem Rack oder Rack (SG5700)"]
+* link:cabling-appliance-sg5700.html["Verkabelung der Appliance (SG5700)"]
+* link:connecting-power-cords-and-applying-power-sg5700.html["Anschließen der Stromkabel und Anschließen der Stromversorgung (SG5700)"]
+* link:viewing-sg5700-boot-up-status-codes.html["Anzeigen der SG5700-Boot-Statuscodes"]
+

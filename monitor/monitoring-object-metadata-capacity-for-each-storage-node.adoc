@@ -1,0 +1,92 @@
+---
+permalink: monitor/monitoring-object-metadata-capacity-for-each-storage-node.html 
+sidebar: sidebar 
+keywords: object, metadata, monitoring, monitoring object metadata, metadata, metadata capacity 
+summary: 'Sie müssen die Metadatennutzung für jeden Storage-Node überwachen, um sicherzustellen, dass ausreichend Speicherplatz für wichtige Datenbankvorgänge verfügbar bleibt. Sie müssen an jedem Standort neue Storage-Nodes hinzufügen, bevor die Objektmetadaten 100 % des zulässigen Metadaten-Speicherplatzes übersteigen.' 
+---
+= Monitoring der Objekt-Metadaten-Kapazität für jeden Storage Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Metadatennutzung für jeden Storage-Node überwachen, um sicherzustellen, dass ausreichend Speicherplatz für wichtige Datenbankvorgänge verfügbar bleibt. Sie müssen an jedem Standort neue Storage-Nodes hinzufügen, bevor die Objektmetadaten 100 % des zulässigen Metadaten-Speicherplatzes übersteigen.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+
+
+.Über diese Aufgabe
+StorageGRID behält drei Kopien von Objektmetadaten an jedem Standort vor, um Redundanz zu gewährleisten und Objekt-Metadaten vor Verlust zu schützen. Die drei Kopien werden gleichmäßig über alle Storage-Nodes an jedem Standort verteilt. Dabei wird der für Metadaten reservierte Speicherplatz auf dem Storage Volume 0 jedes Storage-Nodes verwendet.
+
+In einigen Fällen wird die Kapazität der Objektmetadaten des Grid möglicherweise schneller belegt als die Kapazität des Objekt-Storage. Wenn Sie zum Beispiel normalerweise eine große Anzahl von kleinen Objekten aufnehmen, müssen Sie möglicherweise Storage-Nodes hinzufügen, um die Metadaten-Kapazität zu erhöhen, obwohl weiterhin ausreichend Objekt-Storage-Kapazität vorhanden ist.
+
+Zu den Faktoren, die die Metadatennutzung steigern können, gehören die Größe und Menge der Metadaten und -Tags der Benutzer, die Gesamtzahl der Teile in einem mehrteiligen Upload und die Häufigkeit von Änderungen an den ILM-Speicherorten.
+
+.Schritte
+. Wählen Sie *Nodes* > *_Storage Node_* > *Storage* Aus.
+. Bewegen Sie den Mauszeiger über das Diagramm „verwendete Objekte – Metadaten“, um die Werte für eine bestimmte Zeit anzuzeigen.
++
+image::../media/storage_used_object_metadata.png[Verwendeter Storage: Objekt-Metadaten]
+
++
+|===
+| Wert | Beschreibung | Prometheus metrisch 
+
+
+ a| 
+Nutzung (%)
+ a| 
+Der Prozentsatz des zulässigen Metadaten-Speicherplatzes, der auf diesem Storage-Node verwendet wurde.
+ a| 
+`storagegrid_storage_utilization_metadata_bytes/ storagegrid_storage_utilization_metadata_allowed_bytes`
+
+
+
+ a| 
+Verwendet
+ a| 
+Die Bytes des zulässigen Metadaten-Speicherplatzes, der auf diesem Speicherknoten verwendet wurde.
+ a| 
+`storagegrid_storage_utilization_metadata_bytes`
+
+
+
+ a| 
+Zulässig
+ a| 
+Der zulässige Speicherplatz für Objektmetadaten auf diesem Storage-Node. Erfahren Sie, wie dieser Wert für die einzelnen Speicherknoten bestimmt ist, und lesen Sie die Anweisungen zur Verwaltung von StorageGRID.
+ a| 
+`storagegrid_storage_utilization_metadata_allowed_bytes`
+
+
+
+ a| 
+Ist reserviert
+ a| 
+Der tatsächliche Speicherplatz, der für Metadaten auf diesem Speicherknoten reserviert ist. Beinhaltet den zulässigen Speicherplatz und den erforderlichen Speicherplatz für wichtige Metadaten-Vorgänge. Informationen dazu, wie dieser Wert für die einzelnen Storage-Nodes berechnet wird, finden Sie in den Anweisungen für die Administration von StorageGRID.
+ a| 
+`storagegrid_storage_utilization_metadata_reserved_bytes`
+
+|===
++
+
+NOTE: Die Gesamtwerte für einen Standort oder das Grid enthalten keine Nodes, die Kennzahlen für mindestens fünf Minuten nicht gemeldet haben, z. B. Offline-Nodes.
+
+. Wenn der * verwendete (%)*-Wert 70% oder höher ist, erweitern Sie Ihr StorageGRID-System, indem Sie jedem Standort Storage-Knoten hinzufügen.
++
+
+IMPORTANT: Der Alarm * Low Metadaten Storage* wird ausgelöst, wenn der Wert *used (%)* bestimmte Schwellenwerte erreicht. Unerwünschte Ergebnisse können auftreten, wenn Objekt-Metadaten mehr als 100 % des zulässigen Speicherplatzes beanspruchen.
+
++
+Wenn Sie die neuen Nodes hinzufügen, gleicht das System die Objektmetadaten automatisch auf alle Storage-Nodes am Standort aus. Anweisungen zum erweitern eines StorageGRID-Systems finden Sie in den Anweisungen.
+
+
+
+.Verwandte Informationen
+link:../troubleshoot/troubleshooting-storagegrid-system.html["Fehlerbehebung für Storage-Warnmeldungen bei niedrigen Metadaten"]
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+link:../expand/index.html["Erweitern Sie Ihr Raster"]

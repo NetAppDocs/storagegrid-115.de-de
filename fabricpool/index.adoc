@@ -1,0 +1,21 @@
+---
+permalink: fabricpool/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Konfigurieren Sie StorageGRID für FabricPool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erfahren Sie, wie Sie StorageGRID als NetApp FabricPool Cloud Tier konfigurieren.
+
+* link:configuring-storagegrid-for-fabricpool.html["StorageGRID für FabricPool wird konfiguriert"]
+* link:information-needed-to-attach-storagegrid-as-cloud-tier.html["Erforderliche Informationen zum Hinzufügen von StorageGRID als Cloud-Tier"]
+* link:using-storagegrid-ilm-with-fabricpool-data.html["Informationslebenszyklus-Management von StorageGRID bei FabricPool-Daten ein"]
+* link:creating-traffic-classification-policy-for-fabricpool.html["Erstellen einer Traffic-Klassifizierungsrichtlinie für FabricPool"]
+* link:other-best-practices-for-storagegrid-and-fabricpool.html["Weitere Best Practices für StorageGRID und FabricPool"]
+

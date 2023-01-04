@@ -1,0 +1,18 @@
+---
+permalink: vmware/automating-installation.html 
+sidebar: sidebar 
+keywords:  
+summary: Die Implementierung von VMware Virtual Grid-Nodes, die Konfiguration von Grid-Nodes und die Konfiguration von StorageGRID Appliances können automatisiert werden. 
+---
+= Automatisierung der Installation
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Implementierung von VMware Virtual Grid-Nodes, die Konfiguration von Grid-Nodes und die Konfiguration von StorageGRID Appliances können automatisiert werden.
+
+* link:automating-grid-node-deployment-in-vmware-vsphere.html["Automatisierung der Grid Node-Implementierung in VMware vSphere"]
+* link:automating-configuration-of-storagegrid.html["Automatisierung der Konfiguration von StorageGRID"]
+

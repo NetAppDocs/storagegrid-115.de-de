@@ -1,0 +1,77 @@
+---
+permalink: vmware/running-bash-script.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können das Bash-Skript deploy-vsphere-ovftool.sh und die deploy-vsphere-ovftool.ini-Konfigurationsdatei verwenden, die Sie geändert haben, um die Implementierung von StorageGRID Grid-Nodes in VMware vSphere zu automatisieren. 
+---
+= Das Bash-Skript wird ausgeführt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `deploy-vsphere-ovftool.sh` Bash-Skript und die deploy-vsphere-ovftool.ini-Konfigurationsdatei, die Sie geändert haben, um die Implementierung von StorageGRID-Grid-Nodes in VMware vSphere zu automatisieren.
+
+.Was Sie benötigen
+* Sie haben eine deploy-vsphere-ovftool.ini-Konfigurationsdatei für Ihre Umgebung erstellt.
+
+
+Sie können die mit dem Bash-Skript verfügbare Hilfe verwenden, indem Sie die Hilfebefehle eingeben (`-h/--help`). Beispiel:
+
+[listing]
+----
+./deploy-vsphere-ovftool.sh -h
+----
+Oder
+
+[listing]
+----
+./deploy-vsphere-ovftool.sh --help
+----
+.Schritte
+. Melden Sie sich am Linux-Rechner an, den Sie verwenden, um das Bash-Skript auszuführen.
+. Wechseln Sie in das Verzeichnis, in dem Sie das Installationsarchiv extrahiert haben.
++
+Beispiel:
+
++
+[listing]
+----
+cd StorageGRID-Webscale-version/vsphere
+----
+. Um alle Grid-Nodes bereitzustellen, führen Sie das Bash-Skript mit den entsprechenden Optionen für Ihre Umgebung aus.
++
+Beispiel:
+
++
+[listing]
+----
+./deploy-vsphere-ovftool.sh --username=user --password=pwd ./deploy-vsphere-ovftool.ini
+----
+. Wenn ein Grid-Knoten aufgrund eines Fehlers nicht bereitgestellt werden konnte, beheben Sie den Fehler und führen Sie das Bash-Skript nur für diesen Knoten erneut aus.
++
+Beispiel:
+
++
+[listing]
+----
+./deploy-vsphere-ovftool.sh --username=user --password=pwd --single-node="DC1-S3" ./deploy-vsphere-ovftool.ini
+----
+
+
+Die Bereitstellung ist abgeschlossen, wenn der Status für jeden Knoten „`bestanden`“ lautet.
+
+[listing]
+----
+Deployment Summary
++-----------------------------+----------+----------------------+
+| node                        | attempts | status               |
++-----------------------------+----------+----------------------+
+| DC1-ADM1                    |        1 | Passed               |
+| DC1-G1                      |        1 | Passed               |
+| DC1-S1                      |        1 | Passed               |
+| DC1-S2                      |        1 | Passed               |
+| DC1-S3                      |        1 | Passed               |
++-----------------------------+----------+----------------------+
+----

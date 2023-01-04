@@ -1,0 +1,114 @@
+---
+permalink: admin/creating-high-availability-group.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Sie können eine oder mehrere hochverfügbare \(HA\)-Gruppen erstellen, um hochverfügbare Zugriffe auf die Services auf Admin-Nodes oder Gateway-Nodes zu ermöglichen.' 
+---
+= Erstellen einer Hochverfügbarkeitsgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine oder mehrere Hochverfügbarkeitsgruppen (HA-Gruppen) erstellen, die für hochverfügbaren Zugriff auf die Services in Admin-Nodes oder Gateway-Nodes sorgen.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über die Berechtigung Root Access verfügen.
+
+
+.Über diese Aufgabe
+Eine Schnittstelle muss die folgenden Bedingungen erfüllen, die in einer HA-Gruppe enthalten sein sollen:
+
+* Die Schnittstelle muss für einen Gateway-Node oder einen Admin-Node verwendet werden.
+* Die Schnittstelle muss zum Grid Network (eth0) oder dem Client Network (eth2) gehören.
+* Die Schnittstelle muss mit fester oder statischer IP-Adresse konfiguriert werden, nicht mit DHCP.
+
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Hochverfügbarkeitsgruppen*.
++
+Die Seite „Hochverfügbarkeitsgruppen“ wird angezeigt.
+
++
+image::../media/ha_groups_page_with_no_groups.png[DIE SEITE „HA-Gruppen“ ohne Gruppen]
+
+. Klicken Sie Auf *Erstellen*.
++
+Das Dialogfeld Gruppe für hohe Verfügbarkeit erstellen wird angezeigt.
+
+. Geben Sie einen Namen und, falls gewünscht, eine Beschreibung für die HA-Gruppe ein.
+. Klicken Sie Auf *Schnittstellen Auswählen*.
++
+Das Dialogfeld Schnittstellen zu Hochverfügbarkeitsgruppe hinzufügen wird angezeigt. In der Tabelle werden die infrage kommenden Nodes, Schnittstellen und IPv4-Subnetze aufgeführt.
+
++
+image::../media/ha_group_add_interfaces.png[HA Groups Add Interfaces]
+
++
+Eine Schnittstelle wird in der Liste nicht angezeigt, wenn ihre IP-Adresse durch DHCP zugewiesen wird.
+
+. Aktivieren Sie in der Spalte *zur HA-Gruppe* das Kontrollkästchen für die Schnittstelle, die zur HA-Gruppe hinzugefügt werden soll.
++
+Beachten Sie die folgenden Richtlinien für die Auswahl von Schnittstellen:
+
++
+** Sie müssen mindestens eine Schnittstelle auswählen.
+** Wenn Sie mehrere Schnittstellen auswählen, müssen sich alle Schnittstellen entweder im Grid Network (eth0) oder im Client Network (eth2) befinden.
+** Alle Schnittstellen müssen sich im gleichen Subnetz oder in Subnetzen mit einem gemeinsamen Präfix befinden.
++
+IP-Adressen werden auf das kleinste Subnetz beschränkt (das mit dem größten Präfix).
+
+** Wenn Sie Schnittstellen für verschiedene Node-Typen auswählen und ein Failover auftritt, sind nur die Dienste verfügbar, die für die ausgewählten Knoten gemeinsam sind.
++
+*** Wählen Sie mindestens zwei Admin-Nodes aus, um den HA-Schutz des Grid Manager oder des Mandanten-Manager zu erhalten.
+*** Wählen Sie zwei oder mehr Admin-Nodes, Gateway-Nodes oder beide aus, um den HA-Schutz des Load Balancer Service zu gewährleisten.
+*** Wählen Sie mindestens zwei Gateway-Nodes aus, um den HA-Schutz des CLB-Service zu gewährleisten.
++
+
+NOTE: Der CLB-Service ist veraltet.
+
+
+
+
+
++
+image::../media/ha_groups_different_node_types.png[HA-Gruppen unterschiedliche Node-Typen]
+
+. Klicken Sie Auf *Anwenden*.
++
+Die ausgewählten Schnittstellen werden auf der Seite Hochverfügbarkeitgruppe erstellen im Abschnitt Schnittstellen aufgeführt. Standardmäßig wird die erste Schnittstelle in der Liste als bevorzugter Master ausgewählt.
+
++
+image::../media/ha_group_select_virtual_ips.png[HA-Gruppen virtuelle IPs auswählen]
+
+. Wenn Sie eine andere Schnittstelle als bevorzugten Master auswählen möchten, wählen Sie diese Schnittstelle in der Spalte *bevorzugter Master* aus.
++
+Der bevorzugte Master ist die aktive Schnittstelle, wenn kein Fehler auftritt, der dazu führt, dass die VIP-Adressen einer Backup-Schnittstelle neu zugewiesen werden.
+
++
+
+NOTE: Wenn die HA-Gruppe Zugriff auf den Grid Manager bietet, müssen Sie eine Schnittstelle am primären Admin-Node auswählen, um der bevorzugte Master-Typ zu sein. Einige Wartungsvorgänge können nur vom primären Admin-Node ausgeführt werden.
+
+. Geben Sie im Abschnitt virtuelle IP-Adressen der Seite eine bis 10 virtuelle IP-Adressen für die HA-Gruppe ein. Klicken Sie auf das Pluszeichen (image:../media/icon_plus_sign_black_on_white_old.png["Plus-Zeichen"]) Um mehrere IP-Adressen hinzuzufügen.
++
+Sie müssen mindestens eine IPv4-Adresse angeben. Optional können Sie weitere IPv4- und IPv6-Adressen angeben.
+
++
+IPv4-Adressen müssen sich im IPv4-Subnetz befinden, das von allen Mitgliedschnittstellen gemeinsam genutzt wird.
+
+. Klicken Sie Auf *Speichern*.
++
+Die HA-Gruppe wird erstellt. Sie können jetzt die konfigurierten virtuellen IP-Adressen verwenden.
+
+
+
+.Verwandte Informationen
+link:../rhel/index.html["Installieren Sie Red hat Enterprise Linux oder CentOS"]
+
+link:../vmware/index.html["VMware installieren"]
+
+link:../ubuntu/index.html["Installieren Sie Ubuntu oder Debian"]
+
+link:managing-load-balancing.html["Managen des Lastausgleichs"]

@@ -1,0 +1,36 @@
+---
+permalink: expand/overview-of-expansion-procedure.html 
+sidebar: sidebar 
+keywords: expand, expansion, overview 
+summary: 'Die grundlegenden Schritte zur Durchführung einer StorageGRID-Erweiterung variieren für die verschiedenen Erweiterungstypen: Hinzufügen von Storage-Volumes zu einem Storage-Node, Hinzufügen neuer Nodes zu einem vorhandenen Standort oder Hinzufügen eines neuen Standorts. In allen Fällen können Sie eine Erweiterung durchführen, ohne den Betrieb des aktuellen Systems zu unterbrechen.' 
+---
+= Überblick über das Expansionsverfahren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die grundlegenden Schritte zur Durchführung einer StorageGRID-Erweiterung variieren für die verschiedenen Erweiterungstypen: Hinzufügen von Storage-Volumes zu einem Storage-Node, Hinzufügen neuer Nodes zu einem vorhandenen Standort oder Hinzufügen eines neuen Standorts. In allen Fällen können Sie eine Erweiterung durchführen, ohne den Betrieb des aktuellen Systems zu unterbrechen.
+
+Der Node-Typ, den Sie zum Raster hinzufügen, oder der Grund, warum Sie Nodes hinzufügen, hat keine Auswirkungen auf das grundlegende Erweiterungsverfahren. Wie in der nachstehenden Workflow-Grafik dargestellt, variieren die Schritte beim Hinzufügen von Nodes in geringem Umfang, je nachdem, ob Sie StorageGRID Appliances oder Hosts mit VMware oder Linux hinzufügen.
+
+
+NOTE: Festplattendateien und Skripte von NetApp für neue Installationen oder Erweiterungen von StorageGRID auf OpenStack werden nicht mehr unterstützt. Weitere Informationen zum erweitern einer bestehenden Implementierung auf OpenStack finden Sie in den Schritten für Ihre Linux-Distribution.
+
+
+NOTE: „`Linux`“ bezieht sich auf eine Red hat® Enterprise Linux®-, Ubuntu®-, CentOS- oder Debian®-Bereitstellung. Mit dem NetApp Interoperabilitäts-Matrix-Tool können Sie eine Liste der unterstützten Versionen abrufen.
+
+image::../media/expansion_workflow.png[flussdiagramm mit der Übersicht über den Erweiterungsprozess]
+
+*Verwandte Informationen*
+
+https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"^]
+
+link:planning-expansion.html["StorageGRID-Erweiterung geplant"]
+
+link:preparing-for-expansion.html["Vorbereitung auf eine Erweiterung"]
+
+link:adding-storage-volumes-to-storage-nodes.html["Hinzufügen von Storage-Volumes zu Storage-Nodes"]
+
+link:adding-grid-nodes-to-existing-site-or-adding-new-site.html["Einem vorhandenen Standort Grid-Nodes hinzufügen oder einen neuen Standort hinzufügen"]

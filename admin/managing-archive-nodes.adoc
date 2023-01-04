@@ -1,0 +1,22 @@
+---
+permalink: admin/managing-archive-nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Optional kann jeder der Rechenzentren Ihres StorageGRID-Systems mit einem Archiv-Knoten bereitgestellt werden, der es Ihnen ermöglicht, eine Verbindung zu einem gezielten externen Archiv-Speichersystem, wie Tivoli Storage Manager \ (TSM\).' 
+---
+= Verwalten Von Archivierungs-Knoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Optional können die Datacenter-Standorte des StorageGRID Systems über einen Archive Node bereitgestellt werden, wodurch eine Verbindung zu einem speziell externen Archiv-Storage-System wie Tivoli Storage Manager (TSM) hergestellt werden kann.
+
+Nachdem Sie Verbindungen zum externen Ziel konfiguriert haben, können Sie den Archiv-Node so konfigurieren, dass die TSM-Performance optimiert wird, einen Archiv-Node offline schalten, wenn sich ein TSM-Server der Kapazität nähert oder nicht mehr verfügbar ist, und Einstellungen für Replikation und Abruf konfigurieren. Sie können auch benutzerdefinierte Alarme für den Knoten Archiv einstellen.
+
+* link:what-archive-node-is.html["Was ist ein Archivknoten"]
+* link:configuring-archive-node-connections-to-archival-storage.html["Konfigurieren von Archivierungs-Node-Verbindungen mit Archiv-Storage"]
+* link:setting-custom-alarms-for-archive-node.html["Einstellen benutzerdefinierter Alarme für den Knoten „Archiv“"]
+* link:integrating-tivoli-storage-manager.html["Integration Von Tivoli Storage Manager"]
+

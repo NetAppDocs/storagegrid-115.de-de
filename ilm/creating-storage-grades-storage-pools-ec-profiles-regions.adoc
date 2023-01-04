@@ -1,0 +1,21 @@
+---
+permalink: ilm/creating-storage-grades-storage-pools-ec-profiles-regions.html 
+sidebar: sidebar 
+keywords:  
+summary: Bevor Sie die ILM-Regeln für Ihr StorageGRID System erstellen können, müssen Sie Objekt-Storage-Standorte definieren, die gewünschten Kopftypen festlegen und optional S3-Bereiche konfigurieren. 
+---
+= Erstellung von Speicherklassen, Speicherpools, EC-Profilen und Regionen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie die ILM-Regeln für Ihr StorageGRID System erstellen können, müssen Sie Objekt-Storage-Standorte definieren, die gewünschten Kopftypen festlegen und optional S3-Bereiche konfigurieren.
+
+* link:creating-and-assigning-storage-grades.html["Speicherklassen werden erstellt und zugewiesen"]
+* link:configuring-storage-pools.html["Konfigurieren von Speicherpools"]
+* link:using-cloud-storage-pools.html["Verwendung Von Cloud Storage Pools"]
+* link:configuring-erasure-coding-profiles.html["Konfigurieren von Erasure Coding-Profilen"]
+* link:configuring-regions-optional-and-s3-only.html["Regionen konfigurieren (nur optional und S3)"]
+

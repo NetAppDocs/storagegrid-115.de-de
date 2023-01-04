@@ -1,0 +1,44 @@
+---
+permalink: ubuntu/configuring-host-network.html 
+sidebar: sidebar 
+keywords:  
+summary: Nach dem Abschluss der Linux-Installation auf Ihren Hosts müssen Sie möglicherweise eine zusätzliche Konfiguration durchführen, um auf jedem Host eine Reihe von Netzwerkschnittstellen vorzubereiten, die sich für die Zuordnung zu den später zu implementierenden StorageGRID Nodes eignen. 
+---
+= Konfigurieren des Hostnetzwerks
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Abschluss der Linux-Installation auf Ihren Hosts müssen Sie möglicherweise eine zusätzliche Konfiguration durchführen, um auf jedem Host eine Reihe von Netzwerkschnittstellen vorzubereiten, die sich für die Zuordnung zu den später zu implementierenden StorageGRID Nodes eignen.
+
+.Was Sie benötigen
+* Sie haben sich die StorageGRID Netzwerkrichtlinien durchgelesen.
++
+link:../network/index.html["Netzwerkrichtlinien"]
+
+* Sie haben die Informationen zu den Anforderungen für die Container-Migration von Nodes überprüft.
++
+link:node-container-migration-requirements.html["Anforderungen für die Container-Migration für Nodes"]
+
+* Wenn Sie virtuelle Hosts verwenden, haben Sie vor der Konfiguration des Hostnetzwerks die Überlegungen und Empfehlungen zum Klonen von MAC-Adressen gelesen.
++
+link:considerations-and-recommendations-for-mac-address-cloning.html["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen"]
+
+
+
+
+NOTE: Wenn Sie VMs als Hosts verwenden, sollten Sie VMXNET 3 als virtuellen Netzwerkadapter auswählen. Der VMware E1000-Netzwerkadapter hat Verbindungsprobleme bei StorageGRID-Containern mit bestimmten Linux-Distributionen verursacht.
+
+.Über diese Aufgabe
+Grid-Nodes müssen auf das Grid-Netzwerk und optional auf Admin- und Client-Netzwerke zugreifen können. Sie ermöglichen diesen Zugriff, indem Sie Zuordnungen erstellen, die die physische Schnittstelle des Hosts den virtuellen Schnittstellen für jeden Grid-Node zuordnen. Verwenden Sie bei der Erstellung von Host-Schnittstellen benutzerfreundliche Namen, um die Implementierung über alle Hosts hinweg zu vereinfachen und die Migration zu ermöglichen.
+
+Die gleiche Schnittstelle kann von dem Host und einem oder mehreren Nodes gemeinsam genutzt werden. Beispielsweise können Sie für den Hostzugriff und den Netzwerkzugriff von Node-Admin dieselbe Schnittstelle verwenden, um die Wartung von Hosts und Nodes zu vereinfachen. Obwohl dieselbe Schnittstelle zwischen dem Host und den einzelnen Nodes gemeinsam genutzt werden kann, müssen alle unterschiedliche IP-Adressen haben. IP-Adressen können nicht zwischen Nodes oder zwischen Host und einem beliebigen Node gemeinsam genutzt werden.
+
+Sie können dieselbe Host-Netzwerkschnittstelle verwenden, um die Grid-Netzwerkschnittstelle für alle StorageGRID-Knoten auf dem Host bereitzustellen. Sie können für jeden Knoten eine andere Host-Netzwerkschnittstelle verwenden oder etwas dazwischen tun. Normalerweise würden Sie jedoch nicht die gleiche Hostnetzwerkschnittstelle bereitstellen wie die Grid- und Admin-Netzwerkschnittstellen für einen einzelnen Knoten oder als Grid-Netzwerkschnittstelle für einen Knoten und die Client-Netzwerkschnittstelle für einen anderen.
+
+Sie können diese Aufgabe auf unterschiedliche Weise ausführen. Wenn es sich bei den Hosts um virtuelle Maschinen handelt und Sie einen oder zwei StorageGRID-Nodes für jeden Host implementieren, können Sie im Hypervisor einfach die richtige Anzahl an Netzwerkschnittstellen erstellen und eine 1:1-Zuordnung verwenden. Wenn Sie mehrere Nodes auf Bare-Metal-Hosts für die Produktion implementieren, können Sie die Unterstützung des Linux-Netzwerk-Stacks für VLAN und LACP nutzen, um Fehlertoleranz und Bandbreitenfreigabe zu erhalten. Die folgenden Abschnitte enthalten detaillierte Ansätze für beide Beispiele. Sie müssen kein der folgenden Beispiele verwenden: Sie können jeden Ansatz verwenden, der Ihren Anforderungen entspricht.
+
+
+NOTE: Verwenden Sie keine Bond- oder Bridge-Geräte direkt als Container-Netzwerkschnittstelle. Dies könnte den Anlauf eines Knotens verhindern, der durch ein Kernel-Problem verursacht wurde, indem MACLAN mit Bond- und Bridge-Geräten im Container-Namespace verwendet wird. Verwenden Sie stattdessen ein Gerät ohne Bindung, z. B. ein VLAN- oder ein virtuelles Ethernet-Paar (veth). Geben Sie dieses Gerät als Netzwerkschnittstelle in der Node-Konfigurationsdatei an.

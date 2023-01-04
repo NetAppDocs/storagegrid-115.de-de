@@ -1,0 +1,43 @@
+---
+permalink: admin/enabling-autosupport-on-demand.html 
+sidebar: sidebar 
+keywords:  
+summary: AutoSupport On Demand kann Ihnen bei der Lösung von Problemen helfen, an denen der technische Support aktiv arbeitet. Wenn Sie AutoSupport on Demand aktivieren, kann der technische Support anfordern, dass AutoSupport Meldungen ohne Ihr Eingreifen gesendet werden. 
+---
+= Aktivieren von AutoSupport-on-Demand
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport On Demand kann Ihnen bei der Lösung von Problemen helfen, an denen der technische Support aktiv arbeitet. Wenn Sie AutoSupport on Demand aktivieren, kann der technische Support anfordern, dass AutoSupport Meldungen ohne Ihr Eingreifen gesendet werden.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über die Berechtigung Root Access oder andere Grid-Konfiguration verfügen.
+* Sie müssen wöchentliche AutoSupport-Meldungen aktiviert haben.
+* Sie müssen das Transportprotokoll auf HTTPS einstellen.
+
+
+.Über diese Aufgabe
+Wenn Sie diese Funktion aktivieren, kann der technische Support von Ihrem StorageGRID System anfordern, dass AutoSupport Meldungen automatisch gesendet werden. Der technische Support kann auch das Abfrageintervall für AutoSupport-on-Demand-Abfragen festlegen.
+
+Der technische Support kann AutoSupport bei Bedarf nicht aktivieren oder deaktivieren.
+
+.Schritte
+. Wählen Sie *Support* > *Extras* > *AutoSupport*.
++
+Die Seite AutoSupport wird angezeigt, wobei die Registerkarte *Einstellungen* ausgewählt ist.
+
+. Aktivieren Sie das Optionsfeld HTTPS im Abschnitt *Protokolldetails* der Seite.
++
+image::../media/autosupport_on_demand.png[ASUP-on-Demand]
+
+. Aktivieren Sie das Kontrollkästchen *Wochenendfach-AutoSupport aktivieren*.
+. Aktivieren Sie das Kontrollkästchen * AutoSupport on Demand aktivieren*.
+. Wählen Sie *Speichern*.
++
+AutoSupport-on-Demand ist aktiviert, und der technische Support kann AutoSupport-on-Demand-Anfragen an StorageGRID senden.
+
+

@@ -1,0 +1,19 @@
+---
+permalink: monitor/using-grid-manager-for-monitoring.html 
+sidebar: sidebar 
+keywords:  
+summary: Der Grid Manager ist das wichtigste Tool für das Monitoring Ihres StorageGRID Systems. In diesem Abschnitt wird das Grid Manager Dashboard vorgestellt sowie ausführliche Informationen zu den Seiten Nodes bereitgestellt. 
+---
+= Verwenden des Grid Managers zur Überwachung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Grid Manager ist das wichtigste Tool für das Monitoring Ihres StorageGRID Systems. In diesem Abschnitt wird das Grid Manager Dashboard vorgestellt sowie ausführliche Informationen zu den Seiten Nodes bereitgestellt.
+
+* link:web-browser-requirements.html["Anforderungen an einen Webbrowser"]
+* link:viewing-dashboard.html["Anzeigen des Dashboards"]
+* link:viewing-nodes-page.html["Anzeigen der Seite Knoten"]
+

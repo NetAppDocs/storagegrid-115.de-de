@@ -1,0 +1,45 @@
+---
+permalink: maintain/replacing-failed-node-with-services-appliance.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, replace failed node, services appliance 
+summary: Sie können eine SG100- oder SG1000-Services-Appliance verwenden, um einen fehlgeschlagenen Gateway-Node, einen ausgefallenen nicht-primären Admin-Node oder einen ausgefallenen primären Admin-Node wiederherzustellen, der auf VMware, einem Linux-Host oder einer Services Appliance gehostet wurde. Dieses Verfahren ist ein Schritt der Wiederherstellung des Grid-Nodes. 
+---
+= Ersetzen eines fehlerhaften Knotens durch eine Services-Appliance
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine SG100- oder SG1000-Services-Appliance verwenden, um einen fehlgeschlagenen Gateway-Node, einen ausgefallenen nicht-primären Admin-Node oder einen ausgefallenen primären Admin-Node wiederherzustellen, der auf VMware, einem Linux-Host oder einer Services Appliance gehostet wurde. Dieses Verfahren ist ein Schritt der Wiederherstellung des Grid-Nodes.
+
+.Was Sie benötigen
+* Sie müssen festgestellt haben, dass eine der folgenden Situationen zutrifft:
++
+** Die virtuelle Maschine, die den Node hostet, kann nicht wiederhergestellt werden.
+** Der physische oder virtuelle Linux-Host für den Grid-Node ist ausgefallen und muss ersetzt werden.
+** Die Services-Appliance, die den Grid-Node hostet, muss ersetzt werden.
+
+
+* Sie müssen sicherstellen, dass die Installationsversion von StorageGRID Appliance auf der Services Appliance mit der Softwareversion des StorageGRID Systems übereinstimmt. Diese wird in der Hardwareinstallation und -Wartung für die Überprüfung und das Upgrade der Installationsversion von StorageGRID Appliance beschrieben.
++
+link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+
+
+
+IMPORTANT: Stellen Sie keine SG100- und SG1000-Service-Appliance am selben Standort bereit. Das kann zu einer unvorhersehbaren Performance führen.
+
+.Über diese Aufgabe
+In den folgenden Fällen können Sie eine SG100- oder SG1000-Services-Appliance verwenden, um einen fehlgeschlagenen Grid-Node wiederherzustellen:
+
+* Der ausgefallene Node wurde auf VMware oder Linux gehostet (Plattformänderung)
+* Der ausgefallene Node wurde auf einer Service Appliance gehostet (Plattformaustausch).
+
+
+.Schritte
+* link:installing-services-appliance-platform-change-only.html["Installieren einer Services Appliance (nur Plattformänderung)"]
+* link:preparing-appliance-for-reinstallation-platform-replacement-only.html["Vorbereiten eines Geräts für die Neuinstallation (nur Plattformaustausch)"]
+* link:starting-software-installation-on-services-appliance-recovery.html["Starten der Softwareinstallation auf einer Service-Appliance"]
+* link:monitoring-services-appliance-installation.html["Monitoring der Installation von Services Appliances"]
+

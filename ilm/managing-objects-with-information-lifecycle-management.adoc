@@ -1,0 +1,25 @@
+---
+permalink: ilm/managing-objects-with-information-lifecycle-management.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Sie managen die Objekte in einem StorageGRID-System durch die Konfiguration von Regeln und Richtlinien für das Information Lifecycle Management \ (ILM\). Die ILM-Regeln und Richtlinien erläutern StorageGRID, wie Kopien von Objektdaten erstellt und verteilt werden und wie diese Kopien im Laufe der Zeit gemanagt werden.' 
+---
+= Verwalten von Objekten mit Information Lifecycle Management
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie managen die Objekte in einem StorageGRID-System durch die Konfiguration von Regeln und Richtlinien für das Information Lifecycle Management (ILM). Die ILM-Regeln und Richtlinien erläutern StorageGRID, wie Kopien von Objektdaten erstellt und verteilt werden und wie diese Kopien im Laufe der Zeit gemanagt werden.
+
+Für die Entwicklung und Implementierung von ILM-Regeln und der ILM-Richtlinie ist eine sorgfältige Planung erforderlich. Betriebliche Anforderungen, die Topologie des StorageGRID Systems, die Anforderungen an die Objektsicherung und die verfügbaren Storage-Typen sind unbedingt bekannt. Anschließend müssen Sie festlegen, wie unterschiedliche Objekttypen kopiert, verteilt und gespeichert werden sollen.
+
+* link:how-ilm-operates-throughout-objects-life.html["Funktionsweise von ILM während der gesamten Nutzungsdauer eines Objekts"]
+* link:what-ilm-policy-is.html["Was ist eine ILM-Richtlinie"]
+* link:what-ilm-rule-is.html["Was ist eine ILM-Regel"]
+* link:creating-storage-grades-storage-pools-ec-profiles-regions.html["Erstellung von Speicherklassen, Speicherpools, EC-Profilen und Regionen"]
+* link:creating-ilm-rule.html["Erstellen einer ILM-Regel"]
+* link:creating-ilm-policy.html["ILM-Richtlinie erstellen"]
+* link:working-with-ilm-rules-and-ilm-policies.html["Arbeiten mit ILM-Regeln und ILM-Richtlinien"]
+

@@ -1,0 +1,61 @@
+---
+permalink: tenant/deleting-s3-bucket.html 
+sidebar: sidebar 
+keywords: storagegrid, S3 bucket, tenant, delete bucket, delete s3 bucket, deleting bucket, deleting s3 bucket, s3 object lock 
+summary: Sie können den Mandanten-Manager verwenden, um einen leeren S3-Bucket zu löschen. 
+---
+= Löschen eines S3-Buckets
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Mandanten-Manager verwenden, um einen leeren S3-Bucket zu löschen.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Tenant Manager angemeldet sein.
+* Sie müssen einer Benutzergruppe angehören, die über die Berechtigung Alle Buckets verwalten oder Root Access verfügt. Diese Berechtigungen überschreiben die Berechtigungseinstellungen in Gruppen- oder Bucket-Richtlinien.
+
+
+.Über diese Aufgabe
+Diese Anweisungen beschreiben das Löschen eines S3-Buckets mithilfe von Tenant Manager. Sie können auch S3-Buckets mithilfe der Mandantenmanagement-API oder der S3-REST-API löschen.
+
+Ein S3-Bucket kann nicht gelöscht werden, wenn er Objekte oder nicht aktuelle Objektversionen enthält. Informationen zum Löschen von S3-versionierten Objekten finden Sie in den Anweisungen zum Managen von Objekten mit Information Lifecycle Management.
+
+.Schritte
+. Wählen Sie *STORAGE (S3)* > *Buckets* aus.
++
+Die Seite Buckets wird angezeigt und zeigt alle vorhandenen S3-Buckets an.
+
++
+image::../media/buckets_table.png[Buckets-Tabelle]
+
+. Aktivieren Sie das Kontrollkästchen für den leeren Bucket, den Sie löschen möchten.
++
+Das Menü Aktionen ist aktiviert.
+
+. Wählen Sie im Menü Aktionen die Option *leerer Eimer löschen* aus.
++
+image::../media/delete_bucket_button.png[Schaltfläche „Buckets Löschen“]
+
++
+Eine Bestätigungsmeldung wird angezeigt.
+
++
+image::../media/delete_bucket_confirmation_dialog.png[Dialogfeld „Bucket-Bestätigung Löschen“]
+
+. Wenn Sie sicher sind, dass Sie den Bucket löschen möchten, wählen Sie *Bucket löschen*.
++
+StorageGRID bestätigt, dass der Bucket leer ist und löscht dann den Bucket. Dieser Vorgang kann einige Minuten dauern.
+
++
+Wenn der Bucket nicht leer ist, wird eine Fehlermeldung angezeigt. Sie müssen alle Objekte löschen, bevor Sie den Bucket löschen können.
+
++
+image::../media/delete_bucket_not_empty_message.png[Bucket Löschen Nicht Leere Nachricht]
+
+
+
+.Verwandte Informationen
+link:../ilm/index.html["Objektmanagement mit ILM"]

@@ -1,0 +1,24 @@
+---
+permalink: admin/restoring-default-server-certificates-for-s3-swift-api-endpoints.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können die Standardeinstellungen für die S3- und Swift-REST-API-Endpunkte verwenden. 
+---
+= Wiederherstellen der Standard-Serverzertifikate für die S3- und Swift-REST-API-Endpunkte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Standardeinstellungen für die S3- und Swift-REST-API-Endpunkte verwenden.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Server-Zertifikate*.
+. Klicken Sie im Abschnitt Serverzertifikat für Objekt-Storage-API-Service-Endpunkte auf *Standardzertifikate verwenden*.
+. Klicken Sie im Bestätigungsdialogfeld auf *OK*.
++
+Wenn Sie die Standard-Serverzertifikate für die Endpunkte der Objekt-Storage-API wiederherstellen, werden die von Ihnen konfigurierten benutzerdefinierten Serverzertifikatdateien gelöscht und können nicht vom System wiederhergestellt werden. Die Standard-Serverzertifikate werden für alle nachfolgenden neuen API-Client-Verbindungen verwendet.
+
+. Aktualisieren Sie die Seite, um sicherzustellen, dass der Webbrowser aktualisiert wird.
+

@@ -1,0 +1,21 @@
+---
+permalink: admin/what-archive-node-is.html 
+sidebar: sidebar 
+keywords:  
+summary: Der Archive Node bietet eine Schnittstelle, über die Sie ein externes Archiv-Storage-System zur langfristigen Speicherung von Objektdaten gezielt einsetzen können. Der Archivknoten überwacht darüber hinaus diese Verbindung und die Übertragung von Objektdaten zwischen dem StorageGRID System und dem angestrebten externen Archiv-Storage-System. 
+---
+= Was ist ein Archivknoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Archive Node bietet eine Schnittstelle, über die Sie ein externes Archiv-Storage-System zur langfristigen Speicherung von Objektdaten gezielt einsetzen können. Der Archivknoten überwacht darüber hinaus diese Verbindung und die Übertragung von Objektdaten zwischen dem StorageGRID System und dem angestrebten externen Archiv-Storage-System.
+
+image::../media/archive_node.gif[Übersicht zu Archivierungs-Knoten]
+
+Objektdaten, die nicht gelöscht, aber nicht regelmäßig abgerufen werden können, können jederzeit von den rotierenden Festplatten eines Storage Node auf einen externen Archiv-Storage wie die Cloud oder auf Tapes verschoben werden. Diese Archivierung von Objektdaten erfolgt durch die Konfiguration des Archiv-Nodes eines Datacenter-Standorts und anschließend die Konfiguration von ILM-Regeln, bei denen dieser Archivknoten als „Ziel“ für Anweisungen zur Content-Platzierung ausgewählt wird. Der Archivknoten verwaltet die archivierten Objektdaten nicht selbst; dies wird durch das externe Archivgerät erreicht.
+
+
+NOTE: Objektmetadaten werden nicht archiviert, bleiben aber auf Storage-Nodes erhalten.

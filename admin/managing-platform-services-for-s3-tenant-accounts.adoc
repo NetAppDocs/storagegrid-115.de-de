@@ -1,0 +1,20 @@
+---
+permalink: admin/managing-platform-services-for-s3-tenant-accounts.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn Sie Plattformservices für S3-Mandantenkonten aktivieren, müssen Sie Ihr Grid so konfigurieren, dass Mandanten auf die externen Ressourcen zugreifen können, die für die Nutzung dieser Services erforderlich sind. 
+---
+= Management von Plattform-Services für S3-Mandantenkonten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie Plattformservices für S3-Mandantenkonten aktivieren, müssen Sie Ihr Grid so konfigurieren, dass Mandanten auf die externen Ressourcen zugreifen können, die für die Nutzung dieser Services erforderlich sind.
+
+* link:what-platform-services-are.html["Um welche Plattform-Services geht es"]
+* link:networking-and-ports-for-platform-services.html["Networking und Ports für Plattform-Services"]
+* link:per-site-delivery-of-platform-services-messages.html["Bereitstellung von Plattform-Services am Standort"]
+* link:troubleshooting-platform-services.html["Plattform-Services zur Fehlerbehebung"]
+

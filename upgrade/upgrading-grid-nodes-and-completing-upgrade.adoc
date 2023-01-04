@@ -1,0 +1,141 @@
+---
+permalink: upgrade/upgrading-grid-nodes-and-completing-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, grid nodes, recovery package 
+summary: Nach dem Upgrade des primären Admin-Knotens müssen Sie alle anderen Grid-Knoten in Ihrem StorageGRID-System aktualisieren. Sie können die Upgrade-Sequenz anpassen, indem Sie auswählen, um einzelne Grid-Nodes, Gruppen von Grid-Nodes oder alle Grid-Nodes zu aktualisieren. 
+---
+= Aktualisieren der Grid-Nodes und Abschließen des Upgrades
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Upgrade des primären Admin-Knotens müssen Sie alle anderen Grid-Knoten in Ihrem StorageGRID-System aktualisieren. Sie können die Upgrade-Sequenz anpassen, indem Sie auswählen, um einzelne Grid-Nodes, Gruppen von Grid-Nodes oder alle Grid-Nodes zu aktualisieren.
+
+.Schritte
+. Lesen Sie den Abschnitt Aktualisierungsfortschritt auf der Seite Software-Upgrade, auf der Sie Informationen zu allen wichtigen Aktualisierungsaufgaben erhalten.
++
+.. *Start Upgrade Service* ist die erste Upgrade-Aufgabe. Während dieser Aufgabe wird die Softwaredatei auf die Grid-Nodes verteilt und der Upgrade-Service gestartet.
+.. Wenn die Aufgabe *Upgrade Service* starten abgeschlossen ist, startet die Aufgabe *Grid Nodes aktualisieren*.
+.. Während der Task *Grid-Knoten aktualisieren* ausgeführt wird, wird die Tabelle Status des Grid-Knotens angezeigt und die Aktualisierungsstufe für jeden Grid-Knoten in Ihrem System angezeigt.
+
+
+. Nachdem die Grid-Knoten in der Tabelle „Grid Node Status“ angezeigt wurden, laden Sie jedoch vor Genehmigung von Grid-Knoten eine neue Kopie des Wiederherstellungspakets herunter.
++
+
+IMPORTANT: Sie müssen eine neue Kopie der Wiederherstellungspaket-Datei herunterladen, nachdem Sie die Softwareversion auf dem primären Admin-Knoten aktualisiert haben. Die Recovery Package-Datei ermöglicht es Ihnen, das System wiederherzustellen, wenn ein Fehler auftritt.
+
+. Überprüfen Sie die Informationen in der Tabelle Status des Grid-Knotens. Die Grid-Nodes sind in Abschnitten nach Typ angeordnet: Admin Nodes, API-Gateway-Nodes, Storage-Nodes und Archiv-Nodes.
++
+image::../media/software_upgrade_start_grid_node_status.gif[Screenshot von Upgrade Grid Nodes nach Admin Node abgeschlossen]
+
++
+Ein Rasterknoten kann sich in einer dieser Phasen befinden, wenn diese Seite zuerst angezeigt wird:
+
++
+** Fertig (nur primärer Admin-Node)
+** Upgrade wird vorbereitet
+** Software-Download in Warteschlange
+** Download
+** Warten auf Genehmigung
+
+
+. Genehmigen Sie die Grid-Knoten, die Sie zur Upgrade-Warteschlange hinzufügen möchten. Genehmigte Nodes desselben Typs werden nacheinander aktualisiert.
++
+Wenn die Reihenfolge des Upgrades von Nodes wichtig ist, genehmigen Sie Knoten oder Gruppen von Knoten jeweils eins und warten Sie, bis das Upgrade auf jedem Knoten abgeschlossen ist, bevor Sie den nächsten Knoten oder die nächste Gruppe von Nodes genehmigen.
+
++
+
+IMPORTANT: Wenn das Upgrade auf einem Grid-Node startet, werden die Services auf diesem Node angehalten. Später wird der Grid-Node neu gebootet. Diese Vorgänge können zu Serviceunterbrechungen für Clients führen, die mit dem Node kommunizieren. Genehmigen Sie das Upgrade für einen Node nicht, es sei denn, Sie sind sicher, dass der Node bereit ist, angehalten und neu gebootet zu werden.
+
++
+** Wählen Sie eine oder mehrere *Genehmigen*-Schaltflächen, um einen oder mehrere einzelne Knoten zur Upgrade-Warteschlange hinzuzufügen.
+** Wählen Sie in jedem Abschnitt die Schaltfläche *Alle genehmigen* aus, um alle Knoten desselben Typs zur Upgrade-Warteschlange hinzuzufügen.
+** Wählen Sie die oberste Ebene *Alle genehmigen*-Taste, um alle Knoten im Raster zur Upgrade-Warteschlange hinzuzufügen.
+
+
+. Wenn Sie einen Knoten oder alle Knoten aus der Upgrade-Warteschlange entfernen müssen, wählen Sie *Entfernen* oder *Alle entfernen*.
++
+Wie im Beispiel gezeigt, wird die *Stoppdienste*-Schaltfläche *Entfernen* ausgeblendet, und Sie können den Knoten nicht mehr entfernen.
+
++
+image::../media/software_upgrade_two_nodes_queued.gif[Screenshot zeigt, dass die Dienste angehalten werden]
+
+. Warten Sie, bis jeder Node die Upgrade-Phasen durchlaufen hat, einschließlich Queued, Stoppen von Services, Stoppen von Containern, Reinigen von Docker-Images, Aktualisieren von Basis-BS-Paketen, Neustarten und Starten von Services.
++
+
+NOTE: Wenn ein Appliance-Knoten die Phase der Upgrade-Base-BS-Pakete erreicht, wird die Installationssoftware für die StorageGRID-Appliance auf der Appliance aktualisiert. Durch diesen automatisierten Prozess wird sichergestellt, dass die Installationsversion der StorageGRID Appliance mit der StorageGRID-Softwareversion synchronisiert bleibt.
+
++
+Wenn alle Grid-Knoten aktualisiert wurden, wird die Aufgabe *Grid-Knoten aktualisieren* als abgeschlossen angezeigt. Die verbleibenden Upgrade-Aufgaben werden automatisch und im Hintergrund ausgeführt.
+
+. Sobald die Aufgabe *Features* aktivieren abgeschlossen ist (die sich schnell abspielt), können Sie die neuen Funktionen in der aktualisierten StorageGRID-Version nutzen.
++
+Wenn Sie beispielsweise ein Upgrade auf StorageGRID 11.5 durchführen, können Sie jetzt die S3-Objektsperre aktivieren, einen Schlüsselverwaltungsserver konfigurieren oder die Einstellung für reservierten Metadatenspeicherplatz erhöhen.
+
++
+link:increasing-metadata-reserved-space-setting.html["Erhöhen der Einstellung für reservierten Speicherplatz für Metadaten"]
+
+. Überwachen Sie regelmäßig den Fortschritt der Aufgabe * Upgrade Database*.
++
+Während dieser Aufgabe wird die Cassandra-Datenbank auf jedem Storage-Node aktualisiert.
+
++
+
+NOTE: Die Aufgabe *Upgrade Database* kann Tage dauern. Wenn diese Hintergrundaufgabe ausgeführt wird, können Sie Hotfixes anwenden oder Knoten wiederherstellen. Sie müssen jedoch warten, bis die Aufgabe * Final Upgrade Steps* abgeschlossen ist, bevor Sie eine Erweiterung durchführen oder den Vorgang stilllegen.
+
++
+Sie können das Diagramm überprüfen, um den Fortschritt für jeden Speicherknoten zu überwachen.
+
++
+image::../media/software_upgrade_upgrade_database.png[Software Upgrade-Datenbank]
+
+. Wenn der Task *Upgrade Database* abgeschlossen ist, warten Sie einige Minuten, bis die Aufgabe *Final Upgrade Steps* abgeschlossen ist.
++
+image::../media/software_upgrade_final_upgrade_steps.png[Letzte Schritte Zur Aktualisierung]
+
++
+Nach Abschluss der Aufgabe „Letzte Upgrade-Schritte“ wird das Upgrade durchgeführt.
+
+. Bestätigen Sie, dass das Upgrade erfolgreich abgeschlossen wurde.
++
+.. Melden Sie sich über einen unterstützten Browser beim Grid Manager an.
+.. Wählen Sie *Hilfe* > *Info*.
+.. Vergewissern Sie sich, dass die angezeigte Version den Erwartungen entspricht.
+.. Wählen Sie *Wartung* > *System* > *Software-Update*. Wählen Sie dann *StorageGRID-Upgrade*.
+.. Vergewissern Sie sich, dass das grüne Banner zeigt, dass das Software-Upgrade an dem erwarteten Datum und der erwarteten Uhrzeit abgeschlossen wurde.
++
+image::../media/software_upgrade_done.png[Software-Upgrade Abgeschlossen]
+
+
+
+. Überprüfen Sie, ob die Grid-Vorgänge wieder den normalen Status aufweisen:
++
+.. Überprüfen Sie, ob die Dienste normal funktionieren und keine unerwarteten Warnmeldungen vorliegen.
+.. Vergewissern Sie sich, dass die Client-Verbindungen zum StorageGRID-System wie erwartet funktionieren.
+
+
+. Prüfen Sie die StorageGRID-Seite zu NetApp Downloads, um zu sehen, ob Hotfixes für die von Ihnen gerade installierte StorageGRID-Version verfügbar sind.
++
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp Downloads: StorageGRID"^]
+
++
+In der StorageGRID 11.5._x.y_ Versionsnummer:
+
++
+** Die Hauptversion hat einen _x_-Wert von 0 (11.5.0).
+** Eine kleine Version hat, falls verfügbar, einen anderen _x_-Wert als 0 (z. B. 11.5.1).
+** Ein Hotfix, falls verfügbar, hat einen _y_-Wert (z. B. 11.5.0.1).
+
+
+. Falls verfügbar, laden Sie den neuesten Hotfix für Ihre StorageGRID-Version herunter und wenden Sie ihn an.
++
+Informationen zur Anwendung von Hotfixes finden Sie in der Recovery- und Wartungsanleitung.
+
+
+
+.Verwandte Informationen
+link:downloading-recovery-package.html["Herunterladen des Wiederherstellungspakets"]
+
+link:../maintain/index.html["Verwalten Sie  erholen"]

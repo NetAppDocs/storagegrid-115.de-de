@@ -1,0 +1,34 @@
+---
+permalink: admin/creating-custom-notifications-for-migration-alarms.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Möglicherweise möchten Sie, dass StorageGRID Alarmbenachrichtigungen oder Alarme \(Legacy System\) an den Systemadministrator sendet, der für die Überwachung der Migration verantwortlich ist, falls bestimmte Werte die empfohlenen Schwellenwerte überschreiten.' 
+---
+= Erstellen benutzerdefinierter Benachrichtigungen für Migrationsalarme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise soll StorageGRID Alarmbenachrichtigungen oder Warnmeldungen an den Systemadministrator senden, der für das Monitoring der Migration verantwortlich ist, falls bestimmte Werte die empfohlenen Schwellenwerte überschreiten.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+* Sie müssen E-Mail-Einstellungen für Alarm- (oder Alarm-) Benachrichtigungen konfiguriert haben.
+
+
+.Schritte
+. Erstellen Sie für jede Prometheus-Metrik oder jedes StorageGRID-Attribut, das Sie während der Datenmigration überwachen möchten, eine benutzerdefinierte Alarmregel oder einen globalen benutzerdefinierten Alarm.
++
+Warnmeldungen werden auf Basis der Prometheus-Messwerte ausgelöst. Alarme werden basierend auf Attributwerten ausgelöst. Weitere Informationen finden Sie in den Anweisungen zum Monitoring und zur Fehlerbehebung von StorageGRID.
+
+. Deaktivieren Sie die benutzerdefinierte Alarmregel oder den globalen benutzerdefinierten Alarm, nachdem die Datenmigration abgeschlossen ist.
++
+Beachten Sie, dass globale benutzerdefinierte Alarme Standardalarme überschreiben.
+
+
+
+.Verwandte Informationen
+link:../monitor/index.html["Monitor  Fehlerbehebung"]

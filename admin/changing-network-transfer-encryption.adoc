@@ -1,0 +1,31 @@
+---
+permalink: admin/changing-network-transfer-encryption.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Das StorageGRID System verwendet Transport Layer Security \ (TLS\) zum Schutz des internen Kontrollverkehrs zwischen den Grid-Nodes. Die Option „Netzwerkübertragungsverschlüsselung“ legt den von TLS verwendeten Algorithmus zur Verschlüsselung der Datenverkehrskontrolle zwischen den Grid-Nodes fest. Diese Einstellung hat keine Auswirkung auf die Datenverschlüsselung.' 
+---
+= Die Netzwerkübertragungsverschlüsselung wird geändert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID System verwendet Transport Layer Security (TLS) zum Schutz des internen Kontrolldatenverkehrs zwischen den Grid-Nodes. Die Option „Netzwerkübertragungsverschlüsselung“ legt den von TLS verwendeten Algorithmus zur Verschlüsselung der Datenverkehrskontrolle zwischen den Grid-Nodes fest. Diese Einstellung hat keine Auswirkung auf die Datenverschlüsselung.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Über diese Aufgabe
+Standardmäßig verwendet die Netzwerkübertragungsverschlüsselung den AES256-SHA-Algorithmus. Der Kontrolldatenverkehr kann auch mit dem AES128-SHA-Algorithmus verschlüsselt werden.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Systemeinstellungen* > *Gitteroptionen*.
+. Ändern Sie im Abschnitt Netzwerkoptionen die Netzwerkübertragungsverschlüsselung in *AES128-SHA* oder *AES256-SHA* (Standardeinstellung).
++
+image::../media/network_transfer_encryption.png[Netzwerkverschlüsselung der Grid-Konfiguration]
+
+. Klicken Sie Auf *Speichern*.
+

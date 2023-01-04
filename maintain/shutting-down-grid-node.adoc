@@ -1,0 +1,64 @@
+---
+permalink: maintain/shutting-down-grid-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, node shutdown, shut down node, node shut down 
+summary: Sie können einen Grid-Node von der Befehlshülle des Node herunterfahren. 
+---
+= Herunterfahren eines Grid-Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen Grid-Node über die Befehlshaber des Node herunterfahren.
+
+.Was Sie benötigen
+* Sie müssen die haben `Passwords.txt` Datei:
+
+
+.Über diese Aufgabe
+Bevor Sie dieses Verfahren durchführen, sollten Sie folgende Punkte beachten:
+
+* Im Allgemeinen sollten Sie nicht mehr als einen Node gleichzeitig herunterfahren, um Unterbrechungen zu vermeiden.
+* Schalten Sie einen Node während eines Wartungsvorgangs nicht herunter, es sei denn, er wird ausdrücklich von der Dokumentation oder vom technischen Support dazu aufgefordert.
+* Das Herunterfahren basiert auf dem Installationsort des Node, wie folgt:
++
+** Durch das Herunterfahren eines VMware-Knotens wird die virtuelle Maschine heruntergefahren.
+** Durch das Herunterfahren eines Linux-Node wird der Container heruntergefahren.
+** Durch das Herunterfahren eines StorageGRID-Appliance-Node wird der Computing-Controller heruntergefahren.
+
+
+* Wenn Sie Storage-Nodes herunterfahren möchten, beachten Sie Folgendes:
++
+** Wenn eine ILM-Regel ein Aufnahmeverhalten von Dual-Commit angibt oder die Regel einen Ausgleich angibt und nicht sofort alle erforderlichen Kopien erstellen kann, werden neu aufgenommenen Objekte sofort von StorageGRID auf zwei Storage-Nodes am selben Standort übertragen und ILM wird später ausgewertet. Wenn Sie zwei oder mehr Speicherknoten an einem bestimmten Standort herunterfahren möchten, können Sie während des Herunterfahrens möglicherweise nicht auf diese Objekte zugreifen.
+** Um sicherzustellen, dass Sie bei Herunterfahren eines Storage-Nodes auf alle Objekte zugreifen können, beenden Sie die Aufnahme von Objekten an einem Standort für etwa eine Stunde, bevor Sie den Node herunterfahren.
+
+
+
+
+.Schritte
+. Melden Sie sich beim Grid-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+.. Geben Sie das im aufgeführte Passwort ein `Passwords.txt` Datei:
+.. Geben Sie den folgenden Befehl ein, um zum Root zu wechseln: `su -`
+.. Geben Sie das im aufgeführte Passwort ein `Passwords.txt` Datei:
+
+
++
+Wenn Sie als root angemeldet sind, ändert sich die Eingabeaufforderung von `$` Bis `#`.
+
+. Beenden Sie alle Dienste: `service servermanager stop`
++
+Die Dienste können bis zu 15 Minuten zum Herunterfahren dauern. Außerdem können Sie sich möglicherweise per Remote-Zugriff beim System anmelden, um den Shutdown-Prozess zu überwachen.
+
+. Melden Sie sich aus der Befehlsshell ab: `exit`
+
+
+Nach dem Herunterfahren können Sie den Grid-Node ausschalten.
+
+link:powering-down-host.html["Herunterfahren eines Hosts"]
+
+.Verwandte Informationen
+link:../admin/index.html["StorageGRID verwalten"]

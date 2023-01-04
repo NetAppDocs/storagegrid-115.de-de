@@ -1,0 +1,20 @@
+---
+permalink: upgrade/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Software-Upgrade
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erfahren Sie, wie Sie ein StorageGRID System auf eine neue Version aktualisieren.
+
+* link:about-this-release.html["Informationen zu StorageGRID 11.5"]
+* link:upgrade-planning-and-preparation.html["Planung und Vorbereitung von Upgrades"]
+* link:performing-upgrade.html["Durchführen des Upgrades"]
+* link:troubleshooting-upgrade-issues.html["Fehlerbehebung bei Upgrade-Problemen"]
+

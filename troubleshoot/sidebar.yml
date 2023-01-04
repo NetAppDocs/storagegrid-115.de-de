@@ -1,0 +1,34 @@
+---
+section: troubleshoot
+title: Fehler in einem StorageGRID System beheben
+url: "/troubleshoot/troubleshooting-storagegrid-system.html"
+entries:
+- title: Fehlerbehebung bei Objekt- und Storage-Problemen
+  url: "/troubleshoot/troubleshooting-object-and-storage-issues.html"
+  entries:
+  - title: Überprüfen der Objektintegrität
+    url: "/troubleshoot/verifying-object-integrity.html"
+  - title: Fehlerbehebung verloren gegangene und fehlende Objektdaten
+    url: "/troubleshoot/troubleshooting-lost-and-missing-object-data.html"
+    entries:
+    - title: Untersuchung verlorener Objekte
+      url: "/troubleshoot/investigating-lost-objects.html"
+    - title: Suche nach und Wiederherstellung möglicherweise verlorenen Objekten
+      url: "/troubleshoot/searching-for-and-restoring-potentially-lost-objects.html"
+    - title: Zurücksetzen verlorener und fehlender Objektanzahl
+      url: "/troubleshoot/resetting-lost-and-missing-object-counts.html"
+  - title: Fehlerbehebung bei der Warnung „niedriger Objektdatenspeicher“
+    url: "/troubleshoot/troubleshooting-low-object-data-storage-alert.html"
+  - title: Fehlerbehebung beim SSTS-Alarm (Storage Status)
+    url: "/troubleshoot/troubleshooting-storage-status-alarm.html"
+  - title: Fehlerbehebung bei der Bereitstellung von Plattform-Services-Meldungen
+      (SMTT-Alarm)
+    url: "/troubleshoot/troubleshooting-delivery-platform-services-messages.html"
+- title: Behebung von Metadatenproblemen
+  url: "/troubleshoot/troubleshooting-metadata-issues.html"
+- title: Fehlerbehebung bei Zertifikatfehlern
+  url: "/troubleshoot/troubleshooting-certificate-errors.html"
+- title: Fehlerbehebung bei Problemen mit Admin-Knoten und Benutzeroberfläche
+  url: "/troubleshoot/troubleshooting-admin-node-and-user-interface-issues.html"
+- title: Fehlerbehebung bei Netzwerk-, Hardware- und Plattformproblemen
+  url: "/troubleshoot/troubleshooting-network-hardware-and-platform-issues.html"

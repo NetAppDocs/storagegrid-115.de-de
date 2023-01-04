@@ -1,0 +1,19 @@
+---
+permalink: tenant/managing-system-access-for-tenant-users.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Sie gewähren Benutzern Zugriff auf ein Mandantenkonto, indem Sie Gruppen von einer föderierten Identitätsquelle importieren und Verwaltungsberechtigungen zuweisen. Außerdem können lokale Mandantengruppen und Benutzer erstellt werden, es sei denn, Single Sign-On \(SSO\) gilt für das gesamte StorageGRID System.' 
+---
+= Managen des Systemzugriffs für Mandantenbenutzer
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie gewähren Benutzern Zugriff auf ein Mandantenkonto, indem Sie Gruppen von einer föderierten Identitätsquelle importieren und Verwaltungsberechtigungen zuweisen. Außerdem können lokale Mandantengruppen und Benutzer erstellt werden, es sei denn, Single Sign On (SSO) gilt für das gesamte StorageGRID System.
+
+* link:using-identity-federation.html["Identitätsföderation verwenden"]
+* link:managing-groups.html["Verwalten von Gruppen"]
+* link:managing-local-users.html["Verwalten von lokalen Benutzern"]
+

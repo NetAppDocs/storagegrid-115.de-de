@@ -1,0 +1,20 @@
+---
+permalink: release-notes/index.html 
+sidebar: sidebar 
+keywords:  
+summary: Holen Sie sich Release-spezifische Informationen zu neuen Funktionen, bekannten Problemen und festen Problemen. 
+---
+= Versionshinweise
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Release-spezifische Informationen zu neuen Funktionen, entfernten und veralteten Funktionen, festen Problemen und bekannten Problemen erhalten
+
+Versionshinweise sind außerhalb dieser Dokumentwebsite erhältlich. Sie werden aufgefordert, sich mit Ihren Anmeldedaten für die NetApp Support Site anzumelden.
+
+* https://library.netapp.com/ecmdocs/ECMLP2873529/html/frameset.html["HTML"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2873529["PDF"^]
+

@@ -1,0 +1,33 @@
+---
+permalink: admin/resetting-store-failure-count-for-s3-api-connection.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Wenn Ihr Archiv-Node über die S3-API eine Verbindung zu einem Archivspeichersystem herstellt, können Sie die Anzahl der Speicherfehler zurücksetzen, die zum Löschen des ARVF \(Store Failures\)-Alarms verwendet werden kann.' 
+---
+= Zurücksetzen der Speicherfehler-Anzahl für S3-API-Verbindung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Ihr Archiv-Node über die S3-API eine Verbindung zu einem Archivspeichersystem herstellt, können Sie die Anzahl der Speicherfehler zurücksetzen, die zum Löschen des ARVF-Alarms (Store Failures) verwendet werden kann.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Schritte
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie *_Archivknoten_* > *ARC* > *Store* aus.
+. Wählen Sie *Konfiguration* > *Main*.
++
+image::../media/archive_store_s3.gif[Konfigurieren von Speichereinstellungen für die S3-API-Verbindung]
+
+. Wählen Sie *Anzahl Der Fehler Im Store Zurücksetzen* Aus.
+. Klicken Sie Auf *Änderungen Übernehmen*.
++
+Das Attribut Fehler speichern wird auf Null zurückgesetzt.
+
+

@@ -1,0 +1,23 @@
+---
+permalink: expand/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Erweitern Sie Ihr Raster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erfahren Sie, wie Sie ein StorageGRID System ohne Unterbrechung des Systembetriebs erweitern können.
+
+* link:planning-expansion.html["StorageGRID-Erweiterung geplant"]
+* link:preparing-for-expansion.html["Vorbereitung auf eine Erweiterung"]
+* link:overview-of-expansion-procedure.html["Überblick über das Expansionsverfahren"]
+* link:adding-storage-volumes-to-storage-nodes.html["Hinzufügen von Storage-Volumes zu Storage-Nodes"]
+* link:adding-grid-nodes-to-existing-site-or-adding-new-site.html["Einem vorhandenen Standort Grid-Nodes hinzufügen oder einen neuen Standort hinzufügen"]
+* link:configuring-expanded-storagegrid-system.html["Konfiguration des erweiterten StorageGRID-Systems"]
+* link:contacting-technical-support.html["Kontakt mit dem technischen Support"]
+

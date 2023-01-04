@@ -1,0 +1,22 @@
+---
+permalink: rhel/example-1-1-to-1-mapping-to-physical-or-virtual-nics.html 
+sidebar: sidebar 
+keywords:  
+summary: In Beispiel 1 wird eine einfache Zuordnung von physischen Schnittstellen beschrieben, wofür nur wenig oder keine Host-seitige Konfiguration erforderlich ist. 
+---
+= Beispiel 1: 1-zu-1-Zuordnung zu physischen oder virtuellen NICs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In Beispiel 1 wird eine einfache Zuordnung von physischen Schnittstellen beschrieben, wofür nur wenig oder keine Host-seitige Konfiguration erforderlich ist.
+
+image::../media/rhel_install_vlan_diag_1.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+
+Das Betriebssystem Linux erstellt den `ensXYZ` Schnittstellen werden automatisch während der Installation oder beim Booten oder beim Hot-Added-Schnittstellen bereitgestellt. Es ist keine andere Konfiguration erforderlich als sicherzustellen, dass die Schnittstellen nach dem Booten automatisch eingerichtet werden. Sie müssen herausfinden, welche `ensXYZ` Entspricht dem StorageGRID-Netzwerk (Grid, Administrator oder Client), sodass Sie später im Konfigurationsprozess die korrekten Zuordnungen bereitstellen können.
+
+Beachten Sie, dass in der Abbildung mehrere StorageGRID Nodes angezeigt werden. Normalerweise werden diese Konfigurationen jedoch für VMs mit einem Node verwendet.
+
+Wenn Switch 1 ein physischer Switch ist, sollten Sie die mit den Schnittstellen 10G1 bis 10G3 verbundenen Ports für den Zugriffsmodus konfigurieren und sie in den entsprechenden VLANs platzieren.

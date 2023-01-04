@@ -1,0 +1,51 @@
+---
+permalink: sg100-1000/changing-mtu-setting.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, mtu, set, setting, change, changing, modify 
+summary: Sie können die MTU-Einstellung ändern, die Sie beim Konfigurieren von IP-Adressen für den Appliance-Node zugewiesen haben. 
+---
+= Ändern der MTU-Einstellung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die MTU-Einstellung ändern, die Sie beim Konfigurieren von IP-Adressen für den Appliance-Node zugewiesen haben.
+
+.Was Sie benötigen
+Das Gerät wurde in den Wartungsmodus versetzt.
+
+link:placing-appliance-into-maintenance-mode.html["Versetzen einer Appliance in den Wartungsmodus"]
+
+.Schritte
+. Wählen Sie im Installationsprogramm der StorageGRID-Appliance die Option *Netzwerke konfigurieren* > *IP-Konfiguration* aus.
+. Nehmen Sie die gewünschten Änderungen an den MTU-Einstellungen für Grid Network, Admin Network und Client Network vor.
++
+image::../media/grid_network_static.png[Grid-Netzwerk-IP]
+
++
+
+IMPORTANT: Der MTU-Wert des Netzwerks muss mit dem Wert übereinstimmen, der auf dem Switch-Port konfiguriert ist, mit dem der Node verbunden ist. Andernfalls können Probleme mit der Netzwerkleistung oder Paketverluste auftreten.
+
++
+
+IMPORTANT: Für die beste Netzwerkleistung sollten alle Knoten auf ihren Grid Network Interfaces mit ähnlichen MTU-Werten konfiguriert werden. Die Warnung *Grid Network MTU mismatch* wird ausgelöst, wenn sich die MTU-Einstellungen für das Grid Network auf einzelnen Knoten erheblich unterscheiden. Die MTU-Werte müssen nicht für alle Netzwerktypen identisch sein.
+
+. Wenn Sie mit den Einstellungen zufrieden sind, wählen Sie *Speichern*.
+. Booten Sie den Node neu. Wählen Sie im Installationsprogramm der StorageGRID-Appliance die Option *Erweitert* > *Controller neu starten* aus, und wählen Sie dann eine der folgenden Optionen aus:
++
+** Wählen Sie *Neustart in StorageGRID* aus, um den Controller neu zu starten, wobei der Knoten wieder in das Raster integriert wird. Wählen Sie diese Option, wenn Sie im Wartungsmodus ausgeführt werden und den Node in den normalen Betrieb zurückkehren möchten.
+** Wählen Sie *Neustart im Wartungsmodus* aus, um den Controller neu zu starten, wobei der Knoten noch im Wartungsmodus bleibt. Wählen Sie diese Option aus, wenn weitere Wartungsmaßnahmen erforderlich sind, die Sie auf dem Node durchführen müssen, bevor Sie das Raster neu beitreten.image:../media/reboot_controller_from_maintenance_mode.png["Booten Sie den Controller im Wartungsmodus neu"]
++
+Die Appliance kann bis zu 20 Minuten dauern, bis sie neu gestartet und wieder in das Grid eingesetzt wird. Um zu überprüfen, ob das Neubooten abgeschlossen ist und dass der Node wieder dem Grid beigetreten ist, gehen Sie zurück zum Grid Manager. Auf der Registerkarte *Nodes* sollte ein normaler Status angezeigt werden image:../media/icon_alert_green_checkmark.png["Grünes Häkchen für Symbolwarnung"] Für den Appliance-Node gibt an, dass keine Meldungen aktiv sind und der Node mit dem Grid verbunden ist.
+
++
+image::../media/node_rejoin_grid_confirmation.png[Das Raster des Appliance-Node wurde neu verbunden]
+
+
+
+
+
+.Verwandte Informationen
+link:../admin/index.html["StorageGRID verwalten"]

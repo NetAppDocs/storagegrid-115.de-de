@@ -1,0 +1,18 @@
+---
+permalink: tenant/managing-s3-tenant-accounts.html 
+sidebar: sidebar 
+keywords:  
+summary: Mandanten-Manager können S3-Zugriffsschlüssel managen und S3-Buckets erstellen und managen. 
+---
+= Verwalten von S3-Mandantenkonten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mandanten-Manager können S3-Zugriffsschlüssel managen und S3-Buckets erstellen und managen.
+
+* link:managing-s3-access-keys.html["Verwalten von S3-Zugriffsschlüsseln"]
+* link:managing-s3-buckets.html["Management von S3-Buckets"]
+

@@ -1,0 +1,43 @@
+---
+permalink: admin/configuring-server-certificates.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können die vom StorageGRID-System verwendeten Serverzertifikate anpassen. 
+---
+= Serverzertifikate werden konfiguriert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die vom StorageGRID-System verwendeten Serverzertifikate anpassen.
+
+Das StorageGRID System verwendet Sicherheitszertifikate für mehrere unterschiedliche Zwecke:
+
+* Management Interface Server Certificates: Dient zum sicheren Zugriff auf den Grid Manager, den Tenant Manager, die Grid Management API und die Tenant Management API.
+* Storage API Server Certificates: Dient zum sicheren Zugriff auf die Storage Nodes und Gateway Nodes, welche API-Client-Anwendungen zum Hochladen und Herunterladen von Objektdaten verwenden.
+
+
+Sie können die während der Installation erstellten Standardzertifikate verwenden oder diese Standardtypen durch Ihre eigenen benutzerdefinierten Zertifikate ersetzen.
+
+
+
+== Unterstützte Arten von benutzerdefiniertem Serverzertifikat
+
+Das StorageGRID-System unterstützt benutzerdefinierte Serverzertifikate, die mit RSA oder ECDSA (Algorithmus für digitale Signaturen der Elliptischen Kurve) verschlüsselt sind.
+
+Weitere Informationen dazu, wie StorageGRID Client-Verbindungen für DIE REST-API sichert, finden Sie in den S3 oder Swift-Implementierungsleitfäden.
+
+
+
+== Zertifikate für Load Balancer-Endpunkte
+
+StorageGRID managt die für Load Balancer-Endpunkte verwendeten Zertifikate separat. Informationen zum Konfigurieren von Load Balancer-Zertifikaten finden Sie in den Anweisungen zum Konfigurieren von Load Balancer-Endpunkten.
+
+.Verwandte Informationen
+link:../s3/index.html["S3 verwenden"]
+
+link:../swift/index.html["Verwenden Sie Swift"]
+
+link:configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"]

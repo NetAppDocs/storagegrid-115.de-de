@@ -1,0 +1,22 @@
+---
+permalink: admin/managing-storage-nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: Storage-Nodes stellen Festplattenkapazität und Services zur Verfügung. Das Verwalten von Storage-Nodes umfasst die Überwachung des nutzbaren Speicherplatzes auf jedem Node mithilfe von Wasserzeichen-Einstellungen und das Anwenden der Konfigurationseinstellungen von Storage-Nodes. 
+---
+= Verwalten Von Storage-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Storage-Nodes stellen Festplattenkapazität und Services zur Verfügung. Das Verwalten von Storage-Nodes umfasst die Überwachung des nutzbaren Speicherplatzes auf jedem Node mithilfe von Wasserzeichen-Einstellungen und das Anwenden der Konfigurationseinstellungen von Storage-Nodes.
+
+* link:what-storage-node-is.html["Was ist ein Storage-Node"]
+* link:managing-storage-options.html["Verwalten Von Storage-Optionen"]
+* link:managing-object-metadata-storage.html["Management von Objekt-Metadaten-Storage"]
+* link:configuring-global-settings-for-stored-objects.html["Globale Einstellungen für gespeicherte Objekte konfigurieren"]
+* link:storage-node-configuration-settings.html["Konfigurationseinstellungen für Storage-Nodes"]
+* link:managing-full-storage-nodes.html["Verwalten vollständiger Speicherknoten"]
+

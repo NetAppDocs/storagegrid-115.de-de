@@ -1,0 +1,46 @@
+---
+permalink: monitor/creating-custom-syslog-events.html 
+sidebar: sidebar 
+keywords: event tracking, syslog, log 
+summary: 'Benutzerdefinierte Ereignisse ermöglichen die Verfolgung aller Kernel-, Daemon-, Fehler- und kritischen Benutzerereignisse auf der Ebene, die beim Syslog-Server protokolliert werden. Ein benutzerdefiniertes Ereignis kann nützlich sein, um das Auftreten von Systemprotokollmeldungen \ (und damit Netzwerksicherheitsereignisse und Hardwarefehler\) zu überwachen.' 
+---
+= Erstellen benutzerdefinierter Syslog-Ereignisse
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Benutzerdefinierte Ereignisse ermöglichen die Verfolgung aller Kernel-, Daemon-, Fehler- und kritischen Benutzerereignisse auf der Ebene, die beim Syslog-Server protokolliert werden. Ein benutzerdefiniertes Ereignis kann nützlich sein, um das Auftreten von Systemprotokollmeldungen zu überwachen (und damit Netzwerksicherheitsereignisse und Hardwarefehler).
+
+.Über diese Aufgabe
+Ziehen Sie in Betracht, benutzerdefinierte Ereignisse zu erstellen, um wiederkehrende Probleme zu überwachen. Die folgenden Überlegungen gelten für benutzerdefinierte Ereignisse.
+
+* Nach der Erstellung eines benutzerdefinierten Ereignisses wird jeder Vorgang überwacht. Auf der Seite *Nodes* > *_GRID Node_* > *Events* können Sie einen kumulativen Zählwert für alle benutzerdefinierten Ereignisse anzeigen.
+* So erstellen Sie ein benutzerdefiniertes Ereignis basierend auf Schlüsselwörtern im `/var/log/messages` Oder `/var/log/syslog` Dateien, die Protokolle in diesen Dateien müssen:
++
+** Vom Kernel generiert
+** Wird vom Daemon oder vom Benutzerprogramm auf der Fehler- oder kritischen Ebene generiert
+
+
+
+
+*Hinweis:* nicht alle Einträge im `/var/log/messages` Oder `/var/log/syslog` Die Dateien werden abgeglichen, sofern sie nicht die oben genannten Anforderungen erfüllen.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Überwachung* > *Ereignisse*.
+. Klicken Sie Auf *Bearbeiten* image:../media/icon_nms_edit.gif["Bleistiftsymbol"] (Oder *Einfügen* image:../media/icon_nms_insert.gif["Plus-Symbol"] Wenn dies nicht das erste Ereignis ist).
+. Geben Sie eine benutzerdefinierte Ereigniszeichenfolge ein, z. B. Herunterfahren
++
+image::../media/custom_events.gif[Screenshot mit der Eingabe benutzerdefinierter Ereigniszeichenfolge]
+
+. Klicken Sie Auf *Änderungen Übernehmen*.
+. Wählen Sie *Knoten*. Wählen Sie dann *_GRID Node_* > *Events* aus.
+. Suchen Sie den Eintrag für benutzerdefinierte Ereignisse in der Ereignistabelle, und überwachen Sie den Wert für *Zählung*.
++
+Wenn die Anzahl erhöht wird, wird ein benutzerdefiniertes Ereignis, das Sie überwachen, auf diesem Grid-Node ausgelöst.
+
++
+image::../media/custom_events_count.gif[SSM > Ereignisse > Übersichtsseite]
+
+

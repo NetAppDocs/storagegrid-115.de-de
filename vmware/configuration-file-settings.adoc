@@ -1,0 +1,407 @@
+---
+permalink: vmware/configuration-file-settings.html 
+sidebar: sidebar 
+keywords:  
+summary: Die Konfigurationsdatei deploy-vsphere-ovftool.ini enthält die Einstellungen, die für die Implementierung von virtuellen Grid-Nodes erforderlich sind. 
+---
+= Konfigurationsdateieinstellungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der `deploy-vsphere-ovftool.ini` Die Konfigurationsdatei enthält die Einstellungen, die für die Implementierung der virtuellen Grid-Nodes erforderlich sind.
+
+In der Konfigurationsdatei werden zunächst die globalen Parameter aufgelistet und anschließend die knotenspezifischen Parameter in Abschnitten aufgelistet, die durch den Knotennamen definiert sind. Wenn die Datei verwendet wird:
+
+* _Globale Parameter_ werden auf alle Grid-Knoten angewendet.
+* _Node-spezifische Parameter_ globale Parameter überschreiben.
+
+
+
+
+== Globale Parameter
+
+Globale Parameter werden auf alle Rasterknoten angewendet, es sei denn, sie werden durch Einstellungen in einzelnen Abschnitten außer Kraft gesetzt. Platzieren Sie die Parameter, die für mehrere Knoten gelten, im globalen Parameterabschnitt und überschreiben Sie diese Einstellungen, wie in den Abschnitten für einzelne Knoten erforderlich.
+
+* *OVFTOOL_ARGUMENTS*: Sie können OVFTOOL_ARGUMENTS als globale Einstellungen angeben oder Argumente einzeln auf bestimmte Knoten anwenden. Beispiel:
++
+[source, subs="specialcharacters,quotes"]
+----
+OVFTOOL_ARGUMENTS = --powerOn --noSSLVerify --diskMode=thin --datastore='_datastore_name_'
+----
++
+Sie können das verwenden `--powerOffTarget` Und `--overwrite` Optionen zum Herunterfahren und Ersetzen vorhandener Virtual Machines.
+
++
+
+IMPORTANT: Sie sollten Knoten auf verschiedenen Datastores bereitstellen und OVFTOOL_ARGUMENTE für jeden Knoten angeben, anstatt global.
+
+* *QUELLE*: Der Pfad zur StorageGRID Virtual Machine Vorlage (`.vmdk`) Datei und die `.ovf` Und `.mf` Dateien für einzelne Grid-Nodes: Dies ist standardmäßig das aktuelle Verzeichnis.
++
+[source, subs="specialcharacters,quotes"]
+----
+SOURCE = /downloads/StorageGRID-Webscale-_version_/vsphere
+----
+* *ZIEL*: Die virtuelle Infrastruktur (vi) von VMware vSphere für den Speicherort, an dem StorageGRID bereitgestellt wird. Beispiel:
++
+[listing]
+----
+TARGET = vi://vcenter.example.com/vm/sgws
+----
+* *GRID_NETWORK_CONFIG*: Die Methode, mit der IP-Adressen erworben werden, ENTWEDER STATISCH oder DHCP. Die Standardeinstellung IST STATISCH. Wenn alle oder die meisten Knoten dieselbe Methode zum Erwerb von IP-Adressen verwenden, können Sie diese Methode hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+GRID_NETWORK_CONFIG = DHCP
+----
+* *GRID_NETWORK_TARGET*: Der Name eines vorhandenen VMware-Netzwerks, das für das Grid-Netzwerk verwendet werden soll. Wenn alle oder die meisten Nodes denselben Netzwerknamen verwenden, können Sie ihn hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+GRID_NETWORK_TARGET = SG-Admin-Network
+----
+* *GRID_NETWORK_MASKE*: Die Netzwerkmaske für das Grid-Netzwerk. Wenn alle oder die meisten Nodes dieselbe Netzwerkmaske verwenden, können Sie sie hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+GRID_NETWORK_MASK = 255.255.255.0
+----
+* *GRID_NETWORK_GATEWAY*: Das Netzwerk-Gateway für das Grid-Netzwerk. Wenn alle oder die meisten Nodes dasselbe Netzwerk-Gateway verwenden, können Sie ihn hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+GRID_NETWORK_GATEWAY = 10.1.0.1
+----
+* *GRID_NETWORK_MTU*: OPTIONAL. Die maximale Übertragungseinheit (MTU) im Grid-Netzwerk. Wenn angegeben, muss der Wert zwischen 1280 und 9216 liegen. Beispiel:
++
+[listing]
+----
+GRID_NETWORK_MTU = 8192
+----
++
+Wenn weggelassen wird, wird 1400 verwendet.
+
++
+Wenn Sie Jumbo Frames verwenden möchten, setzen Sie die MTU auf einen für Jumbo Frames geeigneten Wert, z. B. 9000. Behalten Sie andernfalls den Standardwert bei.
+
++
+
+IMPORTANT: Der MTU-Wert des Netzwerks muss mit dem Wert übereinstimmen, der auf dem Switch-Port konfiguriert ist, mit dem der Node verbunden ist. Andernfalls können Probleme mit der Netzwerkleistung oder Paketverluste auftreten.
+
++
+
+IMPORTANT: Für die beste Netzwerkleistung sollten alle Knoten auf ihren Grid Network Interfaces mit ähnlichen MTU-Werten konfiguriert werden. Die Warnung *Grid Network MTU mismatch* wird ausgelöst, wenn sich die MTU-Einstellungen für das Grid Network auf einzelnen Knoten erheblich unterscheiden. Die MTU-Werte müssen nicht für alle Netzwerktypen identisch sein.
+
+* *ADMIN_NETWORK_CONFIG*: Die Methode zum Abrufen von IP-Adressen, entweder DEAKTIVIERT, STATISCH oder DHCP. Die Standardeinstellung IST DEAKTIVIERT. Wenn alle oder die meisten Knoten dieselbe Methode zum Erwerb von IP-Adressen verwenden, können Sie diese Methode hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+ADMIN_NETWORK_CONFIG = STATIC
+----
+* *ADMIN_NETWORK_TARGET*: Der Name eines vorhandenen VMware-Netzwerks, das für das Admin-Netzwerk verwendet werden soll. Diese Einstellung ist erforderlich, es sei denn, das Admin-Netzwerk ist deaktiviert. Wenn alle oder die meisten Nodes denselben Netzwerknamen verwenden, können Sie ihn hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+ADMIN_NETWORK_TARGET = SG-Admin-Network
+----
+* *ADMIN_NETWORK_MASKE*: Die Netzwerkmaske für das Admin-Netzwerk. Diese Einstellung ist erforderlich, wenn Sie statische IP-Adressen verwenden. Wenn alle oder die meisten Nodes dieselbe Netzwerkmaske verwenden, können Sie sie hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+ADMIN_NETWORK_MASK = 255.255.255.0
+----
+* *ADMIN_NETWORK_GATEWAY*: Das Netzwerk-Gateway für das Admin-Netzwerk. Diese Einstellung ist erforderlich, wenn Sie statische IP-Adressen verwenden und externe Subnetze in DER EINSTELLUNG ADMIN_NETWORK_ESL angeben. (Das heißt, es ist nicht erforderlich, wenn ADMIN_NETWORK_ESL leer ist.) Wenn alle oder die meisten Nodes dasselbe Netzwerk-Gateway verwenden, können Sie ihn hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+ADMIN_NETWORK_GATEWAY = 10.3.0.1
+----
+* *ADMIN_NETWORK_ESL*: Die externe Subnetz-Liste (Routen) für das Admin-Netzwerk, angegeben als kommagetrennte Liste der CIDR-Routenziele. Wenn alle oder die meisten Knoten dieselbe externe Subnetz Liste verwenden, können Sie sie hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+ADMIN_NETWORK_ESL = 172.16.0.0/21,172.17.0.0/21
+----
+* *ADMIN_NETWORK_MTU*: OPTIONAL. Die maximale Übertragungseinheit (MTU) im Admin-Netzwerk. Geben Sie nicht an, ob ADMIN_NETWORK_CONFIG = DHCP ist. Wenn angegeben, muss der Wert zwischen 1280 und 9216 liegen. Wenn weggelassen wird, wird 1400 verwendet. Wenn Sie Jumbo Frames verwenden möchten, setzen Sie die MTU auf einen für Jumbo Frames geeigneten Wert, z. B. 9000. Behalten Sie andernfalls den Standardwert bei. Wenn alle oder die meisten Knoten dieselbe MTU für das Admin-Netzwerk verwenden, können Sie diese hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+ADMIN_NETWORK_MTU = 8192
+----
+* *CLIENT_NETWORK_CONFIG*: Die Methode zum Abrufen von IP-Adressen, entweder DEAKTIVIERT, STATISCH oder DHCP. Die Standardeinstellung IST DEAKTIVIERT. Wenn alle oder die meisten Knoten dieselbe Methode zum Erwerb von IP-Adressen verwenden, können Sie diese Methode hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+CLIENT_NETWORK_CONFIG = STATIC
+----
+* *CLIENT_NETWORK_TARGET*: Der Name eines vorhandenen VMware-Netzwerks, das für das Client-Netzwerk verwendet werden soll. Diese Einstellung ist erforderlich, es sei denn, das Client-Netzwerk ist deaktiviert. Wenn alle oder die meisten Nodes denselben Netzwerknamen verwenden, können Sie ihn hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+CLIENT_NETWORK_TARGET = SG-Client-Network
+----
+* *CLIENT_NETWORK_MASKE*: Die Netzwerkmaske für das Client-Netzwerk. Diese Einstellung ist erforderlich, wenn Sie statische IP-Adressen verwenden. Wenn alle oder die meisten Nodes dieselbe Netzwerkmaske verwenden, können Sie sie hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+CLIENT_NETWORK_MASK = 255.255.255.0
+----
+* *CLIENT_NETWORK_GATEWAY*: Das Netzwerk-Gateway für das Client-Netzwerk. Diese Einstellung ist erforderlich, wenn Sie statische IP-Adressen verwenden. Wenn alle oder die meisten Nodes dasselbe Netzwerk-Gateway verwenden, können Sie ihn hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+CLIENT_NETWORK_GATEWAY = 10.4.0.1
+----
+* *CLIENT_NETWORK_MTU*: OPTIONAL. Die maximale Übertragungseinheit (MTU) im Client-Netzwerk. Geben Sie nicht an, ob CLIENT_NETWORK_CONFIG = DHCP ist. Wenn angegeben, muss der Wert zwischen 1280 und 9216 liegen. Wenn weggelassen wird, wird 1400 verwendet. Wenn Sie Jumbo Frames verwenden möchten, setzen Sie die MTU auf einen für Jumbo Frames geeigneten Wert, z. B. 9000. Behalten Sie andernfalls den Standardwert bei. Wenn alle oder die meisten Knoten dieselbe MTU für das Client-Netzwerk verwenden, können Sie diese hier angeben. Sie können die globale Einstellung dann überschreiben, indem Sie unterschiedliche Einstellungen für einen oder mehrere einzelne Knoten festlegen. Beispiel:
++
+[listing]
+----
+CLIENT_NETWORK_MTU = 8192
+----
+* *PORT_REMAP*: Ordnet jeden Port, der von einem Knoten für interne Netzknoten-Kommunikation oder externe Kommunikation verwendet wird, neu zu. Ports müssen neu zugeordnet werden, wenn Netzwerkrichtlinien in Unternehmen eine oder mehrere von StorageGRID verwendete Ports einschränken. Eine Liste der von StorageGRID verwendeten Ports finden Sie unter interne Grid-Node-Kommunikation und externe Kommunikation in link:../network/index.html["Netzwerkrichtlinien"].
++
+
+IMPORTANT: Ordnen Sie die Ports, die Sie für die Konfiguration von Load Balancer-Endpunkten verwenden möchten, nicht neu zu.
+
++
+
+NOTE: Wenn nur PORT_REMAP festgelegt ist, wird die Zuordnung, die Sie angeben, sowohl für eingehende als auch für ausgehende Kommunikation verwendet. Wenn AUCH PORT_REMAP_INBOUND angegeben wird, gilt PORT_REMAP nur für ausgehende Kommunikation.
+
+
+
+Das verwendete Format ist: `_network type_/_protocol/_default port used by grid node_/_new port_`, Wobei der Netzwerktyp Grid, admin oder Client ist, und das Protokoll tcp oder udp ist.
+
+Beispiel:
+
+[listing]
+----
+PORT_REMAP = client/tcp/18082/443
+----
+Wenn diese Beispieleinstellung allein verwendet wird, ordnet sie symmetrisch ein- und ausgehende Kommunikation für den Grid-Knoten von Port 18082 bis Port 443 zu. Wenn dieses Beispiel zusammen mit PORT_REMAP_INBOUND verwendet wird, ordnet die ausgehende Kommunikation von Port 18082 zu Port 443 zu.
+
+* *PORT_REMAP_INBOUND*: Ordnet eingehende Kommunikation für den angegebenen Port neu zu. Wenn Sie PORT_REMAP_INBOUND angeben, jedoch keinen Wert für PORT_REMAP angeben, wird die ausgehende Kommunikation für den Port nicht geändert.
++
+
+IMPORTANT: Ordnen Sie die Ports, die Sie für die Konfiguration von Load Balancer-Endpunkten verwenden möchten, nicht neu zu.
+
+
+
+Das verwendete Format ist: `_network type_/_protocol/_default port used by grid node_/_new port_`, Wobei der Netzwerktyp Grid, admin oder Client ist, und das Protokoll tcp oder udp ist.
+
+Beispiel:
+
+[listing]
+----
+PORT_REMAP_INBOUND = client/tcp/443/18082
+----
+Dieses Beispiel nimmt den an Port 443 gesendeten Datenverkehr auf, um eine interne Firewall zu übergeben und ihn an Port 18082 zu leiten, wo der Grid-Node auf S3-Anforderungen hört.
+
+
+
+== Node-spezifische Parameter
+
+Jeder Node befindet sich in einem eigenen Abschnitt der Konfigurationsdatei. Jeder Node muss die folgenden Einstellungen vornehmen:
+
+* Der Abschnittskopf definiert den Knotennamen, der im Grid Manager angezeigt wird. Sie können diesen Wert außer Kraft setzen, indem Sie den optionalen NODE_NAME Parameter für den Node angeben.
+* *NODE_TYPE*: VM_Admin_Node, VM_Storage_Node, VM_Archive_Node oder VM_API_Gateway_Node
+* *GRID_NETWORK_IP*: Die IP-Adresse für den Knoten im Grid-Netzwerk.
+* *ADMIN_NETWORK_IP*: Die IP-Adresse für den Knoten im Admin-Netzwerk. Erforderlich nur, wenn der Knoten mit dem Admin-Netzwerk verbunden ist und ADMIN_NETWORK_CONFIG auf STATISCH gesetzt ist.
+* *CLIENT_NETWORK_IP*: Die IP-Adresse für den Knoten im Client-Netzwerk. Erforderlich nur, wenn der Knoten mit dem Client-Netzwerk verbunden ist und CLIENT_NETWORK_CONFIG für diesen Knoten auf STATISCH gesetzt ist.
+* *ADMIN_IP*: Die IP-Adresse für den primären Admin-Knoten im Grid-Netzwerk. Verwenden Sie den Wert, den Sie als GRID_NETWORK_IP für den primären Admin-Node angeben. Wenn Sie diesen Parameter nicht angeben, versucht der Node, die primäre Admin-Node-IP mit mDNS zu ermitteln. Weitere Informationen finden Sie unter link:how-grid-nodes-discover-primary-admin-node.html["Ermitteln der primären Admin-Node durch Grid-Nodes"].
++
+
+NOTE: Der ADMIN_IP-Parameter wird für den primären Admin-Node ignoriert.
+
+* Parameter, die nicht global festgelegt wurden. Wenn beispielsweise ein Node mit dem Admin-Netzwerk verbunden ist und Sie ADMIN_NETWORK nicht global angeben, müssen Sie diese für den Node angeben.
+
+
+
+
+== Primärer Admin-Node
+
+Für den primären Admin-Node sind folgende zusätzliche Einstellungen erforderlich:
+
+* *NODE_TYPE*: VM_Admin_Node
+* *ADMIN_ROLE*: Primär
+
+
+Dieser Beispieleintrag gilt für einen primären Admin-Knoten, der sich auf allen drei Netzwerken befindet:
+
+[listing]
+----
+[DC1-ADM1]
+  ADMIN_ROLE = Primary
+  NODE_TYPE = VM_Admin_Node
+
+  GRID_NETWORK_IP = 10.1.0.2
+  ADMIN_NETWORK_IP = 10.3.0.2
+  CLIENT_NETWORK_IP = 10.4.0.2
+----
+Die folgende zusätzliche Einstellung ist optional für den primären Admin-Knoten:
+
+* *DISK*: Admin Nodes werden standardmäßig zwei zusätzliche 200 GB-Festplatten für Audit und Datenbanknutzung zugewiesen. Diese Einstellungen können Sie mit dem FESTPLATTENPARAMETER erhöhen. Beispiel:
++
+[listing]
+----
+DISK = INSTANCES=2, CAPACITY=300
+----
+
+
+
+NOTE: Bei Admin-Nodes müssen INSTANZEN immer gleich 2 sein.
+
+
+
+== Storage-Node
+
+Für Speicherknoten ist die folgende zusätzliche Einstellung erforderlich:
+
+* *NODE_TYPE*: VM_Storage_Node
++
+Dieser Beispieleintrag gilt für einen Speicherknoten, der sich in Grid- und Admin-Netzwerken befindet, aber nicht im Client-Netzwerk. Dieser Knoten verwendet die EINSTELLUNG ADMIN_IP, um die IP-Adresse des primären Admin-Knotens im Grid-Netzwerk anzugeben.
+
++
+[listing]
+----
+[DC1-S1]
+  NODE_TYPE = VM_Storage_Node
+
+  GRID_NETWORK_IP = 10.1.0.3
+  ADMIN_NETWORK_IP = 10.3.0.3
+
+  ADMIN_IP = 10.1.0.2
+----
++
+Der zweite Beispieleintrag gilt für einen Speicherknoten in einem Client-Netzwerk, in dem in der unternehmensweiten Netzwerkrichtlinie des Kunden angegeben ist, dass eine S3-Client-Anwendung nur über Port 80 oder 443 auf den Storage-Node zugreifen darf. Die Beispielkonfigurationsdatei verwendet PORT_REMAP, um den Storage Node zum Senden und Empfangen von S3-Meldungen an Port 443 zu aktivieren.
+
++
+[listing]
+----
+[DC2-S1]
+  NODE_TYPE = VM_Storage_Node
+
+  GRID_NETWORK_IP = 10.1.1.3
+  CLIENT_NETWORK_IP = 10.4.1.3
+  PORT_REMAP = client/tcp/18082/443
+
+  ADMIN_IP = 10.1.0.2
+----
++
+Das letzte Beispiel erstellt eine symmetrische Neuzuordnung für ssh-Verkehr von Port 22 zu Port 3022, legt aber explizit die Werte für den ein- und ausgehenden Datenverkehr fest.
+
++
+[listing]
+----
+[DC1-S3]
+  NODE_TYPE = VM_Storage_Node
+
+  GRID_NETWORK_IP = 10.1.1.3
+
+  PORT_REMAP = grid/tcp/22/3022
+  PORT_REMAP_INBOUND = grid/tcp/3022/22
+
+  ADMIN_IP = 10.1.0.2
+----
+
+
+Die folgende zusätzliche Einstellung ist optional für Speicherknoten:
+
+* *DISK*: Standardmäßig werden den Speicherknoten drei 4 TB-Festplatten für die RangeDB-Nutzung zugewiesen. Sie können diese Einstellungen mit dem FESTPLATTENPARAMETER erhöhen. Beispiel:
++
+[listing]
+----
+DISK = INSTANCES=16, CAPACITY=4096
+----
+
+
+
+
+== Archiv-Node
+
+Für Archiv-Knoten ist die folgende zusätzliche Einstellung erforderlich:
+
+* *NODE_TYPE*: VM_Archive_Node
+
+
+Dieser Beispieleintrag gilt für einen Archiv-Node, der sich auf Grid- und Admin-Netzwerken befindet, jedoch nicht im Client-Netzwerk.
+
+[listing]
+----
+[DC1-ARC1]
+  NODE_TYPE = VM_Archive_Node
+
+  GRID_NETWORK_IP = 10.1.0.4
+  ADMIN_NETWORK_IP = 10.3.0.4
+
+  ADMIN_IP = 10.1.0.2
+----
+
+
+== Gateway-Node
+
+Für Gateway-Knoten ist die folgende zusätzliche Einstellung erforderlich:
+
+* *NODE_TYPE*: VM_API_GATEWAY
+
+
+Dieser Beispieleintrag gilt für einen Beispiel-Gateway-Node auf allen drei Netzwerken. In diesem Beispiel wurden im globalen Abschnitt der Konfigurationsdatei keine Client-Netzwerkparameter angegeben, so dass sie für den Knoten angegeben werden müssen:
+
+[listing]
+----
+[DC1-G1]
+  NODE_TYPE = VM_API_Gateway
+
+  GRID_NETWORK_IP = 10.1.0.5
+  ADMIN_NETWORK_IP = 10.3.0.5
+
+  CLIENT_NETWORK_CONFIG = STATIC
+  CLIENT_NETWORK_TARGET = SG-Client-Network
+  CLIENT_NETWORK_MASK = 255.255.255.0
+  CLIENT_NETWORK_GATEWAY = 10.4.0.1
+  CLIENT_NETWORK_IP = 10.4.0.5
+
+  ADMIN_IP = 10.1.0.2
+----
+
+
+== Nicht primärer Admin-Node
+
+Die folgenden zusätzlichen Einstellungen sind für nicht-primäre Admin-Nodes erforderlich:
+
+* *NODE_TYPE*: VM_Admin_Node
+* *ADMIN_ROLE*: Nicht-Primary
+
+
+Dieser Beispieleintrag gilt für einen nicht-primären Admin-Node, der sich nicht im Client-Netzwerk befindet:
+
+[listing]
+----
+[DC2-ADM1]
+  ADMIN_ROLE = Non-Primary
+  NODE_TYPE = VM_Admin_Node
+
+  GRID_NETWORK_TARGET = SG-Grid-Network
+  GRID_NETWORK_IP = 10.1.0.6
+  ADMIN_NETWORK_IP = 10.3.0.6
+
+  ADMIN_IP = 10.1.0.2
+----
+Die folgende zusätzliche Einstellung ist optional für nicht-primäre Admin-Knoten:
+
+* *DISK*: Admin Nodes werden standardmäßig zwei zusätzliche 200 GB-Festplatten für Audit und Datenbanknutzung zugewiesen. Diese Einstellungen können Sie mit dem FESTPLATTENPARAMETER erhöhen. Beispiel:
++
+[listing]
+----
+DISK = INSTANCES=2, CAPACITY=300
+----
+
+
+
+NOTE: Bei Admin-Nodes müssen INSTANZEN immer gleich 2 sein.
+
+.Verwandte Informationen
+link:how-grid-nodes-discover-primary-admin-node.html["Ermitteln der primären Admin-Node durch Grid-Nodes"]
+
+link:../network/index.html["Netzwerkrichtlinien"]

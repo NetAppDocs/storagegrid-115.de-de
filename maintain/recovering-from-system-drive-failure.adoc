@@ -1,0 +1,33 @@
+---
+permalink: maintain/recovering-from-system-drive-failure.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, system drive failure 
+summary: Wenn das Systemlaufwerk auf einem softwarebasierten Speicherknoten ausgefallen ist, steht der Speicherknoten dem StorageGRID-System nicht zur Verfügung. Sie müssen einen bestimmten Satz von Aufgaben zur Wiederherstellung nach einem Systemausfall ausführen. 
+---
+= Wiederherstellung nach einem Systemausfall
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn das Systemlaufwerk auf einem softwarebasierten Speicherknoten ausgefallen ist, steht der Speicherknoten dem StorageGRID-System nicht zur Verfügung. Sie müssen einen bestimmten Satz von Aufgaben zur Wiederherstellung nach einem Systemausfall ausführen.
+
+.Über diese Aufgabe
+Gehen Sie folgendermaßen vor, um nach einem Systemlaufwerksausfall auf einem softwarebasierten Speicherknoten wiederherzustellen. Dieses Verfahren umfasst die folgenden Schritte, wenn auch Storage-Volumes ausgefallen sind oder nicht neu eingebunden werden können.
+
+
+NOTE: Dieses Verfahren gilt nur für softwarebasierte Speicherknoten. Sie müssen ein anderes Verfahren befolgen, um einen Appliance-Speicherknoten wiederherzustellen.
+
+link:recovering-storagegrid-appliance-storage-node.html["Wiederherstellen eines Speicherknoten für StorageGRID-Geräte"]
+
+image::../media/storage_node_recovery_system_drive.gif[Wiederherstellungsschritte für ausgefallenes Systemlaufwerk auf softwarebasierter Speicherknoten]
+
+.Schritte
+* link:reviewing-warnings-for-system-drive-recovery.html["Überprüfen von Warnungen für die Wiederherstellung von Speicherknoten-Laufwerken"]
+* link:replacing-storage-node.html["Ersetzen des Speicherknotens"]
+* link:selecting-start-recovery-to-configure-storage-node.html["Wählen Sie Wiederherstellung starten, um einen Speicherknoten zu konfigurieren"]
+* link:remounting-and-reformatting-storage-volumes-manual-steps.html["Erneutes Mounten und Neuformatieren von Storage Volumes („`MAnual Steps`“)"]
+* link:restoring-object-data-to-storage-volume-if-required.html["Wiederherstellen von Objektdaten in einem Storage Volume, falls erforderlich"]
+* link:checking-storage-state-after-recovering-storage-node-system-drive.html["Überprüfen des Speicherstatus nach der Wiederherstellung eines Speicherknoten-Systemlaufwerks"]
+

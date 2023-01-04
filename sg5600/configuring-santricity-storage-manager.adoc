@@ -1,0 +1,20 @@
+---
+permalink: sg5600/configuring-santricity-storage-manager.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, SANtricity Storage Manager, SANtricity, Storage Manager, configure, configuring, setup, set up, setting up, e2700 
+summary: 'Mit SANtricity Storage Manager lässt sich der Status der Storage-Festplatten und Hardwarekomponenten Ihrer StorageGRID Appliance überwachen. Um auf diese Software zuzugreifen, müssen Sie die IP-Adresse des Managementports 1 auf dem E2700 Controller \(der Storage Controller in der Appliance\) kennen.' 
+---
+= SANtricity Storage Manager wird konfiguriert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SANtricity Storage Manager lässt sich der Status der Storage-Festplatten und Hardwarekomponenten Ihrer StorageGRID Appliance überwachen. Um auf diese Software zuzugreifen, müssen Sie die IP-Adresse des Managementports 1 auf dem E2700 Controller (der Storage Controller in der Appliance) kennen.
+
+.Schritte
+* link:setting-ip-address-for-e2700-controller.html["Festlegen der IP-Adresse für den E2700 Controller"]
+* link:adding-appliance-to-santricity-storage-manager.html["Hinzufügen der Appliance zum SANtricity Storage Manager"]
+* link:setting-up-santricity-storage-manager.html["Einrichten von SANtricity-Storage-Manager"]
+

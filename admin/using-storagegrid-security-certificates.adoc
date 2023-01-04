@@ -1,0 +1,221 @@
+---
+permalink: admin/using-storagegrid-security-certificates.html 
+sidebar: sidebar 
+keywords:  
+summary: Sicherheitszertifikate sind kleine Datendateien, die zur Erstellung sicherer, vertrauenswürdiger Verbindungen zwischen StorageGRID-Komponenten und zwischen StorageGRID-Komponenten und externen Systemen verwendet werden. 
+---
+= StorageGRID-Sicherheitszertifikate werden verwendet
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sicherheitszertifikate sind kleine Datendateien, die zur Erstellung sicherer, vertrauenswürdiger Verbindungen zwischen StorageGRID-Komponenten und zwischen StorageGRID-Komponenten und externen Systemen verwendet werden.
+
+StorageGRID verwendet zwei Arten von Sicherheitszertifikaten:
+
+* *Serverzertifikate* sind erforderlich, wenn Sie HTTPS-Verbindungen verwenden. Serverzertifikate werden verwendet, um sichere Verbindungen zwischen Clients und Servern herzustellen, die Identität eines Servers bei seinen Clients zu authentifizieren und einen sicheren Kommunikationspfad für Daten bereitzustellen. Der Server und der Client verfügen jeweils über eine Kopie des Zertifikats.
+* *Clientzertifikate* authentifizieren eine Client- oder Benutzeridentität auf dem Server und bieten eine sicherere Authentifizierung als Passwörter allein. Clientzertifikate verschlüsseln keine Daten.
+
+
+Wenn ein Client über HTTPS eine Verbindung zum Server herstellt, antwortet der Server mit dem Serverzertifikat, das einen öffentlichen Schlüssel enthält. Der Client überprüft dieses Zertifikat, indem er die Serversignatur mit der Signatur seiner Kopie des Zertifikats vergleicht. Wenn die Signaturen übereinstimmen, startet der Client eine Sitzung mit dem Server, der denselben öffentlichen Schlüssel verwendet.
+
+StorageGRID-Funktionen wie der Server für einige Verbindungen (z. B. den Endpunkt des Load Balancer) oder als Client für andere Verbindungen (z. B. den CloudMirror-Replikationsdienst).
+
+Eine externe Zertifizierungsstelle (CA) kann benutzerdefinierte Zertifikate ausstellen, die vollständig den Informationssicherheitsrichtlinien Ihres Unternehmens entsprechen. StorageGRID umfasst außerdem eine integrierte Zertifizierungsstelle (Certificate Authority, CA), die während der Systeminstallation interne CA-Zertifikate generiert. Diese internen CA-Zertifikate werden standardmäßig zum Schutz des internen StorageGRID-Datenverkehrs verwendet. Obwohl Sie die internen CA-Zertifikate für eine nicht-Produktionsumgebungen verwenden können, empfiehlt es sich, benutzerdefinierte Zertifikate zu verwenden, die von einer externen Zertifizierungsstelle signiert sind. Ungesicherte Verbindungen ohne Zertifikat werden ebenfalls unterstützt, werden jedoch nicht empfohlen.
+
+* Benutzerdefinierte CA-Zertifikate entfernen die internen Zertifikate nicht. Die benutzerdefinierten Zertifikate sollten jedoch die für die Überprüfung der Serververbindungen angegebenen Zertifikate sein.
+* Alle benutzerdefinierten Zertifikate müssen den Richtlinien zur Systemhärtung für Serverzertifikate entsprechen.
++
+link:../harden/index.html["Systemhärtung"]
+
+* StorageGRID unterstützt das Bündeln von Zertifikaten aus einer Zertifizierungsstelle in einer einzelnen Datei (Bundle als CA-Zertifikat).
+
+
+
+NOTE: StorageGRID enthält auch CA-Zertifikate für das Betriebssystem, die in allen Grids identisch sind. Stellen Sie in Produktionsumgebungen sicher, dass Sie ein benutzerdefiniertes Zertifikat angeben, das von einer externen Zertifizierungsstelle anstelle des CA-Zertifikats des Betriebssystems signiert wurde.
+
+Varianten der Server- und Client-Zertifikatstypen werden auf verschiedene Weise implementiert. Vor der Konfiguration des Systems sollten Sie alle erforderlichen Zertifikate für Ihre spezifische StorageGRID-Konfiguration bereithaben.
+
+[cols="1a,1a,1a,1a,1a"]
+|===
+| Zertifikat | Zertifikatstyp | Beschreibung | Speicherort für die Navigation | Details 
+
+
+ a| 
+Administrator-Client-Zertifikat
+ a| 
+Client
+ a| 
+Wird auf jedem Client installiert, sodass StorageGRID den externen Client-Zugriff authentifizieren kann.
+
+* Ermöglicht autorisierten externen Clients den Zugriff auf die StorageGRID Prometheus-Datenbank.
+* Ermöglicht die sichere Überwachung von StorageGRID mit externen Tools.
+
+ a| 
+*Konfiguration* > *Zugangskontrolle* > *Client-Zertifikate*
+ a| 
+link:configuring-administrator-client-certificates.html["Administrator-Client-Zertifikate werden konfiguriert"]
+
+
+
+ a| 
+Zertifikat für Identitätsföderation
+ a| 
+Server
+ a| 
+Authentifiziert die Verbindung zwischen StorageGRID und einem externen Active Directory-, OpenLDAP- oder Oracle Directory-Server.wird für die Identitätsföderation verwendet, sodass Administratorgruppen und Benutzer von einem externen System gemanagt werden können.
+ a| 
+*Konfiguration* > *Zugangskontrolle* > *Identitätsföderation*
+ a| 
+link:using-identity-federation.html["Identitätsföderation verwenden"]
+
+
+
+ a| 
+SSO-Zertifikat (Single Sign On)
+ a| 
+Server
+ a| 
+Authentifiziert die Verbindung zwischen Active Directory Federation Services (AD FS) und StorageGRID, die für SSO-Anfragen (Single Sign On) verwendet werden.
+ a| 
+*Konfiguration* > *Zugangskontrolle* > *Single Sign-On*
+ a| 
+link:configuring-sso.html["Konfigurieren der Single Sign-On-Konfiguration"]
+
+
+
+ a| 
+KMS-Zertifikat (Key Management Server)
+ a| 
+Server und Client
+ a| 
+Authentifiziert die Verbindung zwischen StorageGRID und einem externen Verschlüsselungsmanagement-Server (KMS), der Verschlüsselungsschlüssel für die StorageGRID Appliance-Nodes bereitstellt.
+ a| 
+*Konfiguration* > *Systemeinstellungen* > *Schlüsselverwaltungsserver*
+ a| 
+link:kms-adding.html["Hinzufügen eines Verschlüsselungsmanagement-Servers (KMS)"]
+
+
+
+ a| 
+Zertifikat für eine E-Mail-Benachrichtigung
+ a| 
+Server und Client
+ a| 
+Authentifiziert die Verbindung zwischen einem SMTP-E-Mail-Server und StorageGRID, die für Benachrichtigungen verwendet werden.
+
+* Wenn die Kommunikation mit dem SMTP-Server TLS (Transport Layer Security) erfordert, müssen Sie das CA-Zertifikat für den E-Mail-Server angeben.
+* Geben Sie ein Clientzertifikat nur an, wenn für den SMTP-E-Mail-Server Clientzertifikate zur Authentifizierung erforderlich sind.
+
+ a| 
+*Alarme* > *E-Mail-Einrichtung*
+ a| 
+link:../monitor/index.html["Monitor  Fehlerbehebung"]
+
+
+
+ a| 
+Endpunkt-Zertifikat für Load Balancer
+ a| 
+Server
+ a| 
+Authentifiziert die Verbindung zwischen S3- oder Swift-Clients und dem StorageGRID Load Balancer-Service auf Gateway-Nodes oder Admin-Nodes. Sie laden ein Load Balancer-Zertifikat hoch oder generieren ein Load Balancer-Zertifikat, wenn Sie einen Load Balancer-Endpunkt konfigurieren.Client-Anwendungen verwenden das Load Balancer-Zertifikat bei der Verbindung zu StorageGRID zum Speichern und Abrufen von Objektdaten.
+
+*Hinweis:* das Load Balancer-Zertifikat ist das am häufigsten verwendete Zertifikat während des normalen StorageGRID-Betriebs.
+ a| 
+*Konfiguration* > *Netzwerkeinstellungen* > *Load Balancer Endpoints*
+ a| 
+* link:configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"]
+* Erstellen eines Endpunkts für den Load Balancer für FabricPool
++
+link:../fabricpool/index.html["Konfigurieren Sie StorageGRID für FabricPool"]
+
+
+
+
+
+ a| 
+Zertifikat Für Den Management Interface Server
+ a| 
+Server
+ a| 
+Authentifiziert die Verbindung zwischen Client-Webbrowsern und der StorageGRID-Managementoberfläche, sodass Benutzer ohne Sicherheitswarnungen auf Grid-Manager und Mandantenmanager zugreifen können.
+
+Dieses Zertifikat authentifiziert auch Grid Management-API- und Mandantenmanagement-API-Verbindungen.
+
+Sie können das interne CA-Zertifikat verwenden oder ein benutzerdefiniertes Zertifikat hochladen.
+ a| 
+*Konfiguration* > *Netzwerkeinstellungen* > *Serverzertifikate*
+ a| 
+* link:configuring-server-certificates.html["Serverzertifikate werden konfiguriert"]
+* link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html["Konfigurieren eines benutzerdefinierten Serverzertifikats für den Grid Manager und den Tenant Manager"]
+
+
+
+
+ a| 
+Endpunkt-Zertifikat für Cloud Storage Pool
+ a| 
+Server
+ a| 
+Authentifiziert die Verbindung vom StorageGRID Cloud Storage Pool an einem externen Storage-Standort (z. B. S3 Glacier oder Microsoft Azure Blob Storage). Für jeden Cloud-Provider-Typ ist ein anderes Zertifikat erforderlich.
+ a| 
+*ILM* > *Speicherpools*
+ a| 
+link:../ilm/index.html["Objektmanagement mit ILM"]
+
+
+
+ a| 
+Endpoint-Zertifikat für Plattform-Services
+ a| 
+Server
+ a| 
+Authentifiziert die Verbindung vom StorageGRID Plattform-Service zu einer S3-Storage-Ressource.
+ a| 
+*Tenant Manager* > *STORAGE (S3)* > *Plattform-Services-Endpunkte*
+ a| 
+link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]
+
+
+
+ a| 
+Endpoint Server-Zertifikat für den Objekt-Storage-API-Service
+ a| 
+Server
+ a| 
+Authentifiziert sichere S3- oder Swift-Client-Verbindungen mit dem LDR-Service (Local Distribution Router) auf einem Storage-Node oder zum veralteten Connection Load Balancer (CLB)-Service auf einem Gateway-Node.
+ a| 
+*Konfiguration* > *Netzwerkeinstellungen* > *Load Balancer Endpoints*
+ a| 
+link:configuring-custom-server-certificate-for-storage-node-or-clb.html["Konfigurieren eines benutzerdefinierten Serverzertifikats für Verbindungen mit dem Speicherknoten oder dem CLB-Dienst"]
+
+|===
+
+
+== Beispiel 1: Load Balancer Service
+
+In diesem Beispiel fungiert StorageGRID als Server.
+
+. Sie konfigurieren einen Load Balancer-Endpunkt und laden ein Serverzertifikat in StorageGRID hoch oder erstellen.
+. Sie konfigurieren eine S3- oder Swift-Client-Verbindung zum Endpunkt des Load Balancer und laden dasselbe Zertifikat auf den Client hoch.
+. Wenn der Client Daten speichern oder abrufen möchte, stellt er über HTTPS eine Verbindung zum Load Balancer-Endpunkt her.
+. StorageGRID antwortet mit dem Serverzertifikat, das einen öffentlichen Schlüssel enthält, und mit einer Signatur auf Grundlage des privaten Schlüssels.
+. Der Client überprüft dieses Zertifikat, indem er die Serversignatur mit der Signatur seiner Kopie des Zertifikats vergleicht. Wenn die Signaturen übereinstimmen, startet der Client eine Sitzung mit demselben öffentlichen Schlüssel.
+. Der Client sendet Objektdaten an StorageGRID.
+
+
+
+
+== Beispiel 2: Externer KMS (Key Management Server)
+
+In diesem Beispiel fungiert StorageGRID als Client.
+
+. Mithilfe der Software für den externen Verschlüsselungsmanagement-Server konfigurieren Sie StorageGRID als KMS-Client und erhalten ein von einer Zertifizierungsstelle signiertes Serverzertifikat, ein öffentliches Clientzertifikat und den privaten Schlüssel für das Clientzertifikat.
+. Mit dem Grid Manager konfigurieren Sie einen KMS-Server und laden die Server- und Client-Zertifikate sowie den privaten Client-Schlüssel hoch.
+. Wenn ein StorageGRID-Node einen Verschlüsselungsschlüssel benötigt, fordert er den KMS-Server an, der Daten des Zertifikats enthält und eine auf dem privaten Schlüssel basierende Signatur.
+. Der KMS-Server validiert die Zertifikatsignatur und entscheidet, dass er StorageGRID vertrauen kann.
+. Der KMS-Server antwortet über die validierte Verbindung.
+

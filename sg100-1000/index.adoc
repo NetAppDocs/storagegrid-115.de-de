@@ -1,0 +1,27 @@
+---
+permalink: sg100-1000/index.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node 
+summary: Lesen Sie, wie Sie die StorageGRID SG100- und SG1000-Appliances installieren und warten. 
+---
+= SG100- und SG1000-Services-Appliances
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lesen Sie, wie Sie die StorageGRID SG100- und SG1000-Appliances installieren und warten.
+
+* link:sg100-and-sg1000-appliances-overview.html["SG100- und SG1000-Geräte im Überblick"]
+* link:sg100-and-sg1000-applications.html["SG100- und SG1000-Applikationen"]
+* link:installation-and-deployment-overview.html["Übersicht über Installation und Implementierung"]
+* link:preparing-for-installation-sg100-and-sg1000.html["Installation wird vorbereitet"]
+* link:installing-hardware-sg100-and-sg1000.html["Installieren der Hardware"]
+* link:configuring-storagegrid-connections-sg100-and-sg1000.html["Konfigurieren von StorageGRID-Verbindungen"]
+* link:configuring-bmc-interface-sg1000.html["Konfigurieren der BMC-Schnittstelle"]
+* link:optional-enabling-node-encryption.html["Optional: Aktivieren der Node-Verschlüsselung"]
+* link:deploying-services-appliance-node.html["Implementieren eines Service-Appliance-Nodes"]
+* link:troubleshooting-hardware-installation-sg100-and-sg1000.html["Fehlerbehebung bei der Hardwareinstallation"]
+* link:maintaining-services-appliance-sg100-and-sg1000.html["Warten des Geräts"]
+

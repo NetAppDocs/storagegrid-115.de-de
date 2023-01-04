@@ -1,0 +1,19 @@
+---
+permalink: ilm/configuring-erasure-coding-profiles.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie konfigurieren Erasure Coding-Profile, indem Sie einen Storage Pool mit einem Erasure Coding-Schema wie 6+3 verknüpfen. Wenn Sie dann die Anweisungen zur Platzierung einer ILM-Regel konfigurieren, können Sie das Erasure Coding-Profil auswählen. Entspricht ein Objekt der Regel, werden Daten- und Paritätsfragmente erstellt und gemäß dem Erasure Coding-Schema an die Storage-Standorte im Storage Pool verteilt. 
+---
+= Konfigurieren von Erasure Coding-Profilen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie konfigurieren Erasure Coding-Profile, indem Sie einen Storage Pool mit einem Erasure Coding-Schema wie 6+3 verknüpfen. Wenn Sie dann die Anweisungen zur Platzierung einer ILM-Regel konfigurieren, können Sie das Erasure Coding-Profil auswählen. Entspricht ein Objekt der Regel, werden Daten- und Paritätsfragmente erstellt und gemäß dem Erasure Coding-Schema an die Storage-Standorte im Storage Pool verteilt.
+
+* link:creating-erasure-coding-profile.html["Erstellen eines Erasure Coding-Profils"]
+* link:renaming-erasure-coding-profile.html["Umbenennen eines Erasure Coding-Profils"]
+* link:deactivating-erasure-coding-profile.html["Deaktivieren eines Erasure Coding-Profils"]
+

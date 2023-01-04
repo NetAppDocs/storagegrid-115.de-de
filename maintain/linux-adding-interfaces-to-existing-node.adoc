@@ -1,0 +1,60 @@
+---
+permalink: maintain/linux-adding-interfaces-to-existing-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, linux, adding interfaces, add interfaces, adding interface to node, add interface to node 
+summary: Wenn Sie eine Schnittstelle zu einem Linux-basierten Node hinzufügen möchten, den Sie anfangs nicht installiert haben, müssen Sie diese Vorgehensweise anwenden. 
+---
+= Linux: Hinzufügen von Schnittstellen zu einem vorhandenen Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie eine Schnittstelle zu einem Linux-basierten Node hinzufügen möchten, den Sie anfangs nicht installiert haben, müssen Sie diese Vorgehensweise anwenden.
+
+Wenn SIE WÄHREND der Installation IN der Node-Konfigurationsdatei auf dem Linux-Host NICHT ADMIN_NETWORK_TARGET oder CLIENT_NETWORK_TARGET konfiguriert haben, verwenden Sie dieses Verfahren, um die Schnittstelle hinzuzufügen. Weitere Informationen zur Node-Konfigurationsdatei finden Sie in den StorageGRID-Installationsanweisungen für Ihr Linux-Betriebssystem.
+
+link:../rhel/index.html["Installieren Sie Red hat Enterprise Linux oder CentOS"]
+
+link:../ubuntu/index.html["Installieren Sie Ubuntu oder Debian"]
+
+Sie führen diese Schritte auf dem Linux-Server durch, der den Node hostet, der die neue Netzwerkzuweisung benötigt, nicht innerhalb des Nodes. Bei diesem Vorgang wird die Schnittstelle nur dem Knoten hinzugefügt. Ein Validierungsfehler tritt auf, wenn Sie versuchen, andere Netzwerkparameter anzugeben.
+
+Um Adressinformationen bereitzustellen, müssen Sie das Werkzeug IP ändern verwenden. Informationen zum Ändern der Netzwerkkonfiguration eines Node finden Sie unter.
+
+link:changing-nodes-network-configuration.html["Ändern der Netzwerkkonfiguration eines Node"]
+
+.Schritte
+. Melden Sie sich beim Linux-Server an, auf dem der Node gehostet wird, der die neue Netzwerkzuweisung benötigt.
+. Bearbeiten Sie die Konfigurationsdatei des Knotens unter `/etc/storagegrid/nodes/_node-name_.conf`.
++
+
+IMPORTANT: Geben Sie keine anderen Netzwerkparameter an, oder ein Validierungsfehler führt zu einem Ergebnis.
+
++
+.. Fügen Sie das neue Netzwerkziel hinzu.
++
+[listing]
+----
+CLIENT_NETWORK_TARGET = bond0.3206
+----
+.. Optional: Fügen Sie eine MAC-Adresse hinzu.
++
+[listing]
+----
+CLIENT_NETWORK_MAC = aa:57:61:07:ea:5c
+----
+
+
+. Führen Sie den Node-Validier-Befehl aus: `sudo storagegrid node validate _node-name_`
+. Beheben Sie alle Validierungsfehler.
+. Führen Sie den Befehl zum erneuten Laden des Node aus: `sudo storagegrid node reload _node-name_`
+
+
+.Verwandte Informationen
+link:../rhel/index.html["Installieren Sie Red hat Enterprise Linux oder CentOS"]
+
+link:../ubuntu/index.html["Installieren Sie Ubuntu oder Debian"]
+
+link:changing-nodes-network-configuration.html["Ändern der Netzwerkkonfiguration eines Node"]

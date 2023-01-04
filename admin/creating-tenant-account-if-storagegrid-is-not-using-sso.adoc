@@ -1,0 +1,173 @@
+---
+permalink: admin/creating-tenant-account-if-storagegrid-is-not-using-sso.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Wenn Sie ein Mandantenkonto erstellen, geben Sie einen Namen, ein Client-Protokoll und optional ein Storage-Kontingent an. Wenn StorageGRID keine Single Sign-On \(SSO\) verwendet, müssen Sie auch angeben, ob das Mandantenkonto seine eigene Identitätsquelle verwendet und das ursprüngliche Passwort für den lokalen Root-Benutzer des Mandanten konfiguriert.' 
+---
+= Erstellen eines Mandantenkontos, wenn StorageGRID kein SSO verwendet
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie ein Mandantenkonto erstellen, geben Sie einen Namen, ein Client-Protokoll und optional ein Storage-Kontingent an. Wenn StorageGRID keine Single Sign On (SSO) verwendet, müssen Sie außerdem angeben, ob das Mandantenkonto seine eigene Identitätsquelle verwendet und das ursprüngliche Passwort für den lokalen Root-Benutzer des Mandanten konfiguriert.
+
+.Über diese Aufgabe
+Wenn das Mandantenkonto die Identitätsquelle verwendet, die für den Grid Manager konfiguriert wurde, und Sie eine föderierte Gruppe mit Root Access-Berechtigungen für das Mandantenkonto gewähren möchten, müssen Sie diese föderierte Gruppe in den Grid Manager importiert haben. Sie müssen dieser Admin-Gruppe keine Grid Manager-Berechtigungen zuweisen. Siehe Anweisungen für link:managing-admin-groups.html["Verwalten von Admin-Gruppen"].
+
+.Schritte
+. Geben Sie im Textfeld *Anzeigename* einen Anzeigenamen für dieses Mandantenkonto ein.
++
+Anzeigenamen müssen nicht eindeutig sein. Wenn das Mandantenkonto erstellt wird, erhält es eine eindeutige, numerische Konto-ID.
+
+. Wählen Sie das Client-Protokoll aus, das von diesem Mandantenkonto verwendet wird, entweder *S3* oder *Swift*.
+. Aktivieren Sie für S3-Mandantenkonten das Kontrollkästchen *Platform Services zulassen*, es sei denn, dass dieser Mandant Plattformdienste für S3-Buckets verwendet.
++
+Wenn Plattformservices aktiviert sind, kann ein Mandant Funktionen wie CloudMirror Replizierung verwenden, die auf externe Services zugreifen. Vielleicht möchten Sie die Verwendung dieser Funktionen deaktivieren, um die Netzwerkbandbreite oder andere Ressourcen einzuschränken, die von einem Mandanten verbraucht werden. Siehe „`MAnaging Platform Services`“.
+
+. Geben Sie im Textfeld *Speicherkontingent* optional die maximale Anzahl von Gigabyte, Terabyte oder Petabytes ein, die Sie für die Objekte dieses Mandanten bereitstellen möchten. Wählen Sie dann die Einheiten aus der Dropdown-Liste aus.
++
+Lassen Sie dieses Feld leer, wenn dieser Mieter eine unbegrenzte Quote haben soll.
+
++
+
+NOTE: Das Storage-Kontingent eines Mandanten stellt eine logische Menge (Objektgröße) und keine physische Menge (Größe auf der Festplatte) dar. ILM-Kopien und Erasure Coding tragen nicht zum Umfang des verwendeten Kontingents bei. Wenn das Kontingent überschritten wird, kann das Mandantenkonto keine neuen Objekte erstellen.
+
++
+
+NOTE: Um die Storage-Nutzung jedes Mandantenkontos zu überwachen, wählen Sie *Nutzung*. Mandantenkonten können auch ihre eigene Storage-Auslastung von der Konsole im Mandantenmanager oder mit der Mandantenmanagement-API überwachen. Beachten Sie, dass die Storage-Nutzungswerte eines Mandanten möglicherweise nicht mehr aktuell sind, wenn Nodes von anderen Nodes im Grid isoliert werden. Die Gesamtwerte werden aktualisiert, wenn die Netzwerkverbindung wiederhergestellt ist.
+
+. Wenn der Mandant seine eigenen Gruppen und Benutzer verwaltet, führen Sie diese Schritte aus.
++
+.. Aktivieren Sie das Kontrollkästchen * verwendet eigene Identitätsquelle* (Standard).
++
+
+NOTE: Wenn dieses Kontrollkästchen aktiviert ist und Sie einen Identitätsverbund für Mandanten und Benutzer verwenden möchten, muss der Mandant seine eigene Identitätsquelle konfigurieren. Siehe die Anweisungen zur Verwendung von Mandantenkonten.
+
+.. Geben Sie ein Passwort für den lokalen Root-Benutzer des Mandanten an.
+
+
+. Wenn der Mandant die für den Grid Manager konfigurierten Gruppen und Benutzer verwendet, führen Sie die folgenden Schritte aus.
++
+.. Deaktivieren Sie das Kontrollkästchen * verwendet eigene Identitätsquelle*.
+.. Führen Sie einen oder beide der folgenden Schritte aus:
++
+*** Wählen Sie im Feld Root Access Group eine vorhandene föderierte Gruppe aus dem Grid Manager aus, die über die ursprüngliche Root Access-Berechtigung für den Mandanten verfügen soll.
++
+
+NOTE: Wenn Sie über ausreichende Berechtigungen verfügen, werden die vorhandenen föderierten Gruppen aus dem Grid Manager aufgelistet, wenn Sie auf das Feld klicken. Geben Sie andernfalls den eindeutigen Namen der Gruppe ein.
+
+*** Geben Sie ein Passwort für den lokalen Root-Benutzer des Mandanten an.
+
+
+
+
+. Klicken Sie Auf *Speichern*.
++
+Das Mandantenkonto wird erstellt.
+
+. Optional können Sie auf den neuen Mandanten zugreifen. Andernfalls fahren Sie mit dem Schritt für fort <<STEP_SIGN_IN_LATER,Später Zugriff auf den Mandanten>>.
++
+[cols="1a,2a"]
+|===
+| Ihr Unternehmen | Tun Sie das... 
+
+
+ a| 
+Zugriff auf den Grid Manager über einen eingeschränkten Port
+ a| 
+Klicken Sie auf *eingeschränkt*, um mehr über den Zugriff auf dieses Mandantenkonto zu erfahren.
+
+Die URL für den Tenant Manager weist folgendes Format auf:
+
+`https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_/`
+
+** `_FQDN_or_Admin_Node_IP_` Ist ein vollständig qualifizierter Domain-Name oder die IP-Adresse eines Admin-Knotens
+** `_port_` Ist der reine Mandantenport
+** `_20-digit-account-id_` Die eindeutige Account-ID des Mandanten
+
+
+
+
+ a| 
+Zugriff auf den Grid Manager auf Port 443, Sie haben jedoch kein Passwort für den lokalen Root-Benutzer festgelegt
+ a| 
+Klicken Sie auf *Anmelden*, und geben Sie die Anmeldeinformationen für einen Benutzer in die Gruppe Stammzugriff ein.
+
+
+
+ a| 
+Zugriff auf den Grid Manager auf Port 443 und Sie legen ein Passwort für den lokalen Root-Benutzer fest
+ a| 
+Fahren Sie mit dem nächsten Schritt fort <<STEP_SIGN_IN_AS_ROOT,melden Sie sich als Root an>>.
+
+|===
+. [[STEP_SIGN_IN_AS_ROOT]]Melden Sie sich als Root beim Mandanten an:
++
+.. Klicken Sie im Dialogfeld Mandantenkonto konfigurieren auf die Schaltfläche *als root* anmelden.
++
+image::../media/configure_tenant_account.gif[Screenshot von Schritt 2: Mandantenkonto konfigurieren]
+
++
+Auf der Schaltfläche wird ein grünes Häkchen angezeigt, das angibt, dass Sie jetzt als Root-Benutzer beim Mandantenkonto angemeldet sind.
+
++
+image::../media/step_2_sign_in_as_root.gif[Melden Sie sich als Root an]
+
+.. Klicken Sie auf die Links, um das Mandantenkonto zu konfigurieren.
++
+Jeder Link öffnet die entsprechende Seite im Tenant Manager. Zum Ausfüllen der Seite lesen Sie die Anweisungen zur Verwendung von Mandantenkonten.
+
+.. Klicken Sie Auf *Fertig Stellen*.
+
+
+. [[STEP_SIGN_IN_LATER]]um später auf den Mandanten zuzugreifen:
++
+[cols="1a,2a"]
+|===
+| Sie verwenden... | Führen Sie eine dieser... 
+
+
+ a| 
+Port 443
+ a| 
+** Wählen Sie im Grid Manager *Mieters* aus und klicken Sie rechts neben dem Mieternamen auf *Anmelden*.
+** Geben Sie die URL des Mandanten in einen Webbrowser ein:
++
+`https://_FQDN_or_Admin_Node_IP_/?accountId=_20-digit-account-id_/`
+
++
+*** `_FQDN_or_Admin_Node_IP_` Ist ein vollständig qualifizierter Domain-Name oder die IP-Adresse eines Admin-Knotens
+*** `_20-digit-account-id_` Die eindeutige Account-ID des Mandanten
+
+
+
+
+
+
+ a| 
+Ein eingeschränkter Port
+ a| 
+** Wählen Sie im Grid Manager die Option *Miters* aus, und klicken Sie auf *eingeschränkt*.
+** Geben Sie die URL des Mandanten in einen Webbrowser ein:
++
+`https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_`
+
++
+*** `_FQDN_or_Admin_Node_IP_` Ist ein vollständig qualifizierter Domain-Name oder die IP-Adresse eines Admin-Knotens
+*** `_port_` Ist der ausschließlich auf Mandanten beschränkte Port
+*** `_20-digit-account-id_` Die eindeutige Account-ID des Mandanten
+
+
+
+
+|===
+
+
+.Verwandte Informationen
+link:controlling-access-through-firewalls.html["Zugriffskontrolle durch Firewalls"]
+
+link:managing-platform-services-for-s3-tenant-accounts.html["Management von Plattform-Services für S3-Mandantenkonten"]
+
+link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]

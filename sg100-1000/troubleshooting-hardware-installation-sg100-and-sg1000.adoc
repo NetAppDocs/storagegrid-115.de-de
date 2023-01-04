@@ -1,0 +1,19 @@
+---
+permalink: sg100-1000/troubleshooting-hardware-installation-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, troubleshoot, troubleshooting, hardware, install, installation 
+summary: Wenn während der Installation Probleme auftreten, können Sie die Fehlerbehebungsinformationen zu Hardware-Setup- und Konnektivitätsproblemen überprüfen. 
+---
+= Fehlerbehebung bei der Hardwareinstallation
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn während der Installation Probleme auftreten, können Sie die Fehlerbehebungsinformationen zu Hardware-Setup- und Konnektivitätsproblemen überprüfen.
+
+.Verwandte Informationen
+link:hardware-setup-appears-to-hang-sg100-and-sg1000.html["Die Hardware-Einrichtung scheint zu hängen"]
+
+link:troubleshooting-connection-issues-sg100-and-sg1000.html["Fehlerbehebung bei Verbindungsproblemen"]

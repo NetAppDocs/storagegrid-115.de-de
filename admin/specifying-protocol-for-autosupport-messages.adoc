@@ -1,0 +1,60 @@
+---
+permalink: admin/specifying-protocol-for-autosupport-messages.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können eines von drei Protokollen zum Senden von AutoSupport Meldungen verwenden. 
+---
+= Angeben des Protokolls für AutoSupport Meldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eines von drei Protokollen zum Senden von AutoSupport Meldungen verwenden.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über die Berechtigung Root Access oder andere Grid-Konfiguration verfügen.
+* Wenn Sie das HTTPS- oder HTTP-Protokoll für das Senden von AutoSupport-Meldungen verwenden, müssen Sie Outbound-Internetzugang für den primären Admin-Node entweder direkt oder über einen Proxy-Server bereitgestellt haben (eingehende Verbindungen sind nicht erforderlich).
+* Wenn Sie das HTTPS- oder HTTP-Protokoll verwenden und einen Proxy-Server verwenden möchten, müssen Sie einen Administrator-Proxy-Server konfiguriert haben.
+* Wenn Sie SMTP als Protokoll für AutoSupport-Meldungen verwenden, müssen Sie einen SMTP-Mail-Server konfiguriert haben. Die gleiche E-Mail-Serverkonfiguration wird für Benachrichtigungen über Alarm E-Mails verwendet (altes System).
+
+
+.Über diese Aufgabe
+AutoSupport Meldungen können mit einem der folgenden Protokolle gesendet werden:
+
+* *HTTPS*: Dies ist die Standard-Einstellung und wird für Neuinstallationen empfohlen. Das HTTPS-Protokoll verwendet Port 443. Wenn Sie die Funktion AutoSupport On Demand aktivieren möchten, müssen Sie das HTTPS-Protokoll verwenden.
+* *HTTP*: Dieses Protokoll ist nicht sicher, es sei denn, es wird in einer vertrauenswürdigen Umgebung verwendet, in der der Proxyserver beim Senden von Daten über das Internet in HTTPS konvertiert. Das HTTP-Protokoll verwendet Port 80.
+* *SMTP*: Verwenden Sie diese Option, wenn Sie AutoSupport-Nachrichten per E-Mail versenden möchten. Wenn Sie SMTP als Protokoll für AutoSupport-Meldungen verwenden, müssen Sie auf der Seite Legacy E-Mail-Einrichtung einen SMTP-Mail-Server konfigurieren (*Support* > *Alarme (alt)* > *Legacy E-Mail-Setup*).
++
+
+NOTE: SMTP war das einzige Protokoll, das vor der StorageGRID 11.2-Version für AutoSupport-Meldungen verfügbar war. Wenn Sie zunächst eine frühere Version von StorageGRID installiert haben, ist SMTP möglicherweise das ausgewählte Protokoll.
+
+
+
+Das von Ihnen festgelegte Protokoll wird für das Senden aller Typen von AutoSupport Meldungen verwendet.
+
+.Schritte
+. Wählen Sie *Support* > *Extras* > *AutoSupport*.
++
+Die Seite AutoSupport wird angezeigt, und die Registerkarte *Einstellungen* ist ausgewählt.
+
+. Wählen Sie das Protokoll aus, das Sie zum Senden von AutoSupport Meldungen verwenden möchten.
++
+image::../media/autosupport_protocol.png[AutoSupport-Protokoll]
+
+. Wählen Sie Ihre Wahl für *NetApp Support Certificate Validation*.
++
+** Verwenden Sie ein NetApp Support-Zertifikat (Standard): Die Zertifikatvalidierung stellt sicher, dass die Übertragung von AutoSupport Meldungen sicher ist. Das NetApp Supportzertifikat ist bereits mit der StorageGRID Software installiert.
+** Zertifikat nicht überprüfen: Wählen Sie diese Option nur aus, wenn Sie einen guten Grund haben, keine Zertifikatvalidierung zu verwenden, z. B. wenn ein vorübergehendes Problem mit einem Zertifikat vorliegt.
+
+
+. Wählen Sie *Speichern*.
++
+Alle wöchentlichen, vom Benutzer ausgelösten und von Ereignissen ausgelösten Meldungen werden über das ausgewählte Protokoll gesendet.
+
+
+
+.Verwandte Informationen
+link:configuring-admin-proxy-settings.html["Konfigurieren von Administrator-Proxy-Einstellungen"]

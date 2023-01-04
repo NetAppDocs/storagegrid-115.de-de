@@ -1,0 +1,42 @@
+---
+permalink: maintain/introduction-to-storagegrid-recovery-and-maintenance.html 
+sidebar: sidebar 
+keywords: storagegrid, recovery, maintenance 
+summary: Die Recovery- und Wartungsverfahren für StorageGRID umfassen die Anwendung eines Software-Hotfix, die Wiederherstellung von Grid-Nodes, die Wiederherstellung eines ausgefallenen Standorts, die Stilllegung von Grid-Nodes oder einem gesamten Standort, die Durchführung von Netzwerkwartung, die Durchführung von Wartungsvorgängen auf Host- und Middleware-Ebene sowie die Durchführung von Grid Node-Verfahren. 
+---
+= Einführung in StorageGRID Recovery und Wartung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Recovery- und Wartungsverfahren für StorageGRID umfassen die Anwendung eines Software-Hotfix, die Wiederherstellung von Grid-Nodes, die Wiederherstellung eines ausgefallenen Standorts, die Stilllegung von Grid-Nodes oder einem gesamten Standort, die Durchführung von Netzwerkwartung, die Durchführung von Wartungsvorgängen auf Host- und Middleware-Ebene sowie die Durchführung von Grid Node-Verfahren.
+
+Alle Recovery- und Wartungsaktivitäten erfordern ein umfassendes Verständnis des StorageGRID Systems. Sie sollten die Topologie Ihres StorageGRID Systems überprüfen, um sicherzustellen, dass Sie die Grid-Konfiguration kennen.
+
+Sie müssen alle Anweisungen genau befolgen und alle Warnungen beachten.
+
+Nicht beschriebene Wartungsmaßnahmen werden nicht unterstützt oder erfordern ein Serviceprojekt.
+
+Hardwareverfahren finden Sie in der Installations- und Wartungsanleitung für Ihre StorageGRID Appliance.
+
+
+NOTE: „`Linux`“ bezieht sich auf eine Red hat® Enterprise Linux®-, Ubuntu®-, CentOS- oder Debian®-Bereitstellung. Mit dem NetApp Interoperabilitäts-Matrix-Tool können Sie eine Liste der unterstützten Versionen abrufen.
+
+.Verwandte Informationen
+link:../primer/index.html["Gittergrundierung"]
+
+link:../network/index.html["Netzwerkrichtlinien"]
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+link:../sg6000/index.html["SG6000 Storage-Appliances"]
+
+link:../sg5700/index.html["SG5700 Storage-Appliances"]
+
+link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"]

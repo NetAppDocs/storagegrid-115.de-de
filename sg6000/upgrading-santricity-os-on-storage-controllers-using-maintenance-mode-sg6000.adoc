@@ -1,0 +1,63 @@
+---
+permalink: sg6000/upgrading-santricity-os-on-storage-controllers-using-maintenance-mode-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, controller, storage controller, upgrade, upgrading, SANtricity OS, SANtricity, maintenance mode 
+summary: 'Für Storage-Controller, die derzeit SANtricity OS verwenden, die älter als 08.42.20.00 \(11.42\) sind, müssen Sie das Verfahren des Wartungsmodus verwenden, um ein Upgrade durchzuführen.' 
+---
+= Aktualisieren des SANtricity OS auf den Storage Controllern mithilfe des Wartungsmodus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für Storage-Controller, die derzeit SANtricity OS verwenden, die älter als 08.42.20.00 (11.42) sind, müssen Sie das Verfahren des Wartungsmodus verwenden, um ein Upgrade durchzuführen.
+
+.Was Sie benötigen
+* Sie haben das NetApp Interoperabilitäts-Matrix-Tool (IMT) konsultiert, um zu überprüfen, ob die für das Upgrade verwendete SANtricity Betriebssystemversion mit Ihrer Appliance kompatibel ist.
+* Wenn die StorageGRID-Appliance in einem StorageGRID-System ausgeführt wird, wurde der SG6000-CN-Controller in den Wartungsmodus versetzt.
++
+
+NOTE: Im Wartungsmodus wird die Verbindung zum Storage Controller unterbrochen.
+
++
+link:placing-appliance-into-maintenance-mode.html["Versetzen einer Appliance in den Wartungsmodus"]
+
+
+
+.Über diese Aufgabe
+Aktualisieren Sie das SANtricity Betriebssystem und NVSRAM im E-Series Controller nicht auf mehr als einer StorageGRID Appliance gleichzeitig.
+
+
+IMPORTANT: Wenn Sie mehrere StorageGRID Appliances gleichzeitig aktualisieren, kann dies in Abhängigkeit von Ihrem Implementierungsmodell und den ILM-Richtlinien zu Datenunverfügbarkeit führen.
+
+.Schritte
+. Greifen Sie über ein Service-Laptop auf den SANtricity System Manager zu und melden Sie sich an.
+. Laden Sie die neue SANtricity OS Software-Datei und die NVSRAM-Datei auf den Management-Client herunter.
++
+
+IMPORTANT: Das NVSRAM bezieht sich auf die StorageGRID Appliance. Verwenden Sie nicht den Standard-NVSRAM-Download.
+
+. Folgen Sie den Anweisungen im Handbuch „ _Upgrade SANtricity OS_“ oder der Online-Hilfe von SANtricity System Manager, um die Firmware und NVSRAM zu aktualisieren.
++
+
+NOTE: Aktivieren Sie die Upgrade-Dateien sofort. Die Aktivierung nicht verschieben.
+
+. Sobald der Upgrade-Vorgang abgeschlossen ist, booten Sie den Node neu. Wählen Sie im Installationsprogramm der StorageGRID-Appliance die Option *Erweitert* > *Controller neu starten* aus, und wählen Sie dann eine der folgenden Optionen aus:
++
+** Wählen Sie *Neustart in StorageGRID* aus, um den Controller neu zu starten, wobei der Knoten wieder in das Raster integriert wird. Wählen Sie diese Option, wenn Sie im Wartungsmodus ausgeführt werden und den Node in den normalen Betrieb zurückkehren möchten.
+** Wählen Sie *Neustart im Wartungsmodus* aus, um den Controller neu zu starten, wobei der Knoten noch im Wartungsmodus bleibt. Wählen Sie diese Option aus, wenn weitere Wartungsmaßnahmen erforderlich sind, die Sie auf dem Node durchführen müssen, bevor Sie das Raster neu beitreten.image:../media/reboot_controller_from_maintenance_mode.png["Booten Sie den Controller im Wartungsmodus neu"]
++
+Die Appliance kann bis zu 20 Minuten dauern, bis sie neu gestartet und wieder in das Grid eingesetzt wird. Um zu überprüfen, ob das Neubooten abgeschlossen ist und dass der Node wieder dem Grid beigetreten ist, gehen Sie zurück zum Grid Manager. Auf der Registerkarte *Nodes* sollte ein normaler Status angezeigt werden image:../media/icon_alert_green_checkmark.png["Grünes Häkchen für Symbolwarnung"] Für den Appliance-Node gibt an, dass keine Meldungen aktiv sind und der Node mit dem Grid verbunden ist.
+
++
+image::../media/node_rejoin_grid_confirmation.png[Das Raster des Appliance-Node wurde neu verbunden]
+
+
+
+
+
+.Verwandte Informationen
+https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"^]
+
+link:upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg6000.html["Aktualisieren von SANtricity OS auf den Storage Controllern mit Grid Manager"]

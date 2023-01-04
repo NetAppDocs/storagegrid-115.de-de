@@ -1,0 +1,43 @@
+---
+permalink: monitor/generating-charts.html 
+sidebar: sidebar 
+keywords: charts, generating 
+summary: Diagramme zeigen eine grafische Darstellung der Attributdatenwerte an. Die Berichte können an Datacenter-Standorten, Grid-Node, Komponenten oder Service erstellt werden. 
+---
+= Diagramme werden erstellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Diagramme zeigen eine grafische Darstellung der Attributdatenwerte an. Die Berichte können an Datacenter-Standorten, Grid-Node, Komponenten oder Service erstellt werden.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Schritte
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie *_Grid Node_* > *_Component oder Service_* > *Berichte* > *Diagramme* aus.
+. Wählen Sie das Attribut aus der Dropdown-Liste *Attribut* aus, für das ein Bericht erstellt werden soll.
+. Um die Y-Achse auf Null zu starten, deaktivieren Sie das Kontrollkästchen *Vertikale Skalierung*.
+. Um Werte mit voller Präzision anzuzeigen, aktivieren Sie das Kontrollkästchen *Raw Data* oder um Werte auf maximal drei Dezimalstellen zu runden (z. B. bei Attributen, die als Prozentsätze angegeben werden), deaktivieren Sie das Kontrollkästchen *Raw Data*.
+. Wählen Sie den Zeitraum aus der Dropdown-Liste *Quick Query* aus, für den Sie einen Bericht erstellen möchten.
++
+Wählen Sie die Option Benutzerdefinierte Abfrage aus, um einen bestimmten Zeitbereich auszuwählen.
+
++
+Das Diagramm erscheint nach wenigen Augenblicken. Lassen Sie mehrere Minuten für die Tabulierung von langen Zeitbereichen.
+
+. Wenn Sie Benutzerdefinierte Abfrage ausgewählt haben, passen Sie den Zeitraum für das Diagramm an, indem Sie die Optionen *Startdatum* und *Enddatum* eingeben.
++
+Verwenden Sie das Format `_YYYY/MM/DDHH:MM:SS_` Ortszeit verwendet. Führende Nullen sind für das Format erforderlich. Beispiel: 2017/4/6 7:30:00 schlägt die Validierung fehl. Das richtige Format ist: 2017/04/06 07:30:00.
+
+. Klicken Sie Auf *Aktualisieren*.
++
+Ein Diagramm wird nach wenigen Augenblicken erzeugt. Lassen Sie mehrere Minuten für die Tabulierung von langen Zeitbereichen. Abhängig von der für die Abfrage festgelegten Dauer wird entweder ein RAW-Textbericht oder ein aggregierter Textbericht angezeigt.
+
+. Wenn Sie das Diagramm drucken möchten, klicken Sie mit der rechten Maustaste, und wählen Sie *Drucken*, und ändern Sie die erforderlichen Druckereinstellungen und klicken Sie auf *Drucken*.
+

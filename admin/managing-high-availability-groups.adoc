@@ -1,0 +1,22 @@
+---
+permalink: admin/managing-high-availability-groups.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Hochverfügbare \(HA\)-Gruppen sorgen für hochverfügbare Datenverbindungen für S3 und Swift Clients. HA-Gruppen können auch für hochverfügbare Verbindungen mit dem Grid Manager und dem Tenant Manager verwendet werden.' 
+---
+= Verwalten von Hochverfügbarkeitsgruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Hochverfügbarkeitsgruppen (High Availability groups, HA-Gruppen) sorgen für hochverfügbare Datenverbindungen für S3 und Swift Clients. HA-Gruppen können auch für hochverfügbare Verbindungen mit dem Grid Manager und dem Tenant Manager verwendet werden.
+
+* link:what-ha-group-is.html["Eine HA-Gruppe"]
+* link:how-ha-groups-are-used.html["Verwendung von HA-Gruppen"]
+* link:configuration-options-for-ha-groups.html["Konfigurationsoptionen für HA-Gruppen"]
+* link:creating-high-availability-group.html["Erstellen einer Hochverfügbarkeitsgruppe"]
+* link:editing-high-availability-group.html["Bearbeiten einer Hochverfügbarkeitsgruppe"]
+* link:removing-high-availability-group.html["Entfernen einer Hochverfügbarkeitsgruppe"]
+

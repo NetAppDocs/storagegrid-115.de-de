@@ -1,0 +1,22 @@
+---
+permalink: primer/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Gittergrundierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lernen Sie die Grundlagen eines NetApp StorageGRID Systems kennen.
+
+* link:about-storagegrid.html["Informationen zu StorageGRID"]
+* link:storagegrid-architecture-and-network-topology.html["StorageGRID Architektur und Netzwerktopologie"]
+* link:how-storagegrid-manages-data.html["Managen von Daten mit StorageGRID"]
+* link:exploring-grid-manager.html["Wie Grid Manager zu sehen ist"]
+* link:exploring-tenant-manager.html["Entdecken Sie den Tenant Manager"]
+* link:using-storagegrid.html["Verwenden von StorageGRID"]
+

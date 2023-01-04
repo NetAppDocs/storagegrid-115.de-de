@@ -1,0 +1,22 @@
+---
+permalink: expand/adding-storage-capacity.html 
+sidebar: sidebar 
+keywords: storage, capacity, add, adding, expand, expansion, full storage node 
+summary: Wenn vorhandene Storage-Nodes voll werden, müssen Sie die Storage-Kapazität Ihres StorageGRID Systems erhöhen. 
+---
+= Erweiterung der Storage-Kapazität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn vorhandene Storage-Nodes voll werden, müssen Sie die Storage-Kapazität Ihres StorageGRID Systems erhöhen.
+
+Um die Storage-Kapazität zu erhöhen, müssen Kunden zunächst verstehen, wo die Daten aktuell gespeichert sind, und dann alle erforderlichen Kapazitäten erweitern. Wenn Sie beispielsweise derzeit Kopien von Objektdaten an mehreren Standorten speichern, muss die Storage-Kapazität jedes Standorts erhöht werden.
+
+* link:guidelines-for-adding-object-capacity.html["Richtlinien zum Hinzufügen von Objektkapazität"]
+* link:adding-storage-capacity-for-replicated-objects.html["Hinzufügen von Speicherkapazität für replizierte Objekte"]
+* link:adding-storage-capacity-for-erasure-coded-objects.html["Hinzufügen von Storage-Kapazität für Objekte mit Erasure-Coding-Verfahren"]
+* link:considerations-for-rebalancing-erasure-coded-data.html["Überlegungen zur Lastverteilung bei Daten, die mit Erasure Coding versehen sind"]
+

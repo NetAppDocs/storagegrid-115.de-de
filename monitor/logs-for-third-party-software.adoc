@@ -1,0 +1,100 @@
+---
+permalink: monitor/logs-for-third-party-software.html 
+sidebar: sidebar 
+keywords: troubleshooting, logs 
+summary: Sie können die Softwareprotokolle von Drittanbietern verwenden, um Probleme zu beheben. 
+---
+= Protokolle für Drittanbietersoftware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Softwareprotokolle von Drittanbietern verwenden, um Probleme zu beheben.
+
+|===
+| Kategorie | Dateiname | Hinweise | Gefunden am 
+
+
+ a| 
+Apache2-Protokolle
+ a| 
+`/var/local/log/apache2/access.log /var/local/log/apache2/error.log`
+
+`/var/local/log/apache2/other_vhosts_access.log`
+ a| 
+Protokolldateien für apache2.
+ a| 
+Admin-Nodes
+
+
+
+ a| 
+Archivierung
+ a| 
+`/var/local/log/dsierror.log`
+ a| 
+Fehlerinformationen für TSM Client APIs.
+ a| 
+Archiv-Nodes
+
+
+
+ a| 
+MySQL
+ a| 
+/Var/local/log/mysql.err`
+
+`/var/local/log/mysql.err /var/local/log/mysql-slow.log`
+ a| 
+Protokolldateien von MySQL erstellt.
+
+Die Datei mysql.err erfasst Datenbankfehler und Ereignisse wie Start-ups und Herunterfahren.
+
+Die Datei mysql-slow.log (das langsame Abfrageprotokoll) erfasst die SQL-Anweisungen, die mehr als 10 Sekunden in Anspruch genommen haben.
+ a| 
+Admin-Nodes
+
+
+
+ a| 
+Betriebssystem
+ a| 
+`/var/local/log/messages`
+ a| 
+Dieses Verzeichnis enthält Protokolldateien für das Betriebssystem. Die in diesen Protokollen enthaltenen Fehler werden auch im Grid Manager angezeigt. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus. Wählen Sie dann *Topologie* > *_Site_* > *_Node_* > *SSM* > *Events* aus.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+NTP
+ a| 
+`/var/local/log/ntp.log`
+
+`/var/lib/ntp/var/log/ntpstats/`
+ a| 
+Der `/var/local/log/ntp.log` Enthält die Protokolldatei für NTP-Fehlermeldungen.
+
+Der `/var/lib/ntp/var/log/ntpstats/` Verzeichnis enthält NTP-Zeitstatistiken.
+
+`loopstats` Statistikdaten für Datensätze-Loop-Filter.
+
+`peerstats` Zeichnet Informationen zu Peer-Statistiken auf.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Samba
+ a| 
+`/var/local/log/samba/`
+ a| 
+Das Samba-Protokollverzeichnis enthält eine Protokolldatei für jeden Samba-Prozess (smb, nmb und winbind) und jeden Client-Hostnamen/jede IP.
+ a| 
+Admin-Node für den Export der Revisionsfreigabe über CIFS konfiguriert
+
+|===

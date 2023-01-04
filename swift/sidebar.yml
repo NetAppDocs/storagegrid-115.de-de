@@ -1,0 +1,37 @@
+---
+section: swift
+title: Nutzen Sie die Swift REST API
+url: "/swift/index.html"
+entries:
+- title: Unterstützung für OpenStack Swift API in StorageGRID
+  url: "/swift/openstack-swift-api-support-in-storagegrid.html"
+  entries:
+  - title: Geschichte der Unterstützung von Swift API in StorageGRID
+    url: "/swift/history-of-swift-api-support-in-storagegrid.html"
+  - title: So implementiert StorageGRID die Swift REST API
+    url: "/swift/how-storagegrid-implements-swift-rest-api.html"
+  - title: Empfehlungen für die Implementierung der Swift REST API
+    url: "/swift/recommendations-for-implementing-swift-rest-api.html"
+- title: Mandantenkonten und -Verbindungen werden konfiguriert
+  url: "/swift/configuring-tenant-accounts-and-connections.html"
+- title: Von Swift UNTERSTÜTZTE REST-API-Operationen
+  url: "/swift/swift-rest-api-supported-operations.html"
+  entries:
+  - title: Unterstützte Swift-API-Endpunkte
+    url: "/swift/supported-swift-api-endpoints.html"
+  - title: Konto-Operationen
+    url: "/swift/account-operations.html"
+  - title: Container-Operationen
+    url: "/swift/container-operations.html"
+  - title: Objekt-Operationen
+    url: "/swift/object-operations.html"
+  - title: OPTIONEN anfordern
+    url: "/swift/options-request.html"
+  - title: Fehlerantworten bei Swift-API-Operationen
+    url: "/swift/error-responses-to-swift-api-operations.html"
+- title: StorageGRID Swift REST-API-Operationen
+  url: "/swift/storagegrid-swift-rest-api-operations.html"
+- title: Sicherheit wird für DIE REST API konfiguriert
+  url: "/swift/configuring-security-for-rest-api.html"
+- title: Monitoring und Auditing von Vorgängen
+  url: "/swift/monitoring-and-auditing-operations.html"

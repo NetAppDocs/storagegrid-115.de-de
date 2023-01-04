@@ -1,0 +1,52 @@
+---
+permalink: admin/signing-out-of-grid-manager.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn Sie mit dem Grid-Manager arbeiten, müssen Sie sich anmelden, um sicherzustellen, dass nicht autorisierte Benutzer nicht auf das StorageGRID-System zugreifen können. Wenn Sie Ihren Browser schließen, werden Sie möglicherweise aufgrund der Cookie-Einstellungen des Browsers nicht aus dem System abgesendet. 
+---
+= Vom Grid Manager abmelden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie mit dem Grid-Manager arbeiten, müssen Sie sich anmelden, um sicherzustellen, dass nicht autorisierte Benutzer nicht auf das StorageGRID-System zugreifen können. Wenn Sie Ihren Browser schließen, werden Sie möglicherweise aufgrund der Cookie-Einstellungen des Browsers nicht aus dem System abgesendet.
+
+.Schritte
+. Klicken Sie oben rechts auf der Benutzeroberfläche auf den Link *Abmelden*.
++
+image::../media/sign_out.gif[Abmelden-Link]
+
+. Klicken Sie Auf *Abmelden*.
++
+[cols="1a,1a"]
+|===
+| Option | Beschreibung 
+
+
+ a| 
+SSO wird nicht verwendet
+ a| 
+Sie sind vom Admin-Knoten abgemeldet.
+
+Die Anmeldeseite des Grid Manager wird angezeigt.
+
+*Hinweis:* Wenn Sie sich bei mehr als einem Admin-Knoten angemeldet haben, müssen Sie sich von jedem Knoten abmelden.
+
+
+
+ a| 
+SSO aktiviert
+ a| 
+Sie sind von allen Admin-Knoten abgemeldet, auf die Sie zugreifen konnten. Die Seite StorageGRID-Anmeldung wird angezeigt. *Grid Manager* wird standardmäßig im Dropdown-Menü *Letzte Konten* aufgeführt, und im Feld *Konto-ID* wird 0 angezeigt.
+
+*Hinweis:* Wenn SSO aktiviert ist und Sie auch beim Mandantenmanager angemeldet sind, müssen Sie sich ebenfalls vom Mandantenkonto abzeichnen, um sich von SSO abzumelden.
+
+|===
+
+
+.Verwandte Informationen
+link:configuring-sso.html["Konfigurieren der Single Sign-On-Konfiguration"]
+
+link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]

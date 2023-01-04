@@ -1,0 +1,105 @@
+---
+permalink: audit/changing-audit-message-levels.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, log, message level, message levels, increase messages, decrease messages, message category 
+summary: Sie können die Audiorelevel anpassen, um die Anzahl der im Audit-Protokoll für jede Kategorie von Überwachungsmeldungen aufgezeichneten Audit-Meldungen zu erhöhen oder zu verringern. 
+---
+= Ändern der Level von Überwachungsnachrichten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Audiorelevel anpassen, um die Anzahl der im Audit-Protokoll für jede Kategorie von Überwachungsmeldungen aufgezeichneten Audit-Meldungen zu erhöhen oder zu verringern.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Über diese Aufgabe
+Die im Auditprotokoll aufgezeichneten Überwachungsmeldungen werden basierend auf den Einstellungen auf der Seite *Konfiguration* > *Überwachung* > *Audit* gefiltert.
+
+Sie können für jede der folgenden Meldungskategorien eine andere Überwachungsstufe festlegen:
+
+* *System*: Standardmäßig ist dieser Level auf Normal gesetzt.
+* *Speicherung*: Standardmäßig ist diese Ebene auf Fehler gesetzt.
+* *Verwaltung*: Standardmäßig ist diese Ebene auf Normal gesetzt.
+* *Client liest*: Standardmäßig ist diese Ebene auf Normal gesetzt.
+* *Client schreibt*: Standardmäßig ist diese Ebene auf Normal gesetzt.
+
+
+
+NOTE: Diese Standardeinstellungen gelten, wenn Sie StorageGRID ursprünglich mit Version 10.3 oder höher installiert haben. Wenn Sie ein Upgrade von einer früheren Version von StorageGRID durchgeführt haben, ist die Standardeinstellung für alle Kategorien auf „Normal“ gesetzt.
+
+
+NOTE: Bei Upgrades sind Audit-Level-Konfigurationen nicht sofort wirksam.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Überwachung* > *Audit*.
++
+image::../media/default_audit_settings.gif[Screenshot von Konfiguration > Audit]
+
+. Wählen Sie für jede Kategorie der Überwachungsmeldung eine Überwachungsstufe aus der Dropdown-Liste aus:
++
+[cols="20,80"]
+|===
+| Audit-Level | Beschreibung 
+
+
+ a| 
+Aus
+ a| 
+Es werden keine Überwachungsmeldungen aus der Kategorie protokolliert.
+
+
+
+ a| 
+Fehler
+ a| 
+Nur Fehlermeldungen sind protokollierte - Audit-Meldungen, für die der Ergebniscode nicht „erfolgreich“ (SUCS) war.
+
+
+
+ a| 
+Normal
+ a| 
+Standardtransaktionsmeldungen werden protokolliert – die in diesen Anweisungen für die Kategorie aufgeführten Nachrichten.
+
+
+
+ a| 
+Debuggen
+ a| 
+Veraltet. Dieser Level verhält sich mit dem normalen Prüfstand.
+
+|===
++
+Die Meldungen, die für eine bestimmte Ebene enthalten sind, enthalten diejenigen, die auf den höheren Ebenen protokolliert werden würden. Die normale Ebene umfasst beispielsweise alle Fehlermeldungen.
+
+. Geben Sie unter *Audit Protocol Headern* den Namen der HTTP-Request-Header ein, die in den Audit-Meldungen Client Read und Client Write enthalten sein sollen. Verwenden Sie ein Sternchen (\*) als Platzhalter, oder verwenden Sie die Escape-Sequenz (\*) als wortwörtliche Sternchen. Klicken Sie auf das Pluszeichen, um eine Liste der Kopfzeilennamen-Felder zu erstellen.
++
+
+NOTE: Header für Prüfprotokolle sind nur auf S3 und Swift Anfragen anwendbar.
+
++
+Wenn solche HTTP-Header in einer Anfrage gefunden werden, sind sie in der Überwachungsmeldung unter dem Feld HTRH enthalten.
+
++
+
+NOTE: Header für Auditprotokoll-Anfragen werden nur protokolliert, wenn die Audit-Ebene für *Client* oder *Client-Schreibvorgänge* nicht *aus* ist.
+
+. Klicken Sie Auf *Speichern*.
+
+
+.Verwandte Informationen
+link:system-audit-messages.html["Systemaudits Meldungen"]
+
+link:object-storage-audit-messages.html["Audit-Meldungen zu Objekt-Storage"]
+
+link:management-audit-message.html["Management-Audit-Nachricht"]
+
+link:client-read-audit-messages.html["Client liest Audit-Meldungen"]
+
+link:../admin/index.html["StorageGRID verwalten"]

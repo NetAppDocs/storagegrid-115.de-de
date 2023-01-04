@@ -1,0 +1,38 @@
+---
+permalink: admin/what-ha-group-is.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Hochverfügbarkeitsgruppen verwenden virtuelle IP-Adressen \(VIPs\), um aktiv-Backup-Zugriff auf Gateway Node- oder Admin-Node-Services bereitzustellen.' 
+---
+= Eine HA-Gruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Hochverfügbarkeitsgruppen verwenden virtuelle IP-Adressen (VIPs), um aktiv-Backup-Zugriff auf Gateway Node- oder Admin-Node-Services bereitzustellen.
+
+Eine HA-Gruppe besteht aus mindestens einer Netzwerkschnittstellen an Admin-Nodes und Gateway-Nodes. Beim Erstellen einer HA-Gruppe wählen Sie Netzwerkschnittstellen aus, die zum Grid Network (eth0) oder dem Client-Netzwerk (eth2) gehören. Alle Schnittstellen in einer HA-Gruppe müssen sich im selben Netzwerk-Subnetz befinden.
+
+Eine HA-Gruppe behält eine oder mehrere virtuelle IP-Adressen bei, die der aktiven Schnittstelle in der Gruppe hinzugefügt werden. Wenn die aktive Schnittstelle nicht mehr verfügbar ist, werden die virtuellen IP-Adressen in eine andere Schnittstelle verschoben. Dieser Failover-Prozess dauert in der Regel nur wenige Sekunden und ist schnell genug, dass Client-Applikationen nur geringe Auswirkungen haben und sich auf normale Wiederholungsmuster verlassen können, um den Betrieb fortzusetzen.
+
+Die aktive Schnittstelle in einer HA-Gruppe wird als Master bezeichnet. Alle anderen Schnittstellen werden als Backup bezeichnet. Um diese Bezeichnungen anzuzeigen, wählen Sie *Knoten* > *_Node_* > *Übersicht*.
+
+image::../media/ha_group_master_interface.png[MASTER-Schnittstelle DER HA-Gruppe]
+
+Beim Erstellen einer HA-Gruppe geben Sie eine Schnittstelle an, die der bevorzugte Master sein soll. Der bevorzugte Master ist die aktive Schnittstelle, wenn kein Fehler auftritt, der dazu führt, dass die VIP-Adressen einer Backup-Schnittstelle neu zugewiesen werden. Wenn der Fehler behoben ist, werden die VIP-Adressen automatisch zurück zum bevorzugten Master verschoben.
+
+Ein Failover kann aus einem der folgenden Gründe ausgelöst werden:
+
+* Der Node, auf dem die Schnittstelle konfiguriert ist, schaltet sich aus.
+* Der Node, auf dem die Schnittstelle konfiguriert ist, verliert mindestens 2 Minuten lang die Verbindung zu allen anderen Nodes
+* Die aktive Schnittstelle ausfällt.
+* Der Lastverteiler-Dienst wird angehalten.
+* Der High Availability Service stoppt.
+
+
+
+NOTE: Der Failover wird möglicherweise nicht durch Netzwerkausfälle außerhalb des Node ausgelöst, der die aktive Schnittstelle hostet. Ebenso wird der Failover nicht durch den Ausfall des CLB-Dienstes (veraltet) oder der Dienste für den Grid-Manager oder den Mandanten-Manager ausgelöst.
+
+Wenn die HA-Gruppe Schnittstellen von mehr als zwei Nodes enthält, kann während des Failover die aktive Schnittstelle zu einer anderen Node verschoben werden.

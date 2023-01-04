@@ -1,0 +1,31 @@
+---
+permalink: monitor/viewing-hardware-tab.html 
+sidebar: sidebar 
+keywords: hardware tab 
+summary: Auf der Registerkarte Hardware werden für jeden Node CPU-Auslastung und Arbeitsspeicherauslastung sowie zusätzliche Hardware-Informationen über Appliances angezeigt. 
+---
+= Anzeigen der Registerkarte Hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf der Registerkarte Hardware werden für jeden Node CPU-Auslastung und Arbeitsspeicherauslastung sowie zusätzliche Hardware-Informationen über Appliances angezeigt.
+
+Die Registerkarte Hardware wird für alle Nodes angezeigt.
+
+image::../media/nodes_page_hardware_tab_graphs.png[Registerkarte Knoten Hardware]
+
+Um ein anderes Zeitintervall anzuzeigen, wählen Sie eines der Steuerelemente oberhalb des Diagramms oder Diagramms aus. Sie können die verfügbaren Informationen für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat anzeigen. Sie können auch ein benutzerdefiniertes Intervall festlegen, mit dem Sie Datum und Zeitbereiche festlegen können.
+
+Wenn Sie Details zur CPU-Auslastung und Arbeitsspeicherauslastung anzeigen möchten, bewegen Sie den Mauszeiger über jedes Diagramm.
+
+image::../media/nodes_page_memory_usage_details.png[Seite „Nodes“ > „Hardware > Speichernutzung“]
+
+Wenn der Knoten ein Appliance-Node ist, enthält diese Registerkarte auch einen Abschnitt mit weiteren Informationen zur Appliance-Hardware.
+
+.Verwandte Informationen
+link:viewing-information-about-appliance-storage-nodes.html["Anzeigen von Informationen zu Appliance-Speicherknoten"]
+
+link:viewing-information-about-appliance-admin-nodes-and-gateway-nodes.html["Anzeigen von Informationen zu Appliance Admin Nodes und Gateway Nodes"]

@@ -1,0 +1,63 @@
+---
+permalink: admin/creating-tenant-account-if-sso-is-enabled.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Wenn Sie ein Mandantenkonto erstellen, geben Sie einen Namen, ein Client-Protokoll und optional ein Storage-Kontingent an. Wenn Single Sign-On \ (SSO\) für StorageGRID aktiviert ist, geben Sie außerdem an, welche föderierte Gruppe Root Access-Berechtigung hat, um das Mandantenkonto zu konfigurieren.' 
+---
+= Erstellen eines Mandantenkontos, wenn SSO aktiviert ist
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie ein Mandantenkonto erstellen, geben Sie einen Namen, ein Client-Protokoll und optional ein Storage-Kontingent an. Wenn Single Sign-On (SSO) für StorageGRID aktiviert ist, geben Sie außerdem an, welche föderierte Gruppe Root-Zugriffsberechtigungen hat, um das Mandantenkonto zu konfigurieren.
+
+.Schritte
+. Geben Sie im Textfeld *Anzeigename* einen Anzeigenamen für dieses Mandantenkonto ein.
++
+Anzeigenamen müssen nicht eindeutig sein. Wenn das Mandantenkonto erstellt wird, erhält es eine eindeutige, numerische Konto-ID.
+
+. Wählen Sie das Client-Protokoll aus, das von diesem Mandantenkonto verwendet wird, entweder *S3* oder *Swift*.
+. Aktivieren Sie für S3-Mandantenkonten das Kontrollkästchen *Platform Services zulassen*, es sei denn, dass dieser Mandant Plattformdienste für S3-Buckets verwendet.
++
+Wenn Plattformservices aktiviert sind, kann ein Mandant Funktionen wie CloudMirror Replizierung verwenden, die auf externe Services zugreifen. Vielleicht möchten Sie die Verwendung dieser Funktionen deaktivieren, um die Netzwerkbandbreite oder andere Ressourcen einzuschränken, die von einem Mandanten verbraucht werden. Siehe „`MAnaging Platform Services`“.
+
+. Geben Sie im Textfeld *Speicherkontingent* optional die maximale Anzahl von Gigabyte, Terabyte oder Petabytes ein, die Sie für die Objekte dieses Mandanten bereitstellen möchten. Wählen Sie dann die Einheiten aus der Dropdown-Liste aus.
++
+Lassen Sie dieses Feld leer, wenn dieser Mieter eine unbegrenzte Quote haben soll.
+
++
+
+NOTE: Das Storage-Kontingent eines Mandanten stellt eine logische Menge (Objektgröße) und keine physische Menge (Größe auf der Festplatte) dar. ILM-Kopien und Erasure Coding tragen nicht zum Umfang des verwendeten Kontingents bei. Wenn das Kontingent überschritten wird, kann das Mandantenkonto keine neuen Objekte erstellen.
+
++
+
+NOTE: Um die Storage-Nutzung jedes Mandantenkontos zu überwachen, wählen Sie *Nutzung*. Mandantenkonten können auch ihre eigene Storage-Auslastung von der Konsole im Mandantenmanager oder mit der Mandantenmanagement-API überwachen. Beachten Sie, dass die Storage-Nutzungswerte eines Mandanten möglicherweise nicht mehr aktuell sind, wenn Nodes von anderen Nodes im Grid isoliert werden. Die Gesamtwerte werden aktualisiert, wenn die Netzwerkverbindung wiederhergestellt ist.
+
+. Beachten Sie, dass das Kontrollkästchen * verwendet eigene Identitätsquelle* deaktiviert ist.
++
+Da SSO aktiviert ist, muss der Mandant die für den Grid Manager konfigurierte Identitätsquelle verwenden. Keine lokalen Benutzer können sich anmelden.
+
+. Wählen Sie im Feld *Root Access Group* eine vorhandene föderierte Gruppe aus dem Grid Manager aus, um die ursprüngliche Root Access-Berechtigung für den Mandanten zu erhalten.
++
+
+NOTE: Wenn Sie über ausreichende Berechtigungen verfügen, werden die vorhandenen föderierten Gruppen aus dem Grid Manager aufgelistet, wenn Sie auf das Feld klicken. Geben Sie andernfalls den eindeutigen Namen der Gruppe ein.
+
+. Klicken Sie Auf *Speichern*.
++
+Das Mandantenkonto wird erstellt. Die Seite Mandantenkonten wird angezeigt, und es enthält eine Zeile für den neuen Mandanten.
+
+. Wenn Sie ein Benutzer in der Root Access-Gruppe sind, klicken Sie optional auf den Link *Anmelden*, damit der neue Mandant sofort auf den Tenant Manager zugreift, wo Sie den Mandanten konfigurieren können. Geben Sie andernfalls die URL für den Link *Anmelden* an den Administrator des Mandantenkontos. (Die URL für einen Mandanten ist der vollständig qualifizierte Domain-Name oder die IP-Adresse eines Admin-Knotens, gefolgt von `/?accountId=_20-digit-account-id_`.)
++
+
+NOTE: Wenn Sie auf *Anmelden* klicken, jedoch nicht zur Root Access-Gruppe für das Mandantenkonto gehören, wird eine Meldung angezeigt, die Zugriff verweigert.
+
+
+
+.Verwandte Informationen
+link:configuring-sso.html["Konfigurieren der Single Sign-On-Konfiguration"]
+
+link:managing-platform-services-for-s3-tenant-accounts.html["Management von Plattform-Services für S3-Mandantenkonten"]
+
+link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]

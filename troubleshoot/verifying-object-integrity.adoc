@@ -1,0 +1,237 @@
+---
+permalink: troubleshoot/verifying-object-integrity.html 
+sidebar: sidebar 
+keywords:  
+summary: Das StorageGRID System überprüft die Integrität der Objektdaten auf Storage-Nodes und überprüft sowohl beschädigte als auch fehlende Objekte. 
+---
+= Überprüfen der Objektintegrität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID System überprüft die Integrität der Objektdaten auf Storage-Nodes und überprüft sowohl beschädigte als auch fehlende Objekte.
+
+Es gibt zwei Verifizierungsverfahren: Hintergrund- und Vordergrundüberprüfung. Sie arbeiten zusammen, um die Datenintegrität sicherzustellen. Die Hintergrundüberprüfung wird automatisch ausgeführt und überprüft kontinuierlich die Korrektheit von Objektdaten. Die Vordergrundüberprüfung kann von einem Benutzer ausgelöst werden, um die Existenz (obwohl nicht die Korrektheit) von Objekten schneller zu überprüfen.
+
+
+
+== Was ist Hintergrundüberprüfung
+
+Die Hintergrundüberprüfung überprüft Storage Nodes automatisch und kontinuierlich auf beschädigte Kopien von Objektdaten und versucht automatisch, alle gefundenen Probleme zu beheben.
+
+Bei der Hintergrundüberprüfung werden die Integrität replizierter Objekte und Objekte mit Erasure-Coding-Verfahren überprüft:
+
+* *Replizierte Objekte*: Findet der Hintergrundverifizierungsvorgang ein beschädigtes Objekt, wird die beschädigte Kopie vom Speicherort entfernt und an anderer Stelle auf dem Speicherknoten isoliert. Anschließend wird eine neue, nicht beschädigte Kopie erstellt und gemäß der aktiven ILM-Richtlinie platziert. Die neue Kopie wird möglicherweise nicht auf dem Speicherknoten abgelegt, der für die ursprüngliche Kopie verwendet wurde.
+
+
+
+NOTE: Beschädigte Objektdaten werden nicht aus dem System gelöscht, sondern in Quarantäne verschoben, sodass weiterhin darauf zugegriffen werden kann. Weitere Informationen zum Zugriff auf isolierte Objektdaten erhalten Sie vom technischen Support.
+
+* *Erasure-codierte Objekte*: Erkennt der Hintergrund-Verifizierungsprozess, dass ein Fragment eines Löschungscodierten Objekts beschädigt ist, versucht StorageGRID automatisch, das fehlende Fragment auf demselben Speicherknoten unter Verwendung der verbleibenden Daten- und Paritätsfragmente neu zu erstellen. Wenn das beschädigte Fragment nicht wiederhergestellt werden kann, wird das Attribut „Corrupt Copies detected (ECOR)“ um eins erhöht und es wird versucht, eine weitere Kopie des Objekts abzurufen. Wenn der Abruf erfolgreich ist, wird eine ILM-Bewertung durchgeführt, um eine Ersatzkopie des Objekts, das mit der Fehlerkorrektur codiert wurde, zu erstellen.
++
+Bei der Hintergrundüberprüfung werden nur Objekte auf Speicherknoten überprüft. Es überprüft keine Objekte auf Archiv-Nodes oder in einem Cloud-Speicherpool. Objekte müssen älter als vier Tage sein, um sich für die Hintergrundüberprüfung zu qualifizieren.
+
+
+
+Die Hintergrundüberprüfung läuft mit einer kontinuierlichen Geschwindigkeit, die nicht auf normale Systemaktivitäten ausgerichtet ist. Hintergrundüberprüfung kann nicht angehalten werden. Sie können jedoch die Hintergrundverifizierungsrate erhöhen, um falls Sie vermuten, dass ein Problem vorliegt, den Inhalt eines Storage-Nodes schneller zu überprüfen.
+
+
+
+=== Warnmeldungen und Alarme (alt) im Zusammenhang mit der Hintergrundüberprüfung
+
+Wenn das System ein korruptes Objekt erkennt, das nicht automatisch korrigiert werden kann (weil die Beschädigung verhindert, dass das Objekt identifiziert wird), wird die Warnung *Unerkannter beschädigter Gegenstand erkannt* ausgelöst.
+
+Wenn die Hintergrundüberprüfung ein beschädigtes Objekt nicht ersetzen kann, da es keine andere Kopie finden kann, werden die Meldung *Objekte verloren* und der ältere Alarm VERLOREN GEGANGENE (verlorene Objekte) ausgelöst.
+
+
+
+== Ändern der Hintergrundverifizierungsrate
+
+Sie können die Rate ändern, mit der die Hintergrundüberprüfung replizierte Objektdaten auf einem Storage-Node überprüft, wenn Sie Bedenken hinsichtlich der Datenintegrität haben.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Über diese Aufgabe
+Sie können die Verifizierungsrate für die Hintergrundüberprüfung eines Speicherknoten ändern:
+
+* Adaptiv: Standardeinstellung. Die Aufgabe wurde entwickelt, um maximal 4 MB/s oder 10 Objekte/s zu überprüfen (je nachdem, welcher Wert zuerst überschritten wird).
+* Hoch: Die Storage-Verifizierung verläuft schnell und kann zu einer Geschwindigkeit führen, die normale Systemaktivitäten verlangsamen kann.
+
+
+Verwenden Sie die hohe Überprüfungsrate nur, wenn Sie vermuten, dass ein Hardware- oder Softwarefehler beschädigte Objektdaten aufweisen könnte. Nach Abschluss der Hintergrundüberprüfung mit hoher Priorität wird die Verifizierungsrate automatisch auf Adaptive zurückgesetzt.
+
+.Schritte
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie *_Storage-Node_ > LDR > Verifizierung* aus.
+. Wählen Sie *Konfiguration* > *Main*.
+. Gehen Sie zu *LDR* > *Verifizierung* > *Konfiguration* > *Main*.
+. Wählen Sie unter Hintergrundüberprüfung die Option *Verifizierungsrate* > *hoch* oder *Verifizierungsrate* > *adaptiv* aus.
++
+image::../media/background_verification_rate.png[Festlegen der Überprüfungsrate]
+
+
+
+
+NOTE: Wenn Sie die Verifizierungsrate auf hoch setzen, wird der alte Alarm VPRI (Verification Rate) auf der Melderebene ausgelöst.
+
+. Klicken Sie Auf *Änderungen Übernehmen*.
+. Überwachen der Ergebnisse der Hintergrundüberprüfung replizierter Objekte
++
+.. Gehen Sie zu *Nodes* > *_Storage Node_* > *Objects*.
+.. Überwachen Sie im Abschnitt Überprüfung die Werte für *beschädigte Objekte* und *beschädigte Objekte nicht identifiziert*.
++
+Wenn bei der Hintergrundüberprüfung beschädigte replizierte Objektdaten gefunden werden, wird die Metrik *beschädigte Objekte* erhöht und StorageGRID versucht, die Objektkennung aus den Daten zu extrahieren, wie folgt:
+
++
+*** Wenn die Objekt-ID extrahiert werden kann, erstellt StorageGRID automatisch eine neue Kopie der Objektdaten. Die neue Kopie kann an jedem beliebigen Ort im StorageGRID System erstellt werden, der die aktive ILM-Richtlinie erfüllt.
+*** Wenn die Objektkennung nicht extrahiert werden kann (weil sie beschädigt wurde), wird die Metrik *korrupte Objekte nicht identifiziert* erhöht und die Warnung *nicht identifiziertes korruptes Objekt erkannt* ausgelöst.
+
+
+.. Wenn beschädigte replizierte Objektdaten gefunden werden, wenden Sie sich an den technischen Support, um die Ursache der Beschädigung zu ermitteln.
+
+
+. Überwachen Sie die Ergebnisse der Hintergrundüberprüfung von Objekten, die mit Erasure Coding codiert wurden.
++
+Wenn bei der Hintergrundüberprüfung beschädigte Fragmente von Objektdaten gefunden werden, die mit dem Erasure-Coding-Verfahren codiert wurden, wird das Attribut „beschädigte Fragmente erkannt“ erhöht. StorageGRID stellt sich wieder her, indem das beschädigte Fragment auf demselben Speicherknoten wiederhergestellt wird.
+
++
+.. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+.. Wählen Sie *_Storage Node_ > LDR > Erasure Coding* aus.
+.. Überwachen Sie in der Tabelle „Ergebnisse der Überprüfung“ das Attribut „beschädigte Fragmente erkannt“ (ECCD).
+
+
+. Nachdem das StorageGRID System beschädigte Objekte automatisch wiederhergestellt hat, setzen Sie die Anzahl beschädigter Objekte zurück.
++
+.. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+.. Wählen Sie *_Storage Node_ > LDR > Verifizierung > Konfiguration* aus.
+.. Wählen Sie *Anzahl Der Beschädigten Objekte Zurücksetzen*.
+.. Klicken Sie Auf *Änderungen Übernehmen*.
+
+
+. Wenn Sie sicher sind, dass isolierte Objekte nicht erforderlich sind, können Sie sie löschen.
+
+
+
+NOTE: Wenn der Alarm *Objects lost* oder der Legacy-Alarm LOST (Lost Objects) ausgelöst wurde, möchte der technische Support möglicherweise auf isolierte Objekte zugreifen, um das zugrunde liegende Problem zu beheben oder eine Datenwiederherstellung zu versuchen.
+
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie *_Storage Node_* > *LDR* > *Verifizierung* > *Konfiguration*.
+. Wählen Sie *Gesperrte Objekte Löschen*.
+. Klicken Sie Auf *Änderungen Übernehmen*.
+
+
+
+
+== Was ist die Vordergrundüberprüfung
+
+Vordergrundüberprüfung ist ein vom Benutzer initiierter Prozess, der überprüft, ob alle erwarteten Objektdaten auf einem Storage-Node vorhanden sind. Vordergrundüberprüfung wird verwendet, um die Integrität eines Speichergeräts zu überprüfen.
+
+Die Vordergrundüberprüfung ist eine schnellere Alternative zur Hintergrundüberprüfung, die die Existenz von Objektdaten auf einem Storage-Node, jedoch nicht die Integrität überprüft. Wenn bei der Überprüfung im Vordergrund festgestellt wird, dass viele Elemente fehlen, kann es zu Problemen mit dem gesamten oder einem Teil eines Speichergeräts, das mit dem Speicherknoten verknüpft ist, kommen.
+
+Bei der Vordergrundüberprüfung werden sowohl replizierte Objektdaten als auch mit Erasure-Coding-Objektdaten überprüft:
+
+* *Replizierte Objekte*: Fehlt eine Kopie replizierter Objektdaten, versucht StorageGRID automatisch, die Kopie von an anderer Stelle im System gespeicherten Kopien zu ersetzen. Der Storage Node führt eine vorhandene Kopie durch eine ILM-Bewertung aus. Damit wird ermittelt, dass die aktuelle ILM-Richtlinie für dieses Objekt nicht mehr erfüllt wird, da die fehlende Kopie nicht mehr am erwarteten Standort vorhanden ist. Eine neue Kopie wird erstellt und platziert, um die aktive ILM-Richtlinie des Systems zu erfüllen. Diese neue Kopie kann nicht an demselben Speicherort abgelegt werden, an dem die fehlende Kopie gespeichert wurde.
+* *Erasure-codierte Objekte*: Wenn ein Fragment eines Löschungskodierten Objekts gefunden wird, versucht StorageGRID automatisch, das fehlende Fragment auf demselben Speicherknoten unter Verwendung der verbleibenden Fragmente neu zu erstellen. Wenn das fehlende Fragment nicht wieder aufgebaut werden kann (weil zu viele Fragmente verloren sind), wird das Attribut Corrupt Copies detected (ECOR) um eins erhöht. ILM versucht anschließend, eine andere Kopie des Objekts zu finden, mit der das Unternehmen eine neue Kopie mit Verfahren zur Fehlerkorrektur erstellen kann.
++
+Wenn bei der Vordergrundüberprüfung ein Problem mit dem Erasure Coding für ein Storage-Volume erkannt wird, wird bei der Vordergrundverifizierung eine Fehlermeldung angehalten, die das betroffene Volume identifiziert. Sie müssen ein Recovery-Verfahren für alle betroffenen Storage Volumes durchführen.
+
+
+
+Wenn im Raster keine weiteren Kopien eines fehlenden replizierten Objekts oder eines beschädigten Erasure-codierten Objekts gefunden werden, werden die Meldung *Objekte verloren* und der Legacy-Alarm FÜR VERLORENE (verlorene Objekte) ausgelöst.
+
+
+
+== Vordergrundüberprüfung wird ausgeführt
+
+Mit der Vordergrundüberprüfung können Sie die Existenz von Daten auf einem Speicherknoten überprüfen. Fehlende Objektdaten können darauf hindeuten, dass beim zugrunde liegenden Speichergerät ein Problem vorliegt.
+
+.Was Sie benötigen
+* Sie haben sichergestellt, dass die folgenden Grid-Aufgaben nicht ausgeführt werden:
++
+** Grid Expansion: Add Server (GEXP), wenn ein Storage Node hinzugefügt wird
+** Storage Node Deaktivierungsfunktion (LDCM) auf demselben Storage-Node Wenn diese Grid-Aufgaben ausgeführt werden, warten Sie, bis sie abgeschlossen sind oder lassen Sie die Sperre frei.
+
+
+* Sie haben sichergestellt, dass die Speicherung online ist. (Wählen Sie *Support* > *Tools* > *Grid Topology*. Wählen Sie dann *_Storage Node_* > *LDR* > *Storage* > *Übersicht* > *Haupt* aus. Vergewissern Sie sich, dass *Speicherstatus - Aktuell* online ist.)
+* Sie haben sichergestellt, dass die folgenden Wiederherstellungsverfahren nicht auf demselben Speicherknoten ausgeführt werden:
++
+** Recovery eines ausgefallenen Storage-Volumes
+** Die Recovery eines Storage-Knotens mit einer fehlgeschlagenen Systemlaufwerk-Vordergrundüberprüfung bietet keine nützlichen Informationen, während Recovery-Verfahren ausgeführt werden.
+
+
+
+
+.Über diese Aufgabe
+Vordergrundüberprüfung werden sowohl fehlende replizierte Objektdaten als auch fehlende, mit Erasure Coding versehenen Objektdaten überprüft:
+
+* Wenn bei der Überprüfung im Vordergrund große Mengen fehlender Objektdaten festgestellt werden, liegt es wahrscheinlich vor, dass der Storage-Node analysiert und behoben werden muss.
+* Wenn bei der Überprüfung im Vordergrund ein schwerwiegender Storage-Fehler bei der Datenlöschung festgestellt wird, werden Sie darüber informiert. Sie müssen die Wiederherstellung des Speichervolumes durchführen, um den Fehler zu beheben.
+
+
+Sie können die Vordergrundüberprüfung so konfigurieren, dass alle Objektspeicher eines Storage Node oder nur bestimmte Objektspeichern überprüft werden.
+
+Wenn die Vordergrundüberprüfung fehlende Objektdaten findet, versucht das StorageGRID-System, sie zu ersetzen. Wenn keine Ersatzkopie erstellt werden kann, kann der Alarm „VERLORENE Objekte“ ausgelöst werden.
+
+Die Vordergrundüberprüfung generiert eine LDR-Vordergrundverifizierung, die je nach Anzahl der auf einem Storage-Node gespeicherten Objekte Tage- oder wochenlang dauern kann. Es ist möglich, mehrere Storage-Nodes gleichzeitig auszuwählen. Diese Grid-Aufgaben werden jedoch nicht gleichzeitig ausgeführt. Stattdessen werden sie in eine Warteschlange gestellt und bis zum Abschluss nacheinander ausgeführt. Wenn die Vordergrundüberprüfung auf einem Storage-Node ausgeführt wird, können Sie auf diesem Storage-Node keine andere Überprüfungsaufgabe im Vordergrund starten, obwohl die Option zum Überprüfen zusätzlicher Volumes für den Storage-Node möglicherweise verfügbar ist.
+
+Wenn ein anderer Storage-Node als der, auf dem die Vordergrundüberprüfung ausgeführt wird, offline geschaltet wird, wird die Grid-Aufgabe weiter ausgeführt, bis das Attribut *% complete* 99.99 Prozent erreicht. Das Attribut *% complete* wird dann auf 50 Prozent zurückgestellt und wartet, bis der Speicherknoten wieder in den Online-Status zurückkehrt. Wenn der Status des Speicherknotens wieder online geschaltet wird, wird die Grid-Aufgabe für die Überprüfung des LDR-Vordergrunds fortgesetzt, bis sie abgeschlossen ist.
+
+.Schritte
+. Wählen Sie *_Storage Node_* > *LDR* > *Verifizierung* aus.
+. Wählen Sie *Konfiguration* > *Main*.
+. Aktivieren Sie unter *Vordergrundüberprüfung* das Kontrollkästchen für jede Speicher-Volume-ID, die Sie überprüfen möchten.
++
+image::../media/foreground_verification_volume_id_selection.gif[Konfigurationsseite Vordergrundüberprüfung]
+
+. Klicken Sie Auf *Änderungen Übernehmen*.
++
+Warten Sie, bis die Seite automatisch aktualisiert und neu geladen wird, bevor Sie die Seite verlassen. Sobald die Aktualisierung abgeschlossen ist, stehen Objektspeicher zur Auswahl auf diesem Speicherknoten nicht mehr zur Verfügung.
+
++
+Eine LDR-Vordergrundüberprüfungsraster-Aufgabe wird erstellt und ausgeführt, bis sie abgeschlossen, unterbrochen oder abgebrochen wird.
+
+. Fehlende Objekte oder fehlende Fragmente überwachen:
++
+.. Wählen Sie *_Storage Node_* > *LDR* > *Verifizierung* aus.
+.. Notieren Sie auf der Registerkarte Übersicht unter *Ergebnisse der Überprüfung* den Wert von *fehlenden Objekten erkannt*.
++
+*Hinweis*: Der gleiche Wert wird auf der Seite Knoten als *Lost Objects* angegeben. Gehen Sie zu *Nodes* > *_Storage Node_* und wählen Sie die Registerkarte *Objects* aus.
+
++
+Wenn die Anzahl der *fehlenden Objekte erkannt* groß ist (wenn Hunderte von fehlenden Objekten vorhanden sind), liegt wahrscheinlich ein Problem mit dem Speicher des Speicherknoten vor. Wenden Sie sich an den technischen Support.
+
+.. Wählen Sie *_Storage Node_* > *LDR* > *Erasure Coding* aus.
+.. Notieren Sie auf der Registerkarte Übersicht unter *Ergebnisse der Überprüfung* den Wert von *fehlenden Fragmenten erkannt*.
++
+Wenn die Anzahl *fehlendes Fragment* groß ist (wenn hunderte von fehlenden Fragmenten vorhanden sind), liegt wahrscheinlich ein Problem mit dem Speicher des Speicherknoten vor. Wenden Sie sich an den technischen Support.
+
+
+
++
+Wenn die Vordergrundüberprüfung keine beträchtliche Anzahl an fehlenden replizierten Objektkopien oder eine beträchtliche Anzahl an fehlenden Fragmenten erkennt, funktioniert der Speicher normal.
+
+. Überwachen Sie den Abschluss der Vordergrundüberprüfungsraster-Aufgabe:
++
+.. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus. Wählen Sie dann *site* > *_Admin Node_* > *CMN* > *Grid Task* > *Übersicht* > *Main*.
+.. Stellen Sie sicher, dass das Raster für die Vordergrundverifizierung fehlerfrei fortschreitet.
++
+*Hinweis*: Bei Unterbrechung des Vordergrundverifizierungsgitters wird ein Alarm auf Notice-Ebene am Grid Task Status (SCAS) ausgelöst.
+
+.. Wenn die Rasteraufgabe mit einem angehalten wird `critical storage error`, Das betroffene Volumen wiederherstellen und dann die Vordergrundüberprüfung auf den verbleibenden Volumes ausführen, um auf zusätzliche Fehler zu überprüfen.
++
+*Achtung*: Wenn die Aufgabe Vordergrundverifizierung mit der Meldung unterbricht `Encountered a critical storage error in volume _volID_`, Sie müssen das Verfahren für die Wiederherstellung eines fehlerhaften Speichervolume. Weitere Informationen finden Sie in den Anweisungen zur Wiederherstellung und Wartung.
+
+
+
+
+
+.Nachdem Sie fertig sind
+Wenn Sie noch Bedenken bezüglich der Datenintegrität haben, gehen Sie zu *LDR* > *Verifizierung* > *Konfiguration* > *Main* und erhöhen Sie die Hintergrundverifizierungsrate. Die Hintergrundüberprüfung überprüft die Richtigkeit aller gespeicherten Objektdaten und repariert sämtliche gefundenen Probleme. Das schnelle Auffinden und Reparieren potenzieller Probleme verringert das Risiko von Datenverlusten.
+
+.Verwandte Informationen
+link:../maintain/index.html["Verwalten Sie  erholen"]

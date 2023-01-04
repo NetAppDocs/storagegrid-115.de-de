@@ -1,0 +1,42 @@
+---
+permalink: ilm/how-objects-are-ingested.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID schützt Objekte bei der Aufnahme, entweder durch synchrones Platzieren oder durch Dual-Commit, wie in der ILM-Regel, die den Objekten entspricht. 
+---
+= Aufnahme von Objekten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID schützt Objekte bei der Aufnahme, entweder durch synchrones Platzieren oder durch Dual-Commit, wie in der ILM-Regel, die den Objekten entspricht.
+
+Wenn ein S3- oder Swift-Client ein Objekt im Grid speichert, führt StorageGRID das Objekt mithilfe einer der folgenden beiden Methoden ein:
+
+* *Synchronous Placement*: StorageGRID erstellt sofort alle Objektkopien, die zur Erfüllung der ILM-Anforderungen benötigt werden. StorageGRID sendet eine Nachricht „`Aufnahme erfolgreich`“ an den Client, wenn alle Kopien erstellt werden.
++
+Wenn StorageGRID nicht sofort alle Objektkopien erstellen kann (z. B. weil ein erforderlicher Standort vorübergehend nicht verfügbar ist), sendet er entweder eine „`Aufnahme fehlgeschlagen`“-Nachricht an den Client, Es ist aber auch möglich, vorläufige Objektkopien zu erstellen und ILM später zu evaluieren. Dies hängt davon ab, welche Auswahl Sie bei der Erstellung der ILM-Regel getroffen haben.
+
+* *Dual Commit*: StorageGRID erstellt sofort zwei Zwischenkopien des Objekts, jedes auf einem anderen Speicherknoten und sendet eine „`Aufnahme erfolgreich`“-Nachricht an den Client. StorageGRID Warteschlangen für die ILM-Bewertung.
++
+Wenn StorageGRID die ILM-Bewertung durchführt, wird zunächst geprüft, ob die übergangsweisen Kopien die Anweisungen zur Platzierung in der ILM-Regel erfüllen. So könnten die beiden vorläufigen Kopien beispielsweise die Anweisungen in einer ILM-Regel mit zwei Kopien erfüllen, doch würden sie die Anweisungen in einer Regel für das Erasure Coding nicht erfüllen. Wenn die Zwischenkopien die ILM-Anweisungen nicht erfüllen, erstellt StorageGRID neue Objektkopien und löscht alle nicht benötigten Zwischenkopien.
+
++
+Wenn StorageGRID nicht zwei Übergangskopien erstellen kann (z. B. wenn ein Netzwerkproblem die Erstellung der zweiten Kopie verhindert), wird StorageGRID nicht erneut versuchen. Aufnahme schlägt fehl.
+
++
+
+NOTE: S3- oder Swift-Clients können angeben, dass StorageGRID bei der Aufnahme eine einzelne Interimskopie erstellt `REDUCED_REDUNDANCY` Für die Speicherklasse. Weitere Informationen finden Sie in der Anleitung zur Implementierung eines S3- oder Swift-Clients.
+
+
+
+StorageGRID verwendet standardmäßig die synchrone Platzierung, um Objekte bei der Aufnahme zu schützen.
+
+.Verwandte Informationen
+link:data-protection-options-for-ingest.html["Datensicherungsoptionen für die Aufnahme"]
+
+link:../s3/index.html["S3 verwenden"]
+
+link:../swift/index.html["Verwenden Sie Swift"]

@@ -1,0 +1,71 @@
+---
+permalink: maintain/gathering-required-materials-for-grid-node-recovery.html 
+sidebar: sidebar 
+keywords: storagegrid, recovery, grid node recovery, node recovery 
+summary: Bevor Sie Wartungsmaßnahmen durchführen, müssen Sie sicherstellen, dass die zur Wiederherstellung eines ausgefallenen Grid-Node erforderlichen Materialien vorhanden sind. 
+---
+= Sammeln der erforderlichen Materialien für die Recovery von Grid Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie Wartungsmaßnahmen durchführen, müssen Sie sicherstellen, dass die zur Wiederherstellung eines ausgefallenen Grid-Node erforderlichen Materialien vorhanden sind.
+
+[cols="1a,2a"]
+|===
+| Element | Hinweise 
+
+
+ a| 
+StorageGRID Installationsarchiv
+ a| 
+Wenn Sie einen Grid-Knoten wiederherstellen müssen, benötigen Sie das StorageGRID Installationsarchiv für Ihre Plattform.
+
+*Hinweis:* Sie müssen keine Dateien herunterladen, wenn Sie fehlgeschlagene Speichervolumen auf einem Speicherknoten wiederherstellen.
+
+
+
+ a| 
+Wiederherstellungspaket `.zip` Datei
+ a| 
+Erhalten Sie eine Kopie des aktuellsten Wiederherstellungspakets `.zip` Datei:
+`sgws-recovery-package-_id-revision_.zip`
+
+Der Inhalt des `.zip` Die Datei wird jedes Mal aktualisiert, wenn das System geändert wird. Sie werden aufgefordert, die aktuellste Version des Wiederherstellungspakets nach dem Speichern dieser Änderungen an einem sicheren Ort zu speichern. Verwenden Sie die neueste Kopie, um nach Grid-Ausfällen eine Wiederherstellung durchzuführen.
+
+Wenn der primäre Admin-Node normal funktioniert, können Sie das Wiederherstellungspaket aus dem Grid Manager herunterladen. Wählen Sie *Wartung* *System* *Wiederherstellungspaket*.
+
+Wenn Sie nicht auf den Grid Manager zugreifen können, können Sie auf einigen Speicherknoten, die den ADC-Dienst enthalten, verschlüsselte Kopien des Wiederherstellungspakets finden. Untersuchen Sie auf jedem Speicherknoten diesen Speicherort für das Wiederherstellungspaket: `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg` Verwenden Sie das Wiederherstellungspaket mit der höchsten Versionsnummer.
+
+
+
+ a| 
+`Passwords.txt` Datei
+ a| 
+Enthält die Passwörter, die für den Zugriff auf Grid-Nodes in der Befehlszeile erforderlich sind. Im Wiederherstellungspaket enthalten.
+
+
+
+ a| 
+Provisioning-Passphrase
+ a| 
+Die Passphrase wird erstellt und dokumentiert, wenn das StorageGRID-System zum ersten Mal installiert wird. Die Provisionierungs-Passphrase befindet sich nicht im `Passwords.txt` Datei:
+
+
+
+ a| 
+Aktuelle Dokumentation für Ihre Plattform
+ a| 
+Die derzeit unterstützten Versionen Ihrer Plattform finden Sie im Interoperabilitäts-Matrix-Tool.
+
+https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"]
+
+Dokumentation finden Sie auf der Website des Plattformanbieters.
+
+|===
+.Verwandte Informationen
+link:downloading-and-extracting-storagegrid-installation-files.html["Herunterladen und Extrahieren der StorageGRID-Installationsdateien"]
+
+link:web-browser-requirements.html["Anforderungen an einen Webbrowser"]

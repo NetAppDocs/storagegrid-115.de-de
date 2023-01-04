@@ -1,0 +1,14 @@
+---
+permalink: tenant/managing-s3-buckets.html 
+sidebar: sidebar 
+keywords: StorageGRID, tenant, tenant manager, s3 bucket 
+summary: 'Wenn Sie einen S3-Mandanten mit entsprechenden Berechtigungen verwenden, können Sie S3-Buckets erstellen, anzeigen und löschen, Einstellungen für Konsistenzlevel aktualisieren, Cross-Origin Resource Sharing \ (CORS\) konfigurieren, Einstellungen für Updates der letzten Zugriffszeit aktivieren bzw. deaktivieren sowie S3-Plattformservices verwalten.' 
+---
+= Management von S3-Buckets
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen S3-Mandanten mit entsprechenden Berechtigungen verwenden, können Sie S3-Buckets erstellen, anzeigen und löschen, Einstellungen für Konsistenzstufen aktualisieren, Cross-Origin Resource Sharing (CORS) konfigurieren, Einstellungen für Updates der letzten Zugriffszeit aktivieren bzw. deaktivieren und S3-Plattformservices managen.

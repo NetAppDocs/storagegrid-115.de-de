@@ -1,0 +1,90 @@
+---
+permalink: admin/using-sandbox-mode.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Sie können den Sandbox-Modus verwenden, um Active Directory Federation Services \(AD FS\) zu konfigurieren und zu testen, die auf parteibasierten vertraut sind, bevor Sie Single Sign-On \(SSO\) für StorageGRID-Benutzer durchsetzen. Nachdem SSO aktiviert ist, können Sie den Sandbox-Modus erneut aktivieren, um neue und vorhandene Vertrauensstellen zu konfigurieren oder zu testen. Im Sandbox-Modus wird SSO für StorageGRID-Benutzer vorübergehend deaktiviert.' 
+---
+= Sandbox-Modus verwenden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Sandbox-Modus verwenden, um Active Directory Federation Services (AD FS) zu konfigurieren und zu testen, die auf Vertrauen von Parteien basieren, bevor Sie SSO für StorageGRID-Benutzer durchsetzen. Nachdem SSO aktiviert ist, können Sie den Sandbox-Modus erneut aktivieren, um neue und vorhandene Vertrauensstellen zu konfigurieren oder zu testen. Im Sandbox-Modus wird SSO für StorageGRID-Benutzer vorübergehend deaktiviert.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Über diese Aufgabe
+Wenn SSO aktiviert ist und ein Benutzer versucht, sich bei einem Admin-Node anzumelden, sendet StorageGRID eine Authentifizierungsanforderung an AD FS. Wiederum sendet AD FS eine Authentifizierungsantwort zurück an StorageGRID, die angibt, ob die Autorisierungsanforderung erfolgreich war. Für erfolgreiche Anforderungen enthält die Antwort eine universell eindeutige Kennung (UUID) für den Benutzer.
+
+Damit StorageGRID (der Service Provider) und AD FS (der Identitäts-Provider) sicher über Benutzerauthentifizierungsanforderungen kommunizieren können, müssen Sie bestimmte Einstellungen in StorageGRID konfigurieren. Als Nächstes müssen Sie AD FS verwenden, um für jeden Admin-Knoten ein Vertrauensverhältnis zu erstellen. Abschließend müssen Sie zu StorageGRID zurückkehren, um SSO zu aktivieren.
+
+Im Sandbox-Modus ist es einfach, diese Rückkehrkonfiguration durchzuführen und alle Einstellungen zu testen, bevor Sie SSO aktivieren.
+
+
+NOTE: Die Verwendung des Sandbox-Modus ist sehr empfehlenswert, aber nicht unbedingt erforderlich. Wenn Sie bereit sind, AD FS zu erstellen, auf denen die Teilnehmer vertrauen, unmittelbar nach der Konfiguration von SSO in StorageGRID, Und Sie müssen die SSO- und SLO-Prozesse (Single Logout) für jeden Admin-Knoten nicht testen, klicken Sie auf *aktiviert*, geben Sie die StorageGRID-Einstellungen ein, erstellen Sie für jeden Admin-Knoten in AD FS ein Vertrauensverhältnis, und klicken Sie dann auf *Speichern*, um SSO zu aktivieren.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Single Sign-On*.
++
+Die Seite Single Sign-On wird angezeigt, wobei die Option *deaktiviertes* ausgewählt ist.
+
++
+image::../media/sso_status_disabled.gif[Single Sign-on-Seite mit deaktiviertem SSO-Status]
+
++
+
+NOTE: Wenn die Optionen für den SSO-Status nicht angezeigt werden, bestätigen Sie, dass Sie Active Directory als föderierte Identitätsquelle konfiguriert haben. Siehe „`Anforderungen für die Verwendung von Single Sign-On.`“
+
+. Wählen Sie die Option *Sandbox Mode*.
++
+Die Einstellungen für Identitäts-Provider und vertrauende Partei werden angezeigt. Im Abschnitt „Identitätsanbieter“ wird das Feld *Diensttyp* schreibgeschützt angezeigt. Es zeigt den Typ des Services zur Identitätsföderation an, den Sie verwenden (z. B. Active Directory).
+
+. Im Abschnitt „Identitätsanbieter“:
++
+.. Geben Sie den Namen des Föderationsdienstes ein, genau wie er in AD FS angezeigt wird.
++
+
+NOTE: Um den Federationsdienstnamen zu finden, gehen Sie zu Windows Server Manager. Wählen Sie *Tools* > *AD FS Management*. Wählen Sie im Menü Aktion die Option *Eigenschaften des Föderationsdienstes bearbeiten* aus. Der Name des Föderationsdienstes wird im zweiten Feld angezeigt.
+
+.. Geben Sie an, ob Sie die Verbindung mit Transport Layer Security (TLS) sichern möchten, wenn der Identitäts-Provider SSO-Konfigurationsinformationen als Antwort auf StorageGRID-Anforderungen sendet.
++
+*** *Verwenden Sie das Betriebssystem CA-Zertifikat*: Verwenden Sie das auf dem Betriebssystem installierte Standard-CA-Zertifikat, um die Verbindung zu sichern.
+*** *Benutzerdefiniertes CA-Zertifikat verwenden*: Verwenden Sie ein benutzerdefiniertes CA-Zertifikat, um die Verbindung zu sichern.
++
+Wenn Sie diese Einstellung auswählen, kopieren Sie das Zertifikat in das Textfeld *CA-Zertifikat* und fügen es ein.
+
+*** *Verwenden Sie keine TLS*: Verwenden Sie kein TLS-Zertifikat, um die Verbindung zu sichern.
+
+
+
+
+. Geben Sie im Abschnitt „Vertrauenspartei“ die ID der betreffenden Partei an, die Sie für StorageGRID-Admin-Knoten verwenden, wenn Sie Vertrauensstellungen der betreffenden Partei konfigurieren.
++
+** Wenn Ihr Grid beispielsweise nur einen Admin-Node hat und Sie nicht erwarten, dass künftig weitere Admin-Nodes hinzugefügt werden, geben Sie ein `SG` Oder `StorageGRID`.
+** Wenn Ihr Grid mehr als einen Admin-Node enthält, fügen Sie die Zeichenfolge ein `[HOSTNAME]` In der Kennung. Beispiel: `SG-[HOSTNAME]`. Dadurch wird eine Tabelle mit einer auf den Hostnamen des Knotens beruhenden Partei-ID für jeden Admin-Node generiert. + HINWEIS: Sie müssen eine Vertrauensbasis für jeden Admin-Knoten in Ihrem StorageGRID-System erstellen. Mit einer Vertrauensbasis für jeden Admin-Knoten wird sichergestellt, dass Benutzer sich sicher bei und aus jedem Admin-Knoten anmelden können.
+
+
++
+image::../media/sso_status_sandbox_mode.gif[Single Sign On,Sandbox mode enabled,Relying party identifiers shown for several Admin Nodes]
+
+. Klicken Sie Auf *Speichern*.
++
+** Ein grünes Häkchen wird für einige Sekunden auf der Schaltfläche *Speichern* angezeigt.
++
+image::../media/save_button_green_checkmark.gif[Schaltfläche mit einem grünen Häkchen speichern]
+
+** Der Bestätigungshinweis zum Sandbox-Modus wird angezeigt und bestätigt, dass der Sandbox-Modus nun aktiviert ist. Sie können diesen Modus verwenden, während Sie AD FS verwenden, um ein Vertrauensverhältnis von Vertrauensstellen für jeden Admin-Node zu konfigurieren und die Single Sign-in (SSO)- und SLO-Prozesse (Single Logout) zu testen.
++
+image::../media/sso_sandbox_mode_enabled.gif[SSO Sandbox-Modus aktiviert]
+
+
+
+
+
+.Verwandte Informationen
+link:requirements-for-sso.html["Anforderungen für die Nutzung von Single Sign On"]

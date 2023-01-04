@@ -1,0 +1,18 @@
+---
+permalink: admin/managing-storage-options.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können Speicheroptionen über das Menü Konfiguration im Grid Manager anzeigen und konfigurieren. Storage-Optionen enthalten die Einstellungen für die Objektsegmentierung und die aktuellen Werte für Storage-Wasserzeichen. Sie können auch die S3- und Swift-Ports anzeigen, die vom veralteten CLB-Dienst auf Gateway-Nodes und vom LDR-Service auf Storage-Nodes verwendet werden. 
+---
+= Verwalten Von Storage-Optionen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Speicheroptionen über das Menü Konfiguration im Grid Manager anzeigen und konfigurieren. Storage-Optionen enthalten die Einstellungen für die Objektsegmentierung und die aktuellen Werte für Storage-Wasserzeichen. Sie können auch die S3- und Swift-Ports anzeigen, die vom veralteten CLB-Dienst auf Gateway-Nodes und vom LDR-Service auf Storage-Nodes verwendet werden.
+
+Informationen zu Port-Zuweisungen finden Sie unter link:summary-ip-addresses-and-ports-for-client-connections.html["Zusammenfassung: IP-Adressen und Ports für Client-Verbindungen"].
+
+image::../media/storage_options.gif[Storage-Optionen]

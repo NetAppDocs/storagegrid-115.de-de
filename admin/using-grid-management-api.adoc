@@ -1,0 +1,32 @@
+---
+permalink: admin/using-grid-management-api.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können Systemmanagementaufgaben mithilfe der Grid Management REST-API anstelle der Grid Manager-Benutzeroberfläche ausführen. Möglicherweise möchten Sie beispielsweise die API zur Automatisierung von Vorgängen verwenden oder mehrere Einheiten, wie beispielsweise Benutzer, schneller erstellen. 
+---
+= Verwenden der Grid-Management-API
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Systemmanagementaufgaben mithilfe der Grid Management REST-API anstelle der Grid Manager-Benutzeroberfläche ausführen. Möglicherweise möchten Sie beispielsweise die API zur Automatisierung von Vorgängen verwenden oder mehrere Einheiten, wie beispielsweise Benutzer, schneller erstellen.
+
+Die Grid Management API verwendet die Swagger Open-Source-API-Plattform. Swagger bietet eine intuitive Benutzeroberfläche, die es Entwicklern und nicht-Entwicklern ermöglicht, mit der API Echtzeit-Operationen in StorageGRID durchzuführen.
+
+
+
+== Allgemeine Ressourcen
+
+Die Grid Management API bietet die folgenden Ressourcen auf oberster Ebene:
+
+* `/grid`: Der Zugriff ist auf Grid Manager-Benutzer beschränkt und basiert auf den konfigurierten Gruppenberechtigungen.
+* `/org`: Der Zugriff ist auf Benutzer beschränkt, die zu einer lokalen oder föderierten LDAP-Gruppe für ein Mandantenkonto gehören. Details finden Sie in den Informationen zur Verwendung von Mandantenkonten.
+* `/private`: Der Zugriff ist auf Grid Manager-Benutzer beschränkt und basiert auf den konfigurierten Gruppenberechtigungen. Diese APIs sind nur zur internen Verwendung bestimmt und nicht öffentlich dokumentiert. Diese APIs können auch ohne vorherige Ankündigung geändert werden.
+
+
+.Verwandte Informationen
+link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]
+
+https://prometheus.io/docs/querying/basics/["Prometheus: Grundlagen der Abfrage"^]

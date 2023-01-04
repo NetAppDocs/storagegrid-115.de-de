@@ -1,0 +1,19 @@
+---
+permalink: admin/scheduling-data-migration.html 
+sidebar: sidebar 
+keywords:  
+summary: Vermeiden Sie die Datenmigration während der wichtigsten Geschäftszeiten. Begrenzen Sie die Datenmigration auf Abende, Wochenenden und andere Zeiten, in denen die Systemauslastung knapp ist. 
+---
+= Planen der Datenmigration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vermeiden Sie die Datenmigration während der wichtigsten Geschäftszeiten. Begrenzen Sie die Datenmigration auf Abende, Wochenenden und andere Zeiten, in denen die Systemauslastung knapp ist.
+
+Planen Sie die Datenmigration nach Möglichkeit nicht für Zeiten mit hoher Aktivität ein. Wenn es jedoch nicht sinnvoll ist, den hohen Aktivitätszeitraum vollständig zu vermeiden, ist es sicher, so lange vorzugehen, wie Sie die relevanten Attribute genau überwachen und Maßnahmen ergreifen, wenn sie akzeptable Werte überschreiten.
+
+.Verwandte Informationen
+link:monitoring-data-migration.html["Monitoring der Datenmigration"]

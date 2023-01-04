@@ -1,0 +1,18 @@
+---
+permalink: s3/monitoring-and-auditing-operations.html 
+sidebar: sidebar 
+keywords:  
+summary: Kunden können Workloads und die Effizienz für Client-Vorgänge überwachen, indem sie Transaktionstrends für das gesamte Grid oder bestimmte Nodes anzeigen. Sie können Audit-Meldungen zur Überwachung von Client-Vorgängen und -Transaktionen verwenden. 
+---
+= Monitoring und Auditing von Vorgängen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Kunden können Workloads und die Effizienz für Client-Vorgänge überwachen, indem sie Transaktionstrends für das gesamte Grid oder bestimmte Nodes anzeigen. Sie können Audit-Meldungen zur Überwachung von Client-Vorgängen und -Transaktionen verwenden.
+
+* link:monitoring-object-ingest-and-retrieval-rates.html["Monitoring der Objekteinspeisung und -Abrufraten"]
+* link:accessing-and-reviewing-audit-logs.html["Aufrufen und Prüfen von Prüfprotokollen"]
+

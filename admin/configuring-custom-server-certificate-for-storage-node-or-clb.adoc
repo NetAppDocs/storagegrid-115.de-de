@@ -1,0 +1,64 @@
+---
+permalink: admin/configuring-custom-server-certificate-for-storage-node-or-clb.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Sie können das Serverzertifikat, das für S3- oder Swift-Client-Verbindungen zum Storage-Node oder zum CLB-Service \(veraltet\) auf Gateway-Node verwendet wird, ersetzen. Das benutzerdefinierte Ersatzserverzertifikat ist speziell für Ihr Unternehmen bestimmt.' 
+---
+= Konfigurieren eines benutzerdefinierten Serverzertifikats für Verbindungen mit dem Speicherknoten oder dem CLB-Dienst
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das Serverzertifikat, das für S3- oder Swift-Client-Verbindungen zum Storage-Node oder zum CLB-Service (veraltet) auf Gateway-Node verwendet wird, ersetzen. Das benutzerdefinierte Ersatzserverzertifikat ist speziell für Ihr Unternehmen bestimmt.
+
+.Über diese Aufgabe
+Standardmäßig wird jeder Speicherknoten ein X.509-Serverzertifikat ausgestellt, das von der Grid-CA signiert wurde. Diese CA-signierten Zertifikate können durch ein einziges allgemeines benutzerdefiniertes Serverzertifikat und den entsprechenden privaten Schlüssel ersetzt werden.
+
+Für alle Speicherknoten wird ein einzelnes benutzerdefiniertes Serverzertifikat verwendet. Sie müssen daher das Zertifikat als Platzhalter- oder Multidomain-Zertifikat angeben, wenn Clients den Hostnamen bei der Verbindung mit dem Speicherendpunkt überprüfen müssen. Definieren Sie das benutzerdefinierte Zertifikat, sodass es mit allen Speicherknoten im Raster übereinstimmt.
+
+Nach Abschluss der Konfiguration auf dem Server müssen Benutzer möglicherweise auch das Root-CA-Zertifikat im S3- oder Swift-API-Client installieren, den sie für den Zugriff auf das System verwenden, abhängig von der Root Certificate Authority (CA), die Sie verwenden.
+
+
+NOTE: Um sicherzustellen, dass die Vorgänge nicht durch ein ausgefallenes Serverzertifikat unterbrochen werden, wird der Alarm *Ablauf des Serverzertifikats für Storage API Endpunkte* und der Alarm Legacy Storage API Service Endpoints Certificate Expiry (SCEP) ausgelöst, wenn das Root-Server-Zertifikat abläuft. Nach Bedarf können Sie die Anzahl der Tage anzeigen, bis das aktuelle Service-Zertifikat abläuft, indem Sie *Support* > *Tools* > *Grid Topology* auswählen. Wählen Sie dann *_primary Admin Node_* > *CMN* > *Ressourcen* aus.
+
+Die benutzerdefinierten Zertifikate werden nur verwendet, wenn Clients über den veralteten CLB-Dienst auf Gateway-Nodes eine Verbindung zu StorageGRID herstellen oder eine direkte Verbindung zu Storage-Nodes herstellen. S3- oder Swift-Clients, die über den Load Balancer Service am Admin-Nodes oder Gateway-Nodes eine Verbindung zu StorageGRID herstellen, verwenden das für den Load Balancer-Endpunkt konfigurierte Zertifikat.
+
+
+NOTE: Die Warnung *Ablauf des Load Balancer-Endpunktzertifikats* wird für Load Balancer-Endpunkte ausgelöst, die bald ablaufen.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Server-Zertifikate*.
+. Klicken Sie im Abschnitt Serverzertifikat für Objekt-Storage-API-Service-Endpunkte auf *Benutzerdefiniertes Zertifikat installieren*.
+. Laden Sie die erforderlichen Serverzertifikatdateien hoch:
++
+** *Server-Zertifikat*: Die benutzerdefinierte Server-Zertifikatdatei (`.crt`).
+** *Server Certificate Private Key*: Die benutzerdefinierte Server Zertifikat private Schlüssel Datei (`.key`).
++
+
+NOTE: Private EC-Schlüssel müssen 224 Bit oder größer sein. RSA Private Keys müssen mindestens 2048 Bit groß sein.
+
+** *CA Bundle*: Eine einzelne Datei, die die Zertifikate jeder Intermediate Emission Certificate Authority (CA) enthält. Die Datei sollte alle PEM-kodierten CA-Zertifikatdateien enthalten, die in der Reihenfolge der Zertifikatskette verkettet sind.
+
+
+. Klicken Sie Auf *Speichern*.
++
+Das benutzerdefinierte Serverzertifikat wird für alle nachfolgenden neuen API-Client-Verbindungen verwendet.
+
++
+Wählen Sie eine Registerkarte aus, um detaillierte Informationen zum StorageGRID-Standardserverzertifikat oder zum hochgeladenen Zertifikat einer Zertifizierungsstelle anzuzeigen.
+
++
+
+NOTE: Nachdem Sie ein neues Zertifikat hochgeladen haben, lassen Sie bis zu einem Tag, bis alle zugehörigen Alarme zum Ablauf des Zertifikats (oder ältere Alarme) gelöscht werden können.
+
+. Aktualisieren Sie die Seite, um sicherzustellen, dass der Webbrowser aktualisiert wird.
+
+
+.Verwandte Informationen
+link:../s3/index.html["S3 verwenden"]
+
+link:../swift/index.html["Verwenden Sie Swift"]
+
+link:configuring-s3-api-endpoint-domain-names.html["Konfigurieren von S3-API-Endpunkt-Domain-Namen"]

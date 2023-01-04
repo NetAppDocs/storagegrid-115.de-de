@@ -1,0 +1,61 @@
+---
+permalink: admin/configuring-custom-server-certificate-for-grid-manager-tenant-manager.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können das standardmäßige StorageGRID-Serverzertifikat durch ein einzelnes benutzerdefiniertes Serverzertifikat ersetzen, das Benutzern den Zugriff auf den Grid-Manager und den Tenant-Manager ermöglicht, ohne dass Sicherheitswarnungen ausgegeben werden. 
+---
+= Konfigurieren eines benutzerdefinierten Serverzertifikats für den Grid Manager und den Tenant Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das standardmäßige StorageGRID-Serverzertifikat durch ein einzelnes benutzerdefiniertes Serverzertifikat ersetzen, das Benutzern den Zugriff auf den Grid-Manager und den Tenant-Manager ermöglicht, ohne dass Sicherheitswarnungen ausgegeben werden.
+
+.Über diese Aufgabe
+Standardmäßig wird jeder Admin-Node ein von der Grid-CA signiertes Zertifikat ausgestellt. Diese CA-signierten Zertifikate können durch ein einziges allgemeines benutzerdefiniertes Serverzertifikat und den entsprechenden privaten Schlüssel ersetzt werden.
+
+Da ein einzelnes benutzerdefiniertes Serverzertifikat für alle Administratorknoten verwendet wird, müssen Sie das Zertifikat als Platzhalter- oder Multi-Domain-Zertifikat angeben, wenn Clients bei der Verbindung mit Grid Manager und Tenant Manager den Hostnamen überprüfen müssen. Definieren Sie das benutzerdefinierte Zertifikat so, dass es mit allen Admin-Nodes im Raster übereinstimmt.
+
+Sie müssen die Konfiguration auf dem Server abschließen, und je nach der von Ihnen verwendeten Root Certificate Authority (CA) müssen Benutzer möglicherweise auch das Root CA-Zertifikat im Webbrowser installieren, mit dem sie auf den Grid Manager und den Tenant Manager zugreifen.
+
+
+NOTE: Um sicherzustellen, dass die Vorgänge nicht durch ein Serverzertifikat unterbrochen werden, werden die Warnung *Ablauf des Serverzertifikats für die Managementoberfläche* und der Alarm Legacy Management Interface Certificate Expiry (MCEP) ausgelöst, wenn dieses Serverzertifikat abläuft. Nach Bedarf können Sie die Anzahl der Tage anzeigen, bis das aktuelle Service-Zertifikat abläuft, indem Sie *Support* > *Tools* > *Grid Topology* auswählen. Wählen Sie dann *_primary Admin Node_* > *CMN* > *Ressourcen* aus.
+
+[NOTE]
+====
+Wenn Sie mit einem Domänennamen anstelle einer IP-Adresse auf den Grid Manager oder den Tenant Manager zugreifen, zeigt der Browser einen Zertifikatfehler ohne eine Option zum Umgehen an, wenn eine der folgenden Fälle auftritt:
+
+* Ihr Zertifikat für den benutzerdefinierten Verwaltungsserver läuft ab.
+* Sie werden von einem Server-Zertifikat der benutzerdefinierten Managementoberfläche auf das Standardserverzertifikat zurückgesetzt.
+
+
+====
+.Schritte
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Server-Zertifikate*.
+. Klicken Sie im Abschnitt Management Interface Server Certificate auf *Benutzerdefiniertes Zertifikat installieren*.
+. Laden Sie die erforderlichen Serverzertifikatdateien hoch:
++
+** *Server-Zertifikat*: Die benutzerdefinierte Server-Zertifikatdatei (`.crt`).
+** *Server Certificate Private Key*: Die benutzerdefinierte Server Zertifikat private Schlüssel Datei (`.key`).
++
+
+NOTE: Private EC-Schlüssel müssen 224 Bit oder größer sein. RSA Private Keys müssen mindestens 2048 Bit groß sein.
+
+** *CA Bundle*: Eine einzelne Datei, die die Zertifikate jeder Intermediate Emission Certificate Authority (CA) enthält. Die Datei sollte alle PEM-kodierten CA-Zertifikatdateien enthalten, die in der Reihenfolge der Zertifikatskette verkettet sind.
+
+
+. Klicken Sie Auf *Speichern*.
++
+Die benutzerdefinierten Serverzertifikate werden für alle nachfolgenden neuen Clientverbindungen verwendet.
+
++
+Wählen Sie eine Registerkarte aus, um detaillierte Informationen zum StorageGRID-Standardserverzertifikat oder zum hochgeladenen Zertifikat einer Zertifizierungsstelle anzuzeigen.
+
++
+
+NOTE: Nachdem Sie ein neues Zertifikat hochgeladen haben, lassen Sie bis zu einem Tag, bis alle zugehörigen Alarme zum Ablauf des Zertifikats (oder ältere Alarme) gelöscht werden können.
+
+. Aktualisieren Sie die Seite, um sicherzustellen, dass der Webbrowser aktualisiert wird.
+

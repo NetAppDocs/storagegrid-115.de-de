@@ -1,0 +1,36 @@
+---
+permalink: tenant/disabling-identity-federation.html 
+sidebar: sidebar 
+keywords: storagegrid, tenant, disable identity federation, disabling identity federation, federated identity source 
+summary: Wenn Sie einen Identitätsföderationsdienst für diesen Mandanten konfiguriert haben, können Sie die Identitätsföderation für Mandanten und Benutzer vorübergehend oder dauerhaft deaktivieren. Wenn die Identitätsföderation deaktiviert ist, besteht keine Kommunikation zwischen dem StorageGRID-System und der Identitätsquelle. Allerdings bleiben alle von Ihnen konfigurierten Einstellungen erhalten, sodass Sie die Identitätsföderation zukünftig einfach wieder aktivieren können. 
+---
+= Identitätsföderation deaktivieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen Identitätsföderationsdienst für diesen Mandanten konfiguriert haben, können Sie die Identitätsföderation für Mandanten und Benutzer vorübergehend oder dauerhaft deaktivieren. Wenn die Identitätsföderation deaktiviert ist, besteht keine Kommunikation zwischen dem StorageGRID-System und der Identitätsquelle. Allerdings bleiben alle von Ihnen konfigurierten Einstellungen erhalten, sodass Sie die Identitätsföderation zukünftig einfach wieder aktivieren können.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Tenant Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Über diese Aufgabe
+Bevor Sie die Identitätsföderation deaktivieren, sollten Sie Folgendes beachten:
+
+* Verbundene Benutzer können sich nicht anmelden.
+* Föderierte Benutzer, die derzeit angemeldet sind, erhalten bis zum Ablauf ihrer Sitzung Zugriff auf das Mandantenkonto, können sich jedoch nach Ablauf ihrer Sitzung nicht anmelden.
+* Es erfolgt keine Synchronisierung zwischen dem StorageGRID-System und der Identitätsquelle.
+
+
+.Schritte
+. Wählen Sie * ACCESS MANAGEMENT* > *Identity Federation*.
+. Deaktivieren Sie das Kontrollkästchen * Identitätsföderation aktivieren*.
+. Wählen Sie *Speichern*.
+
+
+.Verwandte Informationen
+link:tenant-management-permissions.html["Mandantenmanagement-Berechtigungen"]

@@ -1,0 +1,34 @@
+---
+permalink: monitor/logs-files-reference.html 
+sidebar: sidebar 
+keywords: log, logs, log files 
+summary: In den folgenden Abschnitten werden die Protokolle zum Erfassen von Ereignissen, Diagnosemeldungen und Fehlerbedingungen aufgeführt. Möglicherweise werden Sie gebeten, Protokolldateien zu sammeln und an den technischen Support zu leiten, um bei der Fehlerbehebung zu helfen. 
+---
+= Referenz für Protokolldateien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In den folgenden Abschnitten werden die Protokolle zum Erfassen von Ereignissen, Diagnosemeldungen und Fehlerbedingungen aufgeführt. Möglicherweise werden Sie gebeten, Protokolldateien zu sammeln und an den technischen Support zu leiten, um bei der Fehlerbehebung zu helfen.
+
+* link:storagegrid-software-logs.html["StorageGRID-Softwareprotokolle"]
+* link:deployment-and-maintenance-logs.html["Protokoll für Implementierung und Wartung"]
+* link:logs-for-third-party-software.html["Protokolle für Drittanbietersoftware"]
+* link:about-bycast-log.html["Etwa bycast.log"]
+
+
+
+IMPORTANT: Die Tabellen in diesem Abschnitt dienen nur als Referenz. Die Protokolle sind für erweiterte Fehlerbehebung durch den technischen Support bestimmt. Fortschrittliche Techniken, die die Wiederherstellung des Problemverlaufs mit Hilfe der Audit-Protokolle und der Anwendung Log-Dateien beinhalten, liegen außerhalb des Geltungsbereichs dieses Handbuchs.
+
+Um auf diese Protokolle zuzugreifen, können Sie Log-Dateien und Systemdaten (*Support* > *Tools* > *Logs*) sammeln. Wenn der primäre Admin-Node nicht verfügbar ist oder keinen bestimmten Node erreichen kann, können Sie wie folgt auf die Protokolle für jeden Grid-Node zugreifen:
+
+. Geben Sie den folgenden Befehl ein: `ssh admin@grid_node_IP`
+. Geben Sie das im aufgeführte Passwort ein `Passwords.txt` Datei:
+. Geben Sie den folgenden Befehl ein, um zum Root zu wechseln: `su -`
+. Geben Sie das im aufgeführte Passwort ein `Passwords.txt` Datei:
+
+
+.Verwandte Informationen
+link:collecting-log-files-and-system-data.html["Protokolldateien und Systemdaten werden erfasst"]

@@ -1,0 +1,29 @@
+---
+permalink: maintain/recovering-from-admin-node-failures.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, admin node failure 
+summary: Der Wiederherstellungsprozess für einen Admin-Knoten hängt davon ab, ob es sich um den primären Admin-Knoten oder einen nicht-primären Admin-Knoten handelt. 
+---
+= Wiederherstellung bei Ausfällen von Admin-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Wiederherstellungsprozess für einen Admin-Knoten hängt davon ab, ob es sich um den primären Admin-Knoten oder einen nicht-primären Admin-Knoten handelt.
+
+.Über diese Aufgabe
+Die Schritte für die Wiederherstellung eines primären oder nicht primären Admin-Knotens auf hoher Ebene sind identisch, wobei sich die Details der einzelnen Schritte unterscheiden.
+
+image::../media/overview_admin_node_recovery.png[Übersicht über die Wiederherstellung für primären oder nicht-primären Admin-Knoten]
+
+Befolgen Sie immer den richtigen Wiederherstellungsvorgang für den Admin-Knoten, den Sie wiederherstellen. Die Verfahren sehen auf hohem Niveau gleich aus, unterscheiden sich aber in den Details.
+
+.Verwandte Informationen
+link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+.Wahlmöglichkeiten
+* link:recovering-from-primary-admin-node-failures.html["Wiederherstellung nach Ausfällen des primären Admin-Nodes"]
+* link:recovering-from-non-primary-admin-node-failures.html["Wiederherstellung nach Ausfällen eines Admin-Knotens außerhalb des primären Standorts"]
+

@@ -1,0 +1,240 @@
+---
+permalink: sg6000/replacing-storage-controller-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, Replacing, replace, storage controller, e2800, ef570, controller, remove, removing, removal, install, installing, installation 
+summary: Möglicherweise müssen Sie einen E2800 Controller oder einen EF570 Controller austauschen, wenn er nicht optimal funktioniert oder ausgefallen ist. 
+---
+= Austauschen eines Storage Controllers
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie einen E2800 Controller oder einen EF570 Controller austauschen, wenn er nicht optimal funktioniert oder ausgefallen ist.
+
+.Was Sie benötigen
+* Sie verfügen über einen Ersatzcontroller mit derselben Teilenummer wie der zu ersetzenden Controller.
+* Sie verfügen über Etiketten, um jedes Kabel, das mit dem Controller verbunden ist, zu identifizieren.
+* Sie haben ein ESD-Armband oder andere antistatische Vorsichtsmaßnahmen getroffen.
+* Sie haben einen #1 Kreuzschlitzschraubendreher.
+* Sie verfügen über die Anweisungen für den Austausch eines Controllers in der Duplexkonfiguration.
++
+
+IMPORTANT: Beachten Sie nur bei der Anleitung zur E-Series oder wenn Sie weitere Details für einen bestimmten Schritt benötigen. Verlassen Sie sich beim Austausch eines Controllers in der StorageGRID Appliance nicht auf die Anweisungen der E-Series, da sich die Verfahren nicht unterscheiden.
+
+* Sie haben die Storage Appliance physisch gefunden, an der der Controller im Datacenter ausgetauscht wird.
++
+link:locating-controller-in-data-center.html["Lokalisierung des Controllers in einem Rechenzentrum"]
+
+
+
+.Über diese Aufgabe
+Sie haben zwei Möglichkeiten zur Feststellung, ob ein ausgefallener Controller aufgetreten ist:
+
+* Der Recovery Guru im SANtricity System Manager führt Sie dazu, den Controller zu ersetzen.
+* Die gelbe Warn-LED am Controller leuchtet und gibt an, dass der Controller einen Fehler aufweist.
++
+
+IMPORTANT: Wenn die Warn-LEDs für beide Controller im Shelf leuchten, wenden Sie sich an den technischen Support, um Hilfe zu erhalten.
+
+
+
+Da das Storage-Controller-Shelf zwei Storage-Controller enthält, können Sie einen der Controller ersetzen, während das System eingeschaltet ist und Lese-/Schreibvorgänge durchführen, sofern die folgenden Bedingungen erfüllt sind:
+
+* Der zweite Controller im Shelf hat optimalen Status.
+* Im Feld „`OK to remove`“ im Bereich Details des Recovery Guru im SANtricity System Manager wird mit „Yes“ angezeigt, dass diese Komponente sicher entfernt werden kann.
+
+
+
+IMPORTANT: Wenn der zweite Controller-Behälter im Regal keinen optimalen Status hat oder wenn der Recovery Guru angibt, dass es nicht in Ordnung ist, den Controller-Behälter zu entfernen, wenden Sie sich an den technischen Support.
+
+Wenn Sie einen Controller austauschen, müssen Sie den Akku aus dem ursprünglichen Controller entfernen und in den Ersatzcontroller einsetzen.
+
+
+NOTE: Die Storage Controller im Gerät enthalten keine Host-Schnittstellenkarten (HIC).
+
+.Schritte
+. Packen Sie die neue Steuerung aus und stellen Sie sie auf eine flache, statische Oberfläche.
++
+Bewahren Sie das Verpackungsmaterial auf, das beim Versand der fehlerhaften Steuerung verwendet werden soll.
+
+. Suchen Sie die Etiketten für MAC-Adresse und FRU-Teilenummer auf der Rückseite des Ersatzcontrollers.
++
+Diese Abbildung zeigt den E2800 Controller. Das Verfahren zum Austausch des EF570 Controllers ist identisch.
+
++
+image::../media/e2800_labels_on_controller.gif[MAC- und FRU-Etiketten am E2800 Controller]
+
++
+|===
+| Etikett | Etikett | Beschreibung 
+
+
+ a| 
+1
+ a| 
+MAC-Adresse
+ a| 
+Die MAC-Adresse für Management-Port 1 („`P1`"). Wenn Sie die IP-Adresse des Original-Controllers über DHCP erhalten haben, benötigen Sie diese Adresse, um eine Verbindung zum neuen Controller herzustellen.
+
+
+
+ a| 
+2
+ a| 
+FRU-Teilenummer
+ a| 
+Die FRU-Teilenummer. Diese Nummer muss der Teilenummer des derzeit installierten Controllers entsprechen.
+
+|===
+. Bereiten Sie das Entfernen des Controllers vor.
++
+Sie führen die folgenden Schritte mit SANtricity System Manager aus. Weitere Informationen finden Sie in der E-Series Anleitung zum Austauschen des Storage Controllers.
+
++
+.. Vergewissern Sie sich, dass die Ersatzteilnummer des ausgefallenen Controllers mit der FRU-Teilenummer für den Ersatz-Controller identisch ist.
++
+Wenn ein Controller einen Fehler aufweist und ausgetauscht werden muss, wird im Bereich Details des Recovery Guru die Ersatzteilnummer angezeigt. Wenn Sie diese Nummer manuell finden müssen, können Sie auf der Registerkarte *Base* des Controllers nachsehen.
+
++
+
+IMPORTANT: *Möglicher Verlust des Datenzugangs --* Wenn die beiden Teilenummern nicht gleich sind, versuchen Sie dieses Verfahren nicht.
+
+.. Sichern Sie die Konfigurationsdatenbank.
++
+Wenn beim Entfernen eines Controllers ein Problem auftritt, können Sie die gespeicherte Datei verwenden, um Ihre Konfiguration wiederherzustellen.
+
+.. Sammeln von Support-Daten für die Appliance
++
+
+NOTE: Das Erfassen von Supportdaten vor und nach dem Ersetzen einer Komponente stellt sicher, dass Sie einen vollständigen Satz von Protokollen an den technischen Support senden können, falls das Problem durch den Austausch nicht behoben wird.
+
+.. Nehmen Sie den Controller, den Sie ersetzen möchten, in den Offline-Modus.
+
+
+. Entfernen Sie den Controller aus dem Gerät:
++
+.. Setzen Sie ein ESD-Armband an oder ergreifen Sie andere antistatische Vorsichtsmaßnahmen.
+.. Beschriften Sie die Kabel, und trennen Sie dann die Kabel und SFPs.
++
+
+IMPORTANT: Um eine verminderte Leistung zu vermeiden, dürfen die Kabel nicht verdreht, gefaltet, gequetscht oder treten.
+
+.. Lösen Sie die Steuerung vom Gerät, indem Sie die Verriegelung am Nockengriff so lange drücken, bis sie sich löst, und öffnen Sie dann den Nockengriff nach rechts.
+.. Schieben Sie den Regler mit zwei Händen und dem Nockengriff aus dem Gerät.
++
+
+IMPORTANT: Verwenden Sie immer zwei Hände, um das Gewicht der Steuerung zu unterstützen.
+
+.. Stellen Sie den Controller auf eine flache, statische Oberfläche, wobei die abnehmbare Abdeckung nach oben zeigt.
+.. Entfernen Sie die Abdeckung, indem Sie die Taste nach unten drücken und die Abdeckung abnehmen.
+
+
+. Entfernen Sie den Akku aus dem ausgefallenen Controller, und setzen Sie ihn in den Ersatzcontroller ein:
++
+.. Vergewissern Sie sich, dass die grüne LED im Controller (zwischen Akku und DIMMs) aus ist.
++
+Wenn diese grüne LED leuchtet, wird der Controller weiterhin mit Strom versorgt. Sie müssen warten, bis diese LED erlischt, bevor Sie Komponenten entfernen.
+
++
+image::../media/e2800_internal_cache_active_led.gif[Grüne LED auf E2800]
+
++
+|===
+| Element | Beschreibung 
+
+
+ a| 
+image::../media/icon_legend_01.gif[Nummer 1]
+ a| 
+Interne LED für aktiven Cache
+
+
+
+ a| 
+image::../media/icon_legend_02.gif[Nummer 2]
+ a| 
+Batterie
+
+|===
+.. Suchen Sie den blauen Freigabehebel für die Batterie.
+.. Entriegeln Sie den Akku, indem Sie den Entriegelungshebel nach unten und aus dem Controller entfernen.
++
+image::../media/e2800_remove_battery.gif[Batterieverriegelung]
+
++
+|===
+| Element | Beschreibung 
+
+
+ a| 
+image::../media/icon_legend_01.gif[Nummer 1]
+ a| 
+Akkufreigaberiegel
+
+
+
+ a| 
+image::../media/icon_legend_02.gif[Nummer 2]
+ a| 
+Batterie
+
+|===
+.. Heben Sie den Akku an, und schieben Sie ihn aus dem Controller.
+.. Entfernen Sie die Abdeckung vom Ersatzcontroller.
+.. Richten Sie den Ersatz-Controller so aus, dass der Steckplatz für die Batterie zu Ihnen zeigt.
+.. Setzen Sie den Akku in einem leichten Abwärtswinkel in den Controller ein.
++
+Sie müssen den Metallflansch an der Vorderseite der Batterie in den Schlitz an der Unterseite des Controllers einsetzen und die Oberseite der Batterie unter den kleinen Ausrichtstift auf der linken Seite des Controllers schieben.
+
+.. Schieben Sie die Akkuverriegelung nach oben, um die Batterie zu sichern.
++
+Wenn die Verriegelung einrastet, Haken unten an der Verriegelung in einen Metallschlitz am Gehäuse.
+
+.. Drehen Sie den Controller um, um zu bestätigen, dass der Akku korrekt installiert ist.
++
+
+IMPORTANT: *Mögliche Hardware-Schäden* -- der Metallflansch an der Vorderseite der Batterie muss vollständig in den Schlitz am Controller eingesetzt werden (wie in der ersten Abbildung dargestellt). Wenn die Batterie nicht richtig eingesetzt ist (wie in der zweiten Abbildung dargestellt), kann der Metallflansch die Controllerplatine kontaktieren, was zu Schäden führt.
+
++
+*** *Korrekt -- der Metallflansch der Batterie ist komplett in den Schlitz am Controller eingelegt:*
++
+image::../media/e2800_battery_flange_ok.gif[Batterieflansch Korrekt]
+
+*** *Falsch -- der Metallflansch der Batterie ist nicht in den Steckplatz an der Steuerung eingefügt:*
++
+image::../media/e2800_battery_flange_not_ok.gif[Batterieflansch Nicht Korrekt]
+
+
+
+.. Bringen Sie die Controllerabdeckung wieder an.
+
+
+. Setzen Sie den Ersatzcontroller in das Gerät ein.
++
+.. Drehen Sie den Controller um, so dass die abnehmbare Abdeckung nach unten zeigt.
+.. Schieben Sie den Steuerknebel in die geöffnete Stellung, und schieben Sie ihn bis zum Gerät.
+.. Bewegen Sie den Nockengriff nach links, um die Steuerung zu verriegeln.
+.. Ersetzen Sie die Kabel und SFPs.
+.. Wenn der ursprüngliche Controller DHCP für die IP-Adresse verwendet hat, suchen Sie die MAC-Adresse auf dem Etikett auf der Rückseite des Ersatzcontrollers. Bitten Sie den Netzwerkadministrator, die DNS/Netzwerk- und IP-Adresse des entfernten Controllers mit der MAC-Adresse des Ersatzcontrollers zu verknüpfen.
++
+
+NOTE: Wenn der ursprüngliche Controller DHCP für die IP-Adresse nicht verwendet hat, übernimmt der neue Controller die IP-Adresse des entfernten Controllers.
+
+
+
+. Stellen Sie den Controller mit SANtricity System Manager online:
++
+.. Wählen Sie *Hardware*.
+.. Wenn die Grafik die Laufwerke anzeigt, wählen Sie *Zurück von Regal anzeigen*.
+.. Wählen Sie den Controller aus, den Sie online platzieren möchten.
+.. Wählen Sie im Kontextmenü * Online platzieren* aus, und bestätigen Sie, dass Sie den Vorgang ausführen möchten.
+.. Vergewissern Sie sich, dass auf der 7-Segment-Anzeige ein Status von angezeigt wird `99`.
+
+
+. Vergewissern Sie sich, dass der neue Controller optimal ist, und sammeln Sie Support-Daten.
+
+
+.Verwandte Informationen
+http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E-Series Systems Documentation Site"^]

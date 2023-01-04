@@ -1,0 +1,41 @@
+---
+permalink: upgrade/impact-of-upgrade-on-groups-and-user-accounts.html 
+sidebar: sidebar 
+keywords: upgrade, permissions 
+summary: Sie müssen die Auswirkungen des StorageGRID Upgrades kennen, damit Sie Gruppen und Benutzerkonten nach Abschluss des Upgrades entsprechend aktualisieren können. 
+---
+= Auswirkungen eines Upgrades auf Gruppen und Benutzerkonten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Auswirkungen des StorageGRID Upgrades kennen, damit Sie Gruppen und Benutzerkonten nach Abschluss des Upgrades entsprechend aktualisieren können.
+
+
+
+== Änderungen an Gruppenberechtigungen und -Optionen
+
+Nach dem Upgrade auf StorageGRID 11.5 können Sie optional die folgenden neuen Berechtigungen und Optionen auswählen (*Konfiguration* > *Zugriffskontrolle* > *Admin-Gruppen*).
+
+[cols="1a,2a"]
+|===
+| Berechtigung oder Option | Beschreibung 
+
+
+ a| 
+Storage Appliance Administrator
+ a| 
+Erforderlich für den Zugriff auf die Benutzeroberfläche des SANtricity System Managers über den Grid Manager.
+
+
+
+ a| 
+Zugriffsmodus
+ a| 
+Beim Verwalten von Gruppen können Sie *Schreibgeschützt* für diese neue Option auswählen, um zu verhindern, dass Benutzer die Einstellungen und Funktionen ändern, die für die Gruppe ausgewählt wurden. Benutzer in Gruppen mit schreibgeschütztem Zugriffsmodus können Einstellungen anzeigen, können sie jedoch nicht ändern.
+
+|===
+.Verwandte Informationen
+link:../admin/index.html["StorageGRID verwalten"]

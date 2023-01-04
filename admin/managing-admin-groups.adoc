@@ -1,0 +1,404 @@
+---
+permalink: admin/managing-admin-groups.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Verwalten von Admin-Gruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Administratorgruppen erstellen, um die Sicherheitsberechtigungen für einen oder mehrere Admin-Benutzer zu verwalten. Benutzer müssen zu einer Gruppe gehören, die Zugriff auf das StorageGRID-System gewährt.
+
+
+
+== Erstellen von Admin-Gruppen
+
+Administratorgruppen ermöglichen es Ihnen, festzulegen, welche Benutzer auf welche Funktionen und Vorgänge im Grid Manager und in der Grid Management API zugreifen können.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+* Wenn Sie eine föderierte Gruppe importieren möchten, müssen Sie einen Identitätsverbund konfiguriert haben, und die föderierte Gruppe muss bereits in der konfigurierten Identitätsquelle vorhanden sein.
+
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Admin-Gruppen*.
++
+Die Seite Admin Groups wird angezeigt und enthält alle vorhandenen Admin-Gruppen.
+
++
+image::../media/groups.png[Gruppenseite]
+
+. Wählen Sie *Hinzufügen*.
++
+Das Dialogfeld Gruppe hinzufügen wird angezeigt.
+
++
+image::../media/add_group.png[Gruppe Hinzufügen]
+
+. Wählen Sie für den Gruppentyp *Lokal* aus, wenn Sie eine Gruppe erstellen möchten, die nur innerhalb von StorageGRID verwendet werden soll, oder wählen Sie *föderiert* aus, wenn Sie eine Gruppe aus der Identitätsquelle importieren möchten.
+. Wenn Sie *Lokal* ausgewählt haben, geben Sie einen Anzeigenamen für die Gruppe ein. Der Anzeigename ist der Name, der im Grid Manager angezeigt wird. Zum Beispiel: „`MWartung Benutzer`“ oder „`ILM-Administratoren`“
+. Geben Sie einen eindeutigen Namen für die Gruppe ein.
++
+** *Lokal*: Geben Sie einen eindeutigen Namen ein. Beispiel: „`ILM-Administratoren`“
+** *Federated*: Geben Sie den Namen der Gruppe genau so ein, wie er in der konfigurierten Identitätsquelle angezeigt wird.
+
+
+. Wählen Sie unter *Zugriffsmodus* aus, ob Benutzer in der Gruppe Einstellungen ändern und Vorgänge im Grid Manager und der Grid Management API ausführen können oder ob sie nur Einstellungen und Funktionen anzeigen können.
++
+** *Lesen-Schreiben* (Standard): Benutzer können Einstellungen ändern und die Operationen durchführen, die durch ihre Verwaltungsberechtigungen erlaubt sind.
+** *Schreibgeschützt*: Benutzer können nur Einstellungen und Funktionen anzeigen. Sie können keine Änderungen vornehmen oder Vorgänge im Grid Manager oder der Grid Management API ausführen. Lokale schreibgeschützte Benutzer können ihre eigenen Passwörter ändern.
++
+
+NOTE: Wenn ein Benutzer zu mehreren Gruppen gehört und eine beliebige Gruppe auf *schreibgeschützt* gesetzt ist, hat der Benutzer schreibgeschützten Zugriff auf alle ausgewählten Einstellungen und Features.
+
+
+
+. Wählen Sie eine oder mehrere Verwaltungsberechtigungen aus.
++
+Sie müssen jeder Gruppe mindestens eine Berechtigung zuweisen. Andernfalls können sich Benutzer der Gruppe nicht bei StorageGRID anmelden.
+
+. Wählen Sie *Speichern*.
++
+Die neue Gruppe wird erstellt. Wenn es sich um eine lokale Gruppe handelt, können Sie jetzt einen oder mehrere Benutzer hinzufügen. Wenn es sich um eine föderierte Gruppe handelt, verwaltet die Identitätsquelle, welche Benutzer der Gruppe angehören.
+
+
+
+.Verwandte Informationen
+link:managing-local-users.html["Verwalten von lokalen Benutzern"]
+
+
+
+== Berechtigungen für Admin-Gruppen
+
+Beim Erstellen von Admin-Benutzergruppen wählen Sie eine oder mehrere Berechtigungen, um den Zugriff auf bestimmte Funktionen des Grid Manager zu steuern. Sie können dann jeden Benutzer einer oder mehreren dieser Admin-Gruppen zuweisen, um zu bestimmen, welche Aufgaben der Benutzer ausführen kann.
+
+Sie müssen jeder Gruppe mindestens eine Berechtigung zuweisen. Andernfalls können sich Benutzer, die dieser Gruppe angehören, nicht beim Grid Manager anmelden.
+
+Standardmäßig kann jeder Benutzer, der zu einer Gruppe mit mindestens einer Berechtigung gehört, die folgenden Aufgaben ausführen:
+
+* Melden Sie sich beim Grid Manager an
+* Zeigen Sie das Dashboard an
+* Zeigen Sie die Seiten Knoten an
+* Monitoring der Grid-Topologie
+* Anzeige aktueller und aufgelöster Warnmeldungen
+* Aktuelle und historische Alarme anzeigen (Legacy-System)
+* Eigenes Kennwort ändern (nur lokale Benutzer)
+* Zeigen Sie bestimmte Informationen auf den Seiten Konfiguration und Wartung an
+
+
+In den folgenden Abschnitten werden die Berechtigungen beschrieben, die Sie beim Erstellen oder Bearbeiten einer Admin-Gruppe zuweisen können. Für alle nicht explizit genannten Funktionen ist die Root-Zugriffsberechtigung erforderlich.
+
+
+
+=== Root-Zugriff
+
+Mit dieser Berechtigung erhalten Sie Zugriff auf alle Grid-Administrationsfunktionen.
+
+
+
+=== Verwalten Von Warnmeldungen
+
+Mit dieser Berechtigung erhalten Sie Zugriff auf Optionen zum Verwalten von Warnmeldungen. Benutzer müssen über diese Berechtigung verfügen, um Stille, Warnmeldungen und Alarmregeln zu verwalten.
+
+
+
+=== Quittierung von Alarmen (Altsystem)
+
+Diese Berechtigung ermöglicht den Zugriff auf Quittierung und Reaktion auf Alarme (Altsystem). Alle Benutzer, die angemeldet sind, können aktuelle und historische Alarme anzeigen.
+
+Wenn ein Benutzer die Grid-Topologie überwachen und nur Alarme quittieren soll, sollten Sie diese Berechtigung zuweisen.
+
+
+
+=== Konfiguration Der Seite Grid Topology
+
+Mit dieser Berechtigung haben Sie Zugriff auf die folgenden Menüoptionen:
+
+* Konfigurationsregisterkarten auf den Seiten *Support* > *Tools* > *Grid Topology*.
+* *Ereignisanzahl zurücksetzen*-Link auf der Registerkarte *Knoten* > *Ereignisse*.
+
+
+
+
+=== Andere Grid-Konfiguration
+
+Diese Berechtigung ermöglicht den Zugriff auf zusätzliche Grid-Konfigurationsoptionen.
+
+
+IMPORTANT: Um diese zusätzlichen Optionen zu sehen, müssen Benutzer auch über die Berechtigung für die Konfiguration der Grid Topology-Seite verfügen.
+
+* *Alarme* (Altsystem):
++
+** Globale Alarme
+** Einrichtung Alter E-Mail-Adresse
+
+
+* *ILM*:
++
+** Storage-Pools
+** Storage-Klasse
+
+
+* *Konfiguration* > *Netzwerkeinstellungen*
++
+** Verbindungskosten
+
+
+* *Konfiguration* > *Systemeinstellungen*:
++
+** Anzeigeoptionen
+** Grid-Optionen
+** Storage-Optionen
+
+
+* *Konfiguration* > *Überwachung*:
++
+** Veranstaltungen
+
+
+* * Support*:
++
+** AutoSupport
+
+
+
+
+
+
+=== Mandantenkonten
+
+Mit dieser Berechtigung erhalten Sie Zugriff auf die Seite *Mieter* > *Mandantenkonten*.
+
+
+NOTE: Version 1 der Grid Management API (die veraltet ist) verwendet diese Berechtigung, um Mandantengruppenrichtlinien zu managen, Swift-Admin-Passwörter zurückzusetzen und S3-Zugriffschlüssel für den Root-Benutzer zu verwalten.
+
+
+
+=== Root-Passwort Des Mandanten Ändern
+
+Mit dieser Berechtigung erhalten Sie Zugriff auf die Option *Root Passwort ändern* auf der Seite Mandantenkonten, mit der Sie steuern können, wer das Passwort für den lokalen Root-Benutzer des Mandanten ändern kann. Benutzer, die diese Berechtigung nicht besitzen, können die Option *Root Passwort ändern* nicht sehen.
+
+
+NOTE: Sie müssen der Gruppe die Berechtigungen für Mandantenkonten zuweisen, bevor Sie diese Berechtigung zuweisen können.
+
+
+
+=== Wartung
+
+Mit dieser Berechtigung haben Sie Zugriff auf die folgenden Menüoptionen:
+
+* *Konfiguration* > *Systemeinstellungen*:
++
+** Domain-Namen*
+** Server-Zertifikate*
+
+
+* *Konfiguration* > *Überwachung*:
++
+** Audit*
+
+
+* *Konfiguration* > *Zugangskontrolle*:
++
+** Grid-Passwörter
+
+
+* *Wartung* > *Wartungsaufgaben*
++
+** Ausmustern
+** Erweiterung
+** Recovery
+
+
+* *Wartung* > *Netzwerk*:
++
+** DNS-Server*
+** Grid-Netzwerk*
+** NTP-Server*
+
+
+* *Wartung* > *System*:
++
+** Lizenz*
+** Wiederherstellungspaket
+** Software-Update
+
+
+* *Support* > *Tools*:
++
+** Protokolle
+
+
+* Benutzer, die nicht über die Wartungsberechtigung verfügen, können die mit einem Sternchen gekennzeichneten Seiten anzeigen, jedoch nicht bearbeiten.
+
+
+
+
+=== Abfrage Von Kennzahlen
+
+Mit dieser Berechtigung erhalten Sie Zugriff auf die Seite *Support* > *Tools* > *Metriken*. Diese Berechtigung bietet auch Zugriff auf benutzerdefinierte Prometheus-metrische Abfragen unter Verwendung des Abschnitts *Metriken* der Grid Management API.
+
+
+
+=== ILM
+
+Diese Berechtigung bietet Zugriff auf die folgenden *ILM* Menüoptionen:
+
+* * Erasure Coding*
+* *Regeln*
+* *Richtlinien*
+* *Regionen*
+
+
+
+NOTE: Der Zugriff auf die Menüoptionen *ILM* > *Storage Pools* und *ILM* > *Storage Klasse* wird über die anderen Berechtigungen für die Konfiguration der Grid-Konfiguration und Grid-Topologie-Seite gesteuert.
+
+
+
+=== Lookup Von Objektmetadaten
+
+Mit dieser Berechtigung haben Sie Zugriff auf das Menü *ILM* > *Object Metadaten Lookup*.
+
+
+
+=== Storage Appliance Administrator
+
+Mit dieser Berechtigung erhalten Sie über den Grid Manager Zugriff auf den SANtricity System Manager der E-Series auf Storage Appliances.
+
+
+
+=== Interaktion zwischen Berechtigungen und Zugriffsmodus
+
+Für alle Berechtigungen legt die Einstellung Zugriffsmodus der Gruppe fest, ob Benutzer Einstellungen ändern und Vorgänge ausführen können oder ob sie nur die zugehörigen Einstellungen und Funktionen anzeigen können. Wenn ein Benutzer zu mehreren Gruppen gehört und eine beliebige Gruppe auf *schreibgeschützt* gesetzt ist, hat der Benutzer schreibgeschützten Zugriff auf alle ausgewählten Einstellungen und Features.
+
+
+
+=== Deaktivieren von Funktionen über die Grid Management API
+
+Mithilfe der Grid Management API können Sie bestimmte Funktionen im StorageGRID-System komplett deaktivieren. Wenn ein Feature deaktiviert ist, kann niemand Berechtigungen zum Ausführen der Aufgaben zugewiesen werden, die mit diesem Feature verbunden sind.
+
+.Über diese Aufgabe
+Mit dem deaktivierten Features-System können Sie den Zugriff auf bestimmte Funktionen im StorageGRID-System verhindern. Die Deaktivierung einer Funktion ist die einzige Möglichkeit, zu verhindern, dass der Root-Benutzer oder Benutzer, die zu Administratorgruppen mit Root Access-Berechtigung gehören, diese Funktion verwenden können.
+
+Um zu verstehen, wie diese Funktionalität nützlich sein kann, gehen Sie folgendermaßen vor:
+
+_Unternehmen A ist ein Service Provider, der durch die Erstellung von Mandantenkonten die Storage-Kapazität ihres StorageGRID Systems least. Um die Sicherheit der Objekte ihrer Eigentümer zu schützen, möchte Unternehmen A sicherstellen, dass die eigenen Mitarbeiter nach der Bereitstellung des Kontos niemals auf ein Mandantenkonto zugreifen können._
+
+_Unternehmen A kann dieses Ziel mithilfe des Systems Funktionen deaktivieren in der Grid Management API erreichen. Durch die vollständige Deaktivierung der Funktion *Ändern des Mandantenstammpassworts* im Grid Manager (sowohl der UI als auch der API) kann Unternehmen A sicherstellen, dass kein Admin-Benutzer - einschließlich des Stammbenutzers und der Benutzer, die zu Gruppen mit Root Access-Berechtigung gehören - das Passwort für den Root-Benutzer eines Mandantenkontos ändern kann._
+
+
+
+==== Deaktivieren von Funktionen erneut aktivieren
+
+Standardmäßig können Sie mit der Grid Management API eine deaktivierte Funktion reaktivieren. Wenn Sie jedoch verhindern möchten, dass deaktivierte Funktionen jemals wieder aktiviert werden, können Sie die *activateFeatures*-Funktion selbst deaktivieren.
+
+
+CAUTION: Die *activateFeatures*-Funktion kann nicht reaktiviert werden. Wenn Sie sich entscheiden, diese Funktion zu deaktivieren, beachten Sie, dass Sie die Möglichkeit verlieren, alle anderen deaktivierten Funktionen dauerhaft zu reaktivieren. Sie müssen sich an den technischen Support wenden, um verlorene Funktionen wiederherzustellen.
+
+Details finden Sie in der Anleitung zur Implementierung von S3- oder Swift-Client-Applikationen.
+
+.Schritte
+. Rufen Sie die Swagger-Dokumentation für die Grid Management API auf.
+. Suchen Sie den Endpunkt zum Deaktivieren von Funktionen.
+. Um eine Funktion, wie z. B. *Ändern des Mandantenwurzelkennworts*, zu deaktivieren, senden Sie einen Text wie folgt an die API:
++
+[listing]
+----
+{ "grid": {"changeTenantRootPassword": true} }
+----
++
+Wenn die Anforderung abgeschlossen ist, ist die Funktion Mandantenstammpasswort ändern deaktiviert. Die Berechtigung zum Ändern des Stammkennworts für Mandanten erscheint nicht mehr in der Benutzeroberfläche, und jede API-Anforderung, die versucht, das Root-Passwort für einen Mandanten zu ändern, schlägt mit „`403 Verbotenen`“ fehl.
+
+. Um alle Funktionen erneut zu aktivieren, senden Sie einen Text wie folgt an die API:
++
+[listing]
+----
+{ "grid": null }
+----
++
+Wenn diese Anforderung abgeschlossen ist, werden alle Funktionen, einschließlich der Funktion „Mandantenstammpasswort ändern“, erneut aktiviert. Die Berechtigung zum Ändern des Root-Kennworts für Mandanten erscheint jetzt in der Benutzeroberfläche. Jede API-Anforderung, die versucht, das Root-Passwort für einen Mandanten zu ändern, wird erfolgreich sein, vorausgesetzt, der Benutzer hat die Berechtigung zum Verwalten des Root-Zugriffs oder zum Ändern des Root-Kennworts für Mandanten.
+
++
+
+NOTE: Das vorherige Beispiel führt dazu, dass _all_ deaktivierte Funktionen reaktiviert werden. Wenn andere Features deaktiviert wurden, die deaktiviert bleiben sollen, müssen Sie diese explizit in der PUT-Anforderung angeben. Wenn Sie beispielsweise die Funktion „Mandantenstammpasswort ändern“ erneut aktivieren und die Funktion „Alarm Acknowledgement“ deaktivieren möchten, senden Sie diese PUT-Anforderung:
+
++
+[listing]
+----
+{ "grid": { "alarmAcknowledgment": true } }
+----
+
+
+.Verwandte Informationen
+link:using-grid-management-api.html["Verwenden der Grid-Management-API"]
+
+
+
+== Ändern einer Admin-Gruppe
+
+Sie können eine Admin-Gruppe ändern, um die Berechtigungen zu ändern, die der Gruppe zugeordnet sind. Für lokale Admin-Gruppen können Sie auch den Anzeigenamen aktualisieren.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Admin-Gruppen*.
+. Wählen Sie die Gruppe aus.
++
+Wenn Ihr System mehr als 20 Elemente enthält, können Sie festlegen, wie viele Zeilen auf jeder Seite gleichzeitig angezeigt werden. Sie können dann die Suchfunktion Ihres Browsers verwenden, um nach einem bestimmten Element in den aktuell angezeigten Zeilen zu suchen.
+
+. Klicken Sie Auf *Bearbeiten*.
+. Optional geben Sie für lokale Gruppen den Gruppennamen ein, der Benutzern angezeigt wird, z. B. „`Maintual users`“.
++
+Sie können den eindeutigen Namen, d. h. den internen Gruppennamen, nicht ändern.
+
+. Ändern Sie optional den Zugriffsmodus der Gruppe.
++
+** *Lesen-Schreiben* (Standard): Benutzer können Einstellungen ändern und die Operationen durchführen, die durch ihre Verwaltungsberechtigungen erlaubt sind.
+** *Schreibgeschützt*: Benutzer können nur Einstellungen und Funktionen anzeigen. Sie können keine Änderungen vornehmen oder Vorgänge im Grid Manager oder der Grid Management API ausführen. Lokale schreibgeschützte Benutzer können ihre eigenen Passwörter ändern.
++
+
+NOTE: Wenn ein Benutzer zu mehreren Gruppen gehört und eine beliebige Gruppe auf *schreibgeschützt* gesetzt ist, hat der Benutzer schreibgeschützten Zugriff auf alle ausgewählten Einstellungen und Features.
+
+
+
+. Optional können Sie Gruppenberechtigungen hinzufügen oder entfernen.
++
+Weitere Informationen zu Administratorgruppenberechtigungen finden Sie unter.
+
+. Wählen Sie *Speichern*.
+
+
+.Verwandte Informationen
+<<Berechtigungen für Admin-Gruppen>>
+
+
+
+== Löschen einer Admin-Gruppe
+
+Sie können eine Admin-Gruppe löschen, wenn Sie die Gruppe aus dem System entfernen möchten, und alle mit der Gruppe verknüpften Berechtigungen entfernen. Durch das Löschen einer Admin-Gruppe werden alle Admin-Benutzer aus der Gruppe entfernt, die Admin-Benutzer jedoch nicht gelöscht.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Über diese Aufgabe
+Wenn Sie eine Gruppe löschen, verlieren Benutzer, die dieser Gruppe zugewiesen sind, alle Zugriffsberechtigungen für den Grid Manager, es sei denn, sie werden von einer anderen Gruppe Berechtigungen erteilt.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Admin-Gruppen*.
+. Wählen Sie den Namen der Gruppe aus.
++
+Wenn Ihr System mehr als 20 Elemente enthält, können Sie festlegen, wie viele Zeilen auf jeder Seite gleichzeitig angezeigt werden. Sie können dann die Suchfunktion Ihres Browsers verwenden, um nach einem bestimmten Element in den aktuell angezeigten Zeilen zu suchen.
+
+. Wählen Sie *Entfernen*.
+. Wählen Sie *OK*.
+

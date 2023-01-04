@@ -1,0 +1,23 @@
+---
+permalink: network/network-topology-examples.html 
+sidebar: sidebar 
+keywords: storagegrid, network topology 
+summary: Neben dem erforderlichen Grid-Netzwerk können Sie auswählen, ob Sie Admin-Netzwerk- und Client-Netzwerk-Schnittstellen bei der Entwicklung der Netzwerktopologie für eine Bereitstellung an einem oder mehreren Standorten konfigurieren möchten. 
+---
+= Beispiele für Netzwerktopologie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Neben dem erforderlichen Grid-Netzwerk können Sie auswählen, ob Sie Admin-Netzwerk- und Client-Netzwerk-Schnittstellen bei der Entwicklung der Netzwerktopologie für eine Bereitstellung an einem oder mehreren Standorten konfigurieren möchten.
+
+Auf interne Ports kann nur über das Grid-Netzwerk zugegriffen werden. Auf externe Ports kann von allen Netzwerktypen zugegriffen werden. Diese Flexibilität bietet mehrere Optionen für den Entwurf einer StorageGRID-Implementierung sowie für die Einrichtung einer externen IP- und Portfilterung in Switches und Firewalls. Weitere Informationen zu internen und externen Ports finden Sie unter Netzwerkanschlussreferenz.
+
+Wenn Sie angeben, dass die Client-Netzwerk-Schnittstelle eines Node nicht vertrauenswürdig ist, konfigurieren Sie einen Load Balancer-Endpunkt, um den eingehenden Datenverkehr zu akzeptieren. Informationen zum Konfigurieren nicht vertrauenswürdiger Clientnetzwerke und Load Balancer-Endpunkte finden Sie in den Anweisungen zur Verwaltung von StorageGRID.
+
+.Verwandte Informationen
+link:../admin/index.html["StorageGRID verwalten"]
+
+link:network-port-reference.html["Referenz für Netzwerk-Ports"]

@@ -1,0 +1,34 @@
+---
+permalink: admin/managing-archive-node-when-tsm-server-reaches-capacity.html 
+sidebar: sidebar 
+keywords:  
+summary: Der TSM-Server hat keine Möglichkeit, den Archiv-Node zu benachrichtigen, wenn sich die Kapazität der TSM-Datenbank oder des vom TSM-Server verwalteten Archivmedienspeichers befindet. Der Archivknoten akzeptiert weiterhin Objektdaten für die Übertragung an den TSM-Server, nachdem der TSM-Server keine neuen Inhalte mehr akzeptiert. Dieser Inhalt kann nicht auf Medien geschrieben werden, die vom TSM-Server verwaltet werden. In diesem Fall wird ein Alarm ausgelöst. Dies kann durch proaktive Überwachung des TSM-Servers vermieden werden. 
+---
+= Verwalten eines Archiv-Knotens, wenn TSM-Server die Kapazität erreicht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der TSM-Server hat keine Möglichkeit, den Archiv-Node zu benachrichtigen, wenn sich die Kapazität der TSM-Datenbank oder des vom TSM-Server verwalteten Archivmedienspeichers befindet. Der Archivknoten akzeptiert weiterhin Objektdaten für die Übertragung an den TSM-Server, nachdem der TSM-Server keine neuen Inhalte mehr akzeptiert. Dieser Inhalt kann nicht auf Medien geschrieben werden, die vom TSM-Server verwaltet werden. In diesem Fall wird ein Alarm ausgelöst. Dies kann durch proaktive Überwachung des TSM-Servers vermieden werden.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Über diese Aufgabe
+Um zu verhindern, dass der ARC-Service weitere Inhalte an den TSM-Server sendet, können Sie den Archiv-Node offline schalten, indem Sie die *ARC* > *Store*-Komponente offline schalten. Dieses Verfahren kann auch nützlich sein, um Alarme zu vermeiden, wenn der TSM-Server nicht zur Wartung verfügbar ist.
+
+.Schritte
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie *_Archivknoten_* > *ARC* > *Store* aus.
+. Wählen Sie *Konfiguration* > *Main*.
++
+image::../media/tsm_offline.gif[Konfigurationsseite für einen Archiv-Node]
+
+. Ändern Sie *Store State* in `Offline`.
+. Wählen Sie * Archivspeicher beim Start deaktiviert* aus.
+. Klicken Sie Auf *Änderungen Übernehmen*.
+

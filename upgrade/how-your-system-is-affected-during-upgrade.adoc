@@ -1,0 +1,77 @@
+---
+permalink: upgrade/how-your-system-is-affected-during-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, firmware, appliance, alert 
+summary: Sie müssen wissen, welche Auswirkungen das Upgrade auf Ihr StorageGRID System hat. 
+---
+= Auswirkungen des Upgrades auf Ihr System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen wissen, welche Auswirkungen das Upgrade auf Ihr StorageGRID System hat.
+
+
+
+== StorageGRID Upgrades sind unterbrechungsfrei
+
+Das StorageGRID System ist in der Lage, während des Upgrades Daten von Client-Applikationen aufzunehmen und abzurufen. Während des Upgrades werden Grid-Nodes nacheinander heruntergefahren. Daher ist nicht zu der Zeit gekommen, dass alle Grid-Nodes nicht verfügbar sind.
+
+Um die kontinuierliche Verfügbarkeit zu gewährleisten, müssen Sie sicherstellen, dass Objekte mit den entsprechenden ILM-Richtlinien redundant gespeichert werden. Es muss zudem sichergestellt werden, dass alle externen S3- oder Swift-Clients für das Senden von Anforderungen an eine der folgenden Komponenten konfiguriert sind:
+
+* Ein StorageGRID Endpunkt, der als HA-Gruppe (Hochverfügbarkeit) konfiguriert ist
+* Einen hochverfügbaren Drittanbieter-Load Balancer
+* Mehrere Gateway-Nodes für jeden Client
+* Mehrere Storage-Nodes für jeden Client
+
+
+
+
+== Die Appliance-Firmware wird aktualisiert
+
+Während des Upgrades auf StorageGRID 11.5:
+
+* Alle Knoten der StorageGRID Appliance werden automatisch auf die StorageGRID Appliance Installer Firmware Version 3.5 aktualisiert.
+* SG6060- und SGF6024-Appliances werden automatisch auf die BIOS-Firmware-Version 3B03.EX und BMC-Firmware-Version BMC 3.90.07 aktualisiert.
+* SG100- und SG1000-Appliances werden automatisch auf die BIOS-Firmware-Version 3B08.EC und BMC-Firmware-Version 4.64.07 aktualisiert.
+
+
+
+
+== Möglicherweise werden Benachrichtigungen ausgelöst
+
+Warnmeldungen können ausgelöst werden, wenn Services gestartet und beendet werden und wenn das StorageGRID System als Umgebung mit gemischten Versionen funktioniert (einige Grid-Nodes mit einer früheren Version, während andere auf eine neuere Version aktualisiert wurden). Zum Beispiel wird die Meldung *mit Knoten* nicht kommunizieren kann, wenn Dienste beendet werden, oder Sie sehen möglicherweise die Meldung *Cassandra Kommunikationsfehler*, wenn einige Knoten auf StorageGRID 11.5 aktualisiert wurden, aber andere Knoten laufen noch mit StorageGRID 11.4.
+
+Im Allgemeinen werden diese Meldungen nach Abschluss des Upgrades gelöscht.
+
+Nach Abschluss des Upgrades können Sie alle Warnmeldungen zu Upgrades überprüfen, indem Sie im Grid Manager Dashboard * kürzlich behobene Warnmeldungen* auswählen.
+
+
+NOTE: Während des Upgrades auf StorageGRID 11.5 wird möglicherweise die Warnung für die *ILM-Platzierung nicht erreichbar* ausgelöst, wenn Storage-Nodes angehalten werden. Dieser Alarm wird möglicherweise einen Tag nach dem erfolgreichen Abschluss des Upgrades bestehen bleiben.
+
+
+
+== Viele SNMP-Benachrichtigungen werden erzeugt
+
+Beachten Sie, dass möglicherweise eine große Anzahl von SNMP-Benachrichtigungen generiert werden kann, wenn Grid-Knoten angehalten und während des Upgrades neu gestartet werden. Um übermäßige Benachrichtigungen zu vermeiden, deaktivieren Sie das Kontrollkästchen *SNMP-Agent-Benachrichtigungen aktivieren* (*Konfiguration* > *Überwachung* > *SNMP-Agent*), um SNMP-Benachrichtigungen zu deaktivieren, bevor Sie das Upgrade starten. Aktivieren Sie dann die Benachrichtigungen wieder, nachdem das Upgrade abgeschlossen ist.
+
+
+
+== Konfigurationsänderungen sind eingeschränkt
+
+Bis die Aufgabe *Neues Feature* aktivieren abgeschlossen ist:
+
+* Nehmen Sie keine Änderungen an der Grid-Konfiguration vor.
+* Ändern Sie nicht die Konfiguration der Prüfungsstufe.
+* Aktivieren oder deaktivieren Sie keine neuen Funktionen.
+* Aktualisieren Sie die ILM-Konfiguration nicht. Andernfalls kann es zu inkonsistenten und unerwarteten ILM-Verhaltensweisen kommen.
+* Wenden Sie keinen Hotfix an, oder stellen Sie einen Gitterknoten wieder her.
+
+
+Bis die Aufgabe * Final Upgrade Steps* abgeschlossen ist:
+
+* Führen Sie keine Erweiterungsverfahren durch.
+* Führen Sie keine Außerbetriebnahme durch.
+

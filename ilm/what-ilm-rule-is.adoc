@@ -1,0 +1,61 @@
+---
+permalink: ilm/what-ilm-rule-is.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Zum Managen von Objekten erstellen Sie einen Satz von Regeln für das Information Lifecycle Management \ (ILM\) und ordnen diese in einer ILM-Richtlinie ab. Jedes im System aufgenommene Objekt wird anhand der aktiven Richtlinie ausgewertet. Wenn eine Regel in der Richtlinie mit den Metadaten eines Objekts übereinstimmt, bestimmen die Anweisungen in der Regel, welche Aktionen StorageGRID zum Kopieren und Speichern des Objekts ergreift.' 
+---
+= Was ist eine ILM-Regel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Managen von Objekten erstellen Sie eine Reihe von Regeln für das Information Lifecycle Management (ILM) und organisieren diese in eine ILM-Richtlinie. Jedes im System aufgenommene Objekt wird anhand der aktiven Richtlinie ausgewertet. Wenn eine Regel in der Richtlinie den Metadaten eines Objekts entspricht, legen die Anweisungen in der Regel fest, welche Aktionen StorageGRID zum Kopieren und Speichern des Objekts ergreift.
+
+ILM-Regeln definieren:
+
+* Welche Objekte sollten gespeichert werden. Eine Regel kann auf alle Objekte angewendet werden, oder Sie können Filter angeben, um zu identifizieren, für welche Objekte eine Regel gilt. Beispielsweise kann eine Regel nur für Objekte gelten, die mit bestimmten Mandantenkonten, bestimmten S3-Buckets oder Swift-Containern oder bestimmten Metadatenwerten verbunden sind.
+* Speichertyp und -Standort. Objekte können auf Storage-Nodes, in Cloud-Storage-Pools oder auf Archiv-Nodes gespeichert werden.
+* Der Typ der Objektkopien, die erstellt wurden. Kopien können repliziert oder Erasure Coding ausgeführt werden.
+* Für replizierte Kopien die Anzahl der Kopien, die erstellt werden.
+* Für Kopien mit Verfahren zur Einhaltung von Datenkonsistenz (Erasure Coding) wurde das Verfahren zur Einhaltung von Datenkonsistenz verwendet.
+* Die Änderungen im Laufe der Zeit an dem Storage-Standort und den Koprottypen eines Objekts.
+* Schutz von Objektdaten bei Aufnahme von Objekten in das Grid (synchrone Platzierung oder Dual-Commit)
+
+
+Objekt-Metadaten werden nicht durch ILM-Regeln gemanagt. Stattdessen werden Objekt-Metadaten in einer Cassandra-Datenbank in einem sogenannten Metadaten-Speicher gespeichert. Drei Kopien von Objekt-Metadaten werden automatisch an jedem Standort aufbewahrt, um die Daten vor Verlust zu schützen. Die Kopien werden gleichmäßig auf alle Storage Nodes verteilt.
+
+
+
+== Elemente einer ILM-Regel
+
+Eine ILM-Regel besteht aus drei Elementen:
+
+* *Filterkriterien*: Die Basis- und erweiterten Filter einer Regel definieren, für welche Objekte die Regel gilt. Wenn ein Objekt allen Filtern entspricht, wendet StorageGRID die Regel an und erstellt die Objektkopien, die in den Platzierungsanweisungen der Regel angegeben sind.
+* *Platzierungsanweisungen*: Die Platzierungsanweisungen einer Regel definieren die Zahl, den Typ und den Ort von Objektkopien. Jede Regel kann eine Reihe von Anweisungen zur Platzierung enthalten, um die Anzahl, den Typ und den Standort der Objektkopien im Laufe der Zeit zu ändern. Wenn der Zeitraum für eine Platzierung abgelaufen ist, werden die Anweisungen in der nächsten Platzierung automatisch bei der nächsten ILM-Bewertung angewendet.
+* *Aufnahmeverhalten*: Das Aufnahmeverhalten einer Regel definiert, was passiert, wenn ein S3- oder Swift-Client ein Objekt im Grid speichert. Das Aufnahmeverhalten steuert, ob Objektkopien sofort nach den Anweisungen in der Regel platziert werden oder ob zwischenzeitliche Kopien erstellt und die Speicheranweisungen später angewendet werden.
+
+
+
+
+== Beispiel für eine ILM-Regel
+
+Diese Beispiel-ILM-Regel gilt für die Objekte, die zu Mandant A gehören Es erstellt zwei replizierte Kopien dieser Objekte und speichert jede Kopie an einem anderen Standort. Die beiden Kopien werden „`forever,`“ aufbewahrt. Das bedeutet, dass StorageGRID sie nicht automatisch löscht. Stattdessen behält StorageGRID diese Objekte so lange bei, bis sie von einer Löschanfrage eines Clients oder nach Ablauf eines Bucket-Lebenszyklus gelöscht werden.
+
+Diese Regel verwendet die ausgewogene Option für das Aufnahmeverhalten: Die Anweisung zur Platzierung an zwei Standorten wird angewendet, sobald Mandant A ein Objekt in StorageGRID speichert, es sei denn, es ist nicht möglich, sofort beide erforderlichen Kopien zu erstellen. Wenn z. B. Standort 2 nicht erreichbar ist, wenn Mandant A ein Objekt speichert, erstellt StorageGRID zwei Zwischenkopien auf Storage-Nodes an Standort 1. Sobald Standort 2 verfügbar wird, erstellt StorageGRID die erforderliche Kopie an diesem Standort.
+
+image::../media/ilm_example_rule_2_copies_tenant_a.png[Beispiel einer ILM-Regel 2 kopiert Mandant A]
+
+.Verwandte Informationen
+link:data-protection-options-for-ingest.html["Datensicherungsoptionen für die Aufnahme"]
+
+link:what-storage-pool-is.html["Was ist ein Speicherpool"]
+
+link:what-cloud-storage-pool-is.html["Was ist ein Cloud-Storage-Pool"]
+
+link:how-objects-are-stored-replication-erasure-coding.html["Speicherung von Objekten (Replizierung oder Erasure Coding)"]
+
+link:what-ilm-rule-filtering-is.html["Was ist die ILM-Regelfilterung"]
+
+link:what-ilm-placement-instructions-are.html["Welche Anweisungen zur Platzierung der ILM-Regeln gibt es"]

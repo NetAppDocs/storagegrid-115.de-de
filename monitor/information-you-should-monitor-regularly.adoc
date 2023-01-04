@@ -1,0 +1,91 @@
+---
+permalink: monitor/information-you-should-monitor-regularly.html 
+sidebar: sidebar 
+keywords: monitor, monitoring, StorageGRID, 
+summary: StorageGRID ist ein fehlertolerantes, verteiltes Storage-System, das den Betrieb selbst bei Fehlern oder Nichtverfügbarkeit von Nodes oder Standorten unterstützt. Sie müssen den Systemzustand, die Workloads und die Nutzungsstatistiken proaktiv überwachen, damit Sie Maßnahmen ergreifen können, um potenzielle Probleme zu beheben, bevor sie die Effizienz oder Verfügbarkeit des Grid beeinträchtigen. 
+---
+= Informationen, die Sie regelmäßig überwachen sollten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID ist ein fehlertolerantes, verteiltes Storage-System, das den Betrieb selbst bei Fehlern oder Nichtverfügbarkeit von Nodes oder Standorten unterstützt. Sie müssen den Systemzustand, die Workloads und die Nutzungsstatistiken proaktiv überwachen, damit Sie Maßnahmen ergreifen können, um potenzielle Probleme zu beheben, bevor sie die Effizienz oder Verfügbarkeit des Grid beeinträchtigen.
+
+Ein überlasttes System generiert große Datenmengen. Dieser Abschnitt enthält eine Anleitung zu den wichtigsten Informationen, die fortlaufend überwacht werden sollen. Dieser Abschnitt enthält die folgenden Unterabschnitte:
+
+* link:monitoring-system-health.html["Monitoring des Systemzustands"]
+* link:monitoring-storage-capacity.html["Monitoring der Storage-Kapazität"]
+* link:monitoring-information-lifecycle-management.html["Überwachung des Information Lifecycle Management"]
+* link:monitoring-performance-networking-and-system-resources.html["Monitoring der Performance-, Netzwerk- und Systemressourcen"]
+* link:monitoring-tenant-activity.html["Monitoring der Mandantenaktivitäten"]
+* link:monitoring-archival-capacity.html["Monitoring der Archivierungskapazität"]
+* link:monitoring-load-balancing-operations.html["Monitoring von Lastverteilungsvorgängen"]
+* link:applying-hotfixes-or-upgrading-software-if-necessary.html["Anwenden von Hotfixes oder Aktualisieren der Software, falls erforderlich"]
+
+
+|===
+| Was überwacht werden soll | Frequenz 
+
+
+ a| 
+Die Systemintegritätsdaten, die im Grid Manager DashboardHinweis angezeigt werden, wenn sich etwas vom vorherigen Tag geändert hat.
+ a| 
+Täglich
+
+
+
+ a| 
+Rate, mit welcher Objekt- und Metadatenkapazität des Storage-Node genutzt wird
+ a| 
+Wöchentlich
+
+
+
+ a| 
+Information Lifecycle Management-Operationen
+ a| 
+Wöchentlich
+
+
+
+ a| 
+Performance-, Netzwerk- und Systemressourcen:
+
+* Abfragelatenz
+* Konnektivität und Networking
+* Ressourcen auf Node-Ebene
+
+ a| 
+Wöchentlich
+
+
+
+ a| 
+Mandantenaktivität
+ a| 
+Wöchentlich
+
+
+
+ a| 
+Kapazität des externen Archiv-Storage-Systems
+ a| 
+Wöchentlich
+
+
+
+ a| 
+Lastverteilung
+ a| 
+Nach der Erstkonfiguration und nach Konfigurationsänderungen
+
+
+
+ a| 
+Verfügbarkeit von Software-Hotfixes und Software-Upgrades
+ a| 
+Monatlich
+
+|===

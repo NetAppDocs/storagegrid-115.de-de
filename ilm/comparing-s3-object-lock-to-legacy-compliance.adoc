@@ -1,0 +1,115 @@
+---
+permalink: ilm/comparing-s3-object-lock-to-legacy-compliance.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Vergleich der S3-Objektsperre mit älterer Compliance
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die S3-Objektsperrfunktion in StorageGRID 11.5 ersetzt die in früheren StorageGRID-Versionen verfügbare Compliance-Funktion. Da die neue S3-Objektsperrfunktion den Amazon S3-Anforderungen entspricht, depretiert sie die proprietäre StorageGRID-Compliance-Funktion, die jetzt als „`` Legacy-Compliance“ bezeichnet wird.
+
+Wenn Sie zuvor die globale Compliance-Einstellung aktiviert haben, wird die neue globale S3-Objektsperre beim Upgrade auf StorageGRID 11.5 automatisch aktiviert. Mandantenbenutzer können keine neuen Buckets erstellen, für die in StorageGRID 11.5 die Compliance aktiviert ist. Mandantenbenutzer können jedoch nach Bedarf alle vorhandenen, Compliance-Buckets weiterhin verwenden und managen. Dazu gehören auch die Durchführung der folgenden Aufgaben:
+
+* Einbinden neuer Objekte in einen vorhandenen Bucket, für den veraltete Compliance aktiviert ist
+* Verlängern der Aufbewahrungsfrist für einen vorhandenen Bucket, für den die veraltete Compliance-Funktion aktiviert ist
+* Ändern der Einstellung zum automatischen Löschen für einen vorhandenen Bucket, für den die alte Compliance aktiviert ist
+* Wenn Sie einen gesetzlichen Aufbewahrungspflichten auf einem vorhandenen Bucket platzieren, für den die veraltete Compliance-Funktion aktiviert ist.
+* Anheben eines gesetzlichen Haltes
+
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"^]
+
+Wenn Sie die ältere Compliance-Funktion in einer früheren Version von StorageGRID verwendet haben, lesen Sie die folgende Tabelle, um zu erfahren, wie sie mit der S3-Objektsperrfunktion in StorageGRID verglichen wird.
+
+[cols="1a,1a,1a"]
+|===
+|  | S3-Objektsperre (neu) | Compliance (alt) 
+
+
+ a| 
+Wie wird die Funktion global aktiviert?
+ a| 
+Wählen Sie im Grid Manager die Option *Konfiguration* > *Systemeinstellungen* > *S3 Objektsperre*.
+ a| 
+Wird nicht mehr unterstützt.
+
+*Hinweis:* Wenn Sie zuvor die globale Compliance-Einstellung aktiviert haben, wird die globale S3-Objektsperre automatisch aktiviert, wenn Sie auf StorageGRID 11.5 aktualisieren.
+
+
+
+ a| 
+Wie wird die Funktion für einen Bucket aktiviert?
+ a| 
+Benutzer müssen die S3-Objektsperre aktivieren, wenn ein neuer Bucket mithilfe des Mandantenmanagers, der Mandantenmanagement-API oder der S3-REST-API erstellt wird.
+ a| 
+Benutzer können keine neuen Buckets mehr erstellen, für die Compliance aktiviert ist. Sie können jedoch auch weiterhin vorhandene konforme Buckets hinzufügen.
+
+
+
+ a| 
+Wird die Bucket-Versionierung unterstützt?
+ a| 
+Ja. Die Bucket-Versionierung ist erforderlich und wird automatisch aktiviert, wenn S3 Object Lock für den Bucket aktiviert ist.
+ a| 
+Nein Die alte Compliance-Funktion ermöglicht keine Bucket-Versionierung.
+
+
+
+ a| 
+Wie wird die Objektaufbewahrung festgelegt?
+ a| 
+Benutzer können für jede Objektversion ein „bis-Datum beibehalten“ festlegen.
+ a| 
+Benutzer müssen eine Aufbewahrungsfrist für den gesamten Bucket festlegen. Der Aufbewahrungszeitraum gilt für alle Objekte im Bucket.
+
+
+
+ a| 
+Kann ein Bucket Standardeinstellungen für Aufbewahrung und Aufbewahrung gesetzlicher Aufbewahrungspflichten haben?
+ a| 
+Nein Für StorageGRID-Buckets, für die S3-Objektsperre aktiviert ist, ist kein Standardaufbewahrungszeitraum vorhanden. Stattdessen können Sie für jede Objektversion ein „bis-Aufbewahrung“-Datum angeben.
+ a| 
+Ja.
+
+
+
+ a| 
+Kann der Aufbewahrungszeitraum geändert werden?
+ a| 
+Die Aufbewahrung bis zum Datum für eine Objektversion kann erhöht, aber nie verkleinert werden.
+ a| 
+Die Aufbewahrungsfrist des Buckets kann erhöht, aber nie verringert werden.
+
+
+
+ a| 
+Wo wird die gesetzliche Aufbewahrungspflichten kontrolliert?
+ a| 
+Benutzer können für jede Objektversion im Bucket rechtliche Aufbewahrungspflichten platzieren oder eine gesetzliche Aufbewahrungspflichten aufheben.
+ a| 
+Auf dem Bucket werden gesetzliche Aufbewahrungspflichten angebracht, die alle Objekte im Bucket betreffen.
+
+
+
+ a| 
+Wann können Objekte gelöscht werden?
+ a| 
+Eine Objektversion kann nach Erreichen des Aufbewahrungsdatums gelöscht werden, vorausgesetzt, das Objekt befindet sich nicht in der gesetzlichen Aufbewahrungspflichten.
+ a| 
+Ein Objekt kann nach Ablauf des Aufbewahrungszeitraums gelöscht werden, sofern der Bucket nicht unter der gesetzlichen Aufbewahrungspflichten liegt. Objekte können automatisch oder manuell gelöscht werden.
+
+
+
+ a| 
+Wird die Bucket-Lifecycle-Konfiguration unterstützt?
+ a| 
+Ja.
+ a| 
+Nein
+
+|===

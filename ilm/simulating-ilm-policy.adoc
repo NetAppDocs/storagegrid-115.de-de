@@ -1,0 +1,104 @@
+---
+permalink: ilm/simulating-ilm-policy.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie sollten eine vorgeschlagene Richtlinie für Testobjekte simulieren, bevor Sie die Richtlinie aktivieren und auf Ihre Produktionsdaten anwenden. Das Simulationsfenster bietet eine eigenständige Umgebung, die zum Testen von Richtlinien sicher ist, bevor sie aktiviert und auf Daten in der Produktionsumgebung angewendet werden. 
+---
+= Simulation einer ILM-Richtlinie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie sollten eine vorgeschlagene Richtlinie für Testobjekte simulieren, bevor Sie die Richtlinie aktivieren und auf Ihre Produktionsdaten anwenden. Das Simulationsfenster bietet eine eigenständige Umgebung, die zum Testen von Richtlinien sicher ist, bevor sie aktiviert und auf Daten in der Produktionsumgebung angewendet werden.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+* Sie müssen den S3-Bucket/Objektschlüssel oder den Swift-Container/Objektnamen für jedes Objekt, das Sie testen möchten, kennen und diese Objekte bereits aufgenommen haben.
+
+
+.Über diese Aufgabe
+Sie müssen sorgfältig die Objekte auswählen, die die vorgeschlagene Richtlinie testen soll. Um eine Richtlinie gründlich zu simulieren, sollten Sie mindestens ein Objekt für jeden Filter in jeder Regel testen.
+
+Wenn eine Richtlinie beispielsweise eine Regel enthält, mit der Objekte in Bucket A und eine andere Regel übereinstimmen, um Objekte in Bucket B zu entsprechen, müssen Sie mindestens ein Objekt aus Bucket A und ein Objekt aus Bucket B auswählen, um die Richtlinie gründlich zu testen. Wenn die Richtlinie eine Standardregel zum Platzieren aller anderen Objekte enthält, müssen Sie mindestens ein Objekt aus einem anderen Bucket testen.
+
+Bei der Simulation einer Richtlinie gelten folgende Überlegungen:
+
+* Nachdem Sie Änderungen an einer Richtlinie vorgenommen haben, speichern Sie die vorgeschlagene Richtlinie. Dann simulieren Sie das Verhalten der gespeicherten vorgeschlagenen Richtlinie.
+* Wenn Sie eine Richtlinie simulieren, filtern die ILM-Regeln in der Richtlinie die Testobjekte ab, sodass Sie sehen können, welche Regel auf jedes Objekt angewendet wurde. Es werden jedoch keine Objektkopien erstellt und keine Objekte abgelegt. Wenn Sie eine Simulation ausführen, ändern Sie Ihre Daten, Regeln oder Richtlinien in keiner Weise.
+* Auf der Seite Simulation werden die von Ihnen getesteten Objekte gespeichert, bis Sie die Seite ILM-Richtlinien schließen, wegnavigieren oder aktualisieren.
+* Simulation gibt den Namen der übereinstimmenden Regel zurück. Um festzustellen, welcher Speicherpool oder welches Erasure-Coding-Profil wirksam ist, können Sie das Aufbewahrungsdiagramm anzeigen, indem Sie auf den Regelnamen oder das Detailsymbol klicken image:../media/icon_nms_more_details.gif["Weitere Details"].
+* Wenn die S3-Versionierung aktiviert ist, wird die Richtlinie nur mit der aktuellen Objektversion simuliert.
+
+
+.Schritte
+. Wählen Sie die Regeln aus und ordnen Sie sie an, und speichern Sie die vorgeschlagene Richtlinie.
++
+Die Richtlinie in diesem Beispiel hat drei Regeln:
+
++
+[cols="1a,1a,1a,1a"]
+|===
+| Regelname | Filtern | Kopentyp | Aufbewahrung 
+
+
+ a| 
+X-men
+ a| 
+** Mandant A
+** Benutzer-Metadaten (Serie=x-men)
+
+ a| 
+2 Kopien in zwei Rechenzentren
+ a| 
+2 Jahre
+
+
+
+ a| 
+PNGs
+ a| 
+Die Schlüssel enden mit .png
+ a| 
+2 Kopien in zwei Rechenzentren
+ a| 
+5 Jahre
+
+
+
+ a| 
+Zwei Kopien Zwei Datacenter
+ a| 
+_Keine_
+ a| 
+2 Kopien in zwei Rechenzentren
+ a| 
+Für Immer
+
+|===
++
+image:../media/ilm_policies_viewing_proposed.png["ILM-Richtlinien anzeigen vorgeschlagen"]
+
+. Klicken Sie Auf *Simulieren*.
++
+Das Dialogfeld Simulation ILM-Richtlinie wird angezeigt.
+
+. Geben Sie im Feld *Object* den S3-Bucket/Object-Key oder den Swift-Container/Object-Name für ein Testobjekt ein und klicken Sie auf *Simulate*.
++
+[NOTE]
+====
+Wenn Sie ein Objekt angeben, das nicht aufgenommen wurde, wird eine Meldung angezeigt.
+
+image::../media/object_not_available_for_simulation.gif[Meldung, wenn Sie das fehlende Objekt angeben]
+
+====
+. Bestätigen Sie unter *Simulationsergebnisse*, dass jedes Objekt mit der richtigen Regel übereinstimmt.
++
+In dem Beispiel wird der verwendet `Havok.png` Und `Warpath.jpg` Objekte wurden durch die X-Men-Regel korrekt abgeglichen. Der `Fullsteam.png` Objekt, das nicht enthält `series=x-men` Benutzermetadaten, wurde nicht mit der X-Men-Regel abgeglichen, wurde aber von der PNGs-Regel korrekt abgeglichen. Die Standardregel wurde nicht verwendet, da alle drei Objekte mit anderen Regeln abgeglichen wurden.
+
++
+image::../media/ilm_policy_simulation_results.gif[Simulationsergebnisse]
+
+

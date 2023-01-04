@@ -1,0 +1,31 @@
+---
+permalink: monitor/reviewing-previous-events.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können eine Liste vorheriger Ereignismeldungen generieren, um Probleme zu isolieren, die in der Vergangenheit aufgetreten sind. 
+---
+= Vorherige Ereignisse überprüfen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Liste vorheriger Ereignismeldungen generieren, um Probleme zu isolieren, die in der Vergangenheit aufgetreten sind.
+
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie *_site_* > *_GRID Node_* > *SSM* > *Events* > *Berichte* aus.
+. Wählen Sie *Text*.
++
+Das Attribut *Letztes Ereignis* wird in der Ansicht Diagramme nicht angezeigt.
+
+. Ändern Sie *Attribut* in *Letztes Ereignis*.
+. Wählen Sie optional einen Zeitraum für *Quick Query* aus.
+. Klicken Sie Auf *Aktualisieren*.
++
+image::../media/events_report.gif[Veranstaltungsseite]
+
+
+
+.Verwandte Informationen
+link:using-charts-and-reports.html["Verwenden von Diagrammen und Berichten"]

@@ -1,0 +1,42 @@
+---
+permalink: monitor/monitoring-query-latency.html 
+sidebar: sidebar 
+keywords: monitoring, query latency 
+summary: Client-Aktionen wie Speichern, Abrufen oder Löschen von Objekten erstellen Abfragen in der verteilten Datenbank der Objektmetadaten des Grid. Sie sollten Trends bei der Abfragelatenz überwachen, um sicherzustellen, dass die Grid-Ressourcen für die aktuelle Auslastung ausreichend sind. 
+---
+= Monitoring der Abfragelatenz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Client-Aktionen wie Speichern, Abrufen oder Löschen von Objekten erstellen Abfragen für die verteilte Datenbank der Objektmetadaten des Grid. Sie sollten Trends bei der Abfragelatenz überwachen, um sicherzustellen, dass die Grid-Ressourcen für die aktuelle Auslastung ausreichend sind.
+
+.Was Sie benötigen
+Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+
+.Über diese Aufgabe
+Temporäre Steigerungen der Abfragelatenz sind normal und können durch eine plötzliche Zunahme der Aufnahmeraten verursacht werden. Ausgefallene Abfragen sind ebenfalls normal und können aus vorübergehenden Netzwerkproblemen oder Knoten resultieren, die vorübergehend nicht verfügbar sind. Wenn jedoch die durchschnittliche Zeit für eine Abfrage steigt, sinkt die Gesamtleistung des Grids.
+
+Wenn Sie feststellen, dass die Abfragelatenz im Laufe der Zeit zunimmt, sollten Sie in Erwägung ziehen, weitere Storage-Nodes in einem Erweiterungsverfahren hinzuzufügen, um zukünftige Workloads zu erfüllen.
+
+Die Warnung *hohe Latenz für Metadatenabfragen* wird ausgelöst, wenn die durchschnittliche Zeit für Abfragen zu lang ist.
+
+.Schritte
+. Wählen Sie *Knoten* > *_Speicherknoten_* > *Objekte* Aus.
+. Blättern Sie nach unten zur Tabelle Abfragen, und zeigen Sie den Wert für die durchschnittliche Latenz an.
++
+image::../media/queries_table.png[Abfragetabelle]
+
+. Klicken Sie auf das Diagrammsymbol image:../media/icon_chart_new.gif["Diagrammsymbol"] Um den Wert im Zeitverlauf zu erstellen.
++
+image::../media/average_query_latency_chart.png[Diagramm Mit Durchschnittlicher Abfragelatenz]
+
++
+Das Beispieldiagramm zeigt Spitzen in der Abfragelatenz während des normalen Grid-Betriebs.
+
+
+
+.Verwandte Informationen
+link:../expand/index.html["Erweitern Sie Ihr Raster"]

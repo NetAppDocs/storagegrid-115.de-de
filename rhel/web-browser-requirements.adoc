@@ -1,0 +1,58 @@
+---
+permalink: rhel/web-browser-requirements.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie müssen einen unterstützten Webbrowser verwenden. 
+---
+= Anforderungen an einen Webbrowser
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen einen unterstützten Webbrowser verwenden.
+
+|===
+| Webbrowser | Unterstützte Mindestversion 
+
+
+ a| 
+Google Chrome
+ a| 
+87
+
+
+
+ a| 
+Microsoft Edge
+ a| 
+87
+
+
+
+ a| 
+Mozilla Firefox
+ a| 
+84
+
+|===
+Sie sollten das Browserfenster auf eine empfohlene Breite einstellen.
+
+|===
+| Browserbreite | Pixel 
+
+
+ a| 
+Minimum
+ a| 
+1024
+
+
+
+ a| 
+Optimal
+ a| 
+1280
+
+|===

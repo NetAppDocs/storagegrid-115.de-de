@@ -1,0 +1,76 @@
+---
+permalink: upgrade/downloading-storagegrid-upgrade-files.html 
+sidebar: sidebar 
+keywords: download, upgrade files 
+summary: Sie müssen die erforderlichen Dateien auf einen Service-Laptop herunterladen, bevor Sie Ihr StorageGRID-System aktualisieren. 
+---
+= StorageGRID-Upgrade-Dateien werden heruntergeladen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die erforderlichen Dateien auf einen Service-Laptop herunterladen, bevor Sie Ihr StorageGRID-System aktualisieren.
+
+.Was Sie benötigen
+Sie müssen alle erforderlichen Hotfixes für die StorageGRID-Softwareversion, die Sie aktualisieren, installiert haben. Siehe das Hotfix-Verfahren in den Recovery- und Wartungsanweisungen.
+
+.Über diese Aufgabe
+Sie müssen die herunterladen `.upgrade` Archivierung für jede Plattform: Wenn Nodes auf Linux-Hosts bereitgestellt werden, müssen Sie auch ein RPM- oder DEB-Archiv herunterladen, das Sie installieren, bevor Sie mit dem Upgrade beginnen.
+
+.Schritte
+. StorageGRID finden Sie auf der Seite zu NetApp Downloads.
++
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp Downloads: StorageGRID"^]
+
+. Wählen Sie die Schaltfläche zum Herunterladen der neuesten Version, oder wählen Sie eine andere Version aus dem Dropdown-Menü aus und wählen Sie *Go*.
++
+Die StorageGRID-Softwareversionen haben dieses Format: 11._x.y_. StorageGRID-Hotfixes haben dieses Format: 11._x. y.y.z_.
+
+. Melden Sie sich mit Ihrem Benutzernamen und Passwort für Ihr NetApp Konto an.
+. Wenn eine Warnung/MusterLeseanweisung angezeigt wird, lesen Sie sie, und aktivieren Sie das Kontrollkästchen.
++
+Diese Anweisung wird angezeigt, wenn für das Release ein Hotfix erforderlich ist.
+
+. Lesen Sie die Endbenutzer-Lizenzvereinbarung, aktivieren Sie das Kontrollkästchen und wählen Sie dann *Akzeptieren und fortfahren*.
++
+Die Download-Seite für die ausgewählte Version wird angezeigt. Die Seite enthält drei Spalten:
+
++
+** Installation von StorageGRID
+** Upgrade von StorageGRID
+** Unterstützen von Dateien für StorageGRID Appliances
+
+
+. Wählen Sie in der Spalte *Upgrade StorageGRID* die aus, und laden Sie den herunter `.upgrade` Archivierung:
++
+Jede Plattform erfordert das `.upgrade` Archivierung:
+
+. Wenn Nodes auf Linux-Hosts bereitgestellt werden, laden Sie in beiden auch das RPM- oder DEB-Archiv herunter `.tgz` Oder `.zip` Formatieren.
++
+Sie müssen das RPM- oder DEB-Archiv auf allen Linux-Knoten installieren, bevor Sie das Upgrade starten.
+
++
+
+NOTE: Für SG100 oder SG1000 sind keine zusätzlichen Dateien erforderlich.
+
++
+
+NOTE: Wählen Sie die aus `.zip` Datei, wenn Windows auf dem Service-Laptop ausgeführt wird.
+
++
+** Red hat Enterprise Linux oder CentOS+
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` +
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz`
+** Ubuntu oder Debian +
+`StorageGRID-Webscale-_version_-DEB-_uniqueID_.zip` +
+`StorageGRID-Webscale-_version_-DEB-_uniqueID_.tgz`
+
+
+
+
+.Verwandte Informationen
+link:linux-installing-rpm-or-deb-package-on-all-hosts.html["Linux: Installieren des RPM- oder DEB-Pakets auf allen Hosts"]
+
+link:../maintain/index.html["Verwalten Sie  erholen"]

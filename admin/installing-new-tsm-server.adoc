@@ -1,0 +1,17 @@
+---
+permalink: admin/installing-new-tsm-server.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können den Archiv-Knoten entweder mit einem neuen oder einem vorhandenen TSM-Server integrieren. Wenn Sie einen neuen TSM-Server installieren, befolgen Sie die Anweisungen in der TSM-Dokumentation, um die Installation abzuschließen. 
+---
+= Installieren eines neuen TSM-Servers
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Archiv-Knoten entweder mit einem neuen oder einem vorhandenen TSM-Server integrieren. Wenn Sie einen neuen TSM-Server installieren, befolgen Sie die Anweisungen in der TSM-Dokumentation, um die Installation abzuschließen.
+
+
+NOTE: Ein Archivknoten kann nicht mit einem TSM-Server Co-gehostet werden.

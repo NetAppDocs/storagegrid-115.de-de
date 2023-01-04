@@ -1,0 +1,19 @@
+---
+permalink: admin/integrating-tivoli-storage-manager.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Dieser Abschnitt enthält Best Practices und Setup-Informationen für die Integration eines Archiv-Knotens mit einem Tivoli Storage Manager \(TSM\)-Server, einschließlich der Betriebsdetails des Archivierungs-Knotens, die sich auf die Konfiguration des TSM-Servers auswirken.' 
+---
+= Integration Von Tivoli Storage Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dieser Abschnitt enthält Best Practices und Setup-Informationen für die Integration eines Archiv-Knotens mit einem Tivoli Storage Manager (TSM)-Server, einschließlich Betriebsdetails zu Archive Node, die sich auf die Konfiguration des TSM-Servers auswirken.
+
+* link:archive-node-configuration-and-operation.html["Konfiguration und Betrieb des Archivierungs-Node"]
+* link:configuration-best-practices.html["Best Practices für die Konfiguration"]
+* link:completing-archive-node-setup.html["Abschluss der Konfiguration des Archivierungs-Knotens"]
+

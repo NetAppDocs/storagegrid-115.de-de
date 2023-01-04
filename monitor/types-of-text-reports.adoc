@@ -1,0 +1,43 @@
+---
+permalink: monitor/types-of-text-reports.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Textberichte zeigen eine textuelle Darstellung von Attributdatenwerten an, die vom NMS-Dienst verarbeitet wurden. Es gibt zwei Arten von Berichten, die je nach Zeitraum erstellt werden, für den Sie einen Bericht erstellen: RAW-Textberichte für Zeiträume unter einer Woche und Zusammenfassung von Textberichten für Zeiträume, die länger als eine Woche sind.' 
+---
+= Arten von Textberichten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Textberichte zeigen eine textuelle Darstellung von Attributdatenwerten an, die vom NMS-Dienst verarbeitet wurden. Es gibt zwei Arten von Berichten, die je nach Zeitraum erstellt werden, für den Sie einen Bericht erstellen: RAW-Textberichte für Zeiträume unter einer Woche und Zusammenfassung von Textberichten für Zeiträume, die länger als eine Woche sind.
+
+
+
+== RAW-Textberichte
+
+In einem RAW-Textbericht werden Details zum ausgewählten Attribut angezeigt:
+
+* Empfangene Zeit: Lokales Datum und Uhrzeit, zu der ein Beispielwert der Daten eines Attributs vom NMS-Dienst verarbeitet wurde.
+* Probenzeit: Lokales Datum und Uhrzeit, zu der ein Attributwert an der Quelle erfasst oder geändert wurde.
+* Wert: Attributwert zur Probenzeit.
+
+
+image::../media/raw_text_report.gif[Screenshot mit rohem Textbericht]
+
+
+
+== Zusammenfassen von Textberichten
+
+Ein zusammengefasster Textbericht zeigt Daten über einen längeren Zeitraum (in der Regel eine Woche) an als einen reinen Textbericht. Jeder Eintrag ist das Ergebnis einer Zusammenfassung mehrerer Attributwerte (ein Aggregat von Attributwerten) durch den NMS-Dienst über einen Zeitraum in einem einzigen Eintrag mit durchschnittlichen, maximalen und minimalen Werten, die aus der Aggregation abgeleitet sind.
+
+In jedem Eintrag werden die folgenden Informationen angezeigt:
+
+* Aggregatzeit: Letztes lokales Datum und Zeitpunkt, zu dem der NMS-Dienst einen Satz von geänderten Attributwerten aggregiert (gesammelt) hat.
+* Durchschnittswert: Der Mittelwert des Attributs über den aggregierten Zeitraum.
+* Mindestwert: Der Mindestwert über den aggregierten Zeitraum.
+* Maximalwert: Der Maximalwert über den aggregierten Zeitraum.
+
+
+image::../media/aggregate_text_report.gif[Screenshot mit Aggregat-Textbericht]

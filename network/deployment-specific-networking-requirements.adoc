@@ -1,0 +1,26 @@
+---
+permalink: network/deployment-specific-networking-requirements.html 
+sidebar: sidebar 
+keywords:  
+summary: Je nach den verwendeten Implementierungsplattformen können weitere Überlegungen für Ihr StorageGRID-Netzwerkdesign erforderlich sein. 
+---
+= Implementierungs-spezifische Netzwerküberlegungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Je nach den verwendeten Implementierungsplattformen können weitere Überlegungen für Ihr StorageGRID-Netzwerkdesign erforderlich sein.
+
+Grid-Nodes können wie folgt implementiert werden:
+
+* Softwarebasierte Grid-Nodes, die als Virtual Machines im VMware vSphere Web Client implementiert sind
+* Softwarebasierte Grid-Nodes, die in Docker Containern auf Linux Hosts implementiert werden
+* Appliance-basierte Nodes
+
+
+Weitere Informationen zu Gitterknoten finden Sie im Abschnitt „_Grid Primer_“.
+
+.Verwandte Informationen
+link:../primer/index.html["Gittergrundierung"]

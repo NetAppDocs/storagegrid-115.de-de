@@ -1,0 +1,58 @@
+---
+permalink: primer/viewing-nodes-page.html 
+sidebar: sidebar 
+keywords: nodes page, connection state, unknown, administratively down, critical, major, minor, icon 
+summary: Wenn Sie detailliertere Informationen über Ihr StorageGRID-System als das Dashboard erhalten, können Sie auf der Seite Nodes Metriken für das gesamte Grid, jeden Standort im Raster und jeden Node an einem Standort anzeigen. 
+---
+= Anzeigen der Seite Knoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie detailliertere Informationen über Ihr StorageGRID-System als das Dashboard erhalten, können Sie auf der Seite Nodes Metriken für das gesamte Grid, jeden Standort im Raster und jeden Node an einem Standort anzeigen.
+
+image::../media/nodes_menu.png[Knoten-Menü]
+
+In der Baumansicht links sehen Sie alle Standorte und alle Knoten in Ihrem StorageGRID-System. Das Symbol für jeden Knoten gibt an, ob der Knoten verbunden ist oder ob aktive Warnmeldungen vorliegen.
+
+
+
+== Symbole für Verbindungsstatus
+
+Wenn ein Knoten von der Tabelle getrennt wird, zeigt die Strukturansicht ein blaues oder graues Verbindungssymbol an, nicht das Symbol für die zugrunde liegenden Warnungen.
+
+* *Nicht verbunden - Unbekannt* image:../media/icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"]: Der Knoten ist aus einem unbekannten Grund nicht mit dem Raster verbunden. Beispielsweise wurde die Netzwerkverbindung zwischen den Knoten unterbrochen oder der Strom ist ausgefallen. Die Warnung * kann nicht mit Node* kommunizieren. Auch andere Warnmeldungen können aktiv sein. Diese Situation erfordert sofortige Aufmerksamkeit.
++
+
+NOTE: Ein Node wird möglicherweise während des verwalteten Herunterfahrens als „Unbekannt“ angezeigt. In diesen Fällen können Sie den Status Unbekannt ignorieren.
+
+* *Nicht verbunden - Administrativ unten* image:../media/icon_alarm_gray_administratively_down.png["Graues Fragensymbol"]: Der Knoten ist aus einem erwarteten Grund nicht mit dem Netz verbunden. Beispielsweise wurde der Node oder die Services für den Node ordnungsgemäß heruntergefahren, der Node neu gebootet oder die Software wird aktualisiert. Mindestens ein Alarm ist möglicherweise auch aktiv.
+
+
+
+
+== Warnungssymbole
+
+Wenn ein Knoten mit dem Raster verbunden ist, wird in der Strukturansicht eines der folgenden Symbole angezeigt, je nachdem, ob aktuelle Warnmeldungen für den Knoten vorhanden sind.
+
+* * Kritisch* image:../media/icon_alert_red_critical.png["Symbol Warnung Rot Kritisch"]: Es besteht eine anormale Bedingung, die die normalen Vorgänge eines StorageGRID-Knotens oder -Dienstes gestoppt hat. Sie müssen das zugrunde liegende Problem sofort lösen. Wenn das Problem nicht behoben ist, kann es zu Serviceunterbrechungen und Datenverlusten kommen.
+* *Major* image:../media/icon_alert_orange_major.png["Icon Alert Orange Major"]: Es besteht eine anormale Bedingung, die entweder die aktuellen Operationen beeinflusst oder sich dem Schwellenwert für eine kritische Warnung nähert. Sie sollten größere Warnmeldungen untersuchen und alle zugrunde liegenden Probleme beheben, um sicherzustellen, dass die anormale Bedingung den normalen Betrieb eines StorageGRID Node oder Service nicht beendet.
+* *Klein* image:../media/icon_alert_yellow_miinor.png["Symbol Alarm Gelb Minor"]: Das System funktioniert normal, aber es besteht eine anormale Bedingung, die die Fähigkeit des Systems beeinträchtigen könnte, zu arbeiten, wenn es fortgesetzt wird. Sie sollten kleinere Warnmeldungen überwachen und beheben, die sich nicht selbst beheben lassen, um sicherzustellen, dass sie nicht zu einem schwerwiegenderen Problem führen.
+* *Normal* image:../media/icon_alert_green_checkmark.png["Grünes Häkchen für Symbolwarnung"]: Es sind keine Alarme aktiv, und der Knoten ist mit dem Raster verbunden.
+
+
+
+
+== Anzeigen von Details zu einem System, Standort oder Node
+
+Um die verfügbaren Informationen anzuzeigen, klicken Sie auf die entsprechenden Links auf der linken Seite, wie folgt:
+
+* Wählen Sie den Grid-Namen aus, um eine Zusammenfassung der Statistiken für Ihr gesamtes StorageGRID System anzuzeigen. (Der Screenshot zeigt ein System mit dem Namen „StorageGRID Deployment“.)
+* Wählen Sie einen bestimmten Datacenter-Standort aus, um eine aggregierte Zusammenfassung der Statistiken für alle Nodes an diesem Standort anzuzeigen.
+* Wählen Sie einen bestimmten Node aus, um detaillierte Informationen zu diesem Node anzuzeigen.
+
+
+.Verwandte Informationen
+link:../monitor/index.html["Monitor  Fehlerbehebung"]

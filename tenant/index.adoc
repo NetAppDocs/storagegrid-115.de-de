@@ -1,0 +1,20 @@
+---
+permalink: tenant/index.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID-Mandantenkonto nutzen 
+---
+= Verwenden Sie ein Mandantenkonto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID-Mandantenkonto nutzen
+
+* link:using-tenant-manager.html["Verwenden des Mandanten-Manager"]
+* link:managing-system-access-for-tenant-users.html["Managen des Systemzugriffs für Mandantenbenutzer"]
+* link:managing-s3-tenant-accounts.html["Verwalten von S3-Mandantenkonten"]
+* link:managing-s3-platform-services.html["Verwalten von S3-Plattformservices"]
+

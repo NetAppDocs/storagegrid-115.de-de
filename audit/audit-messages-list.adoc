@@ -1,0 +1,14 @@
+---
+permalink: audit/audit-messages-list.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, messages, message 
+summary: Wenn Systemereignisse auftreten, generiert das StorageGRID System Audit-Meldungen und zeichnet sie im Revisionsprotokoll auf. 
+---
+= Audit-Meldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Systemereignisse auftreten, generiert das StorageGRID System Audit-Meldungen und zeichnet sie im Revisionsprotokoll auf.

@@ -1,0 +1,98 @@
+---
+permalink: primer/configuring-network-settings.html 
+sidebar: sidebar 
+keywords: network settings, configure, configuring, configuration, domain name, virtual hosted-style requests 
+summary: Sie können verschiedene Netzwerkeinstellungen vom Grid Manager konfigurieren, um den Betrieb Ihres StorageGRID Systems zu optimieren. 
+---
+= Netzwerkeinstellungen werden konfiguriert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können verschiedene Netzwerkeinstellungen vom Grid Manager konfigurieren, um den Betrieb Ihres StorageGRID Systems zu optimieren.
+
+
+
+== Domain-Namen
+
+Falls Sie beabsichtigen, virtuelle S3-Hosted-Style-Anforderungen zu unterstützen, müssen Sie die Liste der Endpunkt-Domain-Namen, mit denen S3-Clients verbunden werden, konfigurieren. Beispiele hierfür sind s3.example.com, s3.example.co.uk und s3-east.example.com.
+
+
+NOTE: Die konfigurierten Serverzertifikate müssen mit den Domänennamen des Endpunkts übereinstimmen.
+
+
+
+== Hochverfügbarkeitsgruppen
+
+Hochverfügbarkeitsgruppen verwenden virtuelle IP-Adressen (VIPs), um aktiv-Backup-Zugriff auf Gateway Node- oder Admin-Node-Services bereitzustellen. Eine HA-Gruppe besteht aus mindestens einer Netzwerkschnittstellen an Admin-Nodes und Gateway-Nodes. Beim Erstellen einer HA-Gruppe wählen Sie Netzwerkschnittstellen aus, die zum Grid Network (eth0) oder dem Client-Netzwerk (eth2) gehören.
+
+
+NOTE: Das Admin-Netzwerk unterstützt keine HA-VIPs.
+
+Eine HA-Gruppe behält eine oder mehrere virtuelle IP-Adressen bei, die der aktiven Schnittstelle in der Gruppe hinzugefügt werden. Wenn die aktive Schnittstelle nicht mehr verfügbar ist, werden die virtuellen IP-Adressen in eine andere Schnittstelle verschoben. Dieser Failover-Prozess dauert in der Regel nur wenige Sekunden und ist schnell genug, dass Client-Applikationen nur geringe Auswirkungen haben und sich auf normale Wiederholungsmuster verlassen können, um den Betrieb fortzusetzen.
+
+Es empfiehlt sich, aus mehreren Gründen Gruppen für Hochverfügbarkeit (HA) zu verwenden.
+
+* Eine HA-Gruppe kann hochverfügbare administrative Verbindungen mit dem Grid Manager oder dem Mandanten Manager bereitstellen.
+* Eine HA-Gruppe kann hochverfügbare Datenverbindungen für S3 und Swift Clients bieten.
+* Eine HA-Gruppe, die nur eine Schnittstelle enthält, ermöglicht es Ihnen, viele VIP-Adressen bereitzustellen und explizit IPv6-Adressen festzulegen.
+
+
+
+
+== Verbindungskosten
+
+Sie können die Verbindungskosten entsprechend der Latenz zwischen Standorten anpassen. Wenn zwei oder mehr Datacenter-Standorte vorhanden sind, priorisieren die Verbindungskosten, welcher Datacenter-Standort einen angeforderten Service bereitstellen soll.
+
+
+
+== Load Balancer-Endpunkte
+
+Mithilfe eines Load Balancer können Sie Aufnahme- und Abruf-Workloads von S3 und Swift Clients verarbeiten. Durch Verteilung der Workloads und Verbindungen auf mehrere Storage-Nodes maximiert der Lastausgleich die Geschwindigkeit und die Kapazität der Verbindungen.
+
+Wenn Sie den StorageGRID-Load-Balancer-Dienst verwenden möchten, der in Admin-Nodes und Gateway-Nodes enthalten ist, müssen Sie einen oder mehrere Load-Balancer-Endpunkte konfigurieren. Jeder Endpunkt definiert einen Gateway-Node- oder Admin-Node-Port für S3- und Swift-Anforderungen zu Storage-Nodes.
+
+
+
+== Proxy-Einstellungen
+
+Wenn Sie S3-Plattform-Services oder Cloud Storage-Pools verwenden, können Sie einen nicht transparenten Proxy-Server zwischen Storage Nodes und den externen S3-Endpunkten konfigurieren. Wenn Sie AutoSupport-Meldungen über HTTPS oder HTTP senden, können Sie einen nicht transparenten Proxy-Server zwischen Admin-Knoten und dem technischen Support konfigurieren.
+
+image::../media/proxy_settings_menu_storage.png[Proxy-Einstellungen-Menü - Speicher]
+
+
+
+== Serverzertifikate
+
+Sie können zwei Arten von Serverzertifikaten hochladen:
+
+* Management Interface Server Certificate – dies ist das Zertifikat, das für den Zugriff auf die Managementoberfläche verwendet wird.
+* Objekt-Storage-API-Service-Endpunktserverzertifikat, das die S3- und Swift-Endpunkte für direkte Verbindungen zu Storage-Nodes oder bei Verwendung des CLB-Dienstes auf einem Gateway-Node sichert.
++
+
+NOTE: Der CLB-Service ist veraltet.
+
+
+
+Die Load Balancer-Zertifikate werden auf der Seite Load Balancer Endpoints konfiguriert. Die KMS-Zertifikate (Key Management Server) werden auf der Seite Key Management Server konfiguriert.
+
+
+
+== Richtlinien für die Verkehrsklassifizierung
+
+Mithilfe von Richtlinien für die Traffic-Klassifizierung können Sie Regeln zur Identifizierung und Handhabung verschiedener Arten von Netzwerk-Traffic erstellen, einschließlich Traffic im Zusammenhang mit bestimmten Buckets, Mandanten, Client-Subnetzen oder Endpunkten für den Load Balancer. Diese Richtlinien unterstützen die Begrenzung und das Monitoring des Datenverkehrs.
+
+
+
+== Nicht Vertrauenswürdige Client-Netzwerke
+
+Wenn Sie ein Client-Netzwerk verwenden, können Sie StorageGRID vor feindlichen Angriffen schützen, indem Sie angeben, dass das Client-Netzwerk auf jedem Knoten nicht vertrauenswürdig ist. Wenn das Client-Netzwerk eines Node nicht vertrauenswürdig ist, akzeptiert der Knoten nur eingehende Verbindungen an Ports, die explizit als Load Balancer-Endpunkte konfiguriert sind.
+
+Beispielsweise könnte ein Gateway-Node den gesamten eingehenden Datenverkehr im Client-Netzwerk mit Ausnahme von HTTPS S3-Anforderungen ablehnen. Sie können auch den Datenverkehr des Outbound-S3-Plattformdienstes von einem Speicherknoten aktivieren, während eingehende Verbindungen zu diesem Speicherknoten im Client-Netzwerk verhindert werden.
+
+.Verwandte Informationen
+link:../admin/index.html["StorageGRID verwalten"]
+
+link:managing-tenants-and-client-connections.html["Management von Mandanten und Client-Verbindungen"]

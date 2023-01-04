@@ -1,0 +1,49 @@
+---
+permalink: admin/creating-tenant-account.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie müssen mindestens ein Mandantenkonto erstellen, um den Zugriff auf den Storage in Ihrem StorageGRID-System zu kontrollieren. 
+---
+= Erstellen eines Mandantenkontos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen mindestens ein Mandantenkonto erstellen, um den Zugriff auf den Storage in Ihrem StorageGRID-System zu kontrollieren.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Schritte
+. Wählen Sie *Mieter*.
++
+Die Seite „Mandantenkonten“ wird angezeigt und enthält alle vorhandenen Mandantenkonten.
+
++
+image::../media/tenant_accounts_page_blank.png[Seite „Mandantenkonten“ - Leer]
+
+. Wählen Sie *Erstellen*.
++
+Die Seite Mandantenkonto erstellen wird angezeigt. Die auf der Seite enthaltenen Felder hängen davon ab, ob Single Sign-On (SSO) für das StorageGRID-System aktiviert wurde.
+
++
+** Wenn SSO nicht verwendet wird, sieht die Seite Mandantenkonto erstellen so aus.
++
+image::../media/create_tenant_account_no_sso.gif[SSO für das Erstellen eines Mandantenkontos ist deaktiviert]
+
+** Wenn SSO aktiviert ist, sieht die Seite Mandantenkonto erstellen so aus.
++
+image::../media/create_tenant_account_sso.gif[SSO für Mandantenkonto erstellen aktiviert]
+
+
+
+
+
+.Verwandte Informationen
+link:using-identity-federation.html["Identitätsföderation verwenden"]
+
+link:configuring-sso.html["Konfigurieren der Single Sign-On-Konfiguration"]

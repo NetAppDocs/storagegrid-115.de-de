@@ -1,0 +1,60 @@
+---
+permalink: monitor/chart-legend.html 
+sidebar: sidebar 
+keywords: chart, legend 
+summary: Die Linien und Farben, die zum Zeichnen von Diagrammen verwendet werden, haben eine besondere Bedeutung. 
+---
+= Diagrammlegende
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Linien und Farben, die zum Zeichnen von Diagrammen verwendet werden, haben eine besondere Bedeutung.
+
+|===
+| Probe | Bedeutung 
+
+
+ a| 
+image:../media/dark_green_chart_line.gif["Screenshot mit dunkelgrüner Linie"]
+ a| 
+Gemeldete Attributwerte werden mit dunkelgrünen Linien dargestellt.
+
+
+
+ a| 
+image:../media/light_green_chart_line.gif["Screenshot mit Schattierung, die auf das Datenverdünnen hinweist"]
+ a| 
+Hellgrüne Schattierungen um dunkelgrüne Linien zeigen an, dass die tatsächlichen Werte in diesem Zeitbereich variieren und für eine schnellere Plottierung „`binnt`“ wurden. Die dunkle Linie stellt den gewichteten Durchschnitt dar. Der Bereich in hellgrün zeigt die maximalen und minimalen Werte innerhalb des Fachs an. Für Flächendiagramme wird ein hellbrauner Schattierung verwendet, um volumetrische Daten anzuzeigen.
+
+
+
+ a| 
+image:../media/no_data_plotted_chart.gif["Screenshot mit leeren Bereichen auf der Plotzeile"]
+ a| 
+Leere Bereiche (keine Daten dargestellt) zeigen an, dass die Attributwerte nicht verfügbar waren. Der Hintergrund kann blau, grau oder eine Mischung aus grau und blau sein, je nach Status des Dienstes, der das Attribut meldet.
+
+
+
+ a| 
+image:../media/light_blue_chart_shading.gif["Screenshot mit hellblauer Schattierung, die auf unbestimmte Werte hinweist"]
+ a| 
+Hellblaue Schattierung zeigt an, dass einige oder alle Attributwerte zu diesem Zeitpunkt unbestimmt waren; das Attribut war keine Meldung von Werten, da der Dienst sich in einem unbekannten Zustand befand.
+
+
+
+ a| 
+image:../media/gray_chart_shading.gif["Screenshot mit grauem Schattierung aufgrund unbekannter Werte"]
+ a| 
+Graue Schattierung zeigt an, dass einige oder alle Attributwerte zu diesem Zeitpunkt nicht bekannt waren, da der Dienst, der die Attribute meldet, administrativ herabgesetzt war.
+
+
+
+ a| 
+image:../media/gray_blue_chart_shading.gif["Screenshot mit einer Mischung aus unbestimmten und unbekannten Werten"]
+ a| 
+Eine Mischung aus grauem und blauem Schatten zeigt an, dass einige der Attributwerte zu diesem Zeitpunkt unbestimmt waren (weil der Dienst sich in einem unbekannten Zustand befand), während andere nicht bekannt waren, weil der Dienst, der die Attribute meldet, administrativ nach unten lag.
+
+|===

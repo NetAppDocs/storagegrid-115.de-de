@@ -1,0 +1,34 @@
+---
+permalink: monitor/viewing-events-tab.html 
+sidebar: sidebar 
+keywords:  
+summary: Auf der Registerkarte Ereignisse wird die Anzahl der Systemfehler oder Fehlerereignisse für einen Node angezeigt, einschließlich der Fehler, z. B. Netzwerkfehler. 
+---
+= Anzeigen der Registerkarte Ereignisse
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf der Registerkarte Ereignisse wird die Anzahl der Systemfehler oder Fehlerereignisse für einen Node angezeigt, einschließlich der Fehler, z. B. Netzwerkfehler.
+
+Die Registerkarte Ereignisse wird für alle Nodes angezeigt.
+
+Wenn Probleme mit einem bestimmten Knoten auftreten, erfahren Sie auf der Registerkarte Ereignisse mehr über das Problem. Der technische Support kann auch die Informationen auf der Registerkarte Ereignisse verwenden, um Ihnen bei der Fehlerbehebung zu helfen.
+
+image::../media/nodes_page_events_tab.png[Registerkarte Knoten Seite Ereignisse Registerkarte]
+
+Sie können diese Aufgaben über die Registerkarte Ereignisse ausführen:
+
+* Verwenden Sie die Informationen aus dem Feld *Letztes Ereignis* oben in der Tabelle, um festzustellen, welches Ereignis zuletzt aufgetreten ist.
+* Klicken Sie auf das Diagrammsymbol image:../media/icon_chart_new.gif["Diagrammsymbol"] Für ein bestimmtes Ereignis, um zu sehen, wann dieses Ereignis im Laufe der Zeit aufgetreten ist.
+* Zurücksetzen der Ereignisanzahl auf Null nach Behebung von Problemen.
+
+
+.Verwandte Informationen
+link:monitoring-events.html["Monitoring von Ereignissen"]
+
+link:displaying-charts-and-graphs.html["Anzeigen von Diagrammen und Diagrammen"]
+
+link:resetting-event-counts.html["Ereignisanzahl wird zurückgesetzt"]

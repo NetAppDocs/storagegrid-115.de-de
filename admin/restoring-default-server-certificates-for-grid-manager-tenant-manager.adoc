@@ -1,0 +1,24 @@
+---
+permalink: admin/restoring-default-server-certificates-for-grid-manager-tenant-manager.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können auf die Verwendung der Standard-Serverzertifikate für den Grid Manager und den Tenant Manager zurücksetzen. 
+---
+= Wiederherstellen der Standard-Serverzertifikate für den Grid Manager und den Tenant Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können auf die Verwendung der Standard-Serverzertifikate für den Grid Manager und den Tenant Manager zurücksetzen.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Server-Zertifikate*.
+. Klicken Sie im Abschnitt Schnittstellenserverzertifikat verwalten auf *Standardzertifikate verwenden*.
+. Klicken Sie im Bestätigungsdialogfeld auf *OK*.
++
+Wenn Sie die Standardserverzertifikate wiederherstellen, werden die von Ihnen konfigurierten benutzerdefinierten Serverzertifikatdateien gelöscht und können nicht vom System wiederhergestellt werden. Die Standard-Serverzertifikate werden für alle nachfolgenden neuen Clientverbindungen verwendet.
+
+. Aktualisieren Sie die Seite, um sicherzustellen, dass der Webbrowser aktualisiert wird.
+

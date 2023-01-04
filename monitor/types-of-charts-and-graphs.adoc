@@ -1,0 +1,64 @@
+---
+permalink: monitor/types-of-charts-and-graphs.html 
+sidebar: sidebar 
+keywords: chart,graph 
+summary: Diagramme und Diagramme fassen die Werte bestimmter StorageGRID-Metriken und -Attribute zusammen. 
+---
+= Arten von Diagrammen und Diagrammen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Diagramme und Diagramme fassen die Werte bestimmter StorageGRID-Metriken und -Attribute zusammen.
+
+Das Grid Manager Dashboard enthält PIE-Diagramme (Donut), um den verfügbaren Speicher für das Grid und jeden Standort zusammenzufassen.
+
+image::../media/dashboard_available_storage_panel.png[Dashboard Verfügbarer Speicher-Panel]
+
+Im Bereich Speichernutzung auf dem Tenant Manager Dashboard werden folgende Informationen angezeigt:
+
+* Eine Liste der größten Buckets (S3) oder Container (Swift) für die Mandanten
+* Ein Balkendiagramm, das die relative Größe der größten Buckets oder Container darstellt
+* Der insgesamt verwendete Speicherplatz und, wenn ein Kontingent festgelegt ist, die Menge und der Prozentsatz des verbleibenden Speicherplatzes
+
+
+image::../media/tenant_dashboard_with_buckets.png[Mandanten-Dashboard]
+
+Darüber hinaus stehen Diagramme zur Verfügung, die zeigen, wie sich StorageGRID-Metriken und -Attribute im Laufe der Zeit ändern, auf der Seite Knoten und auf der Seite *Unterstützung* > *Tools* > *Grid Topology*.
+
+Es gibt vier Arten von Diagrammen:
+
+* *Grafana-Diagramme*: Auf der Seite Knoten werden Grafana-Diagramme verwendet, um die Werte der Prometheus-Kennzahlen im Laufe der Zeit zu zeichnen. Die Registerkarte *Nodes* > *Load Balancer* für einen Admin-Node enthält beispielsweise vier Grafana-Diagramme.
++
+image::../media/nodes_page_load_balancer_tab.png[Registerkarte „Balancer Für Knoten“]
+
++
+
+NOTE: Grafana-Diagramme sind auch auf den vorkonfigurierten Dashboards enthalten, die auf der Seite *Support* > *Tools* > *Metrics* verfügbar sind.
+
+* *Liniendiagramme*: Verfügbar auf der Seite Knoten und auf der Seite *Support* > *Tools* > *Grid Topology* (Klicken Sie auf das Chart-Symbol image:../media/icon_chart_new.gif["Symboldiagramm (Neu)"] Nach einem Datenwert) werden Liniendiagramme verwendet, um die Werte von StorageGRID-Attributen zu zeichnen, die einen Einheitenwert haben (z. B. NTP-Frequenzversatz in ppm). Die Wertänderungen werden im Laufe der Zeit in regelmäßigen Datenintervallen (Bins) dargestellt.
++
+image::../media/line_graph.gif[Liniendiagramm]
+
+* *Flächendiagramme*: Verfügbar auf der Seite Knoten und auf der Seite *Support* > *Tools* > *Grid Topology* (Klicken Sie auf das Diagrammsymbol image:../media/icon_chart_new.gif["Symboldiagramm (Neu)"] Nach einem Datenwert) werden Flächendiagramme verwendet, um volumetrische Attributmengen zu zeichnen, z. B. Objektanzahl oder Dienstlastwerte. Die Flächendiagramme ähneln den Liniendiagrammen, enthalten jedoch eine hellbraune Schattierung unter der Linie. Die Wertänderungen werden im Laufe der Zeit in regelmäßigen Datenintervallen (Bins) dargestellt.
++
+image::../media/area_graph.gif[Flächendiagramm]
+
+* Einige Diagramme sind mit einem anderen Diagrammsymbol gekennzeichnet image:../media/icon_chart_new_for_11_5.png["Diagrammsymbol - Neu für 11.5"] Und haben ein anderes Format:
++
+image::../media/charts_lost_object_detected.png[Diagramme Verlorenes Objekt Erkannt]
+
+* *Zustandsdiagramm*: Verfügbar auf der Seite *Support* > *Tools* > *Grid Topology* (Klicken Sie auf das Diagrammsymbol image:../media/icon_chart_new.gif["Symboldiagramm (Neu)"] Nach einem Datenwert) werden Zustandsdiagramme verwendet, um Attributwerte zu zeichnen, die unterschiedliche Zustände darstellen, z. B. einen Servicestatus, der online, Standby oder offline sein kann. Statusdiagramme sind ähnlich wie Liniendiagramme, aber der Übergang ist ununterbrochen, d. h. der Wert springt von einem Statuswert zum anderen.
++
+image::../media/state_graph.gif[Statusdiagramm]
+
+
+
+.Verwandte Informationen
+link:viewing-nodes-page.html["Anzeigen der Seite Knoten"]
+
+link:viewing-grid-topology-tree.html["Anzeigen der Struktur der Grid Topology"]
+
+link:reviewing-support-metrics.html["Überprüfen von Support-Metriken"]

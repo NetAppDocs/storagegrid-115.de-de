@@ -1,0 +1,25 @@
+---
+permalink: maintain/index.html 
+sidebar: sidebar 
+keywords:  
+summary: Erfahren Sie, wie Sie einen Hotfix anwenden, einen ausgefallenen Grid-Node wiederherstellen, Grid-Nodes und -Standorte ausmustern und Objekte im Falle eines Systemausfalls wiederherstellen. 
+---
+= Halten Sie Recoverys ein
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erfahren Sie, wie Sie einen Hotfix anwenden, einen ausgefallenen Grid-Node wiederherstellen, Grid-Nodes und -Standorte ausmustern und Objekte im Falle eines Systemausfalls wiederherstellen.
+
+* link:introduction-to-storagegrid-recovery-and-maintenance.html["Einführung in StorageGRID Recovery und Wartung"]
+* link:storagegrid-hotfix-procedure.html["StorageGRID Hotfix Verfahren"]
+* link:grid-node-recovery-procedures.html["Verfahren zur Recovery von Grid-Nodes"]
+* link:how-site-recovery-is-performed-by-technical-support.html["Durchführen der Standortwiederherstellung durch den technischen Support"]
+* link:decommission-procedure.html["Verfahren zur Deaktivierung"]
+* link:network-maintenance-procedures.html["Netzwerkwartungsverfahren"]
+* link:host-level-and-middleware-procedures.html["Verfahren auf Host-Ebene und Middleware"]
+* link:grid-node-procedures.html["Verfahren für den Grid-Node"]
+* link:appliance-node-cloning.html["Klonen von Appliance-Nodes"]
+

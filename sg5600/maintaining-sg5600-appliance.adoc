@@ -1,0 +1,28 @@
+---
+permalink: sg5600/maintaining-sg5600-appliance.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, maintain, maintaining, hardware, procedures, tasks 
+summary: Möglicherweise müssen Sie die SANtricity OS Software auf dem E2700 Controller aktualisieren, den E2700 Controller oder den E5600SG Controller ersetzen oder bestimmte Komponenten ersetzen. Bei den in diesem Abschnitt beschriebenen Verfahren wird davon ausgegangen, dass die Appliance bereits als Storage-Node in einem StorageGRID-System bereitgestellt wurde. 
+---
+= Warten der SG5600 Appliance
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie die SANtricity OS Software auf dem E2700 Controller aktualisieren, den E2700 Controller oder den E5600SG Controller ersetzen oder bestimmte Komponenten ersetzen. Bei den in diesem Abschnitt beschriebenen Verfahren wird davon ausgegangen, dass die Appliance bereits als Storage-Node in einem StorageGRID-System bereitgestellt wurde.
+
+.Schritte
+* link:placing-appliance-into-maintenance-mode.html["Versetzen einer Appliance in den Wartungsmodus"]
+* link:upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg5600.html["Aktualisieren von SANtricity OS auf den Storage Controllern mit Grid Manager"]
+* link:upgrading-santricity-os-on-e2700-controller-using-maintenance-mode.html["Aktualisieren des SANtricity OS Systems auf dem E2700 Controller mithilfe des Wartungsmodus"]
+* link:upgrading-drive-firmware-using-santricity-storage-manager.html["Aktualisieren der Laufwerk-Firmware mithilfe von SANtricity Storage Manager"]
+* link:replacing-e2700-controller.html["Austausch des E2700 Controllers"]
+* link:replacing-e5600sg-controller.html["Austauschen des E5600SG-Controllers"]
+* link:replacing-other-hardware-components-sg5600.html["Austausch anderer Hardwarekomponenten"]
+* link:changing-link-configuration-of-e5600sg-controller.html["Ändern der Link-Konfiguration des E5600SG-Controllers"]
+* link:changing-mtu-setting.html["Ändern der MTU-Einstellung"]
+* link:checking-dns-server-configuration.html["Überprüfen der DNS-Serverkonfiguration"]
+* link:monitoring-node-encryption-in-maintenance-mode.html["Monitoring der Node-Verschlüsselung im Wartungsmodus"]
+

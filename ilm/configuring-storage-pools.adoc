@@ -1,0 +1,24 @@
+---
+permalink: ilm/configuring-storage-pools.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn Sie eine ILM-Regel definieren, verwenden Sie Speicherpools, um anzugeben, wo Objekte gespeichert werden. Bevor Sie einen Speicherpool erstellen, müssen Sie die Richtlinien für den Speicherpool überprüfen. 
+---
+= Konfigurieren von Speicherpools
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie eine ILM-Regel definieren, verwenden Sie Speicherpools, um anzugeben, wo Objekte gespeichert werden. Bevor Sie einen Speicherpool erstellen, müssen Sie die Richtlinien für den Speicherpool überprüfen.
+
+* link:what-storage-pool-is.html["Was ist ein Speicherpool"]
+* link:guidelines-for-creating-storage-pools.html["Richtlinien zur Erstellung von Speicherpools"]
+* link:using-multiple-storage-pools-for-cross-site-replication.html["Verwendung mehrerer Storage Pools zur standortübergreifenden Replizierung"]
+* link:using-storage-pool-as-temporary-location-deprecated.html["Verwenden eines Speicherpools als temporärer Speicherort (veraltet)"]
+* link:creating-storage-pool.html["Erstellen eines Speicherpools"]
+* link:viewing-storage-pool-details.html["Anzeigen von Details zum Speicherpool"]
+* link:editing-storage-pool.html["Bearbeiten eines Speicherpools"]
+* link:removing-storage-pool.html["Entfernen eines Speicherpools"]
+

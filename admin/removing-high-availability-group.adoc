@@ -1,0 +1,43 @@
+---
+permalink: admin/removing-high-availability-group.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Sie können eine Hochverfügbarkeitsgruppe \(HA\) entfernen, die Sie nicht mehr verwenden.' 
+---
+= Entfernen einer Hochverfügbarkeitsgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine HA-Gruppe (High Availability, Hochverfügbarkeit) entfernen, die Sie nicht mehr verwenden.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über die Berechtigung Root Access verfügen.
+
+
+.Diese Aufgabe auslassen
+Wenn Sie eine HA-Gruppe entfernen, können alle S3- oder Swift-Clients, die für die Verwendung einer der virtuellen IP-Adressen der Gruppe konfiguriert sind, keine Verbindung zu StorageGRID mehr herstellen. Um Client-Unterbrechungen zu vermeiden, sollten Sie alle betroffenen S3 oder Swift Client-Applikationen aktualisieren, bevor Sie eine HA-Gruppe entfernen. Aktualisieren Sie jeden Client, um eine Verbindung über eine andere IP-Adresse herzustellen, z. B. die virtuelle IP-Adresse einer anderen HA-Gruppe oder die IP-Adresse, die während der Installation oder bei der Verwendung von DHCP für eine Schnittstelle konfiguriert wurde.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Hochverfügbarkeitsgruppen*.
++
+Die Seite „Hochverfügbarkeitsgruppen“ wird angezeigt.
+
++
+image::../media/ha_groups_page_with_two_groups.png[HAUPTBILDSCHIRM VON HA-Gruppen]
+
+. Wählen Sie die HA-Gruppe aus, die Sie entfernen möchten, und klicken Sie auf *Entfernen*.
++
+Die Warnung „Gruppe mit hoher Verfügbarkeit löschen“ wird angezeigt.
+
++
+image::../media/ha_group_remove_warning.png[HA-Gruppe Warnung entfernen]
+
+. Klicken Sie auf *OK*.
++
+Die HA-Gruppe wird entfernt.
+
+

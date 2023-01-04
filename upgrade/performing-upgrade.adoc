@@ -1,0 +1,39 @@
+---
+permalink: upgrade/performing-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, software upgrade 
+summary: Die Seite Software-Upgrade führt Sie durch den Prozess des Uploads der erforderlichen Datei und des Upgrades aller Grid-Knoten in Ihrem StorageGRID-System. 
+---
+= Durchführen des Upgrades
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Seite Software-Upgrade führt Sie durch den Prozess des Uploads der erforderlichen Datei und des Upgrades aller Grid-Knoten in Ihrem StorageGRID-System.
+
+.Was Sie benötigen
+Sie kennen Folgendes:
+
+* Sie müssen alle Grid-Nodes für alle Datacenter-Standorte vom primären Admin-Node mithilfe des Grid Manager aktualisieren.
+* Zur Erkennung und Behebung von Problemen können Sie die Vorabprüfungen manuell durchführen, bevor Sie das tatsächliche Upgrade starten. Die gleichen Vorabprüfungen werden durchgeführt, wenn Sie das Upgrade starten. Durch eine Vorabprüfung der Fehler wird der Upgrade-Prozess gestoppt und es kann erforderlich sein, dass der technische Support einbezogen wird, um das Problem zu lösen.
+* Wenn Sie das Upgrade starten, wird der primäre Admin-Node automatisch aktualisiert.
+* Nachdem der primäre Admin-Node aktualisiert wurde, können Sie auswählen, welche Grid-Nodes als Nächstes aktualisiert werden sollen.
+* Sie müssen alle Grid-Nodes in Ihrem StorageGRID System aktualisieren, um das Upgrade abzuschließen. Aber Sie können einzelne Grid-Nodes in beliebiger Reihenfolge aktualisieren. Sie können einzelne Grid-Nodes, Gruppen von Grid-Nodes oder alle Grid-Nodes auswählen. Sie können den Vorgang der Auswahl von Grid-Nodes so oft wie nötig wiederholen, bis alle Grid-Nodes an allen Standorten aktualisiert werden.
+* Wenn das Upgrade auf einem Grid-Node startet, werden die Services auf diesem Node angehalten. Später wird der Grid-Node neu gebootet. Genehmigen Sie das Upgrade für einen Grid-Node nicht, es sei denn, Sie sind sicher, dass der Node bereit ist, angehalten und neu gebootet zu werden.
+* Wenn alle Grid-Knoten aktualisiert wurden, sind neue Funktionen aktiviert und Sie können den Betrieb wieder aufnehmen. Sie müssen jedoch warten, bis der Hintergrund *Upgrade Database* Task und die Aufgabe *Final Upgrade Steps* abgeschlossen sind.
+* Sie müssen das Upgrade auf derselben Hypervisor-Plattform, mit der Sie begonnen haben, durchführen.
+
+
+.Schritte
+. link:linux-installing-rpm-or-deb-package-on-all-hosts.html["Linux: Installieren des RPM- oder DEB-Pakets auf allen Hosts"]
+. link:starting-upgrade.html["Starten des Upgrades"]
+. link:upgrading-grid-nodes-and-completing-upgrade.html["Aktualisieren der Grid-Nodes und Abschließen des Upgrades"]
+. link:increasing-metadata-reserved-space-setting.html["Erhöhen der Einstellung für reservierten Speicherplatz für Metadaten"]
+
+
+.Verwandte Informationen
+link:../admin/index.html["StorageGRID verwalten"]
+
+link:estimating-time-to-complete-upgrade.html["Schätzung der Zeit für die Durchführung eines Upgrades"]

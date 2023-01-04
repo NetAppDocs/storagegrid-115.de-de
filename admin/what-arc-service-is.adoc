@@ -1,0 +1,18 @@
+---
+permalink: admin/what-arc-service-is.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Der Archiv-Node \(ARC\)-Dienst stellt die Verwaltungsschnittstelle bereit, über die Sie Verbindungen zu externen Archivspeichern konfigurieren können, wie z. B. Band über TSM Middleware.' 
+---
+= Was der ARC-Service ist
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Archiv-Node (ARC)-Service stellt die Managementoberfläche bereit, über die Sie Verbindungen zu externen Archivspeichern konfigurieren können, z. B. Bandmedien über TSM Middleware.
+
+Der ARC-Service interagiert mit einem externen Archivspeichersystem, sendet Objektdaten für Nearline-Speicherung und führt Abrufvorgänge durch, wenn eine Client-Anwendung ein archiviertes Objekt anfordert. Wenn eine Client-Anwendung ein archiviertes Objekt anfordert, fordert ein Storage Node die Objektdaten vom ARC-Service an. Der ARC-Dienst stellt eine Anfrage an das externe Archiv-Speichersystem, das die angeforderten Objektdaten abruft und diese an den ARC-Dienst sendet. Der ARC-Dienst überprüft die Objektdaten und leitet sie an den Speicherknoten weiter, der wiederum das Objekt an die anfordernde Client-Anwendung zurückgibt.
+
+Anfragen nach über TSM Middleware auf Tape archivierten Objektdaten werden für eine effiziente Abrufvorgänge verwaltet. Anfragen können so bestellt werden, dass Objekte, die nacheinander auf Band gespeichert sind, in derselben sequenziellen Reihenfolge angefordert werden. Anforderungen werden dann in die Warteschlange gestellt, um sie an das Speichergerät zu übertragen. Je nach Archivgerät können mehrere Anfragen für Objekte auf verschiedenen Volumes gleichzeitig verarbeitet werden.

@@ -1,0 +1,128 @@
+---
+permalink: primer/tabs-for-nodes-page.html 
+sidebar: sidebar 
+keywords: nodes page, hardware tab, network tab, storage tab, events tab, objects tab, ilm tab, load balancer tab, platform services tab, santricity system manager tab 
+summary: Die Registerkarten oben auf der Seite Knoten basieren auf dem, was Sie im Baum links auswählen. 
+---
+= Registerkarten für die Seite Knoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Registerkarten oben auf der Seite Knoten basieren auf dem, was Sie im Baum links auswählen.
+
+[cols="1a,2a,1a"]
+|===
+| Registerkartenname | Beschreibung | Enthalten für 
+
+
+ a| 
+Überblick
+ a| 
+* Enthält grundlegende Informationen zu den einzelnen Nodes.
+* Zeigt alle aktuellen, nicht quittierten Alarme an, die den Knoten betreffen.
+
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Trennt
+ a| 
+* Zeigt die CPU-Auslastung und die Arbeitsspeicherauslastung für jeden Node an
+* Bei Appliance-Nodes werden zusätzliche Hardwareinformationen bereitgestellt.
+
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Netzwerk
+ a| 
+Zeigt ein Diagramm an, in dem der empfangene und über die Netzwerkschnittstellen gesendete Netzwerkverkehr angezeigt wird.
+ a| 
+Alle Nodes, jeden Standort und das gesamte Grid
+
+
+
+ a| 
+Storage
+ a| 
+* Enthält Details zu den Festplattengeräten und Volumes auf jedem Knoten.
+* Enthält Diagramme für Storage-Nodes, die den Objekt-Storage und den über die Zeit verwendeten Metadaten-Storage zeigen.
+
+ a| 
+Alle Nodes, jeden Standort und das gesamte Grid
+
+
+
+ a| 
+Veranstaltungen
+ a| 
+Zeigt die Anzahl aller Systemfehler oder Fehlerereignisse an, einschließlich Fehler wie Netzwerkfehler.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Objekte
+ a| 
+* Bietet Informationen zu Aufnahme- und Abrufraten für S3 und Swift.
+* Für Storage-Nodes werden Objektanzahl und Informationen zu Metadatenspeicherabfragen und zur Hintergrundüberprüfung bereitgestellt.
+
+ a| 
+Storage-Nodes, jeden Standort und das gesamte Grid
+
+
+
+ a| 
+ILM
+ a| 
+Stellt Informationen zu ILM-Vorgängen (Information Lifecycle Management) bereit.
+
+* Für Storage-Nodes enthält Details zur ILM-Bewertung und zur Hintergrund-Verifizierung zum Löschen codierter Objekte.
+* Zeigt für jeden Standort und das gesamte Grid ein Diagramm der ILM-Warteschlange im Laufe der Zeit an.
+* Stellt im gesamten Grid die geschätzte Zeit zum Abschluss eines vollständigen ILM-Scans aller Objekte zur Verfügung.
+
+ a| 
+Storage-Nodes, jeden Standort und das gesamte Grid
+
+
+
+ a| 
+Lastausgleich
+ a| 
+Enthält Performance- und Diagnosediagramme zum Load Balancer-Service.
+
+* Bietet für jeden Standort eine Zusammenfassung der Statistiken für alle Nodes an diesem Standort.
+* Das gesamte Raster bietet eine aggregierte Zusammenfassung der Statistiken für alle Standorte.
+
+ a| 
+Admin-Nodes und Gateway-Nodes, jeden Standort und das gesamte Grid
+
+
+
+ a| 
+Plattform-Services
+ a| 
+Dieser Service bietet Informationen zu S3-Plattform-Servicevorgängen an einem Standort.
+ a| 
+Jeder Standort
+
+
+
+ a| 
+SANtricity System Manager
+ a| 
+Zugriff auf SANtricity System Manager Vom SANtricity System Manager können Sie die Hardware-Diagnose und Umgebungsinformationen für den Storage Controller sowie Probleme im Zusammenhang mit den Laufwerken überprüfen.
+ a| 
+Nodes von Storage-Appliances
+
+*Hinweis:* die Registerkarte SANtricity System Manager wird nicht angezeigt, wenn die Controller-Firmware auf dem Speichergerät weniger als 8.70 ist.
+
+|===

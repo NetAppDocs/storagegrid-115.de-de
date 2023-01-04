@@ -1,0 +1,20 @@
+---
+permalink: audit/index.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, logs, messages, log, message 
+summary: Machen Sie sich mit den StorageGRID Systemaudits-Protokollen vertraut und sehen Sie eine Liste aller Audit-Meldungen an. 
+---
+= Prüfung von Audit-Protokollen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Machen Sie sich mit den StorageGRID Systemaudits-Protokollen vertraut und sehen Sie eine Liste aller Audit-Meldungen an.
+
+* link:audit-message-overview.html["Übersicht über Überwachungsnachrichten"]
+* link:audit-file-and-message-formats.html["Audit-Log-Datei und Nachrichtenformate"]
+* link:audit-messages-and-object-lifecycle.html["Überwachungsmeldungen und der Lebenszyklus von Objekten"]
+* link:audit-messages-main.html["Audit-Meldungen"]
+

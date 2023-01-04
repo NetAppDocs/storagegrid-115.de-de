@@ -1,0 +1,25 @@
+---
+permalink: admin/configuring-archive-node-connections-to-archival-storage.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn Sie einen Archivknoten für die Verbindung mit einem externen Archiv konfigurieren, müssen Sie den Zieltyp auswählen. 
+---
+= Konfigurieren von Archivierungs-Node-Verbindungen mit Archiv-Storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen Archivknoten für die Verbindung mit einem externen Archiv konfigurieren, müssen Sie den Zieltyp auswählen.
+
+Das StorageGRID System unterstützt die Archivierung von Objektdaten in der Cloud über eine S3-Schnittstelle oder auf Tape über Tivoli Storage Manager (TSM) Middleware.
+
+
+NOTE: Wenn der Typ des Archivziels für einen Archiv-Knoten konfiguriert ist, kann der Zieltyp nicht mehr geändert werden.
+
+* link:archiving-to-cloud-through-s3-api.html["Archivierung in der Cloud über die S3-API"]
+* link:archiving-to-tape-through-tsm-middleware.html["Archivierung auf Band über TSM Middleware"]
+* link:configuring-archive-node-retrieve-settings.html["Konfigurieren von Einstellungen für den Abruf von Archivknoten"]
+* link:configuring-archive-node-replication.html["Konfiguration der Replikation von Archivierungs-Knoten"]
+

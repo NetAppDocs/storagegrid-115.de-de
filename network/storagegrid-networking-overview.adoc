@@ -1,0 +1,58 @@
+---
+permalink: network/storagegrid-networking-overview.html 
+sidebar: sidebar 
+keywords: storagegrid, network, networking, ethernet, subnet, routing 
+summary: Die Konfiguration des Netzwerks für ein StorageGRID System erfordert eine hohe Erfahrung mit Ethernet-Switching, TCP/IP-Netzwerken, Subnetzen, Netzwerk-Routing und Firewalls. 
+---
+= Überblick über das StorageGRID Networking
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Konfiguration des Netzwerks für ein StorageGRID System erfordert eine hohe Erfahrung mit Ethernet-Switching, TCP/IP-Netzwerken, Subnetzen, Netzwerk-Routing und Firewalls.
+
+Bevor Sie das Networking konfigurieren, machen Sie sich mit der StorageGRID-Architektur vertraut, wie im _Grid Primer_ beschrieben.
+
+Bevor Sie StorageGRID implementieren und konfigurieren, müssen Sie die Netzwerkinfrastruktur konfigurieren. Die Kommunikation muss zwischen allen Knoten im Grid und zwischen dem Grid und externen Clients und Diensten erfolgen.
+
+Externe Clients und externe Services müssen eine Verbindung zu StorageGRID-Netzwerken herstellen, um Funktionen wie die folgenden auszuführen:
+
+* Speichern und Abrufen von Objektdaten
+* Benachrichtigungen erhalten
+* Zugriff auf die StorageGRID Management-Schnittstelle (Grid Manager und MandantenManager)
+* Zugriff auf die Revisionsfreigabe (optional)
+* Die Bereitstellung von Services wie:
++
+** Network Time Protocol (NTP)
+** Domain Name System (DNS)
+** Verschlüsselungsmanagement-Server (KMS)
+
+
+
+
+StorageGRID-Netzwerke müssen entsprechend konfiguriert werden, um den Datenverkehr für diese Funktionen und vieles mehr zu verarbeiten.
+
+Nachdem Sie ermittelt haben, welche der drei StorageGRID-Netzwerke Sie verwenden möchten und wie diese Netzwerke konfiguriert werden, können Sie die StorageGRID-Nodes installieren und konfigurieren, indem Sie die entsprechenden Anweisungen befolgen.
+
+.Verwandte Informationen
+link:../primer/index.html["Gittergrundierung"]
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+link:../release-notes/index.html["Versionshinweise"]
+
+link:../rhel/index.html["Installieren Sie Red hat Enterprise Linux oder CentOS"]
+
+link:../ubuntu/index.html["Installieren Sie Ubuntu oder Debian"]
+
+link:../vmware/index.html["VMware installieren"]
+
+link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+link:../sg6000/index.html["SG6000 Storage-Appliances"]
+
+link:../sg5700/index.html["SG5700 Storage-Appliances"]
+
+link:../sg5600/index.html["SG5600 Storage Appliances"]

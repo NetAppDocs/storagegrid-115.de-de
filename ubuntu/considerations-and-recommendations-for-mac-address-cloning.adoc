@@ -1,0 +1,70 @@
+---
+permalink: ubuntu/considerations-and-recommendations-for-mac-address-cloning.html 
+sidebar: sidebar 
+keywords:  
+summary: Das Klonen VON MAC-Adressen führt dazu, dass der Docker-Container die MAC-Adresse des Hosts verwendet und der Host die MAC-Adresse entweder einer von Ihnen angegebenen oder einer zufällig generierten Adresse verwendet. Verwenden Sie das Klonen von MAC-Adressen, um Netzwerkkonfigurationen im einfach zu vermeiden. 
+---
+= Überlegungen und Empfehlungen zum Klonen von MAC-Adressen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Klonen VON MAC-Adressen führt dazu, dass der Docker-Container die MAC-Adresse des Hosts verwendet und der Host die MAC-Adresse entweder einer von Ihnen angegebenen oder einer zufällig generierten Adresse verwendet. Verwenden Sie das Klonen von MAC-Adressen, um Netzwerkkonfigurationen im einfach zu vermeiden.
+
+
+
+== Aktivieren des MAC-Klonens
+
+In bestimmten Umgebungen kann die Sicherheit durch das Klonen von MAC-Adressen erhöht werden, da es Ihnen ermöglicht, eine dedizierte virtuelle NIC für das Admin-Netzwerk, das Grid-Netzwerk und das Client-Netzwerk zu verwenden. Wenn der Docker Container die MAC-Adresse der dedizierten NIC auf dem Host nutzen soll, können Sie keine Kompromissmodus-Netzwerkkonfigurationen verwenden.
+
+
+IMPORTANT: Das Klonen DER MAC-Adresse wurde für Installationen virtueller Server entwickelt und funktioniert möglicherweise nicht ordnungsgemäß bei allen Konfigurationen der physischen Appliance.
+
+
+NOTE: Wenn ein Knoten nicht gestartet werden kann, weil eine gezielte Schnittstelle für das MAC-Klonen belegt ist, müssen Sie die Verbindung möglicherweise auf „down“ setzen, bevor Sie den Knoten starten. Darüber hinaus kann es vorkommen, dass die virtuelle Umgebung das Klonen von MAC auf einer Netzwerkschnittstelle verhindert, während der Link aktiv ist. Wenn ein Knoten die MAC-Adresse nicht einstellt und aufgrund einer überlasteten Schnittstelle gestartet wird, kann das Problem durch Setzen des Links auf „down“ vor dem Starten des Knotens behoben werden.
+
+Das Klonen VON MAC-Adressen ist standardmäßig deaktiviert und muss durch Knoten-Konfigurationsschlüssel festgelegt werden. Sie sollten die Aktivierung bei der Installation von StorageGRID aktivieren.
+
+Für jedes Netzwerk gibt es einen Schlüssel:
+
+* `ADMIN_NETWORK_TARGET_TYPE_INTERFACE_CLONE_MAC`
+* `GRID_NETWORK_TARGET_TYPE_INTERFACE_CLONE_MAC`
+* `CLIENT_NETWORK_TARGET_TYPE_INTERFACE_CLONE_MAC`
+
+
+Wenn Sie den Schlüssel auf „true“ setzen, verwendet der Docker Container die MAC-Adresse der NIC des Hosts. Außerdem verwendet der Host dann die MAC-Adresse des angegebenen Containernetzwerks. Standardmäßig ist die Container-Adresse eine zufällig generierte Adresse, jedoch wenn Sie mithilfe des eine Adresse festgelegt haben `_NETWORK_MAC` Der Node-Konfigurationsschlüssel, diese Adresse wird stattdessen verwendet. Host und Container haben immer unterschiedliche MAC-Adressen.
+
+
+IMPORTANT: Wenn das MAC-Klonen auf einem virtuellen Host aktiviert wird, ohne dass gleichzeitig der einfach austauschbare Modus auf dem Hypervisor aktiviert werden muss, kann dies dazu führen, dass Linux-Host-Netzwerke, die die Host-Schnittstelle verwenden, nicht mehr funktionieren.
+
+
+
+== Anwendungsfälle für DAS Klonen VON MAC
+
+Es gibt zwei Anwendungsfälle, die beim Klonen von MAC berücksichtigt werden müssen:
+
+* MAC-Klonen nicht aktiviert: Wenn der `_CLONE_MAC` Der Schlüssel in der Node-Konfigurationsdatei ist nicht festgelegt oder auf „false“ gesetzt. Der Host verwendet die Host-NIC-MAC und der Container verfügt über eine von StorageGRID generierte MAC, sofern im keine MAC angegeben ist `_NETWORK_MAC` Taste. Wenn im eine Adresse festgelegt ist `_NETWORK_MAC` Schlüssel, der Container wird die Adresse im angegeben `_NETWORK_MAC` Taste. Diese Schlüsselkonfiguration erfordert den Einsatz des promiskuitiven Modus.
+* MAC-Klonen aktiviert: Wenn der `_CLONE_MAC` Schlüssel in der Node-Konfigurationsdatei ist auf „true“ gesetzt, der Container verwendet die Host-NIC MAC und der Host verwendet eine von StorageGRID generierte MAC, es sei denn, eine MAC wird im angegeben `_NETWORK_MAC` Taste. Wenn im eine Adresse festgelegt ist `_NETWORK_MAC` Schlüssel, der Host verwendet die angegebene Adresse anstelle einer generierten. In dieser Konfiguration von Schlüsseln sollten Sie nicht den promiskuous Modus verwenden.
+
+
+
+NOTE: Wenn Sie kein Klonen der MAC-Adresse verwenden möchten und lieber alle Schnittstellen Daten für andere MAC-Adressen als die vom Hypervisor zugewiesenen empfangen und übertragen möchten, Stellen Sie sicher, dass die Sicherheitseigenschaften auf der Ebene der virtuellen Switch- und Portgruppen auf *Accept* für den Promiscuous-Modus, MAC-Adressänderungen und Forged-Übertragungen eingestellt sind. Die auf dem virtuellen Switch eingestellten Werte können von den Werten auf der Portgruppenebene außer Kraft gesetzt werden. Stellen Sie also sicher, dass die Einstellungen an beiden Stellen identisch sind.
+
+Informationen zum Aktivieren des MAC-Klonens finden Sie in den Anweisungen zum Erstellen von Node-Konfigurationsdateien.
+
+link:creating-node-configuration-files.html["Erstellen von Knoten-Konfigurationsdateien"]
+
+
+
+== BEISPIEL FÜR DAS Klonen VON MAC
+
+Beispiel für das MAC-Klonen bei einem Host mit einer MAC-Adresse von 11:22:33:44:55:66 für die Schnittstelle ensens256 und die folgenden Schlüssel in der Node-Konfigurationsdatei:
+
+* `ADMIN_NETWORK_TARGET = ens256`
+* `ADMIN_NETWORK_MAC = b2:9c:02:c2:27:10`
+* `ADMIN_NETWORK_TARGET_TYPE_INTERFACE_CLONE_MAC = true`
+
+
+Ergebnis: Der Host-MAC für ens256 ist b2:9c:02:c2:27:10 und die Admin-Netzwerk-MAC ist 11:22:33:44:55:66

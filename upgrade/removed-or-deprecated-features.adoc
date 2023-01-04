@@ -1,0 +1,227 @@
+---
+permalink: upgrade/removed-or-deprecated-features.html 
+sidebar: sidebar 
+keywords: features, removed, deprecated, weak consistency, compliance 
+summary: Einige Funktionen wurden in StorageGRID 11.5 entfernt oder veraltet. Sie müssen diese Elemente überprüfen, um zu verstehen, ob Sie Clientanwendungen aktualisieren oder Ihre Konfiguration ändern müssen, bevor Sie ein Upgrade durchführen. 
+---
+= Funktionen entfernt oder veraltet
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Einige Funktionen wurden in StorageGRID 11.5 entfernt oder veraltet. Sie müssen diese Elemente überprüfen, um zu verstehen, ob Sie Clientanwendungen aktualisieren oder Ihre Konfiguration ändern müssen, bevor Sie ein Upgrade durchführen.
+
+
+
+== Schwache Konsistenzkontrolle entfernt
+
+Die schwache Konsistenzkontrolle wurde für StorageGRID 11.5 entfernt. Nach dem Upgrade gelten folgende Verhaltensweisen:
+
+* Anfragen zur Festlegung einer schwachen Konsistenz für einen S3-Bucket oder Swift-Container sind erfolgreich. Die Konsistenzstufe steht jedoch tatsächlich zur Verfügung.
+* Vorhandene Buckets und Container, die eine schwache Konsistenz verwenden, werden im Hintergrund aktualisiert, um die verfügbare Konsistenz zu nutzen.
+* Anforderungen, die einen schwachen Header zur Consistency-Control haben, verwenden tatsächlich verfügbare Konsistenz, falls zutreffend.
+
+
+Die verfügbare Consistency Control verhält sich wie die Konsistenzstufe „`read-after-New-write`“, bietet jedoch nur eventuelle Konsistenz für DEN KOPFBETRIEB. Die verfügbare Consistency Control bietet eine höhere Verfügbarkeit FÜR HEAD-Operationen als „`read-after-New-write`“, wenn Speicherknoten nicht verfügbar sind.
+
+
+
+== Alarm für den Zustand des Rasters ist veraltet
+
+Der `/grid/health/topology` Die API, die auf aktive _Alarme_ von Nodes überprüft, ist veraltet. An ihrem Platz ein neues `/grid/node-health` endpunkt wurde hinzugefügt. Diese API gibt den aktuellen Status jedes Knotens zurück, indem sie auf aktive „_Alerts_“ auf Knoten überprüft.
+
+
+
+== Compliance-Funktion veraltet
+
+Die S3-Objektsperrfunktion in StorageGRID 11.5 ersetzt die in früheren StorageGRID-Versionen verfügbare Compliance-Funktion. Da die neue S3-Objektsperrfunktion den Amazon S3-Anforderungen entspricht, depretiert sie die proprietäre StorageGRID-Compliance-Funktion, die jetzt als „`` Legacy-Compliance“ bezeichnet wird.
+
+Wenn Sie zuvor die globale Compliance-Einstellung aktiviert haben, wird die neue globale S3-Objektsperre beim Upgrade auf StorageGRID 11.5 automatisch aktiviert. Mandantenbenutzer können keine neuen Buckets erstellen, für die Compliance in StorageGRID aktiviert ist. Mandantenbenutzer können jedoch nach Bedarf vorhandene, konforme Buckets weiterhin verwenden und managen.
+
+Im Mandanten-Manager wird ein Shield-Symbol angezeigt image:../media/icon_shield.png["Schild-Symbol"] Zeigt einen veralteten, konformen Bucket an. Auch für ältere, konforme Buckets ist ein Hold-Abzeichen vorhanden image:../media/hold_badge.png["Hold Namensschild"] Um anzugeben, dass der Bucket unter einer gesetzlichen Aufbewahrungspflichten steht.
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["KB: Wie verwaltet man ältere, konforme Buckets in StorageGRID 11.5"^]
+
+link:../ilm/index.html["Objektmanagement mit ILM"]
+
+
+
+== Warnung „`s 3 mehrtei. zu klein`“ entfernt
+
+Die Warnung *S3 mehrtei. zu klein* wurde entfernt. Zuvor wurde diese Warnmeldung ausgelöst, wenn ein S3-Client einen mehrteiligen Upload mit Teilen durchführen wollte, die die Größenlimits für Amazon S3 nicht erfüllen. Nach dem Upgrade auf StorageGRID 11.5 werden alle Anforderungen für mehrteilige Uploads, die die folgenden Größenlimits nicht erfüllen, fehlschlagen:
+
+* Jedes Teil eines mehrteiligen Uploads muss zwischen 5 MiB (5,242,880 Byte) und 5 gib (5,368,709,120 Byte) liegen.
+* Der letzte Teil kann kleiner als 5 MiB (5,242,880 Byte) sein.
+* Im Allgemeinen sollten die Teilemaße so groß wie möglich sein. Verwenden Sie z. B. für ein Objekt mit 100 gib die Teilenummer 5 gib. Da jedes Teil als einzigartiges Objekt betrachtet wird, verringert der StorageGRID-Metadaten-Overhead durch große Teilgrößen.
+* Verwenden Sie für Objekte, die kleiner als 5 gib sind, stattdessen einen Upload ohne mehrere Teile.
+
+
+
+
+== Warnmeldungen „Appliance-Verbindung im Grid-Netzwerk deaktiviert“ entfernt
+
+Die folgenden Meldungen wurden entfernt. Wenn das Grid-Netzwerk ausgefallen ist, sind die Metriken, die diese Warnmeldungen auslösen würden, nicht verfügbar:
+
+* Services-Appliance-Verbindung im Grid-Netzwerk deaktiviert
+* Verbindung der Storage Appliance im Grid-Netzwerk deaktiviert
+
+
+
+
+== Unterstützung für vollständig qualifizierte Domain Name aus SNMP-Konfiguration entfernt
+
+Wenn Sie einen SNMP-Server im Baseboard Management Controller (BMC) für SG6000, SG100 oder SG1000 konfigurieren, müssen Sie jetzt eine IP-Adresse anstelle eines vollständig qualifizierten Domänennamens angeben. Wenn zuvor ein vollständig qualifizierter Domänenname konfiguriert war, ändern Sie ihn in eine IP-Adresse, bevor Sie ein Upgrade auf StorageGRID 11.5 durchführen.
+
+
+
+== Alte Attribute entfernt
+
+Die folgenden älteren Attribute wurden entfernt. Bei Bedarf werden die äquivalenten Informationen zu den Prometheus Kennzahlen bereitgestellt:
+
+[cols="1a,2a"]
+|===
+| Altes Attribut | Äquivalenter Prometheus-Wert 
+
+
+ a| 
+BREC
+ a| 
+storagegrid_Service_Network_received_Byte
+
+
+
+ a| 
+BTRA
+ a| 
+storagegrid_Service_Network_transmited_Byte
+
+
+
+ a| 
+CQST
+ a| 
+storagegrid_Metadatenabfragen_average_Latency_Millisekunden
+
+
+
+ a| 
+HAIS
+ a| 
+storagegrid_http_Sessions_Incoming_versuchte
+
+
+
+ a| 
+HCCS
+ a| 
+storagegrid_http_Sessions_Incoming_derzeit_etabliertes
+
+
+
+ a| 
+HEIS
+ a| 
+storagegrid_http_Sessions_INCOMING_FAILED
+
+
+
+ a| 
+HISC
+ a| 
+storagegrid_http_Sessions_Incoming_successful
+
+
+
+ a| 
+LHAC
+ a| 
+_None_
+
+
+
+ a| 
+NREC
+ a| 
+_None_
+
+
+
+ a| 
+NTSO (ausgewähltes Zeitquelloffset)
+ a| 
+storagegrid_ntp_Chooed_time_source_Offset_Millisekunden
+
+
+
+ a| 
+NTRA
+ a| 
+_None_
+
+
+
+ a| 
+SLOD
+ a| 
+storagegrid_Service_Load
+
+
+
+ a| 
+SMEM
+ a| 
+storagegrid_Service_Memory_Usage_Byte
+
+
+
+ a| 
+SUTM
+ a| 
+storagegrid_Service_cpu_Sekunden
+
+
+
+ a| 
+SVUT
+ a| 
+storagegrid_Service_Uptime_Sekunden
+
+
+
+ a| 
+TRBS (empfangene Bits pro Sekunde)
+ a| 
+_None_
+
+
+
+ a| 
+TRXB
+ a| 
+storagegrid_Network_received_Byte
+
+
+
+ a| 
+TTBS (Bits insgesamt pro Sekunde übertragen)
+ a| 
+_None_
+
+
+
+ a| 
+TTXB
+ a| 
+storagegrid_Network_transmited_Byte
+
+|===
+Es wurden auch folgende Änderungen vorgenommen:
+
+* Der `network_received_bytes` Und `network_transmitted_bytes` Die Kennzahlen von Prometheus wurden von den Messwerten zu Zählern geändert, da die Werte dieser Kennzahlen nur noch zunehmen. Wenn Sie diese Metriken derzeit in Prometheus-Abfragen verwenden, sollten Sie mit dem beginnen `increase()` Funktion in der Abfrage.
+* Die Tabelle „Netzwerkressourcen“ wurde aus der Registerkarte „Ressourcen“ für StorageGRID-Services entfernt. (Wählen Sie *Support* > *Tools* > *Grid Topology* und dann *_Node_* > *_Service_* > *Ressourcen*.)
+* Die Seite HTTP-Sitzungen wurde für Speicherknoten entfernt. Bisher konnten Sie auf diese Seite zugreifen, indem Sie *Support* > *Tools* > *Grid Topology* und dann *_Storage Node_* > *LDR* > *HTTP* wählen.
+* Der HCCS-Alarm (Currently Creved Incoming Sessions) wurde entfernt.
+* Der NTSO-Alarm (ausgewählter Zeitquelle Offset) wurde entfernt.
+

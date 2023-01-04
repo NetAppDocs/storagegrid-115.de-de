@@ -1,0 +1,1455 @@
+---
+permalink: monitor/alerts-reference.html 
+sidebar: sidebar 
+keywords: alerts, reference 
+summary: In der folgenden Tabelle sind alle standardmäßigen StorageGRID-Warnmeldungen aufgeführt. Bei Bedarf können Sie benutzerdefinierte Alarmregeln erstellen, die Ihrem Systemmanagement entsprechen. 
+---
+= Alerts Referenz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In der folgenden Tabelle sind alle standardmäßigen StorageGRID-Warnmeldungen aufgeführt. Bei Bedarf können Sie benutzerdefinierte Alarmregeln erstellen, die Ihrem Systemmanagement entsprechen.
+
+Hier finden Sie Informationen zu den häufig verwendeten Prometheus-Kennzahlen, um sich über die Metriken zu informieren, die in einigen dieser Warnmeldungen verwendet werden.
+
+|===
+| Alarmname | Beschreibung und empfohlene Aktionen 
+
+
+ a| 
+Akku des Geräts abgelaufen
+ a| 
+Der Akku im Speicher-Controller des Geräts ist abgelaufen.
+
+. Tauschen Sie die Batterie aus. Die Schritte zum Entfernen und Austauschen einer Batterie sind in der Anleitung zum Austauschen eines Speichercontrollers in der Installations- und Wartungsanleitung des Geräts enthalten.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Akku des Geräts fehlgeschlagen
+ a| 
+Der Akku im Speicher-Controller des Geräts ist ausgefallen.
+
+. Tauschen Sie die Batterie aus. Die Schritte zum Entfernen und Austauschen einer Batterie sind in der Anleitung zum Austauschen eines Speichercontrollers in der Installations- und Wartungsanleitung des Geräts enthalten.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Der Akku des Geräts weist nicht genügend Kapazität auf
+ a| 
+Der Akku im Speicher-Controller des Geräts weist nicht genügend Kapazität auf.
+
+. Tauschen Sie die Batterie aus. Die Schritte zum Entfernen und Austauschen einer Batterie sind in der Anleitung zum Austauschen eines Speichercontrollers in der Installations- und Wartungsanleitung des Geräts enthalten.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Akku des Geräts befindet sich nahe dem Ablauf
+ a| 
+Der Akku im Speicher-Controller des Geräts läuft langsam ab.
+
+. Setzen Sie die Batterie bald wieder ein. Die Schritte zum Entfernen und Austauschen einer Batterie sind in der Anleitung zum Austauschen eines Speichercontrollers in der Installations- und Wartungsanleitung des Geräts enthalten.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Akku des Geräts entfernt
+ a| 
+Der Akku im Speicher-Controller des Geräts fehlt.
+
+. Setzen Sie eine Batterie ein. Die Schritte zum Entfernen und Austauschen einer Batterie sind in der Anleitung zum Austauschen eines Speichercontrollers in der Installations- und Wartungsanleitung des Geräts enthalten.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Der Akku des Geräts ist zu heiß
+ a| 
+Die Batterie im Speicher-Controller des Geräts ist überhitzt.
+
+. Stellen Sie fest, ob eine weitere Warnung auf diesen Node wirkt. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Mögliche Gründe für die Temperaturerhöhung wie Lüfter- oder HLK-Ausfall untersuchen.
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Fehler bei der BMC-Kommunikation des Geräts
+ a| 
+Die Kommunikation mit dem Baseboard Management Controller (BMC) wurde verloren.
+
+. Vergewissern Sie sich, dass der BMC ordnungsgemäß funktioniert. Wählen Sie *Nodes*, und wählen Sie dann die Registerkarte *Hardware* für den Geräteknoten aus. Suchen Sie das BMC IP-Feld für den Compute Controller, und navigieren Sie zu dieser IP-Adresse.
+. Versuchen Sie, BMC-Kommunikation wiederherzustellen, indem Sie den Knoten in den Wartungsmodus versetzen und dann das Gerät aus- und wieder einschalten. Siehe Installations- und Wartungsanleitung für Ihr Gerät.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Fehler beim Sichern des Appliance-Cache
+ a| 
+Ein persistentes Cache-Sicherungsgerät ist fehlgeschlagen.
+
+. Stellen Sie fest, ob eine weitere Warnung auf diesen Node wirkt. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Wenden Sie sich an den technischen Support.
+
+
+
+
+ a| 
+Gerät-Cache-Backup-Gerät unzureichende Kapazität
+ a| 
+Die Kapazität des Cache-Sicherungsgeräts ist nicht ausreichend. Wenden Sie sich an den technischen Support.
+
+
+
+ a| 
+Appliance Cache Backup-Gerät schreibgeschützt
+ a| 
+Ein Cache-Backup-Gerät ist schreibgeschützt. Wenden Sie sich an den technischen Support.
+
+
+
+ a| 
+Die Größe des Appliance-Cache-Speichers stimmt nicht überein
+ a| 
+Die beiden Controller in der Appliance haben unterschiedliche Cache-Größen. Wenden Sie sich an den technischen Support.
+
+
+
+ a| 
+Die Temperatur des Computing-Controller-Chassis des Geräts ist zu hoch
+ a| 
+Die Temperatur des Computing-Controllers in einer StorageGRID Appliance hat einen nominalen Schwellenwert überschritten.
+
+. Prüfen Sie die Hardwarekomponenten auf Überhitzungsbedingungen, und befolgen Sie die empfohlenen Maßnahmen:
++
+** Wenn Sie über ein SG100, SG1000 oder SG6000 verfügen, verwenden Sie das BMC.
+** Wenn Sie eine SG5600 oder SG5700 haben, verwenden Sie SANtricity System Manager.
+
+
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+** link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+
+
+
+
+
+ a| 
+Die CPU-Temperatur des Appliance-Compute-Controllers ist zu hoch
+ a| 
+Die Temperatur der CPU im Computing-Controller einer StorageGRID Appliance hat einen nominalen Schwellenwert überschritten.
+
+. Prüfen Sie die Hardwarekomponenten auf Überhitzungsbedingungen, und befolgen Sie die empfohlenen Maßnahmen:
++
+** Wenn Sie über ein SG100, SG1000 oder SG6000 verfügen, verwenden Sie das BMC.
+** Wenn Sie eine SG5600 oder SG5700 haben, verwenden Sie SANtricity System Manager.
+
+
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+** link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+
+
+
+
+
+ a| 
+Aufmerksamkeit für Compute-Controller ist erforderlich
+ a| 
+Im Compute-Controller einer StorageGRID-Appliance wurde ein Hardwarefehler erkannt.
+
+. Überprüfen Sie die Hardwarekomponenten auf Fehler, und befolgen Sie die empfohlenen Maßnahmen:
++
+** Wenn Sie über ein SG100, SG1000 oder SG6000 verfügen, verwenden Sie das BMC.
+** Wenn Sie eine SG5600 oder SG5700 haben, verwenden Sie SANtricity System Manager.
+
+
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+** link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+
+
+
+
+
+ a| 
+Ein Problem besteht in der Stromversorgung Des Computercontrollers A des Geräts
+ a| 
+Stromversorgung A im Compute-Controller weist ein Problem auf.Diese Warnmeldung weist möglicherweise darauf hin, dass das Netzteil ausgefallen ist oder dass es ein Problem bei der Stromversorgung hat.
+
+. Überprüfen Sie die Hardwarekomponenten auf Fehler, und befolgen Sie die empfohlenen Maßnahmen:
++
+** Wenn Sie über ein SG100, SG1000 oder SG6000 verfügen, verwenden Sie das BMC.
+** Wenn Sie eine SG5600 oder SG5700 haben, verwenden Sie SANtricity System Manager.
+
+
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+** link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+
+
+
+
+
+ a| 
+Das Netzteil B des Compute-Controllers ist ein Problem
+ a| 
+Netzteil B im Compute-Controller weist ein Problem auf.Diese Warnmeldung weist möglicherweise darauf hin, dass das Netzteil ausgefallen ist oder dass es ein Problem bei der Stromversorgung hat.
+
+. Überprüfen Sie die Hardwarekomponenten auf Fehler, und befolgen Sie die empfohlenen Maßnahmen:
++
+** Wenn Sie über ein SG100, SG1000 oder SG6000 verfügen, verwenden Sie das BMC.
+** Wenn Sie eine SG5600 oder SG5700 haben, verwenden Sie SANtricity System Manager.
+
+
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+** link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+
+
+
+
+
+ a| 
+Der Service zur Überwachung der Computing-Hardware des Appliances ist ausgesetzt
+ a| 
+Der Service, der den Status der Speicherhardware überwacht, hat die Meldung von Daten gestoppt.
+
+. Überprüfen Sie den Status des eos-Systemstatusdienstes in der Basis-os.
+. Wenn sich der Dienst im Status „angehalten“ oder „Fehler“ befindet, starten Sie den Dienst neu.
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Fibre-Channel-Fehler des Geräts erkannt
+ a| 
+Es liegt ein Problem mit der Fibre Channel-Verbindung zwischen den Storage-Controllern und den Computing-Controllern in der Appliance vor.
+
+. Prüfen Sie die Hardwarekomponenten auf Fehler (*Nodes* > *_Appliance Node_* > *Hardware*). Wenn der Status einer der Komponenten nicht „`Nominal`“ lautet, führen Sie folgende Schritte aus:
++
+.. Stellen Sie sicher, dass die Fibre Channel-Kabel zwischen den Controllern vollständig verbunden sind.
+.. Stellen Sie sicher, dass die Fibre-Channel-Kabel frei von übermäßigen Kurven sind.
+.. Vergewissern Sie sich, dass die SFP+-Module richtig eingesetzt sind.
+
+
+
+
+*Hinweis:* Wenn dieses Problem weiterhin besteht, kann das StorageGRID-System die problematische Verbindung automatisch offline schalten.
+
+. Bei Bedarf die Komponenten austauschen. Siehe Installations- und Wartungsanleitung für Ihr Gerät.
+
+
+
+
+ a| 
+Fehler des Fibre-Channel-HBA-Ports des Geräts
+ a| 
+Ein Fibre Channel-HBA-Port ist ausgefallen oder ist ausgefallen.Kontaktieren Sie den technischen Support.
+
+
+
+ a| 
+Appliance Flash Cache Laufwerke sind nicht optimal
+ a| 
+Die für den SSD-Cache verwendeten Laufwerke sind nicht optimal.
+
+. Ersetzen Sie die SSD-Cache-Laufwerke. Siehe Installations- und Wartungsanleitung für das Gerät.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Geräteverbindung/Batteriebehälter entfernt
+ a| 
+Der Verbindungs-/Batteriebehälter fehlt.
+
+. Tauschen Sie die Batterie aus. Die Schritte zum Entfernen und Austauschen einer Batterie sind in der Anleitung zum Austauschen eines Speichercontrollers in der Installations- und Wartungsanleitung des Geräts enthalten.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Geräte-LACP-Port fehlt
+ a| 
+Ein Port auf einer StorageGRID-Appliance beteiligt sich nicht an der LACP-Verbindung.
+
+. Überprüfen Sie die Konfiguration für den Switch. Stellen Sie sicher, dass die Schnittstelle in der richtigen Link-Aggregationsgruppe konfiguriert ist.
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Das gesamte Netzteil des Geräts ist heruntergestuft
+ a| 
+Die Leistung eines StorageGRID-Geräts ist von der empfohlenen Betriebsspannung abweichen.
+
+. Überprüfen Sie den Status von Netzteil A und B, um festzustellen, welches Netzteil ungewöhnlich funktioniert, und befolgen Sie die empfohlenen Maßnahmen:
++
+** Wenn Sie über ein SG100, SG1000 oder SG6000 verfügen, verwenden Sie das BMC.
+** Wenn Sie eine SG5600 oder SG5700 haben, verwenden Sie SANtricity System Manager.
+
+
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+** link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+
+
+
+
+
+ a| 
+Ausfall des Appliance Storage Controller A
+ a| 
+Der Speicher-Controller A in einer StorageGRID-Appliance ist ausgefallen.
+
+. Verwenden Sie SANtricity System Manager, um Hardwarekomponenten zu überprüfen und die empfohlenen Maßnahmen zu befolgen.
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+
+
+
+
+ a| 
+Fehler beim Speicher-Controller B des Geräts
+ a| 
+Bei Speicher-Controller B in einer StorageGRID-Appliance ist ein Fehler aufgetreten.
+
+. Verwenden Sie SANtricity System Manager, um Hardwarekomponenten zu überprüfen und die empfohlenen Maßnahmen zu befolgen.
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+
+
+
+
+ a| 
+Laufwerksausfall des Appliance-Storage-Controllers
+ a| 
+Mindestens ein Laufwerk in einer StorageGRID-Appliance ist ausgefallen oder nicht optimal.
+
+. Verwenden Sie SANtricity System Manager, um Hardwarekomponenten zu überprüfen und die empfohlenen Maßnahmen zu befolgen.
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+
+
+
+
+ a| 
+Hardwareproblem des Appliance Storage Controllers
+ a| 
+SANtricity meldet, dass für eine Komponente einer StorageGRID Appliance ein Hinweis erforderlich ist.
+
+. Verwenden Sie SANtricity System Manager, um Hardwarekomponenten zu überprüfen und die empfohlenen Maßnahmen zu befolgen.
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+
+
+
+
+ a| 
+Ausfall der Stromversorgung des Speicher-Controllers
+ a| 
+Die Stromversorgung A in einem StorageGRID Gerät hat von der empfohlenen Betriebsspannung abweichen.
+
+. Verwenden Sie SANtricity System Manager, um Hardwarekomponenten zu überprüfen und die empfohlenen Maßnahmen zu befolgen.
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+
+
+
+
+ a| 
+Fehler bei Netzteil B des Speicher-Controllers
+ a| 
+Stromversorgung B bei einem StorageGRID-Gerät hat von der empfohlenen Betriebsspannung abweichen.
+
+. Verwenden Sie SANtricity System Manager, um Hardwarekomponenten zu überprüfen und die empfohlenen Maßnahmen zu befolgen.
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+
+
+
+
+ a| 
+Monitordienst der Appliance-Storage-Hardware ist ausgesetzt
+ a| 
+Der Service, der den Status der Speicherhardware überwacht, hat die Meldung von Daten gestoppt.
+
+. Überprüfen Sie den Status des eos-Systemstatusdienstes in der Basis-os.
+. Wenn sich der Dienst im Status „angehalten“ oder „Fehler“ befindet, starten Sie den Dienst neu.
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Appliance Storage-Shelfs ist beeinträchtigt
+ a| 
+Der Status einer der Komponenten im Storage Shelf für eine Storage Appliance ist beeinträchtigt.
+
+. Verwenden Sie SANtricity System Manager, um Hardwarekomponenten zu überprüfen und die empfohlenen Maßnahmen zu befolgen.
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware entnehmen Sie bitte den folgenden Hinweisen:
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+
+
+
+
+ a| 
+Gerätetemperatur überschritten
+ a| 
+Die nominale oder maximale Temperatur für den Lagercontroller des Geräts wurde überschritten.
+
+. Stellen Sie fest, ob eine weitere Warnung auf diesen Node wirkt. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Mögliche Gründe für die Temperaturerhöhung wie Lüfter- oder HLK-Ausfall untersuchen.
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Temperatursensor des Geräts entfernt
+ a| 
+Ein Temperatursensor wurde entfernt. Wenden Sie sich an den technischen Support.
+
+
+
+ a| 
+Cassandra Auto-Kompaktor-Fehler
+ a| 
+Der Cassandra-Autocompfaktor ist auf allen Storage-Nodes vorhanden und verwaltet die Größe der Cassandra-Datenbank für Überschreibungen und das Löschen schwerer Workloads. Diese Bedingung bleibt bestehen, aber bei bestimmten Workloads kommt es zu einem unerwartet hohen Metadatenverbrauch.
+
+. Stellen Sie fest, ob eine weitere Warnung auf diesen Node wirkt. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Wenden Sie sich an den technischen Support.
+
+
+
+
+ a| 
+Cassandra Auto-Kompaktor-Kennzahlen veraltet
+ a| 
+Die Kennzahlen, die den Cassandra Auto-Kompaktor beschreiben, sind veraltet. Der Cassandra Auto-Kompaktor ist auf allen Storage-Nodes vorhanden und verwaltet die Größe der Cassandra-Datenbank bei Überschreibungen und Löten schwerer Workloads. Während diese Warnung weiterhin angezeigt wird, kommt es bei bestimmten Workloads zu einem unerwartet hohen Metadatenverbrauch.
+
+. Stellen Sie fest, ob eine weitere Warnung auf diesen Node wirkt. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Wenden Sie sich an den technischen Support.
+
+
+
+
+ a| 
+Cassandra Kommunikationsfehler
+ a| 
+Die Knoten, auf denen der Cassandra-Service ausgeführt wird, haben Probleme bei der Kommunikation miteinander.Diese Warnung zeigt an, dass etwas die Kommunikation zwischen Knoten beeinträchtigt. Möglicherweise gibt es ein Netzwerkproblem, oder der Cassandra-Service ist auf einem oder mehreren Storage-Nodes nicht verfügbar.
+
+. Bestimmen Sie, ob ein anderer Alarm einen oder mehrere Speicherknoten betrifft. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Prüfen Sie, ob ein Netzwerkproblem einen oder mehrere Speicherknoten betreffen könnte.
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie für jeden Speicherknoten in Ihrem System *SSM* > *Services* aus. Stellen Sie sicher, dass der Status des Cassandra-Service“` läuft.`“
+. Wenn Cassandra nicht ausgeführt wird, befolgen Sie die Schritte zum Starten oder Neustarten eines Dienstes in den Recovery- und Wartungsanweisungen.
+. Wenn jetzt alle Instanzen des Cassandra-Service ausgeführt werden und die Warnmeldung nicht behoben wurde, wenden Sie sich an den technischen Support.
+
+
+link:../maintain/index.html["Verwalten Sie  erholen"]
+
+
+
+ a| 
+Cassandra-Kompensation überlastet
+ a| 
+Der Cassandra-Verdichtungsvorgang ist überlastet.Wenn der Verdichtungsvorgang überlastet ist, kann die Lese-Performance beeinträchtigt und der RAM-Speicher möglicherweise aufgebraucht werden. Auch der Cassandra-Service reagiert möglicherweise nicht oder stürzt ab.
+
+. Starten Sie den Cassandra-Service neu, indem Sie die Schritte zum Neustart eines Service in den Recovery- und Wartungsanweisungen befolgen.
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+link:../maintain/index.html["Verwalten Sie  erholen"]
+
+
+
+ a| 
+Veraltete Reparaturkennzahlen für Cassandra
+ a| 
+Die Kennzahlen, die Cassandra-Reparaturaufträge beschreiben, sind veraltet. Wenn dieser Zustand mehr als 48 Stunden besteht, werden bei Client-Anfragen, z. B. Bucket-Listen, gelöschte Daten angezeigt.
+
+. Booten Sie den Node neu. Gehen Sie im Grid Manager zu *Nodes*, wählen Sie den Knoten und wählen Sie die Registerkarte Aufgaben aus.
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Cassandra Reparaturfortschritt langsam
+ a| 
+Der Fortschritt der Cassandra-Reparaturen ist langsam.bei langsamen Datenbankreparaturen wird die Datenkonsistenz von Cassandra behindert. Wenn dieser Zustand mehr als 48 Stunden besteht, werden bei Client-Anfragen, z. B. Bucket-Listen, gelöschte Daten angezeigt.
+
+. Vergewissern Sie sich, dass alle Speicherknoten online sind und keine netzwerkbezogenen Warnmeldungen vorliegen.
+. Überwachen Sie diese Warnung bis zu zwei Tage lang, um zu prüfen, ob das Problem selbst behoben wird.
+. Wenn die Reparatur der Datenbank langsam fortgesetzt wird, wenden Sie sich an den technischen Support.
+
+
+
+
+ a| 
+Cassandra Reparaturservice nicht verfügbar
+ a| 
+Der Cassandra-Reparaturservice ist nicht verfügbar.der Cassandra-Reparaturservice ist auf allen Speicherknoten vorhanden und bietet wichtige Reparaturfunktionen für die Cassandra-Datenbank. Wenn dieser Zustand mehr als 48 Stunden besteht, werden bei Client-Anfragen, z. B. Bucket-Listen, gelöschte Daten angezeigt.
+
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie für jeden Speicherknoten in Ihrem System *SSM* > *Services* aus. Stellen Sie sicher, dass der Status des Cassandra Reaper Service „läuft“.
+. Wenn Cassandra Reaper nicht ausgeführt wird, befolgen Sie die Schritte zum Starten oder Neustarten eines Dienstes in den Anweisungen zur Wiederherstellung und Wartung.
+. Wenn jetzt alle Instanzen des Cassandra Reaper Service ausgeführt werden und die Warnmeldung nicht behoben ist, wenden Sie sich an den technischen Support.
+
+
+link:../maintain/index.html["Verwalten Sie  erholen"]
+
+
+
+ a| 
+Verbindungsfehler beim Cloud-Storage-Pool
+ a| 
+Bei der Zustandsprüfung für Cloud-Storage-Pools wurde ein oder mehrere neue Fehler erkannt.
+
+. Wechseln Sie auf der Seite „Speicherpools“ zum Abschnitt „Cloud-Speicherpools“.
+. Sehen Sie sich die Spalte Letzter Fehler an, um zu ermitteln, welcher Cloud Storage Pool einen Fehler hat.
+. Weitere Informationen finden Sie in den Anweisungen zum Verwalten von Objekten mit Information Lifecycle Management.
+
+
+link:../ilm/index.html["Objektmanagement mit ILM"]
+
+
+
+ a| 
+DHCP-Leasing abgelaufen
+ a| 
+Das DHCP-Leasing auf einer Netzwerkschnittstelle ist abgelaufen.Falls das DHCP-Leasing abgelaufen ist, befolgen Sie die empfohlenen Aktionen:
+
+. Stellen Sie sicher, dass die Verbindung zwischen diesem Knoten und dem DHCP-Server auf der betroffenen Schnittstelle besteht.
+. Stellen Sie sicher, dass im betroffenen Subnetz auf dem DHCP-Server IP-Adressen zugewiesen werden können.
+. Stellen Sie sicher, dass eine permanente Reservierung für die im DHCP-Server konfigurierte IP-Adresse vorhanden ist. Oder verwenden Sie das StorageGRID-Tool zur IP-Änderung, um außerhalb des DHCP-Adressenpools eine statische IP-Adresse zuzuweisen. Weitere Informationen finden Sie in den Anweisungen zur Wiederherstellung und Wartung.
+
+
+link:../maintain/index.html["Verwalten Sie  erholen"]
+
+
+
+ a| 
+DHCP-Leasing läuft bald ab
+ a| 
+Der DHCP-Lease auf einer Netzwerkschnittstelle läuft bald ab.um zu verhindern, dass der DHCP-Leasing abläuft, befolgen Sie die empfohlenen Maßnahmen:
+
+. Stellen Sie sicher, dass die Verbindung zwischen diesem Knoten und dem DHCP-Server auf der betroffenen Schnittstelle besteht.
+. Stellen Sie sicher, dass im betroffenen Subnetz auf dem DHCP-Server IP-Adressen zugewiesen werden können.
+. Stellen Sie sicher, dass eine permanente Reservierung für die im DHCP-Server konfigurierte IP-Adresse vorhanden ist. Oder verwenden Sie das StorageGRID-Tool zur IP-Änderung, um außerhalb des DHCP-Adressenpools eine statische IP-Adresse zuzuweisen. Weitere Informationen finden Sie in den Anweisungen zur Wiederherstellung und Wartung.
+
+
+link:../maintain/index.html["Verwalten Sie  erholen"]
+
+
+
+ a| 
+DHCP-Server nicht verfügbar
+ a| 
+Der DHCP-Server ist nicht verfügbar.der StorageGRID-Node kann den DHCP-Server nicht kontaktieren. Das DHCP-Leasing für die IP-Adresse des Node kann nicht validiert werden.
+
+. Stellen Sie sicher, dass die Verbindung zwischen diesem Knoten und dem DHCP-Server auf der betroffenen Schnittstelle besteht.
+. Stellen Sie sicher, dass im betroffenen Subnetz auf dem DHCP-Server IP-Adressen zugewiesen werden können.
+. Stellen Sie sicher, dass eine permanente Reservierung für die im DHCP-Server konfigurierte IP-Adresse vorhanden ist. Oder verwenden Sie das StorageGRID-Tool zur IP-Änderung, um außerhalb des DHCP-Adressenpools eine statische IP-Adresse zuzuweisen. Weitere Informationen finden Sie in den Anweisungen zur Wiederherstellung und Wartung.
+
+
+link:../maintain/index.html["Verwalten Sie  erholen"]
+
+
+
+ a| 
+Die Festplatten-I/O ist sehr langsam
+ a| 
+Sehr langsamer Festplatten-I/O könnte sich auf die StorageGRID-Performance auswirken.
+
+. Wenn das Problem mit einem Storage Appliance-Node zusammenhängt, überprüfen Sie mithilfe von SANtricity System Manager auf fehlerhafte Laufwerke, Laufwerke mit prognostizierte Fehler oder laufende Festplattenreparaturen. Überprüfen Sie auch den Status der Fibre Channel- oder SAS-Links zwischen den Computing-Ressourcen und den Storage Controllern der Appliance, um zu überprüfen, ob Links ausgefallen sind oder übermäßige Fehlerraten angezeigt werden.
+. Überprüfen Sie das Storage-System, das die Volumes dieses Nodes hostet, um die Ursache des langsamen I/O zu ermitteln und zu korrigieren
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+NOTE: Betroffene Nodes können Services deaktivieren und sich neu starten, um keine Auswirkungen auf die allgemeine Grid-Performance zu haben. Wenn der zugrunde liegende Zustand beseitigt ist und diese Nodes eine normale I/O-Performance erkennen, wird der gesamte Service automatisch wiederhergestellt.
+
+
+
+ a| 
+E-Mail-Benachrichtigung fehlgeschlagen
+ a| 
+Die E-Mail-Benachrichtigung für einen Alarm konnte nicht gesendet werden.dieser Alarm wird ausgelöst, wenn eine Benachrichtigung per E-Mail fehlschlägt oder eine Test-E-Mail (gesendet von der Seite *Alerts* > *Email Setup*) nicht zugestellt werden kann.
+
+. Melden Sie sich über den Admin-Node in der Spalte *Standort/Node* der Warnmeldung bei Grid Manager an.
+. Rufen Sie die Seite *Alerts* > *E-Mail-Setup* auf, überprüfen Sie die Einstellungen und ändern Sie diese, falls erforderlich.
+. Klicken Sie auf *Test-E-Mail senden* und prüfen Sie den Posteingang eines Testempfängers für die E-Mail. Eine neue Instanz dieser Warnmeldung kann ausgelöst werden, wenn die Test-E-Mail nicht gesendet werden kann.
+. Wenn die Test-E-Mail nicht gesendet werden konnte, bestätigen Sie, dass Ihr E-Mail-Server online ist.
+. Wenn der Server funktioniert, wählen Sie *Support* > *Tools* > *Protokolle* aus, und sammeln Sie das Protokoll für den Admin-Knoten. Geben Sie einen Zeitraum an, der 15 Minuten vor und nach der Zeit der Warnmeldung liegt.
+. Extrahieren Sie das heruntergeladene Archiv und überprüfen Sie den Inhalt von `prometheus.log` `(_/GID<gid><time_stamp>/<site_node>/<time_stamp>/metrics/prometheus.log)`.
+. Wenn das Problem nicht behoben werden kann, wenden Sie sich an den technischen Support.
+
+
+
+
+ a| 
+Ablauf der auf der Seite Client Certificates konfigurierten Zertifikate
+ a| 
+Ein oder mehrere Zertifikate, die auf der Seite Clientzertifikate konfiguriert sind, laufen bald ab.
+
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Client-Zertifikate*.
+. Wählen Sie ein Zertifikat aus, das bald abläuft.
+. Wählen Sie *Bearbeiten* aus, um ein neues Zertifikat hochzuladen oder zu erstellen.
+. Wiederholen Sie diese Schritte für jedes Zertifikat, das bald abläuft.
+
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+Ablauf des Endpunktzertifikats des Load Balancer
+ a| 
+Ein oder mehrere Load Balancer-Endpunktzertifikate laufen kurz vor dem Ablauf.
+
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Balancer-Endpunkte Laden*.
+. Wählen Sie einen Endpunkt mit einem Zertifikat aus, das bald abläuft.
+. Wählen Sie *Endpunkt bearbeiten* aus, um ein neues Zertifikat hochzuladen oder zu erstellen.
+. Wiederholen Sie diese Schritte für jeden Endpunkt mit einem abgelaufenen Zertifikat oder einem Endpunkt, der bald ausläuft.
+
+
+Weitere Informationen zum Verwalten von Endpunkten für den Load Balancer finden Sie in den Anweisungen zum Verwalten von StorageGRID.
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+Ablauf des Serverzertifikats für die Managementoberfläche
+ a| 
+Das für die Managementoberfläche verwendete Serverzertifikat läuft bald ab.
+
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Server-Zertifikate*.
+. Laden Sie im Abschnitt Management Interface Server Certificate ein neues Zertifikat hoch.
+
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+Ablauf des Serverzertifikats für Storage-API-Endpunkte
+ a| 
+Das Serverzertifikat, das für den Zugriff auf Storage-API-Endpunkte verwendet wird, läuft bald ab.
+
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Server-Zertifikate*.
+. Laden Sie im Abschnitt Serverzertifikat für Objekt-Storage-API-Service-Endpunkte ein neues Zertifikat hoch.
+
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+MTU-Diskrepanz bei dem Grid-Netzwerk
+ a| 
+Die MTU-Einstellung (Maximum Transmission Unit) für die Grid Network Interface (eth0) unterscheidet sich deutlich von den Knoten im Grid.die Unterschiede in den MTU-Einstellungen könnten darauf hindeuten, dass einige, aber nicht alle, eth0-Netzwerke für Jumbo-Frames konfiguriert sind. Eine MTU-Größe von mehr als 1000 kann zu Problemen mit der Netzwerkleistung führen.
+
+link:../troubleshoot/troubleshooting-storagegrid-system.html["Fehlerbehebung bei der Warnmeldung zur Nichtübereinstimmung bei Grid Network MTU"]
+
+
+
+ a| 
+Hohe Java-Heap-Nutzung
+ a| 
+Ein hoher Prozentsatz von Java Heap-Speicherplatz wird verwendet.Wenn der Java-Heap voll wird, können Metadaten-Dienste nicht mehr verfügbar sein und Clientanforderungen können fehlschlagen.
+
+. Überprüfen Sie die ILM-Aktivitäten auf dem Dashboard. Diese Warnmeldung kann sich selbst beheben, wenn der ILM-Workload abnimmt.
+. Stellen Sie fest, ob eine weitere Warnung auf diesen Node wirkt. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Hohe Latenz bei Metadatenanfragen
+ a| 
+Die durchschnittliche Zeit für Cassandra-Metadatenabfragen ist zu lang.ein Anstieg der Abfragelatenz kann durch eine Hardwareänderung, wie den Austausch einer Festplatte oder eine Workload-Änderung, wie eine plötzliche Zunahme der Ingests, verursacht werden.
+
+. Ermitteln, ob sich Hardware- oder Workload-Änderungen während der Erhöhung der Abfragelatenz ergeben.
+. Wenn das Problem nicht behoben werden kann, wenden Sie sich an den technischen Support.
+
+
+
+
+ a| 
+Synchronisierungsfehler bei der Identitätsföderation
+ a| 
+Es ist nicht möglich, föderierte Gruppen und Benutzer von der Identitätsquelle zu synchronisieren.
+
+. Vergewissern Sie sich, dass der konfigurierte LDAP-Server online und verfügbar ist.
+. Überprüfen Sie die Einstellungen auf der Seite Identity Federation. Vergewissern Sie sich, dass alle Werte aktuell sind. Siehe „`Konfigurieren einer föderierten Identitätsquelle`“ in den Anweisungen zur Verwaltung von StorageGRID.
+. Klicken Sie auf *Verbindung testen*, um die Einstellungen für den LDAP-Server zu validieren.
+. Wenden Sie sich an den technischen Support, wenn das Problem nicht gelöst werden kann.
+
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+ILM-Platzierung nicht erreichbar
+ a| 
+Eine Platzierungsanweisung in einer ILM-Regel kann für bestimmte Objekte nicht erreicht werden.Diese Warnung zeigt an, dass ein von einer Platzierungsanweisung erforderlicher Node nicht verfügbar ist oder dass eine ILM-Regel falsch konfiguriert ist. Eine Regel kann beispielsweise mehr replizierte Kopien angeben, als Storage Nodes vorhanden sind.
+
+. Stellen Sie sicher, dass alle Nodes online sind.
+. Wenn alle Nodes online sind, lesen Sie die Anweisungen zur Platzierung in allen ILM-Regeln, die die aktive ILM-Richtlinie verwenden. Vergewissern Sie sich, dass für alle Objekte gültige Anweisungen vorliegen. Weitere Informationen finden Sie in den Anweisungen zum Verwalten von Objekten mit Information Lifecycle Management.
+. Aktualisieren Sie bei Bedarf die Regeleinstellungen und aktivieren Sie eine neue Richtlinie.
++
+
+NOTE: Es kann bis zu 1 Tag dauern, bis die Warnung gelöscht wird.
+
+. Wenn das Problem weiterhin besteht, wenden Sie sich an den technischen Support.
+
+
+
+NOTE: Diese Warnmeldung wird möglicherweise während eines Upgrades angezeigt und kann einen Tag nach Abschluss des Upgrades bestehen. Wenn diese Warnung durch ein Upgrade ausgelöst wird, wird sie von selbst gelöscht.
+
+link:../ilm/index.html["Objektmanagement mit ILM"]
+
+
+
+ a| 
+Der ILM-Scan ist zu lang
+ a| 
+Die Zeit zum Scannen, Bewerten von Objekten und Anwenden von ILM ist zu lang.Wenn die geschätzte Zeit für die Durchführung eines kompletten ILM-Scans aller Objekte zu lang ist (siehe *Scan Period - Estimated* auf dem Dashboard), wird die aktive ILM-Richtlinie möglicherweise nicht auf neu aufgenommene Objekte angewendet. Änderungen der ILM-Richtlinie werden möglicherweise nicht auf vorhandene Objekte angewendet.
+
+. Stellen Sie fest, ob eine weitere Warnung auf diesen Node wirkt. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Vergewissern Sie sich, dass alle Speicherknoten online sind.
+. Verringern Sie vorübergehend den Client-Traffic. Wählen Sie beispielsweise im Grid Manager die Option *Konfiguration* > *Netzwerkeinstellungen* > *Verkehrsklassifizierung* aus, und erstellen Sie eine Richtlinie, die die Bandbreite oder die Anzahl der Anforderungen begrenzt.
+. Wenn Festplatten-I/O oder -CPU überlastet sind, versuchen Sie, die Last zu reduzieren oder die Ressource zu erhöhen.
+. Aktualisieren Sie ggf. ILM-Regeln für die Verwendung der synchronen Platzierung (Standard für Regeln, die nach StorageGRID 11.3 erstellt wurden).
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+ILM-Scan-Rate niedrig
+ a| 
+Die ILM-Scan-Rate ist auf weniger als 100 Objekte/Sekunde eingestellt.Diese Warnmeldung gibt an, dass jemand die ILM-Scan-Rate für Ihr System auf weniger als 100 Objekte/Sekunde geändert hat (Standard: 400 Objekte/Sekunde). Die aktive ILM-Richtlinie wird möglicherweise nicht auf neu aufgenommene Objekte angewendet. Nachfolgende Änderungen der ILM-Richtlinie werden nicht auf vorhandene Objekte angewendet.
+
+. Ermitteln, ob im Rahmen einer laufenden Support-Untersuchung eine temporäre Änderung der ILM-Scanrate vorgenommen wurde.
+. Wenden Sie sich an den technischen Support.
+
+
+
+IMPORTANT: Ändern Sie nie die ILM-Scanrate, ohne den technischen Support zu kontaktieren.
+
+
+
+ a| 
+ABLAUF DES KMS-CA-Zertifikats
+ a| 
+Das Zertifikat der Zertifizierungsstelle (CA), das zum Signieren des KMS-Zertifikats (Key Management Server) verwendet wird, läuft bald ab.
+
+. Aktualisieren Sie mithilfe der KMS-Software das CA-Zertifikat für den Schlüsselverwaltungsserver.
+. Wählen Sie im Grid Manager die Option *Konfiguration* > *Systemeinstellungen* > *Schlüsselverwaltungsserver* aus.
+. Wählen Sie den KMS aus, der über eine Warnung für den Zertifikatsstatus verfügt.
+. Wählen Sie *Bearbeiten*.
+. Wählen Sie *Weiter* aus, um zu Schritt 2 zu wechseln (Serverzertifikat hochladen).
+. Wählen Sie *Durchsuchen*, um das neue Zertifikat hochzuladen.
+. Wählen Sie *Speichern*.
+
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+ABLAUF DES KMS-Clientzertifikats
+ a| 
+Das Clientzertifikat für einen Schlüsselverwaltungsserver läuft bald ab.
+
+. Wählen Sie im Grid Manager die Option *Konfiguration* > *Systemeinstellungen* > *Schlüsselverwaltungsserver* aus.
+. Wählen Sie den KMS aus, der über eine Warnung für den Zertifikatsstatus verfügt.
+. Wählen Sie *Bearbeiten*.
+. Wählen Sie *Weiter* aus, um zu Schritt 3 zu wechseln (Client-Zertifikate hochladen).
+. Wählen Sie *Durchsuchen*, um das neue Zertifikat hochzuladen.
+. Wählen Sie *Durchsuchen*, um den neuen privaten Schlüssel hochzuladen.
+. Wählen Sie *Speichern*.
+
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+KMS-Konfiguration konnte nicht geladen werden
+ a| 
+Es ist die Konfiguration für den Verschlüsselungsmanagement-Server vorhanden, konnte aber nicht geladen werden.
+
+. Stellen Sie fest, ob eine weitere Warnung auf diesen Node wirkt. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+KMS-Verbindungsfehler
+ a| 
+Ein Appliance-Node konnte keine Verbindung zum Schlüsselmanagementserver für seinen Standort herstellen.
+
+. Wählen Sie im Grid Manager die Option *Konfiguration* > *Systemeinstellungen* > *Schlüsselverwaltungsserver* aus.
+. Vergewissern Sie sich, dass die Port- und Hostnamen-Einträge korrekt sind.
+. Vergewissern Sie sich, dass das Serverzertifikat, das Clientzertifikat und der private Schlüssel des Clientzertifikats korrekt und nicht abgelaufen sind.
+. Stellen Sie sicher, dass Firewall-Einstellungen es dem Appliance-Knoten ermöglichen, mit dem angegebenen KMS zu kommunizieren.
+. Beheben Sie alle Netzwerk- oder DNS-Probleme.
+. Wenden Sie sich an den technischen Support, wenn Sie Hilfe benötigen oder diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+DER VERSCHLÜSSELUNGSSCHLÜSSELNAME VON KMS wurde nicht gefunden
+ a| 
+Der konfigurierte Schlüsselverwaltungsserver verfügt nicht über einen Verschlüsselungsschlüssel, der mit dem angegebenen Namen übereinstimmt.
+
+. Vergewissern Sie sich, dass der dem Standort zugewiesene KMS den korrekten Namen für den Verschlüsselungsschlüssel und alle vorherigen Versionen verwendet.
+. Wenden Sie sich an den technischen Support, wenn Sie Hilfe benötigen oder diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+DIE Drehung des VERSCHLÜSSELUNGSSCHLÜSSELS ist fehlgeschlagen
+ a| 
+Alle Appliance-Volumes wurden entschlüsselt, aber ein oder mehrere Volumes konnten nicht auf den neuesten Schlüssel rotieren.Kontaktieren Sie den technischen Support.
+
+
+
+ a| 
+KM ist nicht konfiguriert
+ a| 
+Für diesen Standort ist kein Schlüsselverwaltungsserver vorhanden.
+
+. Wählen Sie im Grid Manager die Option *Konfiguration* > *Systemeinstellungen* > *Schlüsselverwaltungsserver* aus.
+. Fügen Sie für diese Site einen KMS hinzu oder fügen Sie einen Standard-KMS hinzu.
+
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+KMS-Schlüssel konnte ein Appliance-Volume nicht entschlüsseln
+ a| 
+Ein oder mehrere Volumes auf einer Appliance mit aktivierter Node-Verschlüsselung konnten nicht mit dem aktuellen KMS-Schlüssel entschlüsselt werden.
+
+. Stellen Sie fest, ob eine weitere Warnung auf diesen Node wirkt. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Stellen Sie sicher, dass auf dem Verschlüsselungsmanagement-Server (KMS) der konfigurierte Verschlüsselungsschlüssel und alle vorherigen Schlüsselversionen vorhanden sind.
+. Wenden Sie sich an den technischen Support, wenn Sie Hilfe benötigen oder diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Ablauf DES KMS-Serverzertifikats
+ a| 
+Das vom KMS (Key Management Server) verwendete Serverzertifikat läuft in Kürze ab.
+
+. Aktualisieren Sie mithilfe der KMS-Software das Serverzertifikat für den Schlüsselverwaltungsserver.
+. Wenden Sie sich an den technischen Support, wenn Sie Hilfe benötigen oder diese Meldung weiterhin angezeigt wird.
+
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+Große Audit-Warteschlange
+ a| 
+Die Datenträgerwarteschlange für Überwachungsmeldungen ist voll.
+
+. Prüfen Sie die Last auf dem System. Wenn eine beträchtliche Anzahl von Transaktionen vorhanden ist, sollte sich der Alarm im Laufe der Zeit lösen und Sie können die Warnung ignorieren.
+. Wenn die Meldung weiterhin angezeigt wird und der Schweregrad erhöht wird, zeigen Sie ein Diagramm der Warteschlangengröße an. Wenn die Zahl über Stunden oder Tage stetig zunimmt, hat die Audit-Last wahrscheinlich die Audit-Kapazität des Systems überschritten.
+. Verringern Sie die Betriebsrate des Clients oder verringern Sie die Anzahl der protokollierten Audit-Meldungen, indem Sie das Audit-Level für Client-Schreibvorgänge ändern und der Client auf Fehler oder aus liest (*Konfiguration* > *Überwachung* > *Audit*).
+
+
+link:../audit/index.html["Prüfung von Audit-Protokollen"]
+
+
+
+ a| 
+Geringe Kapazität der Auditprotokoll-Festplatte
+ a| 
+Der für Audit-Protokolle verfügbare Platz ist gering.
+
+. Überwachen Sie diese Meldung, um zu prüfen, ob das Problem selbst behoben wird und der Festplattenspeicher wieder verfügbar ist.
+. Wenden Sie sich an den technischen Support, wenn der verfügbare Speicherplatz weiterhin abnehmen wird.
+
+
+
+
+ a| 
+Niedriger verfügbarer Node-Speicher
+ a| 
+Die RAM-Menge, die auf einem Knoten verfügbar ist, ist gering.der niedrige verfügbare RAM kann auf eine Änderung der Arbeitslast oder eine Speicherlecks bei einem oder mehreren Knoten hinweisen.
+
+. Überwachen Sie diese Warnung, um zu sehen, ob das Problem selbst behoben wird.
+. Wenn der verfügbare Speicher unter den Hauptwarnschwellenwert fällt, wenden Sie sich an den technischen Support.
+
+
+
+
+ a| 
+Wenig freier Speicherplatz für den Speicherpool
+ a| 
+Der Speicherplatz, der zur Speicherung von Objektdaten in einem Speicherpool verfügbar ist, ist gering.
+
+. Wählen Sie *ILM* > *Storage Pools* aus.
+. Wählen Sie den Speicherpool aus, der in der Warnmeldung aufgeführt ist, und wählen Sie *Details anzeigen*.
+. Ermitteln, wo zusätzliche Storage-Kapazität erforderlich ist Sie können entweder jedem Standort im Speicherpool Storage-Nodes hinzufügen oder einem oder mehreren vorhandenen Storage-Nodes Storage-Volumes (LUNs) hinzufügen.
+. Führen Sie ein Erweiterungsverfahren durch, um die Speicherkapazität zu erhöhen.
+
+
+link:../expand/index.html["Erweitern Sie Ihr Raster"]
+
+
+
+ a| 
+Wenig installierter Node-Speicher
+ a| 
+Der installierte Speicher auf einem Knoten ist gering.Erhöhen Sie die RAM-Menge, die für die virtuelle Maschine oder den Linux-Host verfügbar ist. Überprüfen Sie den Schwellenwert für die Hauptwarnung, um die standardmäßige Mindestanforderung für einen StorageGRID-Node zu bestimmen. Die Installationsanweisungen für Ihre Plattform finden Sie unter:
+
+* link:../rhel/index.html["Installieren Sie Red hat Enterprise Linux oder CentOS"]
+* link:../ubuntu/index.html["Installieren Sie Ubuntu oder Debian"]
+* link:../vmware/index.html["VMware installieren"]
+
+
+
+
+ a| 
+Niedriger Metadaten-Storage
+ a| 
+Der für die Speicherung von Objektmetadaten verfügbare Platz ist niedrig.*kritischer Alarm*
+
+. Die Aufnahme von Objekten beenden.
+. Speicherknoten werden sofort in einem Erweiterungsverfahren hinzugefügt.
+
+
+*Großalarm*
+
+Speicherknoten werden sofort in einem Erweiterungsverfahren hinzugefügt.
+
+* Kleine Warnung*
+
+. Überwachen Sie die Rate, mit der Objekt-Metadatenspeicherplatz verwendet wird. Wählen Sie *Nodes* > *_Storage Node_* > *Storage* aus, und zeigen Sie das Diagramm verwendete Speicherdaten - Objektmetadaten an.
+. Fügen Sie Speicherknoten in einem Erweiterungsverfahren So bald wie möglich hinzu.
+
+
+Sobald neue Speicherknoten hinzugefügt wurden, gleicht das System die Objektmetadaten automatisch auf alle Speicherknoten aus, und der Alarm wird gelöscht.
+
+link:../troubleshoot/troubleshooting-storagegrid-system.html["Fehlerbehebung für Storage-Warnmeldungen bei niedrigen Metadaten"]
+
+link:../expand/index.html["Erweitern Sie Ihr Raster"]
+
+
+
+ a| 
+Niedrige Kenngrößen für die Festplattenkapazität
+ a| 
+Der für die Kennzahlendatenbank verfügbare Speicherplatz ist gering.
+
+. Überwachen Sie diese Meldung, um zu prüfen, ob das Problem selbst behoben wird und der Festplattenspeicher wieder verfügbar ist.
+. Wenden Sie sich an den technischen Support, wenn der verfügbare Speicherplatz weiterhin abnehmen wird.
+
+
+
+
+ a| 
+Niedriger Objekt-Storage
+ a| 
+Der zur Speicherung von Objektdaten verfügbare Speicherplatz ist gering.Durchführung einer Erweiterung. Sie können Storage-Volumes (LUNs) zu vorhandenen Storage-Nodes hinzufügen oder neue Storage-Nodes hinzufügen.
+
+link:../troubleshoot/troubleshooting-storagegrid-system.html["Fehlerbehebung bei der Warnung „niedriger Objektdatenspeicher“"]
+
+link:../expand/index.html["Erweitern Sie Ihr Raster"]
+
+
+
+ a| 
+Niedrige Root-Festplattenkapazität
+ a| 
+Der für die Root-Festplatte verfügbare Speicherplatz ist gering.
+
+. Überwachen Sie diese Meldung, um zu prüfen, ob das Problem selbst behoben wird und der Festplattenspeicher wieder verfügbar ist.
+. Wenden Sie sich an den technischen Support, wenn der verfügbare Speicherplatz weiterhin abnehmen wird.
+
+
+
+
+ a| 
+Niedrige Datenkapazität des Systems
+ a| 
+Der verfügbare Speicherplatz für StorageGRID-Systemdaten im /var/local-Dateisystem ist gering.
+
+. Überwachen Sie diese Meldung, um zu prüfen, ob das Problem selbst behoben wird und der Festplattenspeicher wieder verfügbar ist.
+. Wenden Sie sich an den technischen Support, wenn der verfügbare Speicherplatz weiterhin abnehmen wird.
+
+
+
+
+ a| 
+Fehler bei der Node-Netzwerkverbindung
+ a| 
+Beim Übertragen der Daten zwischen nodes.Network Verbindungsfehlern sind Fehler aufgetreten, die sich ohne manuelles Eingreifen beheben lassen. Wenden Sie sich an den technischen Support, wenn die Fehler nicht behoben sind.
+
+link:../troubleshoot/troubleshooting-storagegrid-system.html["Fehlerbehebung bei dem NRER-Alarm (Network Receive Error)"]
+
+
+
+ a| 
+Node-Netzwerkannahme-Frame-Fehler
+ a| 
+Bei einem hohen Prozentsatz der von einem Node empfangenen Netzwerkframes sind Fehler aufgetreten.Diese Warnmeldung weist möglicherweise auf ein Hardwareproblem hin, z. B. ein schlechtes Kabel oder ein ausgefallener Transceiver an beiden Enden der Ethernet-Verbindung.
+
+. Wenn Sie eine Appliance verwenden, versuchen Sie, jeden SFP+ oder SFP28 Transceiver und jedes Kabel nacheinander auszutauschen, um zu prüfen, ob die Warnmeldung gelöscht wird.
+. Wenden Sie sich an den technischen Support, wenn diese Meldung weiterhin angezeigt wird.
+
+
+
+
+ a| 
+Der Node ist nicht mit dem NTP-Server synchronisiert
+ a| 
+Die Zeit des Node ist nicht mit dem NTP-Server (Network Time Protocol) synchronisiert.
+
+. Vergewissern Sie sich, dass Sie mindestens vier externe NTP-Server angegeben haben, die jeweils eine Stratum 3 oder eine bessere Referenz liefern.
+. Überprüfen Sie, ob alle NTP-Server normal funktionieren.
+. Überprüfen Sie die Verbindungen zu den NTP-Servern. Stellen Sie sicher, dass sie nicht durch eine Firewall blockiert sind.
+
+
+
+
+ a| 
+Der Node ist nicht mit dem NTP-Server gesperrt
+ a| 
+Der Node ist nicht auf einen NTP-Server (Network Time Protocol) gesperrt.
+
+. Vergewissern Sie sich, dass Sie mindestens vier externe NTP-Server angegeben haben, die jeweils eine Stratum 3 oder eine bessere Referenz liefern.
+. Überprüfen Sie, ob alle NTP-Server normal funktionieren.
+. Überprüfen Sie die Verbindungen zu den NTP-Servern. Stellen Sie sicher, dass sie nicht durch eine Firewall blockiert sind.
+
+
+
+
+ a| 
+Netzwerk außerhalb des Appliance-Node ist ausgefallen
+ a| 
+Mindestens ein Netzwerkgerät ist ausgefallen oder nicht verbunden. Diese Warnung zeigt an, dass eine Netzwerkschnittstelle (eth) für einen Knoten, der auf einer virtuellen Maschine oder einem Linux-Host installiert ist, nicht zugänglich ist.
+
+Wenden Sie sich an den technischen Support.
+
+
+
+ a| 
+Objekte verloren
+ a| 
+Ein oder mehrere Objekte sind aus dem Raster verloren gegangen.Diese Warnung kann darauf hindeuten, dass die Daten dauerhaft verloren gegangen sind und nicht wieder abgerufen werden können.
+
+. Untersuchen Sie diesen Alarm sofort. Möglicherweise müssen Sie Maßnahmen ergreifen, um weiteren Datenverlust zu vermeiden. Sie können auch ein verlorenes Objekt wiederherstellen, wenn Sie eine prompte Aktion ausführen.
++
+link:../troubleshoot/troubleshooting-storagegrid-system.html["Fehlerbehebung verloren gegangene und fehlende Objektdaten"]
+
+. Wenn das zugrunde liegende Problem gelöst ist, setzen Sie den Zähler zurück:
++
+.. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+.. Wählen Sie *_site_* > *_Grid Node_* > *LDR* > *Data Store* > *Konfiguration* > *Main* für den Speicherknoten, der die Warnung erhöht hat.
+.. Wählen Sie *Anzahl der verlorenen Objekte zurücksetzen* und klicken Sie auf *Änderungen anwenden*.
+
+
+
+
+
+
+ a| 
+Plattform-Services nicht verfügbar
+ a| 
+Zu wenige Speicherknoten mit dem RSM-Dienst laufen oder sind an einem Standort verfügbar.Stellen Sie sicher, dass die meisten Speicherknoten, die den RSM-Dienst am betroffenen Standort haben, ausgeführt werden und in einem nicht fehlerfreien Zustand sind.
+
+Siehe „`Fehlerbehebung bei Plattformdiensten`“ in den Anweisungen für die Administration von StorageGRID.
+
+link:../admin/index.html["StorageGRID verwalten"]
+
+
+
+ a| 
+Services-Appliance-Verbindung am Admin-Netzwerkanschluss 1 getrennt
+ a| 
+Der Admin-Netzwerkanschluss 1 am Gerät ist ausgefallen oder ist nicht verbunden.
+
+. Überprüfen Sie das Kabel und die physische Verbindung zum Admin-Netzwerkanschluss 1.
+. Beheben Sie Verbindungsprobleme. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware finden Sie in der Installations- und Wartungsanleitung.
+. Wenn dieser Port zwecklos getrennt ist, deaktivieren Sie diese Regel. Wählen Sie im Grid Manager die Option *Alarme* > *Warnregeln* aus, wählen Sie die Regel aus und klicken Sie auf *Regel bearbeiten*. Deaktivieren Sie dann das Kontrollkästchen * aktiviert*.
++
+** link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+** link:managing-alerts.html["Deaktivieren einer Meldungsregel"]
+
+
+
+
+
+
+ a| 
+Services-Appliance-Link im Admin-Netzwerk (oder Client-Netzwerk) herunter
+ a| 
+Die Appliance-Schnittstelle zum Admin-Netzwerk (eth1) oder dem Client-Netzwerk (eth2) ist ausgefallen oder ist nicht verbunden.
+
+. Überprüfen Sie die Kabel, SFPs und physischen Verbindungen zum StorageGRID Netzwerk.
+. Beheben Sie Verbindungsprobleme. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware finden Sie in der Installations- und Wartungsanleitung.
+. Wenn dieser Port zwecklos getrennt ist, deaktivieren Sie diese Regel. Wählen Sie im Grid Manager die Option *Alarme* > *Warnregeln* aus, wählen Sie die Regel aus und klicken Sie auf *Regel bearbeiten*. Deaktivieren Sie dann das Kontrollkästchen * aktiviert*.
++
+** link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+** link:managing-alerts.html["Deaktivieren einer Meldungsregel"]
+
+
+
+
+
+
+ a| 
+Services-Appliance-Verbindung an Netzwerkport 1, 2, 3 oder 4 getrennt
+ a| 
+Der Netzwerkanschluss 1, 2, 3 oder 4 auf dem Gerät ist ausgefallen oder ist nicht verbunden.
+
+. Überprüfen Sie die Kabel, SFPs und physischen Verbindungen zum StorageGRID Netzwerk.
+. Beheben Sie Verbindungsprobleme. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware finden Sie in der Installations- und Wartungsanleitung.
+. Wenn dieser Port zwecklos getrennt ist, deaktivieren Sie diese Regel. Wählen Sie im Grid Manager die Option *Alarme* > *Warnregeln* aus, wählen Sie die Regel aus und klicken Sie auf *Regel bearbeiten*. Deaktivieren Sie dann das Kontrollkästchen * aktiviert*.
++
+** link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+** link:managing-alerts.html["Deaktivieren einer Meldungsregel"]
+
+
+
+
+
+
+ a| 
+Die Speicherkonnektivität der Services-Appliance ist herabgesetzt
+ a| 
+Einer der beiden SSDs in einer Services-Appliance ist ausgefallen oder die Synchronisierung mit der anderen Appliance-Funktion ist nicht beeinträchtigt. Sie sollten das Problem jedoch sofort beheben. Wenn beide Laufwerke ausfallen, funktioniert die Appliance nicht mehr.
+
+. Wählen Sie im Grid Manager die Option *Nodes* > ***_Services Appliance_, und wählen Sie dann die Registerkarte **Hardware* aus.
+. Überprüfen Sie die Meldung im Feld * Storage RAID Mode*.
+. Wenn die Meldung den Status eines Neusynchronisierung anzeigt, warten Sie, bis der Vorgang abgeschlossen ist, und bestätigen Sie dann, dass die Warnmeldung behoben wurde. Eine Neusynchronisierung bedeutet, dass SSD kürzlich ersetzt oder aus einem anderen Grund erneut synchronisiert wird.
+. Wenn die Meldung angibt, dass eine der SSDs ausgefallen ist, ersetzen Sie das ausgefallene Laufwerk so bald wie möglich.
++
+Anweisungen zum Austauschen eines Laufwerks in einer Services Appliance finden Sie im Installations- und Wartungshandbuch für SG100- und SG1000-Geräte.
+
++
+link:../sg100-1000/index.html["SG100  SG1000 Services-Appliances"]
+
+
+
+
+
+ a| 
+Verknüpfung der Speicher-Appliance auf Admin-Netzwerk-Port 1 ausgefallen
+ a| 
+Der Admin-Netzwerkanschluss 1 am Gerät ist ausgefallen oder ist nicht verbunden.
+
+. Überprüfen Sie das Kabel und die physische Verbindung zum Admin-Netzwerkanschluss 1.
+. Beheben Sie Verbindungsprobleme. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware finden Sie in der Installations- und Wartungsanleitung.
+. Wenn dieser Port zwecklos getrennt ist, deaktivieren Sie diese Regel. Wählen Sie im Grid Manager die Option *Alarme* > *Warnregeln* aus, wählen Sie die Regel aus und klicken Sie auf *Regel bearbeiten*. Deaktivieren Sie dann das Kontrollkästchen * aktiviert*.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+** link:managing-alerts.html["Deaktivieren einer Meldungsregel"]
+
+
+
+
+
+
+ a| 
+Link der Storage Appliance ist im Admin-Netzwerk (oder Client-Netzwerk) inaktiv.
+ a| 
+Die Appliance-Schnittstelle zum Admin-Netzwerk (eth1) oder dem Client-Netzwerk (eth2) ist ausgefallen oder ist nicht verbunden.
+
+. Überprüfen Sie die Kabel, SFPs und physischen Verbindungen zum StorageGRID Netzwerk.
+. Beheben Sie Verbindungsprobleme. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware finden Sie in der Installations- und Wartungsanleitung.
+. Wenn dieser Port zwecklos getrennt ist, deaktivieren Sie diese Regel. Wählen Sie im Grid Manager die Option *Alarme* > *Warnregeln* aus, wählen Sie die Regel aus und klicken Sie auf *Regel bearbeiten*. Deaktivieren Sie dann das Kontrollkästchen * aktiviert*.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+** link:managing-alerts.html["Deaktivieren einer Meldungsregel"]
+
+
+
+
+
+
+ a| 
+Verbindung der Storage Appliance über Netzwerkport 1, 2, 3 oder 4 getrennt
+ a| 
+Der Netzwerkanschluss 1, 2, 3 oder 4 auf dem Gerät ist ausgefallen oder ist nicht verbunden.
+
+. Überprüfen Sie die Kabel, SFPs und physischen Verbindungen zum StorageGRID Netzwerk.
+. Beheben Sie Verbindungsprobleme. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware finden Sie in der Installations- und Wartungsanleitung.
+. Wenn dieser Port zwecklos getrennt ist, deaktivieren Sie diese Regel. Wählen Sie im Grid Manager die Option *Alarme* > *Warnregeln* aus, wählen Sie die Regel aus und klicken Sie auf *Regel bearbeiten*. Deaktivieren Sie dann das Kontrollkästchen * aktiviert*.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+** link:managing-alerts.html["Deaktivieren einer Meldungsregel"]
+
+
+
+
+
+
+ a| 
+Die Storage-Konnektivität der Storage-Appliance ist herabgesetzt
+ a| 
+Problem mit einer oder mehreren Verbindungen zwischen dem Compute-Controller und dem Storage-Controller.
+
+. Gehen Sie zum Gerät, um die Port-Kontrollleuchten zu überprüfen.
+. Wenn die LEDs eines Ports nicht leuchten, überprüfen Sie, ob das Kabel ordnungsgemäß angeschlossen ist. Ersetzen Sie bei Bedarf das Kabel.
+. Warten Sie bis zu fünf Minuten.
++
+
+NOTE: Wenn ein zweites Kabel ausgetauscht werden muss, ziehen Sie den Stecker mindestens 5 Minuten lang nicht ab. Andernfalls kann das Root-Volume schreibgeschützt sein und die Hardware neu starten.
+
+. Wählen Sie im Grid Manager die Option *Nodes* aus. Wählen Sie dann die Registerkarte Hardware des Node aus, auf dem das Problem aufgetreten ist. Vergewissern Sie sich, dass die Alarmbedingung behoben ist.
+
+
+
+
+ a| 
+Speichergerät nicht zugänglich
+ a| 
+Auf ein Speichergerät kann nicht zugegriffen werden.Diese Warnung zeigt an, dass ein Volume nicht gemountet oder auf ein Problem mit einem zugrunde liegenden Speichergerät zugegriffen werden kann.
+
+. Überprüfen Sie den Status aller für den Knoten verwendeten Speichergeräte:
++
+** Wenn der Knoten auf einer virtuellen Maschine oder einem Linux-Host installiert ist, befolgen Sie die Anweisungen für Ihr Betriebssystem, um die Hardware-Diagnose auszuführen oder eine Dateisystemprüfung durchzuführen.
++
+*** link:../rhel/index.html["Installieren Sie Red hat Enterprise Linux oder CentOS"]
+*** link:../ubuntu/index.html["Installieren Sie Ubuntu oder Debian"]
+*** link:../vmware/index.html["VMware installieren"]
+
+
+** Wenn der Node auf einer SG100-, SG1000- oder SG6000-Appliance installiert ist, verwenden Sie den BMC.
+** Wenn der Node auf einer SG5600 oder SG5700 Appliance installiert ist, verwenden Sie SANtricity System Manager.
+
+
+. Ersetzen Sie die Komponente bei Bedarf. Die Installations- und Wartungsanleitung für Ihre Appliance-Hardware finden Sie in der Installations- und Wartungsanleitung.
++
+** link:../sg6000/index.html["SG6000 Storage-Appliances"]
+** link:../sg5700/index.html["SG5700 Storage-Appliances"]
+** link:../sg5600/index.html["SG5600 Storage Appliances"]
+
+
+
+
+
+
+ a| 
+Hohe Kontingentnutzung für Mandanten
+ a| 
+Ein hoher Prozentsatz des Kontingentspeichers wird verwendet. Wenn ein Mieter seine Quote überschreitet, werden Neuanlässe abgelehnt.
+
+
+NOTE: Diese Warnungsregel ist standardmäßig deaktiviert, da sie eine Vielzahl von Benachrichtigungen erzeugen kann.
+
+. Wählen Sie im Grid Manager die Option *Miters* aus.
+. Sortieren Sie die Tabelle nach *Quotenausnutzung*.
+. Wählen Sie einen Mandanten aus, dessen Quotenauslastung fast 100 % beträgt.
+. Führen Sie einen oder beide der folgenden Schritte aus:
++
+** Wählen Sie *Bearbeiten*, um das Speicherkontingent für den Mieter zu erhöhen.
+** Benachrichtigen Sie den Mandanten, dass seine Kontingentauslastung hoch ist.
+
+
+
+
+
+
+ a| 
+Kommunikation mit Knoten nicht möglich
+ a| 
+Ein oder mehrere Dienste reagieren nicht, oder der Node kann nicht erreicht werden.Diese Warnmeldung gibt an, dass ein Node aus einem unbekannten Grund getrennt ist. Beispielsweise wird ein Service auf dem Node möglicherweise angehalten, oder der Node hat aufgrund eines Stromausfalls oder eines unerwarteten Ausfalls seine Netzwerkverbindung verloren.
+
+Überwachen Sie diese Warnung, um zu sehen, ob das Problem selbst behoben wird. Wenn das Problem weiterhin besteht:
+
+. Stellen Sie fest, ob eine weitere Warnung auf diesen Node wirkt. Dieser Alarm kann möglicherweise gelöst werden, wenn Sie die andere Meldung beheben.
+. Vergewissern Sie sich, dass alle Dienste auf diesem Knoten ausgeführt werden. Wenn ein Dienst angehalten wird, versuchen Sie, ihn zu starten. Weitere Informationen finden Sie in den Anweisungen zur Wiederherstellung und Wartung.
+. Stellen Sie sicher, dass der Host für den Node eingeschaltet ist. Falls nicht, starten Sie den Host.
++
+
+NOTE: Wenn mehr als ein Host ausgeschaltet ist, lesen Sie die Recovery- und Wartungsanweisungen.
+
+. Bestimmen Sie, ob zwischen diesem Knoten und dem Admin-Node ein Problem mit der Netzwerkverbindung besteht.
+. Wenn Sie die Meldung nicht beheben können, wenden Sie sich an den technischen Support.
+
+
+link:../maintain/index.html["Verwalten Sie  erholen"]
+
+
+
+ a| 
+Unerwarteter Node-Neustart
+ a| 
+Ein Node wurde in den letzten 24 Stunden unerwartet neu gebootet.
+
+. Überwachen Sie diesen Alarm. Der Alarm wird nach 24 Stunden gelöscht. Wenn der Node jedoch unerwartet neu gebootet wird, wird die Warnmeldung erneut ausgelöst.
+. Wenn Sie die Meldung nicht beheben können, liegt möglicherweise ein Hardwarefehler vor. Wenden Sie sich an den technischen Support.
+
+
+
+
+ a| 
+Nicht identifizierte beschädigte Objekte erkannt
+ a| 
+Im replizierten Objekt-Storage wurde eine Datei gefunden, die nicht als repliziertes Objekt identifiziert werden konnte.
+
+. Ermitteln Sie, ob Probleme mit dem zugrunde liegenden Speicher auf einem Speicherknoten auftreten. Führen Sie beispielsweise die Hardwarediagnose aus oder führen Sie eine Dateisystemprüfung durch.
+. Führen Sie nach der Behebung von Storage-Problemen die Vordergrundüberprüfung aus, um festzustellen, ob Objekte fehlen und wenn möglich ersetzt werden.
+. Überwachen Sie diesen Alarm. Die Warnmeldung wird nach 24 Stunden gelöscht, wird jedoch erneut ausgelöst, wenn das Problem noch nicht behoben wurde.
+. Wenn Sie die Meldung nicht beheben können, wenden Sie sich an den technischen Support.
+
+
+link:../troubleshoot/troubleshooting-storagegrid-system.html["Vordergrundüberprüfung wird ausgeführt"]
+
+|===
+*Verwandte Informationen*
+
+link:commonly-used-prometheus-metrics.html["Häufig verwendete Prometheus-Kennzahlen"]

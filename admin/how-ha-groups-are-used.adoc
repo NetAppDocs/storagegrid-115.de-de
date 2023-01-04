@@ -1,0 +1,86 @@
+---
+permalink: admin/how-ha-groups-are-used.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Vielleicht möchten Sie aus verschiedenen Gründen Hochverfügbarkeitsgruppen \(HA\) verwenden.' 
+---
+= Verwendung von HA-Gruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es empfiehlt sich, aus mehreren Gründen Gruppen für Hochverfügbarkeit (HA) zu verwenden.
+
+* Eine HA-Gruppe kann hochverfügbare administrative Verbindungen mit dem Grid Manager oder dem Mandanten Manager bereitstellen.
+* Eine HA-Gruppe kann hochverfügbare Datenverbindungen für S3 und Swift Clients bieten.
+* Eine HA-Gruppe, die nur eine Schnittstelle enthält, ermöglicht es Ihnen, viele VIP-Adressen bereitzustellen und explizit IPv6-Adressen festzulegen.
+
+
+Eine HA-Gruppe kann nur Hochverfügbarkeit bieten, wenn alle Nodes in der Gruppe dieselben Services bereitstellen. Wenn Sie eine HA-Gruppe erstellen, fügen Sie Schnittstellen von den Typen von Nodes hinzu, die die erforderlichen Services bereitstellen.
+
+* *Admin Nodes*: Schließen Sie den Load Balancer Service ein und ermöglichen Sie den Zugriff auf den Grid Manager oder den Tenant Manager.
+* *Gateway-Knoten*: Schließen Sie den Load Balancer Service und den CLB-Dienst (veraltet) ein.
+
+
+[cols="1a,1a"]
+|===
+| Zweck der HA-Gruppe | Fügen Sie diesem Typ Nodes der HA-Gruppe hinzu 
+
+
+ a| 
+Zugriff auf Grid Manager
+ a| 
+* Primärer Admin-Node (*bevorzugter Master*)
+* Nicht primäre Admin-Nodes
+
+
+*Hinweis:* der primäre Admin-Knoten muss der bevorzugte Master sein. Einige Wartungsvorgänge können nur vom primären Admin-Node ausgeführt werden.
+
+
+
+ a| 
+Zugriff nur auf Tenant Manager
+ a| 
+* Primäre oder nicht primäre Admin-Nodes
+
+
+
+
+ a| 
+S3- oder Swift-Client-Zugriff – Load Balancer Service
+ a| 
+* Admin-Nodes
+* Gateway-Nodes
+
+
+
+
+ a| 
+S3- oder Swift-Client-Zugriff -- CLB-Service
+
+*Hinweis:* der CLB-Service ist veraltet.
+ a| 
+* Gateway-Nodes
+
+
+|===
+
+
+== Einschränkungen bei der Verwendung von HA-Gruppen mit Grid Manager oder Tenant Manager
+
+Der Ausfall von Services für den Grid Manager oder den Mandanten-Manager löst nicht ein Failover innerhalb der HA-Gruppe aus.
+
+Wenn Sie sich bei einem Failover beim Grid Manager oder beim Tenant Manager angemeldet haben, werden Sie abgemeldet und müssen sich erneut anmelden, um Ihre Aufgabe fortzusetzen.
+
+Einige Wartungsvorgänge können nicht ausgeführt werden, wenn der primäre Admin-Node nicht verfügbar ist. Während des Failovers können Sie Ihr StorageGRID-System mit dem Grid-Manager überwachen.
+
+
+
+== Einschränkungen bei der Verwendung von HA-Gruppen mit dem CLB-Service
+
+Der Ausfall des CLB-Dienstes löst nicht ein Failover innerhalb der HA-Gruppe aus.
+
+
+NOTE: Der CLB-Service ist veraltet.

@@ -1,0 +1,34 @@
+---
+permalink: admin/configuring-stored-object-hashing.html 
+sidebar: sidebar 
+keywords:  
+summary: Die Option „Speichertes Objekt-Hashing“ gibt den Hash-Algorithmus an, der zur Überprüfung der Objektintegrität verwendet wird. 
+---
+= Konfigurieren von gespeichertes Objekt-Hashing
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Option „Speichertes Objekt-Hashing“ gibt den Hash-Algorithmus an, der zur Überprüfung der Objektintegrität verwendet wird.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Über diese Aufgabe
+Standardmäßig werden Objektdaten mit dem SHA‐1-Algorithmus gehasht. Der SHA-256-Algorithmus erfordert zusätzliche CPU-Ressourcen und wird im Allgemeinen nicht für die Integritätsprüfung empfohlen.
+
+
+NOTE: Wenn Sie diese Einstellung ändern, dauert es etwa eine Minute, bis die neue Einstellung angewendet wird. Der konfigurierte Wert wird für Performance und Skalierung zwischengespeichert.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Systemeinstellungen* > *Gitteroptionen*.
+. Ändern Sie im Abschnitt „Optionen für gespeicherte Objekte“ die Option „gespeicherte Objekt-Hashing“ in *SHA-1* (Standardeinstellung) oder *SHA-256*.
++
+image::../media/stored_object_hashing.png[Hash Gespeicherter Objekte]
+
+. Klicken Sie Auf *Speichern*.
+

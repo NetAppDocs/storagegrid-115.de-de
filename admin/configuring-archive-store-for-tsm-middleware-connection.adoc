@@ -1,0 +1,44 @@
+---
+permalink: admin/configuring-archive-store-for-tsm-middleware-connection.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn Ihr Archivknoten eine Verbindung zu einem TSM Middleware-Server herstellt, können Sie den Status des Archivspeichers eines Archiv-Knotens auf Online oder Offline konfigurieren. Sie können den Archivspeicher auch deaktivieren, wenn der Archivknoten zum ersten Mal gestartet wird, oder die Fehleranzahl, die für den zugehörigen Alarm nachverfolgt wird, zurücksetzen. 
+---
+= Konfigurieren des Archivierungsstatus und der Zähler für TSM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn der Archivknoten eine Verbindung zu einem TSM Middleware-Server herstellt, können Sie den Status des Archivspeichers eines Archiv-Knotens in Online oder Offline konfigurieren. Sie können den Archivspeicher auch deaktivieren, wenn der Archivknoten zum ersten Mal gestartet wird, oder die Fehleranzahl, die für den zugehörigen Alarm nachverfolgt wird, zurücksetzen.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über spezifische Zugriffsberechtigungen verfügen.
+
+
+.Schritte
+. Wählen Sie *Support* > *Tools* > *Grid Topology* Aus.
+. Wählen Sie *_Archivknoten_* > *ARC* > *Store* aus.
+. Wählen Sie *Konfiguration* > *Main*.
++
+image::../media/archive_store_tsm.gif[Konfigurieren des Archivspeichers für die TSM Middleware-Verbindung]
+
+. Ändern Sie bei Bedarf die folgenden Einstellungen:
++
+** Speicherstatus: Legen Sie den Komponentenstatus auf entweder:
++
+*** Online: Der Archiv-Node ist zur Verarbeitung von Objektdaten zum Speichern im Archiv-Storage-System verfügbar.
+*** Offline: Der Archiv-Node ist nicht verfügbar, um Objektdaten zum Speichern im Archiv-Storage-System zu verarbeiten.
+
+
+** Archivspeicher beim Start deaktiviert: Wenn diese Option ausgewählt ist, bleibt die Komponente Archivspeicher beim Neustart im schreibgeschützten Zustand. Wird verwendet, um Speicher dauerhaft für das Zielspeichersystem zu deaktivieren. Nützlich, wenn das ausgewählte Archiv-Speichersystem keine Inhalte akzeptieren kann.
+** Reset Store Failure Count: Setzt den Zähler für Store Failures zurück. Dies kann verwendet werden, um den ARVF-Alarm (Stores Failure) zu löschen.
+
+
+. Klicken Sie Auf *Änderungen Übernehmen*.
+
+
+.Verwandte Informationen
+link:managing-archive-node-when-tsm-server-reaches-capacity.html["Verwalten eines Archiv-Knotens, wenn TSM-Server die Kapazität erreicht"]

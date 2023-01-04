@@ -1,0 +1,101 @@
+---
+permalink: admin/editing-high-availability-group.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Sie können eine Hochverfügbarkeitsgruppe \(HA\) bearbeiten, um ihren Namen und seine Beschreibung zu ändern, Schnittstellen hinzuzufügen oder zu entfernen oder eine virtuelle IP-Adresse hinzuzufügen oder zu aktualisieren.' 
+---
+= Bearbeiten einer Hochverfügbarkeitsgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine HA-Gruppe (High Availability, Hochverfügbarkeit) bearbeiten, um ihren Namen und ihre Beschreibung zu ändern, Schnittstellen hinzuzufügen oder zu entfernen oder eine virtuelle IP-Adresse hinzuzufügen oder zu aktualisieren.
+
+.Was Sie benötigen
+* Sie müssen über einen unterstützten Browser beim Grid Manager angemeldet sein.
+* Sie müssen über die Berechtigung Root Access verfügen.
+
+
+.Über diese Aufgabe
+Das Bearbeiten einer HA-Gruppe hat einige der Gründe:
+
+* Hinzufügen einer Schnittstelle zu einer vorhandenen Gruppe Die Schnittstellen-IP-Adresse muss sich innerhalb desselben Subnetzes befinden wie andere Schnittstellen, die der Gruppe bereits zugewiesen sind.
+* Entfernen einer Schnittstelle aus einer HA-Gruppe. Sie können beispielsweise keine Deaktivierung eines Standorts oder Nodes starten, wenn die Schnittstelle eines Node für das Grid Network oder das Client Network in einer HA-Gruppe verwendet wird.
+
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Netzwerkeinstellungen* > *Hochverfügbarkeitsgruppen*.
++
+Die Seite „Hochverfügbarkeitsgruppen“ wird angezeigt.
+
++
+image::../media/ha_groups_page_with_two_groups.png[HA-Gruppen-Seite mit zwei Gruppen]
+
+. Wählen Sie die HA-Gruppe aus, die Sie bearbeiten möchten, und klicken Sie auf *Bearbeiten*.
++
+Das Dialogfeld „High Availability Group bearbeiten“ wird angezeigt.
+
+. Optional können Sie den Namen oder die Beschreibung der Gruppe aktualisieren.
+. Klicken Sie optional auf *Schnittstellen auswählen*, um die Schnittstellen für die HA-Gruppe zu ändern.
++
+Das Dialogfeld Schnittstellen zu Hochverfügbarkeitsgruppe hinzufügen wird angezeigt.
+
++
+image::../media/ha_group_add_interfaces.png[HA Groups Add Interfaces]
+
++
+Eine Schnittstelle wird in der Liste nicht angezeigt, wenn ihre IP-Adresse durch DHCP zugewiesen wird.
+
+. Aktivieren oder deaktivieren Sie die Kontrollkästchen, um Schnittstellen hinzuzufügen oder zu entfernen.
++
+Beachten Sie die folgenden Richtlinien für die Auswahl von Schnittstellen:
+
++
+** Sie müssen mindestens eine Schnittstelle auswählen.
+** Wenn Sie mehrere Schnittstellen auswählen, müssen sich alle Schnittstellen entweder im Grid Network (eth0) oder im Client Network (eth2) befinden.
+** Alle Schnittstellen müssen sich im gleichen Subnetz oder in Subnetzen mit einem gemeinsamen Präfix befinden.
++
+IP-Adressen werden auf das kleinste Subnetz beschränkt (das mit dem größten Präfix).
+
+** Wenn Sie Schnittstellen für verschiedene Node-Typen auswählen und ein Failover auftritt, sind nur die Dienste verfügbar, die für die ausgewählten Knoten gemeinsam sind.
++
+*** Wählen Sie mindestens zwei Admin-Nodes aus, um den HA-Schutz des Grid Manager oder des Mandanten-Manager zu erhalten.
+*** Wählen Sie zwei oder mehr Admin-Nodes, Gateway-Nodes oder beide aus, um den HA-Schutz des Load Balancer Service zu gewährleisten.
+*** Wählen Sie mindestens zwei Gateway-Nodes aus, um den HA-Schutz des CLB-Service zu gewährleisten.
++
+
+NOTE: Der CLB-Service ist veraltet.
+
+
+
+
+
+. Klicken Sie Auf *Anwenden*.
++
+Die ausgewählten Schnittstellen werden im Abschnitt Schnittstellen der Seite aufgeführt. Standardmäßig wird die erste Schnittstelle in der Liste als bevorzugter Master ausgewählt.
+
++
+image::../media/ha_group_edit_group.png[HA-Gruppe „Edit Group“]
+
+. Wenn Sie eine andere Schnittstelle als bevorzugten Master auswählen möchten, wählen Sie diese Schnittstelle in der Spalte *bevorzugter Master* aus.
++
+Der bevorzugte Master ist die aktive Schnittstelle, wenn kein Fehler auftritt, der dazu führt, dass die VIP-Adressen einer Backup-Schnittstelle neu zugewiesen werden.
+
++
+
+NOTE: Wenn die HA-Gruppe Zugriff auf den Grid Manager bietet, müssen Sie eine Schnittstelle am primären Admin-Node auswählen, um der bevorzugte Master-Typ zu sein. Einige Wartungsvorgänge können nur vom primären Admin-Node ausgeführt werden.
+
+. Optional können Sie die virtuellen IP-Adressen für die HA-Gruppe aktualisieren.
++
+Sie müssen mindestens eine IPv4-Adresse angeben. Optional können Sie weitere IPv4- und IPv6-Adressen angeben.
+
++
+IPv4-Adressen müssen sich im IPv4-Subnetz befinden, das von allen Mitgliedschnittstellen gemeinsam genutzt wird.
+
+. Klicken Sie Auf *Speichern*.
++
+Die HA-Gruppe wird aktualisiert.
+
+

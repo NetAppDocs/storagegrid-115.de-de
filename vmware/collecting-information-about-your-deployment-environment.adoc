@@ -1,0 +1,88 @@
+---
+permalink: vmware/collecting-information-about-your-deployment-environment.html 
+sidebar: sidebar 
+keywords:  
+summary: Bevor Sie Grid-Nodes bereitstellen, müssen Sie Informationen über Ihre Netzwerkkonfiguration und die VMware Umgebung erfassen. 
+---
+= Sammeln von Informationen über die Bereitstellungsumgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie Grid-Nodes bereitstellen, müssen Sie Informationen über Ihre Netzwerkkonfiguration und die VMware Umgebung erfassen.
+
+
+
+== VMware Informationen
+
+Sie müssen in die Bereitstellungsumgebung zugreifen und Informationen über die VMware Umgebung, die für Grid, Administrator und Client-Netzwerke erstellten Netzwerke und die Storage-Volume-Typen, die Sie für Storage-Nodes verwenden möchten, sammeln.
+
+Sie müssen Informationen über Ihre VMware Umgebung erfassen. Dazu gehören folgende:
+
+* Benutzername und Passwort für ein VMware vSphere-Konto mit entsprechenden Berechtigungen zum Abschließen der Bereitstellung.
+* Informationen zu Host-, Datastore- und Netzwerkkonfiguration für jede StorageGRID Grid-Node Virtual Machine.
+
+
+
+IMPORTANT: VMware Live vMotion bewirkt, dass die Taktzeit der Virtual Machine zu springen und nicht für Grid-Nodes jeglicher Art unterstützt wird. Obwohl selten, falsche Uhrzeiten können zum Verlust von Daten oder Konfigurations-Updates führen.
+
+
+
+== Informationen zum Grid-Netzwerk
+
+Sie müssen Informationen über das für das StorageGRID Grid-Netzwerk erstellte VMware-Netzwerk erfassen (erforderlich), darunter:
+
+* Der Netzwerkname.
+* Wenn Sie DHCP nicht verwenden, erhalten Sie die erforderlichen Netzwerkdetails für jeden Grid-Node (IP-Adresse, Gateway und Netzwerkmaske).
+* Wenn Sie DHCP nicht verwenden, lautet die IP-Adresse des primären Admin-Nodes im Grid-Netzwerk. Weitere Informationen finden Sie unter „`How Grid Nodes discover the primary Admin Node`“.
+
+
+
+
+== Informationen zum Admin-Netzwerk
+
+Bei Nodes, die mit dem optionalen StorageGRID-Admin-Netzwerk verbunden werden sollen, müssen Sie Informationen über das für dieses Netzwerk erstellte VMware-Netzwerk erfassen. Dazu gehören:
+
+* Der Netzwerkname.
+* Die Methode zum Zuweisen von IP-Adressen entweder statisch oder DHCP.
+* Wenn Sie statische IP-Adressen verwenden, sind die erforderlichen Netzwerkdetails für jeden Grid-Node (IP-Adresse, Gateway, Netzwerkmaske) erforderlich.
+* Die externe Subnetz-Liste (ESL) für das Admin-Netzwerk.
+
+
+
+
+== Informationen zum Client-Netzwerk
+
+Bei Nodes, die mit dem optionalen StorageGRID-Clientnetzwerk verbunden werden sollen, müssen Sie Informationen über das für dieses Netzwerk erstellte VMware-Netzwerk erfassen. Dazu gehören:
+
+* Der Netzwerkname.
+* Die Methode zum Zuweisen von IP-Adressen entweder statisch oder DHCP.
+* Wenn Sie statische IP-Adressen verwenden, sind die erforderlichen Netzwerkdetails für jeden Grid-Node (IP-Adresse, Gateway, Netzwerkmaske) erforderlich.
+
+
+
+
+== Storage Volumes für virtuelle Storage-Nodes
+
+Sie müssen die folgenden Informationen für virtuelle Maschinen-basierte Speicherknoten sammeln:
+
+* Die Anzahl und Größe der Storage Volumes (Storage LUNs), die Sie hinzufügen möchten. Siehe „`SStorage- und Performance-Anforderungen.`“
+
+
+
+
+== Informationen zur Grid-Konfiguration
+
+Sie müssen Informationen erfassen, um Ihr Raster zu konfigurieren:
+
+* Grid-Lizenz
+* IP-Adressen des Network Time Protocol-Servers (NTP
+* IP-Adressen des DNS-Servers (Domain Name System
+
+
+.Verwandte Informationen
+link:how-grid-nodes-discover-primary-admin-node.html["Ermitteln der primären Admin-Node durch Grid-Nodes"]
+
+link:storage-and-performance-requirements.html["Storage- und Performance-Anforderungen erfüllt"]

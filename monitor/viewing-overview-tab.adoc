@@ -1,0 +1,69 @@
+---
+permalink: monitor/viewing-overview-tab.html 
+sidebar: sidebar 
+keywords: overview tab, viewing 
+summary: Die Registerkarte Übersicht enthält grundlegende Informationen zu den einzelnen Knoten. Es werden zudem alle Meldungen angezeigt, die derzeit den Node betreffen. 
+---
+= Anzeigen der Registerkarte Übersicht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Registerkarte Übersicht enthält grundlegende Informationen zu den einzelnen Knoten. Es werden zudem alle Meldungen angezeigt, die derzeit den Node betreffen.
+
+Die Registerkarte Übersicht wird für alle Knoten angezeigt.
+
+
+
+== Node-Informationen
+
+Im Abschnitt Knoteninformationen auf der Registerkarte Übersicht werden grundlegende Informationen zum Grid-Knoten angezeigt.
+
+image::../media/nodes_page_overview_tab.png[Registerkarte „Knotenübersicht“]
+
+Die Übersichtsinformationen für einen Knoten umfassen Folgendes:
+
+* *Name*: Der Hostname, der dem Knoten zugewiesen und im Grid Manager angezeigt wird.
+* *Typ*: Der Node-Typ - Admin-Node, Storage Node, Gateway-Node oder Archiv-Node.
+* *ID*: Die eindeutige Kennung für den Knoten, die auch als UUID bezeichnet wird.
+* *Verbindungsstatus*: Einer von drei Zuständen. Das Symbol für den schwersten Zustand wird angezeigt.
++
+** *Nicht verbunden - Unbekannt* image:../media/icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"]: Der Knoten ist aus einem unbekannten Grund nicht mit dem Raster verbunden. Beispielsweise wurde die Netzwerkverbindung zwischen den Knoten unterbrochen oder der Strom ist ausgefallen. Die Warnung * kann nicht mit Node* kommunizieren. Auch andere Warnmeldungen können aktiv sein. Diese Situation erfordert sofortige Aufmerksamkeit.
++
+
+NOTE: Ein Node wird möglicherweise während des verwalteten Herunterfahrens als „Unbekannt“ angezeigt. In diesen Fällen können Sie den Status Unbekannt ignorieren.
+
+** *Nicht verbunden - Administrativ unten* image:../media/icon_alarm_gray_administratively_down.png["Graues Fragensymbol"]: Der Knoten ist aus einem erwarteten Grund nicht mit dem Netz verbunden. Beispielsweise wurde der Node oder die Services für den Node ordnungsgemäß heruntergefahren, der Node neu gebootet oder die Software wird aktualisiert. Mindestens ein Alarm ist möglicherweise auch aktiv.
+** * Verbunden* image:../media/icon_alert_green_checkmark.png["Grünes Häkchen für Symbolwarnung"]: Der Knoten ist mit dem Raster verbunden.
+
+
+* *Software-Version*: Die Version von StorageGRID, die auf dem Knoten installiert ist.
+* *HA-Gruppen*: Nur für Admin-Node und Gateway-Knoten. Wird angezeigt, ob eine Netzwerkschnittstelle auf dem Knoten in einer Hochverfügbarkeitsgruppe enthalten ist und ob diese Schnittstelle der Master oder der Backup ist.
++
+image::../media/ha_group_master_interface.png[MASTER-Schnittstelle DER HA-Gruppe]
+
+* *IP-Adressen*: Die IP-Adressen des Knotens. Klicken Sie auf *Mehr anzeigen*, um die IPv4- und IPv6-Adressen und Schnittstellenzuordnungen des Knotens anzuzeigen:
++
+** Eth0: Grid Network
+** Eth1: Admin Network
+** Eth2: Client-Netzwerk
+
+
+
+
+
+
+== Meldungen
+
+Im Abschnitt „Warnungen“ der Registerkarte „Übersicht“ werden alle Warnmeldungen aufgeführt, die derzeit diesen Knoten betreffen, die nicht stummgeschaltet wurden. Klicken Sie auf den Namen der Warnmeldung, um weitere Details und empfohlene Aktionen anzuzeigen.
+
+image::../media/nodes_page_alerts_table.png[Tabelle „Knotenpunkte“]
+
+.Verwandte Informationen
+link:monitoring-node-connection-states.html["Monitoring der Verbindungsstatus der Nodes"]
+
+link:viewing-current-alerts.html["Anzeigen aktueller Meldungen"]
+
+link:viewing-specific-alert.html["Anzeigen einer bestimmten Meldung"]
