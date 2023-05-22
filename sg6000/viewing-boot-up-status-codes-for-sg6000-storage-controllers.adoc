@@ -32,10 +32,10 @@ image::../media/seven_segment_display_codes_for_e2800.gif[Anzeigecodes für sieb
 
 
 .Verwandte Informationen
-https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html["E5700 und E2800 – System Monitoring Guide"^]
+https://["E5700 und E2800 – System Monitoring Guide"^]
 
 link:troubleshooting-hardware-installation.html["Fehlerbehebung bei der Hardwareinstallation"]
 
-https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^]
+https://["NetApp Support"^]
 
 link:powering-on-sg6000-cn-controller-and-verifying-operation.html["Einschalten des SG6000-CN Controllers und Überprüfen des Betriebs"]

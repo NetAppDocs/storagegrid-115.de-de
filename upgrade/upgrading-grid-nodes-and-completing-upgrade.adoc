@@ -118,7 +118,7 @@ image::../media/software_upgrade_done.png[Software-Upgrade Abgeschlossen]
 
 . Prüfen Sie die StorageGRID-Seite zu NetApp Downloads, um zu sehen, ob Hotfixes für die von Ihnen gerade installierte StorageGRID-Version verfügbar sind.
 +
-https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp Downloads: StorageGRID"^]
+https://["NetApp Downloads: StorageGRID"^]
 
 +
 In der StorageGRID 11.5._x.y_ Versionsnummer:

@@ -60,7 +60,7 @@ Aktuelle Dokumentation für Ihre Plattform
  a| 
 Die derzeit unterstützten Versionen Ihrer Plattform finden Sie im Interoperabilitäts-Matrix-Tool.
 
-https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"]
+https://["NetApp Interoperabilitäts-Matrix-Tool"]
 
 Dokumentation finden Sie auf der Website des Plattformanbieters.
 

@@ -171,7 +171,7 @@ Stellen Sie außerdem sicher, dass die in der Hilfe für den Benutzernamen genan
 Weitere Informationen zur Wartung der Umkehrgruppenmitgliedschaft finden Sie im Administratorhandbuch für OpenLDAP.
 
 .Verwandte Informationen
-http://www.openldap.org/doc/admin24/index.html["OpenLDAP-Dokumentation: Version 2.4 Administratorhandbuch"^]
+http://["OpenLDAP-Dokumentation: Version 2.4 Administratorhandbuch"^]
 
 
 

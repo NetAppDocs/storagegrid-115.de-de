@@ -838,7 +838,7 @@ link:s3-rest-api-supported-operations-and-limitations.html["Verwenden der S3-Obj
 
 link:../ilm/index.html["Objektmanagement mit ILM"]
 
-https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"]
+https://["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"]
 
 
 
@@ -853,7 +853,7 @@ link:s3-rest-api-supported-operations-and-limitations.html["Verwenden der S3-Obj
 
 link:../ilm/index.html["Objektmanagement mit ILM"]
 
-https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"]
+https://["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"]
 
 Mit aktivierter Compliance können keine neuen Buckets mehr erstellt werden. Die folgende Fehlermeldung wird zurückgegeben, wenn Sie versuchen, die Put Bucket-Anforderung zur Compliance-Erstellung eines neuen Compliance-Buckets zu verwenden:
 
@@ -880,7 +880,7 @@ link:s3-rest-api-supported-operations-and-limitations.html["Verwenden der S3-Obj
 
 link:../ilm/index.html["Objektmanagement mit ILM"]
 
-https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"]
+https://["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"]
 
 Um diesen Vorgang abzuschließen, müssen Sie über die berechtigung s3:GetBucketCompliance verfügen oder als Stammverzeichnis für das Konto verfügen.
 
@@ -971,7 +971,7 @@ link:s3-rest-api-supported-operations-and-limitations.html["Verwenden der S3-Obj
 
 link:../ilm/index.html["Objektmanagement mit ILM"]
 
-https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"]
+https://["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"]
 
 Sie müssen über die s3:PutBucketCompliance-Berechtigung verfügen oder als Kontoroot vorliegen, um diesen Vorgang abzuschließen.
 

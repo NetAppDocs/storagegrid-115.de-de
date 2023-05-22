@@ -25,4 +25,4 @@ Wenn mehr als ein Grid-Node auf einem physischen oder virtuellen Linux-Host geho
 
 
 .Verwandte Informationen
-https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"]
+https://["NetApp Interoperabilitäts-Matrix-Tool"]

@@ -38,4 +38,4 @@ link:../sg5700/index.html["SG5700 Storage-Appliances"]
 
 link:../sg5600/index.html["SG5600 Storage Appliances"]
 
-https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^]
+https://["NetApp Support"^]

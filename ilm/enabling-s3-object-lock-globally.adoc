@@ -33,7 +33,7 @@ Ein Grid-Administrator muss die globale S3-Objektsperre aktivieren, damit Mandan
 ====
 Wenn Sie die globale Compliance-Einstellung mit einer früheren Version von StorageGRID aktiviert haben, wird die neue S3-Objektsperre automatisch aktiviert, wenn Sie auf StorageGRID Version 11.5 aktualisieren. Sie können StorageGRID weiterhin zum Management der Einstellungen vorhandener konformer Buckets verwenden. Es ist jedoch nicht mehr möglich, neue konforme Buckets zu erstellen.
 
-https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"^]
+https://["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"^]
 
 ====
 .Schritte

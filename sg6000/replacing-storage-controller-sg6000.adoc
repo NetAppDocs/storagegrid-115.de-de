@@ -237,4 +237,4 @@ NOTE: Wenn der ursprüngliche Controller DHCP für die IP-Adresse nicht verwende
 
 
 .Verwandte Informationen
-http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E-Series Systems Documentation Site"^]
+http://["NetApp E-Series Systems Documentation Site"^]

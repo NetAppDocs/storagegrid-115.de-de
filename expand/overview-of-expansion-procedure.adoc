@@ -25,7 +25,7 @@ image::../media/expansion_workflow.png[flussdiagramm mit der Übersicht über de
 
 *Verwandte Informationen*
 
-https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"^]
+https://["NetApp Interoperabilitäts-Matrix-Tool"^]
 
 link:planning-expansion.html["StorageGRID-Erweiterung geplant"]
 

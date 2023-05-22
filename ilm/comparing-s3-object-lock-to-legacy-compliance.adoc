@@ -22,7 +22,7 @@ Wenn Sie zuvor die globale Compliance-Einstellung aktiviert haben, wird die neue
 * Anheben eines gesetzlichen Haltes
 
 
-https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"^]
+https://["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"^]
 
 Wenn Sie die ältere Compliance-Funktion in einer früheren Version von StorageGRID verwendet haben, lesen Sie die folgende Tabelle, um zu erfahren, wie sie mit der S3-Objektsperrfunktion in StorageGRID verglichen wird.
 

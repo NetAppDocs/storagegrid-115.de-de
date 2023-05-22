@@ -57,6 +57,6 @@ link:e5600sg-controller-seven-segment-display-codes.html["E5600SG-Controller-Anz
 
 link:he-error-error-synchronizing-with-santricity-os-software.html["HE-Fehler: Fehler beim Synchronisieren mit SANtricity OS Software"]
 
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2344477["E2700 – Installationshandbuch für Controller-Laufwerke und zugehörige Laufwerksfächer"^]
+https://["E2700 – Installationshandbuch für Controller-Laufwerke und zugehörige Laufwerksfächer"^]
 
-http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61765["NetApp Dokumentation: E2700 Serie"^]
+http://["NetApp Dokumentation: E2700 Serie"^]

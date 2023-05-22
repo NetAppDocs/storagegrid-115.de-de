@@ -94,7 +94,7 @@ Der Node-Name wird diesem Appliance-Node im StorageGRID-System zugewiesen. Sie w
 +
 .. Laden Sie das Installationsarchiv von der NetApp Downloads Seite zu StorageGRID herunter.
 +
-https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp Downloads: StorageGRID"^]
+https://["NetApp Downloads: StorageGRID"^]
 
 .. Extrahieren Sie das Archiv.
 .. Wählen Sie im Installationsprogramm der StorageGRID-Appliance die Option *Erweitert* > *StorageGRID-Software hochladen*.

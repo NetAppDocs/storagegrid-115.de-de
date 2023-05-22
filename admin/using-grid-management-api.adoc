@@ -29,4 +29,4 @@ Die Grid Management API bietet die folgenden Ressourcen auf oberster Ebene:
 .Verwandte Informationen
 link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]
 
-https://prometheus.io/docs/querying/basics/["Prometheus: Grundlagen der Abfrage"^]
+https://["Prometheus: Grundlagen der Abfrage"^]

@@ -290,4 +290,4 @@ Installation oder Kommunikation mit dem E2800-Controller ist fehlgeschlagen.
 .Verwandte Informationen
 link:troubleshooting-hardware-installation.html["Fehlerbehebung bei der Hardwareinstallation"]
 
-https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^]
+https://["NetApp Support"^]

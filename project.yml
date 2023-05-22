@@ -62,7 +62,7 @@ sidebar:
     entries:
     - section: expand
     - section: maintain
-  - title: Frühere Versionen
+  - title: Andere Versionen
     url: "/earlier-versions.html"
   - title: Rechtliche Hinweise
     url: "/legal-notices.html"
@@ -148,9 +148,15 @@ homepage:
       url: https://netapp.com/blog/
     - title: NetApp Community
       url: https://community.netapp.com/
-  - title: Frühere Versionen
+  - title: Andere Versionen
     links:
+    - title: StorageGRID 11.7-Dokumentation
+      url: https://docs.netapp.com/us-en/storagegrid-117/index.html
+    - title: StorageGRID 11.6-Dokumentation
+      url: https://docs.netapp.com/us-en/storagegrid-116/index.html
     - title: StorageGRID 11.4-Dokumentation
       url: https://docs.netapp.com/sgws-114/index.jsp
     - title: StorageGRID 11.3-Dokumentation
       url: https://docs.netapp.com/sgws-113/index.jsp
+    - title: StorageGRID 11.2-Dokumentation
+      url: https://docs.netapp.com/sgws-112/index.jsp
