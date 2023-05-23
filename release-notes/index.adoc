@@ -15,6 +15,6 @@ Release-spezifische Informationen zu neuen Funktionen, entfernten und veralteten
 
 Versionshinweise sind außerhalb dieser Dokumentwebsite erhältlich. Sie werden aufgefordert, sich mit Ihren Anmeldedaten für die NetApp Support Site anzumelden.
 
-* https://["HTML"^]
-* https://["PDF"^]
+* https://library.netapp.com/ecmdocs/ECMLP2873529/html/frameset.html["HTML"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2873529["PDF"^]
 

@@ -58,6 +58,6 @@ image::../media/node_rejoin_grid_confirmation.png[Das Raster des Appliance-Node 
 
 
 .Verwandte Informationen
-https://["NetApp Interoperabilitäts-Matrix-Tool"^]
+https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"^]
 
 link:upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg6000.html["Aktualisieren von SANtricity OS auf den Storage Controllern mit Grid Manager"]

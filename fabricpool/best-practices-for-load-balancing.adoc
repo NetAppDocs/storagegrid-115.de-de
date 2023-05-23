@@ -25,7 +25,7 @@ Der Load Balancer-Service auf jedem Node wird unabhängig ausgeführt, wenn der 
 
 Obwohl der StorageGRID Load Balancer-Service der empfohlene Load-Balancing-Mechanismus ist, können Sie stattdessen einen Load Balancer eines Drittanbieters integrieren. Weitere Informationen erhalten Sie bei Ihrem NetApp Ansprechpartner oder in den folgenden technischen Berichten:
 
-https://["Optionen zum StorageGRID Load Balancer"^]
+https://www.netapp.com/pdf.html?item=/media/17068-tr4626pdf.pdf["Optionen zum StorageGRID Load Balancer"^]
 
 
 NOTE: Der separate Connection Load Balancer (CLB)-Service auf Gateway-Nodes ist veraltet und wird nicht mehr für die Verwendung mit FabricPool empfohlen.

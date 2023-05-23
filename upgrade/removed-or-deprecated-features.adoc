@@ -42,7 +42,7 @@ Wenn Sie zuvor die globale Compliance-Einstellung aktiviert haben, wird die neue
 
 Im Mandanten-Manager wird ein Shield-Symbol angezeigt image:../media/icon_shield.png["Schild-Symbol"] Zeigt einen veralteten, konformen Bucket an. Auch für ältere, konforme Buckets ist ein Hold-Abzeichen vorhanden image:../media/hold_badge.png["Hold Namensschild"] Um anzugeben, dass der Bucket unter einer gesetzlichen Aufbewahrungspflichten steht.
 
-https://["KB: Wie verwaltet man ältere, konforme Buckets in StorageGRID 11.5"^]
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["KB: Wie verwaltet man ältere, konforme Buckets in StorageGRID 11.5"^]
 
 link:../ilm/index.html["Objektmanagement mit ILM"]
 

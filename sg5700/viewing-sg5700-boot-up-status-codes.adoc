@@ -82,4 +82,4 @@ link:status-indicators-on-e5700sg-controller.html["Statusanzeigen auf dem E5700S
 
 link:troubleshooting-hardware-installation.html["Fehlerbehebung bei der Hardwareinstallation"]
 
-https://["E5700 und E2800 – System Monitoring Guide"^]
+https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html["E5700 und E2800 – System Monitoring Guide"^]

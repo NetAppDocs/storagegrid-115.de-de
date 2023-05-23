@@ -35,7 +35,7 @@ Bei Produktionsimplementierungen sollten nicht mehrere Storage-Nodes auf derselb
 Siehe auch die Informationen über Speicheranforderungen.
 
 .Verwandte Informationen
-https://["NetApp Interoperabilitäts-Matrix-Tool"^]
+https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"^]
 
 link:storage-and-performance-requirements.html["Storage- und Performance-Anforderungen erfüllt"]
 

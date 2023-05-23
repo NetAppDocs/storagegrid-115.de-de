@@ -112,4 +112,4 @@ link:s3-rest-api-supported-operations-and-limitations.html["Initiieren Von Mehrt
 
 link:object-versioning.html["Objektversionierung"]
 
-https://["Amazon Simple Storage Service Benutzerhandbuch: S3 Object Lock verwenden"]
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html["Amazon Simple Storage Service Benutzerhandbuch: S3 Object Lock verwenden"]

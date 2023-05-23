@@ -36,4 +36,4 @@ IMPORTANT: Wenn Sie den Auslagerungsaustausch nicht vollständig deaktivieren, k
 
 
 .Verwandte Informationen
-https://["NetApp Interoperabilitäts-Matrix-Tool"^]
+https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"^]

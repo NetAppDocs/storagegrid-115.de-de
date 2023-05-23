@@ -268,7 +268,7 @@ link:configuring-security-for-rest-api.html["Sicherheit wird für DIE REST API k
 Mit der Amazon Web Services Command Line Interface (AWS CLI) können Sie die Verbindung zum System testen und überprüfen, ob Sie Objekte lesen und in das System schreiben können.
 
 .Was Sie benötigen
-* Sie müssen die AWS CLI von heruntergeladen und installiert haben https://["aws.amazon.com/cli"].
+* Sie müssen die AWS CLI von heruntergeladen und installiert haben https://aws.amazon.com/cli["aws.amazon.com/cli"].
 * Sie müssen ein S3-Mandantenkonto im StorageGRID System erstellt haben.
 
 

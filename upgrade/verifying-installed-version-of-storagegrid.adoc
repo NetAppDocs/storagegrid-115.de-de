@@ -39,7 +39,7 @@ Ein möglicher Upgrade-Pfad wird im Beispiel dargestellt.
 
 . Sobald Sie StorageGRID 11.4 erreicht haben, rufen Sie die NetApp Downloads-Seite für StorageGRID auf und überprüfen Sie, ob Hotfixes für Ihre StorageGRID 11.4._x_-Version verfügbar sind.
 +
-https://["NetApp Downloads: StorageGRID"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp Downloads: StorageGRID"^]
 
 . Überprüfen Sie, ob die StorageGRID 11.4._x_-Version den neuesten Hotfix angewendet hat.
 . Laden Sie ggf. den aktuellen StorageGRID 11.4._x.y_ Hotfix für Ihre StorageGRID 11.4._x_-Version herunter.

@@ -15,7 +15,7 @@ Das StorageGRID System unterstützt für jedes S3-Mandantenkonto maximal 1,000 B
 
 Einschränkungen für Bucket-Namen folgen den regionalen Beschränkungen für AWS US Standard. Sie sollten sie jedoch noch weiter auf DNS-Namenskonventionen beschränken, um Anfragen im Stil von virtuellen S3-Hosted-Style zu unterstützen.
 
-https://["Amazon Web Services (AWS) Dokumentation: Bucket-Einschränkungen und -Einschränkungen"]
+https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html["Amazon Web Services (AWS) Dokumentation: Bucket-Einschränkungen und -Einschränkungen"]
 
 link:configuring-tenant-accounts-and-connections.html["Endpoint-Domain-Namen für S3-Anforderung"]
 
@@ -342,7 +342,7 @@ Diese Implementierung verwendet das `versioning` unterressource, um den Versioni
 
 |===
 .Verwandte Informationen
-http://["Amazon Web Services (AWS) Dokumentation: Regionsübergreifende Replizierung"]
+http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html["Amazon Web Services (AWS) Dokumentation: Regionsübergreifende Replizierung"]
 
 link:consistency-controls.html["Konsistenzkontrollen"]
 
@@ -366,7 +366,7 @@ Sie können eine S3-Lebenszyklukonfiguration erstellen, um zu steuern, wann best
 
 Das einfache Beispiel in diesem Abschnitt veranschaulicht, wie eine S3-Lebenszykluskonfiguration das Löschen bestimmter Objekte aus bestimmten S3-Buckets kontrollieren kann. Das Beispiel in diesem Abschnitt dient nur zu Illustrationszwecken. Alle Details zum Erstellen von S3-Lebenszykluskonfigurationen finden Sie im Abschnitt zum Lifecycle Management von Objekten im _Amazon Simple Storage Service Developer Guide_. Beachten Sie, dass StorageGRID nur Aktionen nach Ablauf unterstützt. Es werden keine Aktionen zur Transition unterstützt.
 
-https://["Amazon Simple Storage Service Developer Guide: Lifecycle Management von Objekten"]
+https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html["Amazon Simple Storage Service Developer Guide: Lifecycle Management von Objekten"]
 
 
 
