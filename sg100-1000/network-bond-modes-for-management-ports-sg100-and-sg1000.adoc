@@ -15,7 +15,7 @@ Für die beiden 1-GbE-Management-Ports auf der Services-Appliance können Sie de
 
 *SG100 Netzwerkverwaltungs-Ports*
 
-image::../media/sg100_bonded_management_ports.png[sg100 verbundene Management-Ports]
+image::../media/sg100_bonded_management_ports.png[Gebundene SG100 Management-Ports]
 
 *SG1000 Netzwerk-Management-Ports*
 

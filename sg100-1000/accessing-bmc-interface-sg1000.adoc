@@ -20,7 +20,7 @@ Sie können auf die BMC-Schnittstelle auf der Services-Appliance mit der DHCP- o
 * SG100 BMC Management Port*
 
 +
-image::../media/sg100_bmc_management_port.png[sg100-Management-Port für BMC]
+image::../media/sg100_bmc_management_port.png[SG100-Management-Port]
 
 +
 *SG1000 BMC-Management-Port*

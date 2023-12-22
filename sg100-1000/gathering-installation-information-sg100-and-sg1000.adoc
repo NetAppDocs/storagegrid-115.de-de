@@ -21,7 +21,7 @@ Das Admin-Netzwerk für StorageGRID ist ein optionales Netzwerk, das zur Systema
 
 * SG100 RJ-45-Anschlüsse*
 
-image::../media/sg100_rj_45_ports_circled.png[sg100 rj-45-Anschlüsse verbunden]
+image::../media/sg100_rj_45_ports_circled.png[SG100 RJ-45-Ports]
 
 *SG1000 RJ-45-Anschlüsse*
 

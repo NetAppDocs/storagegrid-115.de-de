@@ -18,7 +18,7 @@ NOTE: Wenn Sie E-Mail-Benachrichtigungen im gesamten System unterdrücken, werde
 
 Wenn die AutoSupport-Meldung nicht gesendet wird, wird „`failed`“ auf der Registerkarte *Results* der Seite *AutoSupport* angezeigt.
 
-image::../media/autosupport_results_tab.png[registerkarte „AutoSupport Results“ (Ergebnisse]
+image::../media/autosupport_results_tab.png[Registerkarte „AutoSupport-Ergebnisse“]
 
 
 

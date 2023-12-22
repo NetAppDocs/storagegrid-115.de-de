@@ -23,7 +23,7 @@ image::../media/kms_step_2_upload_server_certificate.png[KMS Schritt 2 Serverzer
 Die Metadaten des Serverzertifikats werden angezeigt.
 
 +
-image::../media/kms_step_2_server_certificate_metadata.png[KMS Schritt 2 Server-Zertifikat-Metadaten]
+image::../media/kms_step_2_server_certificate_metadata.png[Metadaten des Serverzertifikats]
 
 +
 

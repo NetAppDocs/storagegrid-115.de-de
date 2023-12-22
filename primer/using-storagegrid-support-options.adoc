@@ -44,7 +44,7 @@ Sie können die AutoSupport-Funktion und die einzelnen AutoSupport-Optionen bei 
 
 image::../media/autosupport_disabled_message.png[AutoSupport-Nachricht deaktiviert]
 
-Sie können das Symbol „`x`“ auswählen image:../media/autosupport_close_message.png[""] Um die Meldung zu schließen. Die Nachricht wird erst wieder angezeigt, wenn Ihr Browser-Cache gelöscht wird, auch wenn AutoSupport deaktiviert bleibt.
+Sie können das Symbol „`x`“ auswählen image:../media/autosupport_close_message.png["X-Symbol"] Um die Meldung zu schließen. Die Nachricht wird erst wieder angezeigt, wenn Ihr Browser-Cache gelöscht wird, auch wenn AutoSupport deaktiviert bleibt.
 
 
 

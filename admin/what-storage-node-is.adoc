@@ -55,7 +55,7 @@ Vielleicht möchten Sie nach Abfrageinformationen suchen, um den Zustand des Met
 
 Sie können auch die Gesamtzahl der Abfragen anzeigen, die aufgrund von Konsistenzfehlern fehlgeschlagen sind. Fehler auf Konsistenzebene resultieren aus einer unzureichenden Anzahl von verfügbaren Metadatenspeichern zum Zeitpunkt der Durchführung einer Abfrage durch den spezifischen DDS-Service.
 
-Auf der Diagnoseseite können Sie weitere Informationen zum aktuellen Status Ihres Rasters abrufen. Siehe link:../monitor/running-diagnostics.html.html["Diagnose wird ausgeführt"].
+Auf der Diagnoseseite können Sie weitere Informationen zum aktuellen Status Ihres Rasters abrufen. Siehe link:../monitor/running-diagnostics.html["Diagnose wird ausgeführt"].
 
 
 
@@ -92,7 +92,7 @@ Sie können Abfrageinformationen prüfen, um den Zustand des Metadatenspeichers 
 
 Sie können auch die Gesamtzahl der Abfragen anzeigen, die aufgrund von Konsistenzfehlern fehlgeschlagen sind. Fehler auf Konsistenzebene resultieren aus einer unzureichenden Anzahl an verfügbaren Metadatenspeichern zum Zeitpunkt einer Abfrage durch den spezifischen LDR-Service.
 
-Auf der Diagnoseseite können Sie weitere Informationen zum aktuellen Status Ihres Rasters abrufen. Siehe link:../monitor/running-diagnostics.html.html["Diagnose wird ausgeführt"].
+Auf der Diagnoseseite können Sie weitere Informationen zum aktuellen Status Ihres Rasters abrufen. Siehe link:../monitor/running-diagnostics.html["Diagnose wird ausgeführt"].
 
 
 

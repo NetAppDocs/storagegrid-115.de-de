@@ -38,7 +38,7 @@ CAUTION: Speichern Sie die neue Provisionierungs-Passphrase an einem sicheren Or
 Das System zeigt ein grünes Erfolgsbanner an, wenn die Änderung der Provisionierungs-Passphrase abgeschlossen ist. Die Änderung sollte weniger als eine Minute dauern.
 
 +
-image::../media/change_provisioning_passphrase_success.png[Erfolgreiche Änderung der Provisionierungs-Passphrase]
+image::../media/change_provisioning_passphrase_success.png[Provisionierungs-Passphrase ändern - Erfolgsmeldung]
 
 . Wählen Sie den Link * Wiederherstellungspaket Seite* im Erfolgsbanner aus.
 . Laden Sie das neue Wiederherstellungspaket aus dem Grid Manager herunter. Wählen Sie *Wartung* > *Wiederherstellungspaket* und geben Sie die neue Provisioning-Passphrase ein.
